@@ -1,0 +1,16 @@
+# system info address_decoder_top_csr_clk on 2023.02.16.09:33:07
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for address_decoder_top_csr_clk on 2023.02.16.09:33:07
+files:
+filepath,kind,attributes,module,is_top
+sim/address_decoder_top_csr_clk.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,address_decoder_top_csr_clk,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

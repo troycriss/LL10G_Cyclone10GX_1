@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_merlin_master_translator_181/sim/address_decoder_multi_channel_master_altera_merlin_master_translator_181_mhudjri.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_master_translator_181" />
+ <file
+   path="sim/address_decoder_multi_channel_master.v"
+   type="VERILOG"
+   library="address_decoder_multi_channel_master"
+   hasInlineConfiguration="true" />
+ <topLevel
+   name="address_decoder_multi_channel_master.address_decoder_multi_channel_master" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

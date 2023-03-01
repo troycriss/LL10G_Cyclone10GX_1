@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/address_decoder_multi_channel_csr_clk.v"
+   type="VERILOG"
+   library="address_decoder_multi_channel_csr_clk"
+   hasInlineConfiguration="true" />
+ <topLevel
+   name="address_decoder_multi_channel_csr_clk.address_decoder_multi_channel_csr_clk" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

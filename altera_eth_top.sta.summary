@@ -1,0 +1,1709 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.263
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.316
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.413
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.712
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.816
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.878
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'clk_125'
+Slack : 2.211
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.175
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.442
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup '~ALTERA_CLKUSR~'
+Slack : 6.358
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Setup 'altera_reserved_tck'
+Slack : 26.498
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'altera_reserved_tck'
+Slack : 0.045
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.051
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.055
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'clk_125'
+Slack : 0.055
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.058
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.069
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.074
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold '~ALTERA_CLKUSR~'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.507
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.516
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.536
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.653
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.550
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.959
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.103
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.155
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.296
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 1.696
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'clk_125'
+Slack : 4.895
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery '~ALTERA_CLKUSR~'
+Slack : 6.937
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 14.712
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 14.906
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 14.954
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 16.101
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Recovery 'altera_reserved_tck'
+Slack : 59.285
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'clk_125'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.359
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.375
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'altera_reserved_tck'
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal '~ALTERA_CLKUSR~'
+Slack : 0.504
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.531
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.598
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 11.075
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 11.651
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 11.696
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 12.270
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|u_xcvr_atx_pll_10g|xcvr_atx_pll_a10_0|mcgb_serial_clk'
+Slack : 0.091
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'refclk_10g'
+Slack : 0.475
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.134
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.135
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.137
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.138
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.207
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.207
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.211
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.384
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.384
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.818
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'clk_125'
+Slack : 3.581
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width '~ALTERA_CLKUSR~'
+Slack : 3.699
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.879
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.879
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 30.820
+TNS   : 0.000
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.418
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.450
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.582
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.602
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.608
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.621
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.638
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.647
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.659
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.703
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.739
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.769
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.777
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.790
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.825
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.875
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.938
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.994
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.010
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.015
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.021
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.032
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.088
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.098
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.108
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.130
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.138
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.168
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.180
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.249
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.267
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.272
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.283
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.285
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.294
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.309
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.317
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.322
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.346
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.357
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.388
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.391
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.408
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.413
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 4.688
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 4.725
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 5.994
+
+Type  : Slow 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 6.005
+
+Type  : Slow 900mV 100C Model Net Delay 'set_net_delay'
+Slack : 4.812
+
+Type  : Slow 900mV 100C Model Net Delay 'set_net_delay'
+Slack : 4.876
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.522
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.554
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.949
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.960
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 1.161
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'clk_125'
+Slack : 2.612
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.483
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.670
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup '~ALTERA_CLKUSR~'
+Slack : 6.367
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Setup 'altera_reserved_tck'
+Slack : 26.758
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'altera_reserved_tck'
+Slack : 0.031
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.034
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.038
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'clk_125'
+Slack : 0.040
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.052
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.056
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.070
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold '~ALTERA_CLKUSR~'
+Slack : 0.070
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.592
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.675
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.010
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.233
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.247
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.286
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.161
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'clk_125'
+Slack : 5.085
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery '~ALTERA_CLKUSR~'
+Slack : 6.923
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 14.295
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 14.602
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 14.696
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 15.740
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Recovery 'altera_reserved_tck'
+Slack : 59.563
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'clk_125'
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.369
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.371
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.412
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'altera_reserved_tck'
+Slack : 0.436
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal '~ALTERA_CLKUSR~'
+Slack : 0.484
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.511
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.566
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 11.251
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 11.788
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 11.854
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 12.523
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|u_xcvr_atx_pll_10g|xcvr_atx_pll_a10_0|mcgb_serial_clk'
+Slack : 0.092
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'refclk_10g'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.091
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.103
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.105
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.118
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.166
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.166
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.214
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.340
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.340
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.799
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'clk_125'
+Slack : 3.523
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width '~ALTERA_CLKUSR~'
+Slack : 3.619
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.843
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.843
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 30.855
+TNS   : 0.000
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.511
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.526
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.558
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.578
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.595
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.629
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.651
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.666
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.667
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.718
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.738
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.757
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.769
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.776
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.845
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.869
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.910
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.965
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.986
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.999
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.034
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.040
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.042
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.093
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.102
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.118
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.119
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.173
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.191
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.219
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.224
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.227
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.240
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.246
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.249
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.275
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.286
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.287
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.297
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.321
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.336
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.340
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.341
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.369
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 4.650
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 4.695
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 5.956
+
+Type  : Slow 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 5.962
+
+Type  : Slow 900mV -40C Model Net Delay 'set_net_delay'
+Slack : 4.852
+
+Type  : Slow 900mV -40C Model Net Delay 'set_net_delay'
+Slack : 4.922
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.690
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.719
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.775
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.822
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.290
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.430
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.641
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.582
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'clk_125'
+Slack : 4.031
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 4.645
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 4.695
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup '~ALTERA_CLKUSR~'
+Slack : 6.852
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Setup 'altera_reserved_tck'
+Slack : 27.922
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'altera_reserved_tck'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.017
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.017
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.018
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'clk_125'
+Slack : 0.019
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.020
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.025
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold '~ALTERA_CLKUSR~'
+Slack : 0.027
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.524
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.604
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.665
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.349
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.576
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.691
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.707
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.874
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.642
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'clk_125'
+Slack : 5.814
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery '~ALTERA_CLKUSR~'
+Slack : 7.383
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 15.790
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 15.829
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 16.874
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 17.701
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Recovery 'altera_reserved_tck'
+Slack : 60.015
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'clk_125'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.216
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal '~ALTERA_CLKUSR~'
+Slack : 0.252
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'altera_reserved_tck'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 10.643
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 11.346
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 12.267
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 12.293
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|u_xcvr_atx_pll_10g|xcvr_atx_pll_a10_0|mcgb_serial_clk'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'refclk_10g'
+Slack : 0.676
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.238
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.240
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.241
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.243
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.252
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.381
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.381
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.488
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.488
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.841
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'clk_125'
+Slack : 3.645
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width '~ALTERA_CLKUSR~'
+Slack : 3.890
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.955
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.955
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 30.754
+TNS   : 0.000
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.778
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.909
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.934
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.946
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.954
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.954
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 1.972
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.019
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.045
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.049
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.059
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.103
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.115
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.124
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.216
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.241
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.249
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.254
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.270
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.331
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.351
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.352
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.394
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.397
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.407
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.421
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.426
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.436
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.466
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.484
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.492
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.536
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.554
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.559
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.576
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.586
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.592
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.600
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.620
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.621
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.630
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.636
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.644
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 2.662
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 4.873
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 4.910
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 6.154
+
+Type  : Fast 900mV 100C Model Max Skew 'set_max_skew'
+Slack : 6.181
+
+Type  : Fast 900mV 100C Model Net Delay 'set_net_delay'
+Slack : 4.919
+
+Type  : Fast 900mV 100C Model Net Delay 'set_net_delay'
+Slack : 4.952
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.966
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.973
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.122
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.130
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.677
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.775
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.908
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 3.402
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'clk_125'
+Slack : 4.880
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 5.297
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 5.372
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup '~ALTERA_CLKUSR~'
+Slack : 7.087
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Setup 'altera_reserved_tck'
+Slack : 28.640
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.012
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'altera_reserved_tck'
+Slack : 0.014
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.017
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'clk_125'
+Slack : 0.017
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.019
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold '~ALTERA_CLKUSR~'
+Slack : 0.023
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Hold 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.785
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.894
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 2.024
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 2.034
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 2.115
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 3.628
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'clk_125'
+Slack : 6.322
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery '~ALTERA_CLKUSR~'
+Slack : 7.457
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 17.380
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 17.393
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 17.425
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 18.071
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Recovery 'altera_reserved_tck'
+Slack : 60.651
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'clk_125'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 0.163
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.164
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal '~ALTERA_CLKUSR~'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'altera_reserved_tck'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 0.227
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 10.368
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 10.799
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 10.835
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Removal 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 10.931
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|u_xcvr_atx_pll_10g|xcvr_atx_pll_a10_0|mcgb_serial_clk'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'refclk_10g'
+Slack : 0.680
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.230
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_clkout'
+Slack : 1.236
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.240
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_clkout'
+Slack : 1.242
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk1'
+Slack : 1.283
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.398
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|tx_pma_clk'
+Slack : 1.398
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.488
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|rx_pma_clk'
+Slack : 1.488
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|core_pll|xcvr_fpll_a10_0|outclk0'
+Slack : 2.883
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'clk_125'
+Slack : 3.692
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width '~ALTERA_CLKUSR~'
+Slack : 3.876
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.956
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|avmmclk'
+Slack : 3.956
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 30.786
+TNS   : 0.000
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 1.883
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.010
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.027
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.036
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.037
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.057
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.088
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.101
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.129
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.204
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.207
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.255
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.267
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.290
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.353
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.358
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.361
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.369
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.380
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.416
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.433
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.437
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.477
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.481
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.483
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.490
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.495
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.523
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.541
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.548
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.551
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.586
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.594
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.604
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.619
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.630
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.635
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.648
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.649
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.655
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.655
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.666
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.673
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 2.676
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 4.906
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 4.937
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 6.195
+
+Type  : Fast 900mV -40C Model Max Skew 'set_max_skew'
+Slack : 6.209
+
+Type  : Fast 900mV -40C Model Net Delay 'set_net_delay'
+Slack : 4.986
+
+Type  : Fast 900mV -40C Model Net Delay 'set_net_delay'
+Slack : 5.016
+
+------------------------------------------------------------

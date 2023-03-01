@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_avalon_mm_clock_crossing_bridge_181/sim/address_decoder_top_mm_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_181_kqxyhsq.v"
+   type="VERILOG"
+   library="altera_avalon_mm_clock_crossing_bridge_181" />
+ <file
+   path="altera_avalon_mm_clock_crossing_bridge_181/sim/altera_avalon_dc_fifo.v"
+   type="VERILOG"
+   library="altera_avalon_mm_clock_crossing_bridge_181" />
+ <file
+   path="altera_avalon_mm_clock_crossing_bridge_181/sim/altera_dcfifo_synchronizer_bundle.v"
+   type="VERILOG"
+   library="altera_avalon_mm_clock_crossing_bridge_181" />
+ <file
+   path="altera_avalon_mm_clock_crossing_bridge_181/sim/altera_std_synchronizer_nocut.v"
+   type="VERILOG"
+   library="altera_avalon_mm_clock_crossing_bridge_181" />
+ <file
+   path="sim/address_decoder_top_mm_clock_crossing_bridge.v"
+   type="VERILOG"
+   library="address_decoder_top_mm_clock_crossing_bridge"
+   hasInlineConfiguration="true" />
+ <topLevel
+   name="address_decoder_top_mm_clock_crossing_bridge.address_decoder_top_mm_clock_crossing_bridge" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

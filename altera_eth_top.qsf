@@ -1,0 +1,162 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 14.1.0 Build 186 12/03/2014 SJ Full Version
+# Date created = 16:28:45  January 05, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		altera_eth_top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone 10 GX"
+set_global_assignment -name DEVICE 10CX220YF780I5G
+set_global_assignment -name TOP_LEVEL_ENTITY altera_eth_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:28:45  JANUARY 05, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Pro Edition"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 4
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+
+# Reset
+
+# LED
+
+# SFP
+set_instance_assignment -name VIRTUAL_PIN ON -to sfp0_txdisable
+set_instance_assignment -name VIRTUAL_PIN ON -to SFPP0_RATE_SEL
+set_instance_assignment -name VIRTUAL_PIN ON -to sfp1_txdisable
+set_instance_assignment -name VIRTUAL_PIN ON -to SFPP1_RATE_SEL
+
+
+
+
+
+# IO Standard
+set_instance_assignment -name IO_STANDARD LVDS -to clk_125
+set_instance_assignment -name IO_STANDARD LVDS -to refclk_10g
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to tx_serial_data[*]
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to rx_serial_data[*]
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to tx_serial_data[*]
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to rx_serial_data[*]
+
+# Clock termination setting
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to clk_125
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to refclk_10g
+
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+
+set_global_assignment -name PRESERVE_UNUSED_XCVR_CHANNEL ON
+
+set_location_assignment PIN_AB16 -to clk_125
+set_location_assignment PIN_AA16 -to "clk_125(n)"
+set_location_assignment PIN_N24 -to refclk_10g
+set_location_assignment PIN_N23 -to "refclk_10g(n)"
+set_location_assignment PIN_AE4 -to reset_n
+set_instance_assignment -name IO_STANDARD "1.8 V" -to reset_n -entity altera_eth_top
+set_location_assignment PIN_F26 -to rx_serial_data[0]
+set_location_assignment PIN_F25 -to "rx_serial_data[0](n)"
+set_location_assignment PIN_H26 -to rx_serial_data[1]
+set_location_assignment PIN_H25 -to "rx_serial_data[1](n)"
+set_location_assignment PIN_G28 -to tx_serial_data[0]
+set_location_assignment PIN_G27 -to "tx_serial_data[0](n)"
+set_location_assignment PIN_J28 -to tx_serial_data[1]
+set_location_assignment PIN_J27 -to "tx_serial_data[1](n)"
+set_instance_assignment -name IO_STANDARD "1.8 V" -to channel_ready_n[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to channel_ready_n[1]
+set_location_assignment PIN_AC7 -to channel_ready_n[1]
+set_location_assignment PIN_AC6 -to channel_ready_n[0]
+set_location_assignment PIN_E21 -to sfp_scl_0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_scl_0 -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_int_0 -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_int_1 -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_scl_1 -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_sda_1 -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_sda_0 -entity altera_eth_top
+set_location_assignment PIN_H21 -to sfp_scl_1
+set_location_assignment PIN_H20 -to sfp_sda_1
+set_location_assignment PIN_D22 -to sfp_sda_0
+set_location_assignment PIN_E23 -to sfp_int_0
+set_location_assignment PIN_D23 -to sfp_int_1
+set_location_assignment PIN_H2 -to arduino_sda
+set_location_assignment PIN_J3 -to arduino_scl
+set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
+set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
+set_global_assignment -name SDC_FILE altera_eth_top.sdc
+set_global_assignment -name VERILOG_FILE rtl/alt_mge_reset_synchronizer.v
+set_global_assignment -name VERILOG_FILE rtl/alt_mge_channel.v
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/alt_mge_multi_channel.sv
+set_global_assignment -name IP_FILE rtl/xcvr_reset_controller/alt_mge_xcvr_reset_ctrl_txpll.ip
+set_global_assignment -name IP_FILE rtl/xcvr_reset_controller/alt_mge_xcvr_reset_ctrl_channel.ip
+set_global_assignment -name IP_FILE rtl/pll_atxpll/alt_mge_xcvr_atx_pll_10g.ip
+set_global_assignment -name IP_FILE rtl/mac/alt_usxgmii_mac.ip
+set_global_assignment -name IP_FILE rtl/phy/alt_usxgmii_phy.ip
+set_global_assignment -name IP_FILE rtl/pll_fpll/alt_mge_core_pll.ip
+set_global_assignment -name IP_FILE rtl/jtag_avalon_master/alt_jtag_csr_master.ip
+set_global_assignment -name QSYS_FILE rtl/address_decoder/address_decoder_channel.qsys
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_channel/address_decoder_channel_csr_clk.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_channel/address_decoder_channel_mac.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_channel/address_decoder_channel_master.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_channel/address_decoder_channel_phy.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_channel/address_decoder_channel_xcvr_rcfg.ip
+set_global_assignment -name QSYS_FILE rtl/address_decoder/address_decoder_multi_channel.qsys
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_0.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_1.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_2.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_3.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_4.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_5.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_6.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_7.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_8.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_9.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_10.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_channel_11.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_csr_clk.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_multi_channel/address_decoder_multi_channel_master.ip
+set_global_assignment -name QSYS_FILE rtl/address_decoder/address_decoder_top.qsys
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_csr_clk.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_mac_clk.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_master.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_mm_clock_crossing_bridge.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_multi_channel.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_0_1.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_2_3.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_4_5.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_6_7.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_8_9.ip
+set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_10_11.ip
+set_global_assignment -name QIP_FILE rtl/ethernet_traffic_controller/eth_traffic_controller_top.qip
+set_location_assignment PIN_AF6 -to led_heartbeat
+set_location_assignment PIN_AE6 -to led_other

@@ -1,0 +1,17 @@
+Fitter Status : Successful - Wed Mar  1 13:24:13 2023
+Quartus Prime Version : 18.1.0 Build 222 09/21/2018 SJ Pro Edition
+Revision Name : altera_eth_top
+Top-level Entity Name : altera_eth_top
+Family : Cyclone 10 GX
+Device : 10CX220YF780I5G
+Timing Models : Final
+Logic utilization (in ALMs) : 14,342 / 80,330 ( 18 % )
+Total registers : 19937
+Total pins : 25 / 340 ( 7 % )
+Total virtual pins : 6
+Total block memory bits : 703,840 / 12,021,760 ( 6 % )
+Total RAM Blocks : 70 / 587 ( 12 % )
+Total DSP Blocks : 0 / 192 ( 0 % )
+Total HSSI RX channels : 2 / 12 ( 17 % )
+Total HSSI TX channels : 2 / 12 ( 17 % )
+Total PLLs : 14 / 30 ( 47 % )

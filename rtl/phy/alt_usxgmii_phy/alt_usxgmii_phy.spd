@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_xcvr_native_a10_181/sim/altera_xcvr_native_a10_functions_h.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_common_sv_packages"
+   systemVerilogPackageName="altera_xcvr_native_a10_functions_h" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_async_fifo_fpga.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_async_fifo_fpga.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_bitsync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_bitsync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_mbow_clock_crosser.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_mbow_clock_crosser.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_pcs_csr_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_pcs_csr_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_pcs_rst_sync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_pcs_rst_sync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_pipeline_base.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_pipeline_base.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_std_synchronizer_bundle.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_std_synchronizer_bundle.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_an_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_an_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_creg_map.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_creg_map.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_creg_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_creg_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_incr_cnt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_incr_cnt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_rx_64_to_32_wadpt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_rx_64_to_32_wadpt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_rx_data_derep.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_rx_data_derep.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_rx_rm_fifo.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_rx_rm_fifo.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_rx_rm_fifo_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_rx_rm_fifo_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_rx_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_rx_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_tx_32_to_64_wadpt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_tx_32_to_64_wadpt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_tx_clockcomp_fifo.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_tx_clockcomp_fifo.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_tx_data_mux.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_tx_data_mux.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_tx_data_rep.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_tx_data_rep.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_tx_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_tx_top.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxg32_umii_fault.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxg32_umii_fault.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_xgmii_1588_latency.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_xgmii_1588_latency.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_xgmii_1588_ppm_counter.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_xgmii_1588_ppm_counter.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_xgmii_clockcomp.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_xgmii_clockcomp.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_xgmii_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_xgmii_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_xgmii_rx_fifo.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_xgmii_rx_fifo.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_xgmii_soft_fifo.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_xgmii_soft_fifo.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_1588_ppm_counter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_1588_ppm_counter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_a_fifo_24.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_a_fifo_24.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_carrier_sense.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_carrier_sense.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_clock_crosser.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_clock_crosser.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_colision_detect.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_colision_detect.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_control.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_control.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_gray_cnt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_gray_cnt.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_gxb_aligned_rxsync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_gxb_aligned_rxsync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_host_control.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_host_control.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_mdio_reg.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_mdio_reg.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_mii_rx_if_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_mii_rx_if_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_mii_tx_if_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_mii_tx_if_pcs.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_ph_calculator.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_ph_calculator.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_pma_gige.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_pma_gige.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_pma.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_pma.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_reset_synchronizer.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_reset_synchronizer.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_rx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_rx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_rx_encapsulation_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_rx_encapsulation_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_rx_fifo_rd.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_rx_fifo_rd.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_sdpm_altsyncram.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_sdpm_altsyncram.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_sgmii_clk_enable.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_sgmii_clk_enable.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_std_synchronizer.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_std_synchronizer.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_top_1000_base_x_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_top_1000_base_x_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_top_autoneg.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_top_autoneg.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_top_pcs_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_top_pcs_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_top_rx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_top_rx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_top_sgmii_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_top_sgmii_strx_gx.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_top_tx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_top_tx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_tx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_tx_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_tx_encapsulation.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_tx_encapsulation.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_xcvr_resync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_xcvr_resync.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_xcvr_latency_pulse_measurement.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_xcvr_latency_pulse_measurement.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/latency_pulse_measurement.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/latency_pulse_measurement.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_sgmii_8_to_16_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_sgmii_8_to_16_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge16_pcs_sgmii_16_to_8_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge16_pcs_sgmii_16_to_8_converter.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/mentor/alt_mge_phy_usxgmii_1588_latency.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/aldec/alt_mge_phy_usxgmii_1588_latency.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="alt_mge_phy_pcs_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_pcs_181/sim/altera_std_synchronizer_nocut.v"
+   type="VERILOG"
+   library="alt_mge_phy_pcs_181" />
+ <file
+   path="alt_mge_phy_xcvr_term_181/sim/mentor/alt_mge_phy_gf_clock_mux.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_xcvr_term_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_xcvr_term_181/sim/mentor/alt_mge16_phy_xcvr_term.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_xcvr_term_181"
+   simulator="modelsim" />
+ <file
+   path="alt_mge_phy_xcvr_term_181/sim/aldec/alt_mge_phy_gf_clock_mux.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_xcvr_term_181"
+   simulator="riviera" />
+ <file
+   path="alt_mge_phy_xcvr_term_181/sim/aldec/alt_mge16_phy_xcvr_term.v"
+   type="VERILOG_ENCRYPT"
+   library="alt_mge_phy_xcvr_term_181"
+   simulator="riviera" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_resync.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_arbiter.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor/alt_xcvr_resync.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="altera_xcvr_native_a10_181"
+   simulator="modelsim" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor/alt_xcvr_arbiter.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="altera_xcvr_native_a10_181"
+   simulator="modelsim" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/twentynm_pcs.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/twentynm_pma.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/twentynm_xcvr_avmm.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/twentynm_xcvr_native.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor/twentynm_pcs.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="altera_xcvr_native_a10_181"
+   simulator="modelsim" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor/twentynm_pma.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="altera_xcvr_native_a10_181"
+   simulator="modelsim" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor/twentynm_xcvr_avmm.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="altera_xcvr_native_a10_181"
+   simulator="modelsim" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor/twentynm_xcvr_native.sv"
+   type="SYSTEM_VERILOG_ENCRYPT"
+   library="altera_xcvr_native_a10_181"
+   simulator="modelsim" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/a10_avmm_h.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_native_pipe_retry.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_native_avmm_csr.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_native_prbs_accum.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_native_odi_accel.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_native_rcfg_arb.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/altera_xcvr_native_pcie_dfe_params_h.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/pcie_mgmt_commands_h.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/pcie_mgmt_functions_h.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/pcie_mgmt_program.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/pcie_mgmt_cpu.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/pcie_mgmt_master.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/altera_xcvr_native_pcie_dfe_ip.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/plain_files.txt"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/mentor_files.txt"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/cadence_files.txt"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/synopsys_files.txt"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/aldec_files.txt"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_10g_rx_pcs_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_10g_tx_pcs_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_8g_rx_pcs_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_8g_tx_pcs_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_common_pcs_pma_interface_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_common_pld_pcs_interface_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_gen3_rx_pcs_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_krfec_rx_pcs_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_pipe_gen1_2_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_rx_pcs_pma_interface_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_rx_pld_pcs_interface_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_tx_pcs_pma_interface_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/rcfg_timing_db/alt_usxgmii_phy_hssi_tx_pld_pcs_interface_rcfg_settings_abaevuq.json"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/reconfig/alt_mge_phy_reconfig_parameters_CFG0.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/reconfig/alt_mge_phy_reconfig_parameters_CFG0.h"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/reconfig/alt_mge_phy_reconfig_parameters_CFG0.mif"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/docs/alt_usxgmii_phy_altera_xcvr_native_a10_181_abaevuq_parameters.csv"
+   type="OTHER"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_usxgmii_phy_altera_xcvr_native_a10_181_abaevuq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="altera_xcvr_native_a10_181/sim/alt_xcvr_native_rcfg_opt_logic_abaevuq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_xcvr_native_a10_181" />
+ <file
+   path="alt_mge_phy_181/sim/alt_usxgmii_phy_alt_mge_phy_181_ofhxqti.v"
+   type="VERILOG"
+   library="alt_mge_phy_181"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/alt_usxgmii_phy.v"
+   type="VERILOG"
+   library="alt_usxgmii_phy"
+   hasInlineConfiguration="true" />
+ <topLevel name="alt_usxgmii_phy.alt_usxgmii_phy" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

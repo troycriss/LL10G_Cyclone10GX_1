@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.02.16.09:33:10"
+ outputDirectory="C:/Users/ahaas/AppData/Local/Temp/alt9404_3265990298192936513.dir/0003_alt_em10g32_0_gen/rtl/address_decoder/ip/address_decoder_top/address_decoder_top_mac_clk/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone 10 GX"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10CX220YF780I6G"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_IN_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_IN_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_IN_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk_in" kind="clock" start="0">
+   <property name="clockRate" value="156250000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="in_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clk_in_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="clk" kind="clock" start="1">
+   <property name="associatedDirectClock" value="clk_in" />
+   <property name="clockRate" value="156250000" />
+   <property name="clockRateKnown" value="true" />
+   <property name="externallyDriven" value="true" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_out" direction="output" role="clk" width="1" />
+  </interface>
+  <interface name="clk_reset" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="clk_in_reset" />
+   <property name="associatedResetSinks" value="clk_in_reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_n_out" direction="output" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="address_decoder_top_mac_clk"
+   version="1.0"
+   name="address_decoder_top_mac_clk">
+  <parameter name="AUTO_CLK_IN_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
+  <parameter name="AUTO_CLK_IN_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLK_IN_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
+  <generatedFiles>
+   <file
+       path="C:\Users\ahaas\AppData\Local\Temp\alt9404_3265990298192936513.dir\0003_alt_em10g32_0_gen\rtl\address_decoder\ip\address_decoder_top\address_decoder_top_mac_clk\synth\address_decoder_top_mac_clk.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:\Users\ahaas\AppData\Local\Temp\alt9404_3265990298192936513.dir\0003_alt_em10g32_0_gen\rtl\address_decoder\ip\address_decoder_top\address_decoder_top_mac_clk\synth\address_decoder_top_mac_clk.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/ahaas/AppData/Local/Temp/alt9404_3265990298192936513.dir/0003_alt_em10g32_0_gen/rtl/address_decoder/ip/address_decoder_top/address_decoder_top_mac_clk.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="address_decoder_top_mac_clk">"Generating: address_decoder_top_mac_clk"</message>
+  </messages>
+ </entity>
+</deploy>

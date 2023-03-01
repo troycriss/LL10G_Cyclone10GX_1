@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_merlin_slave_translator_181/sim/address_decoder_top_multi_channel_altera_merlin_slave_translator_181_5aswt6a.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_translator_181" />
+ <file
+   path="sim/address_decoder_top_multi_channel.v"
+   type="VERILOG"
+   library="address_decoder_top_multi_channel"
+   hasInlineConfiguration="true" />
+ <topLevel
+   name="address_decoder_top_multi_channel.address_decoder_top_multi_channel" />
+ <deviceFamily name="cyclone10gx" />
+</simPackage>

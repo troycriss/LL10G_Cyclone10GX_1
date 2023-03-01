@@ -1,0 +1,18 @@
+# system info address_decoder_top_traffic_controller_ch_10_11 on 2023.02.16.09:33:01
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for address_decoder_top_traffic_controller_ch_10_11 on 2023.02.16.09:33:01
+files:
+filepath,kind,attributes,module,is_top
+sim/address_decoder_top_traffic_controller_ch_10_11.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,address_decoder_top_traffic_controller_ch_10_11,true
+altera_merlin_slave_translator_181/sim/address_decoder_top_traffic_controller_ch_10_11_altera_merlin_slave_translator_181_5aswt6a.sv,SYSTEM_VERILOG,,address_decoder_top_traffic_controller_ch_10_11_altera_merlin_slave_translator_181_5aswt6a,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+address_decoder_top_traffic_controller_ch_10_11.traffic_controller_ch_10_11,address_decoder_top_traffic_controller_ch_10_11_altera_merlin_slave_translator_181_5aswt6a

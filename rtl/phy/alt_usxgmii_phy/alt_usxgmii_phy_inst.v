@@ -1,0 +1,42 @@
+	alt_usxgmii_phy u0 (
+		.csr_clk              (_connected_to_csr_clk_),              //   input,   width = 1,            csr_clk.clk
+		.xgmii_rx_coreclkin   (_connected_to_xgmii_rx_coreclkin_),   //   input,   width = 1, xgmii_rx_coreclkin.clk
+		.xgmii_tx_coreclkin   (_connected_to_xgmii_tx_coreclkin_),   //   input,   width = 1, xgmii_tx_coreclkin.clk
+		.reset                (_connected_to_reset_),                //   input,   width = 1,              reset.reset
+		.rx_digitalreset      (_connected_to_rx_digitalreset_),      //   input,   width = 1,    rx_digitalreset.rx_digitalreset
+		.tx_digitalreset      (_connected_to_tx_digitalreset_),      //   input,   width = 1,    tx_digitalreset.tx_digitalreset
+		.csr_readdata         (_connected_to_csr_readdata_),         //  output,  width = 32,      avalon_mm_csr.readdata
+		.csr_writedata        (_connected_to_csr_writedata_),        //   input,  width = 32,                   .writedata
+		.csr_address          (_connected_to_csr_address_),          //   input,  width = 11,                   .address
+		.csr_waitrequest      (_connected_to_csr_waitrequest_),      //  output,   width = 1,                   .waitrequest
+		.csr_read             (_connected_to_csr_read_),             //   input,   width = 1,                   .read
+		.csr_write            (_connected_to_csr_write_),            //   input,   width = 1,                   .write
+		.xgmii_tx_valid       (_connected_to_xgmii_tx_valid_),       //   input,   width = 1,     xgmii_tx_valid.export
+		.xgmii_tx_control     (_connected_to_xgmii_tx_control_),     //   input,   width = 4,   xgmii_tx_control.export
+		.xgmii_tx_data        (_connected_to_xgmii_tx_data_),        //   input,  width = 32,      xgmii_tx_data.export
+		.xgmii_rx_valid       (_connected_to_xgmii_rx_valid_),       //  output,   width = 1,     xgmii_rx_valid.export
+		.xgmii_rx_control     (_connected_to_xgmii_rx_control_),     //  output,   width = 4,   xgmii_rx_control.export
+		.xgmii_rx_data        (_connected_to_xgmii_rx_data_),        //  output,  width = 32,      xgmii_rx_data.export
+		.led_an               (_connected_to_led_an_),               //  output,   width = 1,             led_an.export
+		.rx_block_lock        (_connected_to_rx_block_lock_),        //  output,   width = 1,      rx_block_lock.rx_enh_blk_lock
+		.operating_speed      (_connected_to_operating_speed_),      //  output,   width = 3,    operating_speed.export
+		.tx_serial_clk        (_connected_to_tx_serial_clk_),        //   input,   width = 1,      tx_serial_clk.clk
+		.rx_cdr_refclk_1      (_connected_to_rx_cdr_refclk_1_),      //   input,   width = 1,    rx_cdr_refclk_1.clk
+		.rx_pma_clkout        (_connected_to_rx_pma_clkout_),        //  output,   width = 1,      rx_pma_clkout.clk
+		.tx_analogreset       (_connected_to_tx_analogreset_),       //   input,   width = 1,     tx_analogreset.tx_analogreset
+		.rx_analogreset       (_connected_to_rx_analogreset_),       //   input,   width = 1,     rx_analogreset.rx_analogreset
+		.tx_cal_busy          (_connected_to_tx_cal_busy_),          //  output,   width = 1,        tx_cal_busy.tx_cal_busy
+		.rx_cal_busy          (_connected_to_rx_cal_busy_),          //  output,   width = 1,        rx_cal_busy.rx_cal_busy
+		.tx_serial_data       (_connected_to_tx_serial_data_),       //  output,   width = 1,     tx_serial_data.tx_serial_data
+		.rx_serial_data       (_connected_to_rx_serial_data_),       //   input,   width = 1,     rx_serial_data.rx_serial_data
+		.rx_is_lockedtodata   (_connected_to_rx_is_lockedtodata_),   //  output,   width = 1, rx_is_lockedtodata.rx_is_lockedtodata
+		.reconfig_clk         (_connected_to_reconfig_clk_),         //   input,   width = 1,       reconfig_clk.clk
+		.reconfig_reset       (_connected_to_reconfig_reset_),       //   input,   width = 1,     reconfig_reset.reset
+		.reconfig_write       (_connected_to_reconfig_write_),       //   input,   width = 1,      reconfig_avmm.write
+		.reconfig_read        (_connected_to_reconfig_read_),        //   input,   width = 1,                   .read
+		.reconfig_address     (_connected_to_reconfig_address_),     //   input,  width = 10,                   .address
+		.reconfig_writedata   (_connected_to_reconfig_writedata_),   //   input,  width = 32,                   .writedata
+		.reconfig_readdata    (_connected_to_reconfig_readdata_),    //  output,  width = 32,                   .readdata
+		.reconfig_waitrequest (_connected_to_reconfig_waitrequest_)  //  output,   width = 1,                   .waitrequest
+	);
+

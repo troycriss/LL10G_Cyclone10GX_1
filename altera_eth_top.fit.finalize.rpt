@@ -1,0 +1,67 @@
+Fitter Finalize Stage Report for altera_eth_top
+Wed Mar  1 13:24:01 2023
+Quartus Prime Version 18.1.0 Build 222 09/21/2018 SJ Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter HSLP Summary
+  3. Finalize Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Fitter HSLP Summary                                                           ;
++--------------------------------------------------------+---------------+------+
+; Resource                                               ; Usage         ; %    ;
++--------------------------------------------------------+---------------+------+
+;                                                        ;               ;      ;
+; Programmable power technology high-speed tiles         ; 371 / 3,531   ; 11 % ;
+; Programmable power technology low-power tiles          ; 3,160 / 3,531 ; 89 % ;
+;     -- low-power tiles that are used by the design     ; 772 / 3,160   ; 24 % ;
+;     -- unused tiles (low-power)                        ; 2,388 / 3,160 ; 76 % ;
+;                                                        ;               ;      ;
+; Programmable power technology high-speed LAB tiles     ; 301 / 2,642   ; 11 % ;
+; Programmable power technology low-power LAB tiles      ; 2,341 / 2,642 ; 89 % ;
+;     -- low-power LAB tiles that are used by the design ; 745 / 2,341   ; 32 % ;
+;     -- unused LAB tiles (low-power)                    ; 1,596 / 2,341 ; 68 % ;
+;                                                        ;               ;      ;
++--------------------------------------------------------+---------------+------+
+
+
++-------------------+
+; Finalize Messages ;
++-------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 18.1.0 Build 222 09/21/2018 SJ Pro Edition
+    Info: Processing started: Wed Mar  1 13:15:36 2023
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off altera_eth_top -c altera_eth_top
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = altera_eth_top
+Info: Revision = altera_eth_top
+Info (11888): Total time spent on timing analysis during Post-Routing is 3.21 seconds.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:01:21
+
+

@@ -1,0 +1,18 @@
+# system info address_decoder_channel_mac on 2023.02.16.09:31:35
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for address_decoder_channel_mac on 2023.02.16.09:31:35
+files:
+filepath,kind,attributes,module,is_top
+sim/address_decoder_channel_mac.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,address_decoder_channel_mac,true
+altera_merlin_slave_translator_181/sim/address_decoder_channel_mac_altera_merlin_slave_translator_181_5aswt6a.sv,SYSTEM_VERILOG,,address_decoder_channel_mac_altera_merlin_slave_translator_181_5aswt6a,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+address_decoder_channel_mac.mac,address_decoder_channel_mac_altera_merlin_slave_translator_181_5aswt6a

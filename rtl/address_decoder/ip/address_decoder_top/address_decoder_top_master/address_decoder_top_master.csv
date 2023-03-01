@@ -1,0 +1,18 @@
+# system info address_decoder_top_master on 2023.02.16.09:33:04
+system_info:
+name,value
+DEVICE,10CX220YF780I5G
+DEVICE_FAMILY,Cyclone 10 GX
+GENERATION_ID,0
+#
+#
+# Files generated for address_decoder_top_master on 2023.02.16.09:33:04
+files:
+filepath,kind,attributes,module,is_top
+sim/address_decoder_top_master.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,address_decoder_top_master,true
+altera_merlin_master_translator_181/sim/address_decoder_top_master_altera_merlin_master_translator_181_mhudjri.sv,SYSTEM_VERILOG,,address_decoder_top_master_altera_merlin_master_translator_181_mhudjri,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+address_decoder_top_master.master,address_decoder_top_master_altera_merlin_master_translator_181_mhudjri
