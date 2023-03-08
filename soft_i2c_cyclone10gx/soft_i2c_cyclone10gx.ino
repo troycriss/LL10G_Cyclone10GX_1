@@ -6,49 +6,45 @@ const uint8_t PIN_SDA = 11;
 XantoI2C i2c(PIN_SCL, PIN_SDA);
 
 void sendConfigOutputCommand() {
-  i2c.start();
-  
+  Serial.println("sendConfigOutputCommand");
+  i2c.start();  
   i2c.writeByte(0x40);
   if (i2c.readAck()) {     }
   i2c.writeByte(0x03);
   if (i2c.readAck()) {     }
   i2c.writeByte(0x00);
-  if (i2c.readAck()) {     }
-  
+  if (i2c.readAck()) {     }  
   i2c.stop();
 }
 
 void sendOutputCommandOff() {
-  i2c.start();
-  
+  Serial.println("sendOutputCommandOff");
+  i2c.start();  
   i2c.writeByte(0x40);
   if (i2c.readAck()) {      }
   i2c.writeByte(0x01);
   if (i2c.readAck()) {      }
-  //i2c.writeByte(0xF9); // TX on, Green LED on
   i2c.writeByte(0xFE); // TX off, Red LED on
-  if (i2c.readAck()) {      }
-  
+  if (i2c.readAck()) {      }  
   i2c.stop();
 }
 
 void sendOutputCommandOn() {
-  i2c.start();
-  
+  Serial.println("sendOutputCommandOn");
+  i2c.start();  
   i2c.writeByte(0x40);
   if (i2c.readAck()) {      }
   i2c.writeByte(0x01);
   if (i2c.readAck()) {      }
   i2c.writeByte(0xF9); // TX on, Green LED on
-  //i2c.writeByte(0xFE); // TX off, Red LED on
-  if (i2c.readAck()) {      }
-  
+  if (i2c.readAck()) {      }  
   i2c.stop();
 }
 
 void setup() {
+  Serial.begin(115200);
 
-  //for power
+  //for power to level shifter
   pinMode(6,OUTPUT);
   digitalWrite(6,HIGH);
   delay(100);
@@ -62,6 +58,14 @@ void setup() {
   delay(100);
 }
 
+bool controlpin;
 void loop() {
-  
+  bool tempcontrolpin = digitalRead(2);
+  if (controlpin != tempcontrolpin){
+    controlpin = tempcontrolpin;
+    Serial.print("control pin now "); Serial.println(controlpin);
+    if (controlpin) sendOutputCommandOn();
+    else sendOutputCommandOff();
+  }
+  delay(1000);
 }
