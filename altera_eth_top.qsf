@@ -160,3 +160,11 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name QIP_FILE rtl/ethernet_traffic_controller/eth_traffic_controller_top.qip
 set_location_assignment PIN_AF6 -to led_heartbeat
 set_location_assignment PIN_AE6 -to led_other
+set_location_assignment PIN_L1 -to fmc_in[0]
+set_location_assignment PIN_K1 -to fmc_in[1]
+set_location_assignment PIN_N2 -to fmc_in[2]
+set_location_assignment PIN_N3 -to fmc_in[3]
+set_location_assignment PIN_U3 -to fmc_in[4]
+set_location_assignment PIN_U4 -to fmc_in[5]
+set_location_assignment PIN_Y1 -to fmc_in[6]
+set_location_assignment PIN_Y2 -to fmc_in[7]

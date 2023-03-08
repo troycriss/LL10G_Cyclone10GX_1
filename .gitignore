@@ -1,0 +1,7 @@
+qdb/*
+*.rpt
+*.summary
+*.done
+*.bak
+tmp-clearbox/*
+*.syn.smsg

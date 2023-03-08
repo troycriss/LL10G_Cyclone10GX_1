@@ -1,5 +1,5 @@
 Assembler report for altera_eth_top
-Wed Mar  1 13:25:26 2023
+Wed Mar  8 12:52:32 2023
 Quartus Prime Version 18.1.0 Build 222 09/21/2018 SJ Pro Edition
 
 
@@ -13,7 +13,7 @@ Quartus Prime Version 18.1.0 Build 222 09/21/2018 SJ Pro Edition
   5. Assembler Messages
   6. Assembler Encrypted IP Cores Summary
   7. Assembler Generated Files
-  8. Assembler Device Options: C:/Users/ahaas/Downloads/bts_config_eth_18/alt_em10g32_2_EXAMPLE_DESIGN/LL10G_10G_USXGMII/altera_eth_top_time_limited.sof
+  8. Assembler Device Options: C:/gitwork/LL10G_Cyclone10GX_1/altera_eth_top_time_limited.sof
 
 
 
@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Mar  1 13:25:26 2023 ;
+; Assembler Status      ; Successful - Wed Mar  8 12:52:32 2023 ;
 ; Revision Name         ; altera_eth_top                        ;
 ; Top-level Entity Name ; altera_eth_top                        ;
 ; Family                ; Cyclone 10 GX                         ;
@@ -102,17 +102,17 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 222 09/21/2018 SJ Pro Edition
-    Info: Processing started: Wed Mar  1 13:25:04 2023
+    Info: Processing started: Wed Mar  8 12:52:13 2023
 Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off altera_eth_top -c altera_eth_top
 Info (16677): Loading final database
 Info (16734): Loading "final" snapshot for partition "root_partition".
 Info (16734): Loading "final" snapshot for partition "auto_fab_0".
-Info (16678): Successfully loaded final database: elapsed time is 00:00:08
+Info (16678): Successfully loaded final database: elapsed time is 00:00:07
 Info (115017): Design contains a time-limited core -- only a single, time-limited programming file can be generated
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 6689 megabytes
-    Info: Processing ended: Wed Mar  1 13:25:27 2023
-    Info: Elapsed time: 00:00:23
+    Info: Peak virtual memory: 6685 megabytes
+    Info: Processing ended: Wed Mar  8 12:52:33 2023
+    Info: Elapsed time: 00:00:20
 
 
 +----------------------------------------------------------------------+
@@ -127,22 +127,22 @@ Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
 +--------+---------------------------------------------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                 ;
-+---------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                 ;
-+---------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/ahaas/Downloads/bts_config_eth_18/alt_em10g32_2_EXAMPLE_DESIGN/LL10G_10G_USXGMII/altera_eth_top_time_limited.sof ;
-+---------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Assembler Generated Files                                      ;
++----------------------------------------------------------------+
+; File Name                                                      ;
++----------------------------------------------------------------+
+; C:/gitwork/LL10G_Cyclone10GX_1/altera_eth_top_time_limited.sof ;
++----------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ahaas/Downloads/bts_config_eth_18/alt_em10g32_2_EXAMPLE_DESIGN/LL10G_10G_USXGMII/altera_eth_top_time_limited.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                            ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0xFFFFFFFF                                                                                                                         ;
-; Checksum       ; 0x097663AB                                                                                                                         ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/gitwork/LL10G_Cyclone10GX_1/altera_eth_top_time_limited.sof ;
++----------------+-------------------------------------------------------------------------+
+; Option         ; Setting                                                                 ;
++----------------+-------------------------------------------------------------------------+
+; JTAG usercode  ; 0xFFFFFFFF                                                              ;
+; Checksum       ; 0x0978A025                                                              ;
++----------------+-------------------------------------------------------------------------+
 
 

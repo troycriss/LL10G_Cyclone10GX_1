@@ -1,5 +1,5 @@
 Flow report for altera_eth_top
-Wed Mar  1 13:25:26 2023
+Wed Mar  8 12:52:32 2023
 Quartus Prime Version 18.1.0 Build 222 09/21/2018 SJ Pro Edition
 
 
@@ -50,16 +50,16 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Flow Summary                                                             ;
 +-----------------------------+--------------------------------------------+
-; Flow Status                 ; Successful - Wed Mar  1 13:25:26 2023      ;
+; Flow Status                 ; Successful - Wed Mar  8 12:52:32 2023      ;
 ; Quartus Prime Version       ; 18.1.0 Build 222 09/21/2018 SJ Pro Edition ;
 ; Revision Name               ; altera_eth_top                             ;
 ; Top-level Entity Name       ; altera_eth_top                             ;
 ; Family                      ; Cyclone 10 GX                              ;
 ; Device                      ; 10CX220YF780I5G                            ;
 ; Timing Models               ; Final                                      ;
-; Logic utilization (in ALMs) ; 14,342 / 80,330 ( 18 % )                   ;
-; Total registers             ; 19937                                      ;
-; Total pins                  ; 25 / 340 ( 7 % )                           ;
+; Logic utilization (in ALMs) ; 14,406 / 80,330 ( 18 % )                   ;
+; Total registers             ; 19884                                      ;
+; Total pins                  ; 33 / 340 ( 10 % )                          ;
 ; Total virtual pins          ; 6                                          ;
 ; Total block memory bits     ; 703,840 / 12,021,760 ( 6 % )               ;
 ; Total DSP Blocks            ; 0 / 192 ( 0 % )                            ;
@@ -74,7 +74,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/01/2023 13:12:25 ;
+; Start date & time ; 03/08/2023 12:39:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; altera_eth_top      ;
 +-------------------+---------------------+
@@ -85,7 +85,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------------------------------------------------------------------------------------------+------------+
 ; Assignment Name                     ; Value                                                                                                                                                              ; Default Value ; Entity Name                                                                                     ; Section Id ;
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------------------------------------------------------------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 159303461227190.167769434512540                                                                                                                                    ; --            ; --                                                                                              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 159303461227190.167829719813060                                                                                                                                    ; --            ; --                                                                                              ; --         ;
 ; MISC_FILE                           ; rtl/address_decoder/address_decoder_channel/address_decoder_channel.cmp                                                                                            ; --            ; --                                                                                              ; --         ;
 ; MISC_FILE                           ; rtl/address_decoder/address_decoder_channel/../address_decoder_channel.qsys                                                                                        ; --            ; --                                                                                              ; --         ;
 ; MISC_FILE                           ; rtl/address_decoder/address_decoder_multi_channel/address_decoder_multi_channel.cmp                                                                                ; --            ; --                                                                                              ; --         ;
@@ -268,11 +268,11 @@ refer to the applicable agreement for further details.
 +-----------------+--------------+-------------------------+---------------------+
 ; Module Name     ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ;
 +-----------------+--------------+-------------------------+---------------------+
-; Synthesis       ; 00:03:04     ; 2.0                     ; 6140 MB             ;
-; Fitter          ; 00:08:37     ; 1.2                     ; 9723 MB             ;
-; Timing Analyzer ; 00:00:42     ; 1.2                     ; 7300 MB             ;
-; Assembler       ; 00:00:22     ; 1.6                     ; 6689 MB             ;
-; Total           ; 00:12:45     ; --                      ; --                  ;
+; Synthesis       ; 00:02:53     ; 2.0                     ; 6133 MB             ;
+; Fitter          ; 00:08:25     ; 1.2                     ; 9719 MB             ;
+; Timing Analyzer ; 00:00:42     ; 1.2                     ; 7280 MB             ;
+; Assembler       ; 00:00:19     ; 1.5                     ; 6685 MB             ;
+; Total           ; 00:12:19     ; --                      ; --                  ;
 +-----------------+--------------+-------------------------+---------------------+
 
 

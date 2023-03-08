@@ -14,6 +14,7 @@
  module eth_std_traffic_controller_top (
 	input 	wire 		clk,
 	input 	wire 		reset_n,
+	input    wire[7:0]   fmc_in,
 
 	input 	wire		avl_mm_read,
 	input 	wire		avl_mm_write,
@@ -105,6 +106,7 @@
 // _______________________________________________________________
 	.clk         (clk), 	 			// Tx clock
 	.reset       (sync_reset), 			// Reset signal
+	.fmc_in (fmc_in),
 	.address     (avl_mm_address[7:0]), 		// Avalon-MM Address
 	.write       (avl_mm_write & blk_sel_gen), 	// Avalon-MM Write Strobe
 	.writedata   (avl_mm_writedata), 		// Avalon-MM Write Data

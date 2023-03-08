@@ -155,26 +155,6 @@
         <assignment_value text="QSYS_NAME address_decoder_channel_csr_clk HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|address_decoder_ch" library="address_decoder_channel" name="address_decoder_ch">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME address_decoder_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|phy" library="alt_usxgmii_phy" name="phy">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_usxgmii_phy HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|mac" library="alt_usxgmii_mac" name="mac">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_usxgmii_mac HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|xcvr_reset_ctrl_ch" library="alt_mge_xcvr_reset_ctrl_channel" name="xcvr_reset_ctrl_ch">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_mge_xcvr_reset_ctrl_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
     <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|address_decoder_ch|xcvr_rcfg" library="address_decoder_channel_xcvr_rcfg" name="xcvr_rcfg">
       <assignment_values>
         <assignment_value text="QSYS_NAME address_decoder_channel_xcvr_rcfg HAS_SOPCINFO 1 GENERATION_ID 0"/>
@@ -198,6 +178,46 @@
     <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|address_decoder_ch|csr_clk" library="address_decoder_channel_csr_clk" name="csr_clk">
       <assignment_values>
         <assignment_value text="QSYS_NAME address_decoder_channel_csr_clk HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|address_decoder_ch" library="address_decoder_channel" name="address_decoder_ch">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME address_decoder_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|phy" library="alt_usxgmii_phy" name="phy">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_usxgmii_phy HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|mac" library="alt_usxgmii_mac" name="mac">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_usxgmii_mac HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[1].u_channel|xcvr_reset_ctrl_ch" library="alt_mge_xcvr_reset_ctrl_channel" name="xcvr_reset_ctrl_ch">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_mge_xcvr_reset_ctrl_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|address_decoder_ch" library="address_decoder_channel" name="address_decoder_ch">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME address_decoder_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|phy" library="alt_usxgmii_phy" name="phy">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_usxgmii_phy HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|mac" library="alt_usxgmii_mac" name="mac">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_usxgmii_mac HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|xcvr_reset_ctrl_ch" library="alt_mge_xcvr_reset_ctrl_channel" name="xcvr_reset_ctrl_ch">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_mge_xcvr_reset_ctrl_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="DUT|address_decoder_mch" library="address_decoder_multi_channel" name="address_decoder_mch">
@@ -228,26 +248,6 @@
     <sld_info hpath="jtag_master" library="alt_jtag_csr_master" name="jtag_master">
       <assignment_values>
         <assignment_value text="QSYS_NAME alt_jtag_csr_master HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|address_decoder_ch" library="address_decoder_channel" name="address_decoder_ch">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME address_decoder_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|phy" library="alt_usxgmii_phy" name="phy">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_usxgmii_phy HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|mac" library="alt_usxgmii_mac" name="mac">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_usxgmii_mac HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="DUT|CHANNEL_GEN[0].u_channel|xcvr_reset_ctrl_ch" library="alt_mge_xcvr_reset_ctrl_channel" name="xcvr_reset_ctrl_ch">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME alt_mge_xcvr_reset_ctrl_channel HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
   </sld_infos>

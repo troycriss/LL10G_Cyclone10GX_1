@@ -1,4 +1,4 @@
-22 serialization::archive 13 0 0 0 0 7 0 2 C: 5 Users 5 ahaas 9 Downloads 17 bts_config_eth_18 28 alt_em10g32_2_EXAMPLE_DESIGN 17 LL10G_10G_USXGMII 0 0 1 0 0 0 9 0 2 e: 13 intelfpga_pro 4 18.1 2 ip 6 altera 3 sld 4 jtag 20 altera_jtag_wys_atom 16 default_jtag.sdc 3110 # (C) 2001-2018 Intel Corporation. All rights reserved.
+22 serialization::archive 13 0 0 0 0 3 0 2 C: 7 gitwork 19 LL10G_Cyclone10GX_1 0 0 1 0 0 0 9 0 2 e: 13 intelfpga_pro 4 18.1 2 ip 6 altera 3 sld 4 jtag 20 altera_jtag_wys_atom 16 default_jtag.sdc 3110 # (C) 2001-2018 Intel Corporation. All rights reserved.
 # Your use of Intel Corporation's design tools, logic functions and other 
 # software and tools, and its AMPP partner logic functions, and any output 
 # files from any of the foregoing (including device programming or simulation 

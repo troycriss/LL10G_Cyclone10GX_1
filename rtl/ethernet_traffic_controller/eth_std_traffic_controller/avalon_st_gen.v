@@ -18,6 +18,9 @@ module avalon_st_gen
 (
  input                 clk             // TX FIFO Interface clock
 ,input                 reset           // Reset signal
+
+,input			 [7:0]  fmc_in          // Inputs from FMC
+
 ,input          [7:0]  address         // Register Address
 ,input                 write           // Register Write Strobe
 ,input                 read            // Register Read Strobe
@@ -32,6 +35,7 @@ module avalon_st_gen
 ,output reg            tx_eop          // Avalon-ST TX EndOfPacket
 ,output reg     [2:0]  tx_empty        // Avalon-ST TX Empty
 ,output wire           tx_error        // Avalon-ST TX Error
+
 );
 
 
@@ -484,7 +488,7 @@ always @ (posedge reset or posedge clk)
             end else if (~random_length & (pkt_length > 14'h2580)) begin
                length <= 16'h2568;
             end else if (~random_length) begin
-               length <= {2'b00, pkt_length - 14'h18};
+               length <= {2'b00, pkt_length - 14'h18}; // 18 B are reserved for the header (14 B) and trailer checksum (4 B)
             end else if (random_length) begin
                length <= (tx_prbs[74:64] % 16'h05D7);
             end
@@ -532,11 +536,11 @@ always @ (posedge reset or posedge clk)
          data_pattern <= 64'h0;
       end else begin
          if (S_IDLE & ~random_payload) begin
-            data_pattern <= 64'h0001020304050607;
-         end else if (S_DATA & ~random_payload & tx_ready & data_pattern == 64'hF8F9FAFBFCFDFEFF) begin
-            data_pattern <= 64'h0001020304050607;
+            data_pattern <= 64'h0000000000000000; //64'h0001020304050607;
+         //end else if (S_DATA & ~random_payload & tx_ready & data_pattern == 64'hF8F9FAFBFCFDFEFF) begin
+         //   data_pattern <= 64'h0001020304050607;
          end else if (S_DATA & ~random_payload & tx_ready) begin
-            data_pattern <= data_pattern + 64'h0808080808080808;
+            data_pattern <= {56'h0000000000000000,fmc_in}; //data_pattern + 64'h0808080808080808;
          end else if ((S_SRC_LEN_SEQ | S_DATA) & random_payload & tx_ready) begin
             data_pattern <= tx_prbs[63:0];
          end
@@ -556,7 +560,7 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[31: 0] <= {DA1,DA0,SA5,SA4};
          end else if (S_SRC_LEN_SEQ) begin
             tx_data_reg[63:32] <= {SA3,SA2,SA1,SA0};
-            tx_data_reg[31: 0] <= {length + 16'h6, seq_num};
+            tx_data_reg[31: 0] <= {length + 16'h6, seq_num}; // First 2B of data payload are seq_num
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end

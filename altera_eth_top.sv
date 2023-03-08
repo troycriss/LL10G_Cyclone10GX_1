@@ -47,7 +47,10 @@ module altera_eth_top # (
 	 input           sfp_int_0,
 	 input           sfp_int_1,
 	 input arduino_scl,
-	 input arduino_sda
+	 input arduino_sda,
+	 
+	 //FMC inputs
+	 input fmc_in[7:0]
 );
 
 	 // I2C interface
@@ -274,6 +277,7 @@ module altera_eth_top # (
                     ) eth_traffic_controller (
                         .clk                                        (mac64b_clk),
                         .reset_n                                    (~reset_mac64b_clk),
+								.fmc_in (fmc_in),
                         
                         .avl_mm_baddress                            (csr_traffic_controller_address[i]),
                         .avl_mm_read                                (csr_traffic_controller_read[i]),
@@ -336,6 +340,7 @@ module altera_eth_top # (
                     ) eth_traffic_controller (
                         .clk                                        (mac64b_clk),
                         .reset_n                                    (~reset_mac64b_clk),
+								.fmc_in (fmc_in),
                         
                         .avl_mm_baddress                            (csr_traffic_controller_address[i]),
                         .avl_mm_read                                (csr_traffic_controller_read[i]),

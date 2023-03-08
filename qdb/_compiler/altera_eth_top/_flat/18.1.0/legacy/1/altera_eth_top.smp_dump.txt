@@ -18,6 +18,19 @@ state.READ_SEND_ISSUE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1
 state.READ_DATA_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
+State Machine - jtag_master|master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|write_state
+Name write_state.ST_WRITE_DATA write_state.ST_HEADER_2 write_state.ST_HEADER_1 write_state.ST_BYPASS 
+write_state.ST_BYPASS 0 0 0 0 
+write_state.ST_HEADER_1 0 0 1 1 
+write_state.ST_HEADER_2 0 1 0 1 
+write_state.ST_WRITE_DATA 1 0 0 1 
+
+State Machine - jtag_master|master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|read_state
+Name read_state.ST_HEADER read_state.ST_READ_DATA read_state.ST_PADDED 
+read_state.ST_HEADER 0 0 0 
+read_state.ST_READ_DATA 1 1 0 
+read_state.ST_PADDED 1 0 1 
+
 State Machine - DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|rx|rm_fifo|rx_rm_fifo_inst|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
 Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
 state.START 0 0 0 0 
@@ -38,78 +51,6 @@ Name state.rst state.ready state.init
 state.rst 0 0 0 
 state.ready 1 1 0 
 state.init 1 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[0].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[1].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[2].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[3].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[4].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[5].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[6].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[7].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
-
-State Machine - ETH_TRAFFIC_CTRL_PAIR_CHANNEL[0].eth_traffic_controller|eth_1588_traffic_controller_u0|slave_gen_mon_inst|slave_state
-Name slave_state.DELAY_RESP_RCV slave_state.DELAY_REQ slave_state.SYNC_RCV slave_state.INIT slave_state.COMPUTE 
-slave_state.INIT 0 0 0 0 0 
-slave_state.SYNC_RCV 0 0 1 1 0 
-slave_state.DELAY_REQ 0 1 0 1 0 
-slave_state.DELAY_RESP_RCV 1 0 0 1 0 
-slave_state.COMPUTE 0 0 0 1 1 
 
 State Machine - ETH_TRAFFIC_CTRL_PAIR_CHANNEL[0].eth_traffic_controller|ETH_STD_TRAFFIC_CONTROLLER[0].eth_std_traffic_controller_u0|MON|monstate
 Name monstate.MONIDLE monstate.MONDONE monstate.MONACTIVE 
@@ -134,20 +75,6 @@ Name state.rst state.ready state.init
 state.rst 0 0 0 
 state.ready 1 1 0 
 state.init 1 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|st_adpt.avalon_st_adpt_inst|tx_156_312_wait_fifo_fill|EG_CTRL_SM_ps
-Name EG_CTRL_SM_ps.IDLE EG_CTRL_SM_ps.RDYTSFR EG_CTRL_SM_ps.WTTSFR 
-EG_CTRL_SM_ps.IDLE 0 0 0 
-EG_CTRL_SM_ps.WTTSFR 1 0 1 
-EG_CTRL_SM_ps.RDYTSFR 1 1 0 
-
-State Machine - ETH_TRAFFIC_CTRL_PAIR_CHANNEL[0].eth_traffic_controller|eth_1588_traffic_controller_u0|master_gen_mon_inst|master_state
-Name master_state.DELAY_REQ_RCV master_state.SYNC master_state.WAIT master_state.INIT master_state.DELAY_RESP 
-master_state.INIT 0 0 0 0 0 
-master_state.WAIT 0 0 1 1 0 
-master_state.SYNC 0 1 0 1 0 
-master_state.DELAY_REQ_RCV 1 0 0 1 0 
-master_state.DELAY_RESP 0 0 0 1 1 
 
 State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|st_adpt.avalon_st_adpt_inst|tx_156_312_wait_fifo_fill|EG_CTRL_SM_ps
 Name EG_CTRL_SM_ps.IDLE EG_CTRL_SM_ps.RDYTSFR EG_CTRL_SM_ps.WTTSFR 
@@ -188,28 +115,6 @@ state.STM_TYP_NO_AN_LINK 0 0 0 1 0 0 0 1
 state.STM_TYP_COMPLETE_ACK 0 0 1 0 0 0 0 1 
 state.STM_TYP_IDLE_DETECT 0 1 0 0 0 0 0 1 
 state.STM_TYP_LINK_OK 1 0 0 0 0 0 0 1 
-
-State Machine - DUT|core_pll|xcvr_fpll_a10_0|phase_en_pulse|state
-Name state.IDLE state.WAIT state.PULSE 
-state.IDLE 0 0 0 
-state.PULSE 1 0 1 
-state.WAIT 1 1 0 
-
-State Machine - DUT|core_pll|xcvr_fpll_a10_0|dps_reset_gen_1|state
-Name state.GEN_DONE_2 state.GEN_DONE_1 state.GEN_DONE_DELAY_1 state.GEN_DONE_DELAY state.GEN_RESET_DELAY_4 state.GEN_RESET_DELAY_3 state.GEN_RESET_DELAY_2 state.GEN_RESET_DELAY_1 state.GEN_RESET_2 state.GEN_RESET_1 state.WAIT_CORE_DONE state.GEN_RESET_DELAY state.WAIT_PE_PULSE 
-state.WAIT_PE_PULSE 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.GEN_RESET_DELAY 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.WAIT_CORE_DONE 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.GEN_RESET_1 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.GEN_RESET_2 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.GEN_RESET_DELAY_1 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.GEN_RESET_DELAY_2 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.GEN_RESET_DELAY_3 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.GEN_RESET_DELAY_4 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.GEN_DONE_DELAY 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.GEN_DONE_DELAY_1 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.GEN_DONE_1 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.GEN_DONE_2 1 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_mem|state
 Name state.STM_TYPE_INC_CNT state.STM_TYPE_RST_CNT state.STM_TYPE_RST_DONE state.STM_TYPE_IDLE 
@@ -280,6 +185,140 @@ case_etherStatsOctets.CASE_RESET_VALUE 0 0 0 0
 case_etherStatsOctets.CASE_CLEAR_UPDATE 0 0 1 1 
 case_etherStatsOctets.CASE_UPDATE 0 1 0 1 
 case_etherStatsOctets.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|st_adpt.avalon_st_adpt_inst|tx_156_312_wait_fifo_fill|EG_CTRL_SM_ps
+Name EG_CTRL_SM_ps.IDLE EG_CTRL_SM_ps.RDYTSFR EG_CTRL_SM_ps.WTTSFR 
+EG_CTRL_SM_ps.IDLE 0 0 0 
+EG_CTRL_SM_ps.WTTSFR 1 0 1 
+EG_CTRL_SM_ps.RDYTSFR 1 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[0].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[1].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[2].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[3].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[4].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[5].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[6].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[7].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[0].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[1].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[2].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[3].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[4].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[5].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[6].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[7].pause_quanta_backpressure_conversion|state
+Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
+state.IDLE 0 0 0 0 0 
+state.LOAD 0 0 1 1 0 
+state.PEND 0 0 0 1 1 
+state.LSBD 0 1 0 1 0 
+state.MSBD 1 0 0 1 0 
 
 State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|rs_layer|i_rx_rs_xgmii|state
 Name state.DATA state.PREAM1 state.PREAM0 state.IDLE state.END 
@@ -436,6 +475,35 @@ case_octetsOK.CASE_RESET_VALUE 0 0 0 0
 case_octetsOK.CASE_CLEAR_UPDATE 0 0 1 1 
 case_octetsOK.CASE_UPDATE 0 1 0 1 
 case_octetsOK.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|core_pll|xcvr_fpll_a10_0|phase_en_pulse|state
+Name state.IDLE state.WAIT state.PULSE 
+state.IDLE 0 0 0 
+state.PULSE 1 0 1 
+state.WAIT 1 1 0 
+
+State Machine - DUT|core_pll|xcvr_fpll_a10_0|dps_reset_gen_1|state
+Name state.GEN_DONE_2 state.GEN_DONE_1 state.GEN_DONE_DELAY_1 state.GEN_DONE_DELAY state.GEN_RESET_DELAY_4 state.GEN_RESET_DELAY_3 state.GEN_RESET_DELAY_2 state.GEN_RESET_DELAY_1 state.GEN_RESET_2 state.GEN_RESET_1 state.WAIT_CORE_DONE state.GEN_RESET_DELAY state.WAIT_PE_PULSE 
+state.WAIT_PE_PULSE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.GEN_RESET_DELAY 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAIT_CORE_DONE 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GEN_RESET_1 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.GEN_RESET_2 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.GEN_RESET_DELAY_1 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.GEN_RESET_DELAY_2 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.GEN_RESET_DELAY_3 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GEN_RESET_DELAY_4 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.GEN_DONE_DELAY 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.GEN_DONE_DELAY_1 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.GEN_DONE_1 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.GEN_DONE_2 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|rx|rm_fifo|rx_rm_fifo_inst|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
+Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
+state.START 0 0 0 0 
+state.BIT_14 0 0 1 1 
+state.BIT_17 0 1 0 1 
+state.BIT_19 1 0 0 1 
 
 State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|rs_layer|i_rx_rs_xgmii|state
 Name state.DATA state.PREAM1 state.PREAM0 state.IDLE state.END 
@@ -607,181 +675,6 @@ case_etherStatsOctets.CASE_CLEAR_UPDATE 0 0 1 1
 case_etherStatsOctets.CASE_UPDATE 0 1 0 1 
 case_etherStatsOctets.CASE_UNCHANGED 1 0 0 1 
 
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|rs_layer|i_rx_rs_gmii16b_top|i_alt_em10g32_rx_rs_gmii16b|state
-Name state.STATE_DATA state.STATE_EOP state.STATE_SOP state.STATE_IDLE 
-state.STATE_IDLE 0 0 0 0 
-state.STATE_SOP 0 0 1 1 
-state.STATE_EOP 0 1 0 1 
-state.STATE_DATA 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_framesCRCErr
-Name case_framesCRCErr.CASE_UNCHANGED case_framesCRCErr.CASE_UPDATE case_framesCRCErr.CASE_CLEAR_UPDATE case_framesCRCErr.CASE_RESET_VALUE 
-case_framesCRCErr.CASE_RESET_VALUE 0 0 0 0 
-case_framesCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
-case_framesCRCErr.CASE_UPDATE 0 1 0 1 
-case_framesCRCErr.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_pfcMACCtrlFrames
-Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
-case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
-case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
-case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
-case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsFragments
-Name case_etherStatsFragments.CASE_UNCHANGED case_etherStatsFragments.CASE_UPDATE case_etherStatsFragments.CASE_CLEAR_UPDATE case_etherStatsFragments.CASE_RESET_VALUE 
-case_etherStatsFragments.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsFragments.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsFragments.CASE_UPDATE 0 1 0 1 
-case_etherStatsFragments.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsJabbers
-Name case_etherStatsJabbers.CASE_UNCHANGED case_etherStatsJabbers.CASE_UPDATE case_etherStatsJabbers.CASE_CLEAR_UPDATE case_etherStatsJabbers.CASE_RESET_VALUE 
-case_etherStatsJabbers.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsJabbers.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsJabbers.CASE_UPDATE 0 1 0 1 
-case_etherStatsJabbers.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsCRCErr
-Name case_etherStatsCRCErr.CASE_UNCHANGED case_etherStatsCRCErr.CASE_UPDATE case_etherStatsCRCErr.CASE_CLEAR_UPDATE case_etherStatsCRCErr.CASE_RESET_VALUE 
-case_etherStatsCRCErr.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsCRCErr.CASE_UPDATE 0 1 0 1 
-case_etherStatsCRCErr.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_pfcMACCtrlFrames
-Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
-case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
-case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
-case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
-case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|tx|tx_fifo|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
-Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
-state.START 0 0 0 0 
-state.BIT_14 0 0 1 1 
-state.BIT_17 0 1 0 1 
-state.BIT_19 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|rs_layer|i_rx_rs_gmii16b_top|i_alt_em10g32_rx_rs_gmii16b|state
-Name state.STATE_DATA state.STATE_EOP state.STATE_SOP state.STATE_IDLE 
-state.STATE_IDLE 0 0 0 0 
-state.STATE_SOP 0 0 1 1 
-state.STATE_EOP 0 1 0 1 
-state.STATE_DATA 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_framesCRCErr
-Name case_framesCRCErr.CASE_UNCHANGED case_framesCRCErr.CASE_UPDATE case_framesCRCErr.CASE_CLEAR_UPDATE case_framesCRCErr.CASE_RESET_VALUE 
-case_framesCRCErr.CASE_RESET_VALUE 0 0 0 0 
-case_framesCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
-case_framesCRCErr.CASE_UPDATE 0 1 0 1 
-case_framesCRCErr.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_pfcMACCtrlFrames
-Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
-case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
-case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
-case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
-case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsFragments
-Name case_etherStatsFragments.CASE_UNCHANGED case_etherStatsFragments.CASE_UPDATE case_etherStatsFragments.CASE_CLEAR_UPDATE case_etherStatsFragments.CASE_RESET_VALUE 
-case_etherStatsFragments.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsFragments.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsFragments.CASE_UPDATE 0 1 0 1 
-case_etherStatsFragments.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsJabbers
-Name case_etherStatsJabbers.CASE_UNCHANGED case_etherStatsJabbers.CASE_UPDATE case_etherStatsJabbers.CASE_CLEAR_UPDATE case_etherStatsJabbers.CASE_RESET_VALUE 
-case_etherStatsJabbers.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsJabbers.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsJabbers.CASE_UPDATE 0 1 0 1 
-case_etherStatsJabbers.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsCRCErr
-Name case_etherStatsCRCErr.CASE_UNCHANGED case_etherStatsCRCErr.CASE_UPDATE case_etherStatsCRCErr.CASE_CLEAR_UPDATE case_etherStatsCRCErr.CASE_RESET_VALUE 
-case_etherStatsCRCErr.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsCRCErr.CASE_UPDATE 0 1 0 1 
-case_etherStatsCRCErr.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_pfcMACCtrlFrames
-Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
-case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
-case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
-case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
-case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|tx|tx_fifo|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
-Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
-state.START 0 0 0 0 
-state.BIT_14 0 0 1 1 
-state.BIT_17 0 1 0 1 
-state.BIT_19 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|rx|rm_fifo|rx_rm_fifo_inst|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
-Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
-state.START 0 0 0 0 
-state.BIT_14 0 0 1 1 
-state.BIT_17 0 1 0 1 
-state.BIT_19 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_mem|state
-Name state.STM_TYPE_INC_CNT state.STM_TYPE_RST_CNT state.STM_TYPE_RST_DONE state.STM_TYPE_IDLE 
-state.STM_TYPE_IDLE 0 0 0 0 
-state.STM_TYPE_RST_DONE 0 0 1 1 
-state.STM_TYPE_RST_CNT 0 1 0 1 
-state.STM_TYPE_INC_CNT 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts64Octets
-Name case_etherStatsPkts64Octets.CASE_UNCHANGED case_etherStatsPkts64Octets.CASE_UPDATE case_etherStatsPkts64Octets.CASE_CLEAR_UPDATE case_etherStatsPkts64Octets.CASE_RESET_VALUE 
-case_etherStatsPkts64Octets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts64Octets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts64Octets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts64Octets.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts65to127Octets
-Name case_etherStatsPkts65to127Octets.CASE_UNCHANGED case_etherStatsPkts65to127Octets.CASE_UPDATE case_etherStatsPkts65to127Octets.CASE_CLEAR_UPDATE case_etherStatsPkts65to127Octets.CASE_RESET_VALUE 
-case_etherStatsPkts65to127Octets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts65to127Octets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts65to127Octets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts65to127Octets.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts128to255Octets
-Name case_etherStatsPkts128to255Octets.CASE_UNCHANGED case_etherStatsPkts128to255Octets.CASE_UPDATE case_etherStatsPkts128to255Octets.CASE_CLEAR_UPDATE case_etherStatsPkts128to255Octets.CASE_RESET_VALUE 
-case_etherStatsPkts128to255Octets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts128to255Octets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts128to255Octets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts128to255Octets.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts256to511Octets
-Name case_etherStatsPkts256to511Octets.CASE_UNCHANGED case_etherStatsPkts256to511Octets.CASE_UPDATE case_etherStatsPkts256to511Octets.CASE_CLEAR_UPDATE case_etherStatsPkts256to511Octets.CASE_RESET_VALUE 
-case_etherStatsPkts256to511Octets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts256to511Octets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts256to511Octets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts256to511Octets.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts512to1023Octets
-Name case_etherStatsPkts512to1023Octets.CASE_UNCHANGED case_etherStatsPkts512to1023Octets.CASE_UPDATE case_etherStatsPkts512to1023Octets.CASE_CLEAR_UPDATE case_etherStatsPkts512to1023Octets.CASE_RESET_VALUE 
-case_etherStatsPkts512to1023Octets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts512to1023Octets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts512to1023Octets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts512to1023Octets.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts1024to1518Octets
-Name case_etherStatsPkts1024to1518Octets.CASE_UNCHANGED case_etherStatsPkts1024to1518Octets.CASE_UPDATE case_etherStatsPkts1024to1518Octets.CASE_CLEAR_UPDATE case_etherStatsPkts1024to1518Octets.CASE_RESET_VALUE 
-case_etherStatsPkts1024to1518Octets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts1024to1518Octets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts1024to1518Octets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts1024to1518Octets.CASE_UNCHANGED 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts1519toXOctets
-Name case_etherStatsPkts1519toXOctets.CASE_UNCHANGED case_etherStatsPkts1519toXOctets.CASE_UPDATE case_etherStatsPkts1519toXOctets.CASE_CLEAR_UPDATE case_etherStatsPkts1519toXOctets.CASE_RESET_VALUE 
-case_etherStatsPkts1519toXOctets.CASE_RESET_VALUE 0 0 0 0 
-case_etherStatsPkts1519toXOctets.CASE_CLEAR_UPDATE 0 0 1 1 
-case_etherStatsPkts1519toXOctets.CASE_UPDATE 0 1 0 1 
-case_etherStatsPkts1519toXOctets.CASE_UNCHANGED 1 0 0 1 
-
 State Machine - DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|rx|rm_fifo|rx_rm_fifo_inst|rd_add_sm
 Name rd_add_sm.RD_IDLE rd_add_sm.RD_INSERT rd_add_sm.RD_ENABLE 
 rd_add_sm.RD_IDLE 0 0 0 
@@ -805,62 +698,6 @@ Name rd_add_sm_reg.RD_IDLE rd_add_sm_reg.RD_INSERT rd_add_sm_reg.RD_ENABLE
 rd_add_sm_reg.RD_IDLE 0 0 0 
 rd_add_sm_reg.RD_ENABLE 1 0 1 
 rd_add_sm_reg.RD_INSERT 1 1 0 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|PAUSEGEN_SM_ps
-Name PAUSEGEN_SM_ps.FRMDAT14 PAUSEGEN_SM_ps.FRMDAT13 PAUSEGEN_SM_ps.FRMDAT12 PAUSEGEN_SM_ps.FRMDAT11 PAUSEGEN_SM_ps.FRMDAT10 PAUSEGEN_SM_ps.FRMDAT9 PAUSEGEN_SM_ps.FRMDAT8 PAUSEGEN_SM_ps.FRMDAT7 PAUSEGEN_SM_ps.FRMDAT6 PAUSEGEN_SM_ps.FRMDAT5 PAUSEGEN_SM_ps.FRMDAT4 PAUSEGEN_SM_ps.FRMDAT3 PAUSEGEN_SM_ps.FRMDAT2 PAUSEGEN_SM_ps.FRMDAT1 PAUSEGEN_SM_ps.FRMGAP PAUSEGEN_SM_ps.FRMDAT0 
-PAUSEGEN_SM_ps.FRMDAT0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-PAUSEGEN_SM_ps.FRMGAP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-PAUSEGEN_SM_ps.FRMDAT1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-PAUSEGEN_SM_ps.FRMDAT2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-PAUSEGEN_SM_ps.FRMDAT14 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|st_pause_req_inst|XONXOFF_SM_ps
-Name XONXOFF_SM_ps.XOFFHLD XONXOFF_SM_ps.XOFF XONXOFF_SM_ps.XON XONXOFF_SM_ps.XIDLE 
-XONXOFF_SM_ps.XIDLE 0 0 0 0 
-XONXOFF_SM_ps.XON 0 0 1 1 
-XONXOFF_SM_ps.XOFF 0 1 0 1 
-XONXOFF_SM_ps.XOFFHLD 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|csr_pause_req_inst|XONXOFF_SM_ps
-Name XONXOFF_SM_ps.XOFFHLD XONXOFF_SM_ps.XOFF XONXOFF_SM_ps.XON XONXOFF_SM_ps.XIDLE 
-XONXOFF_SM_ps.XIDLE 0 0 0 0 
-XONXOFF_SM_ps.XON 0 0 1 1 
-XONXOFF_SM_ps.XOFF 0 1 0 1 
-XONXOFF_SM_ps.XOFFHLD 1 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|data_frm_gen_inst|ING_CTRL_SM_ps
-Name ING_CTRL_SM_ps.PREAM0 ING_CTRL_SM_ps.PAD ING_CTRL_SM_ps.PYLD ING_CTRL_SM_ps.IDLE ING_CTRL_SM_ps.PREAM1 
-ING_CTRL_SM_ps.IDLE 0 0 0 0 0 
-ING_CTRL_SM_ps.PYLD 0 0 1 1 0 
-ING_CTRL_SM_ps.PAD 0 1 0 1 0 
-ING_CTRL_SM_ps.PREAM0 1 0 0 1 0 
-ING_CTRL_SM_ps.PREAM1 0 0 0 1 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|data_frm_gen_inst|tx_srcaddr_inserter|STCNT_SM_ps
-Name STCNT_SM_ps.ST5 STCNT_SM_ps.ST4 STCNT_SM_ps.ST3 STCNT_SM_ps.ST2 STCNT_SM_ps.ST1 STCNT_SM_ps.ST0 
-STCNT_SM_ps.ST0 0 0 0 0 0 0 
-STCNT_SM_ps.ST1 0 0 0 0 1 1 
-STCNT_SM_ps.ST2 0 0 0 1 0 1 
-STCNT_SM_ps.ST3 0 0 1 0 0 1 
-STCNT_SM_ps.ST4 0 1 0 0 0 1 
-STCNT_SM_ps.ST5 1 0 0 0 0 1 
-
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|frm_muxer_inst|arbiter_inst|arb_sm_ps
-Name arb_sm_ps.PRGNT0 arb_sm_ps.PRGNT2 arb_sm_ps.PRGNT1 
-arb_sm_ps.PRGNT2 0 0 0 
-arb_sm_ps.PRGNT0 1 1 0 
-arb_sm_ps.PRGNT1 0 1 1 
 
 State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|PAUSEGEN_SM_ps
 Name PAUSEGEN_SM_ps.FRMDAT14 PAUSEGEN_SM_ps.FRMDAT13 PAUSEGEN_SM_ps.FRMDAT12 PAUSEGEN_SM_ps.FRMDAT11 PAUSEGEN_SM_ps.FRMDAT10 PAUSEGEN_SM_ps.FRMDAT9 PAUSEGEN_SM_ps.FRMDAT8 PAUSEGEN_SM_ps.FRMDAT7 PAUSEGEN_SM_ps.FRMDAT6 PAUSEGEN_SM_ps.FRMDAT5 PAUSEGEN_SM_ps.FRMDAT4 PAUSEGEN_SM_ps.FRMDAT3 PAUSEGEN_SM_ps.FRMDAT2 PAUSEGEN_SM_ps.FRMDAT1 PAUSEGEN_SM_ps.FRMGAP PAUSEGEN_SM_ps.FRMDAT0 
@@ -918,82 +755,117 @@ arb_sm_ps.PRGNT2 0 0 0
 arb_sm_ps.PRGNT0 1 1 0 
 arb_sm_ps.PRGNT1 0 1 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[0].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|PAUSEGEN_SM_ps
+Name PAUSEGEN_SM_ps.FRMDAT14 PAUSEGEN_SM_ps.FRMDAT13 PAUSEGEN_SM_ps.FRMDAT12 PAUSEGEN_SM_ps.FRMDAT11 PAUSEGEN_SM_ps.FRMDAT10 PAUSEGEN_SM_ps.FRMDAT9 PAUSEGEN_SM_ps.FRMDAT8 PAUSEGEN_SM_ps.FRMDAT7 PAUSEGEN_SM_ps.FRMDAT6 PAUSEGEN_SM_ps.FRMDAT5 PAUSEGEN_SM_ps.FRMDAT4 PAUSEGEN_SM_ps.FRMDAT3 PAUSEGEN_SM_ps.FRMDAT2 PAUSEGEN_SM_ps.FRMDAT1 PAUSEGEN_SM_ps.FRMGAP PAUSEGEN_SM_ps.FRMDAT0 
+PAUSEGEN_SM_ps.FRMDAT0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+PAUSEGEN_SM_ps.FRMGAP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+PAUSEGEN_SM_ps.FRMDAT1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+PAUSEGEN_SM_ps.FRMDAT2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+PAUSEGEN_SM_ps.FRMDAT14 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[1].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|st_pause_req_inst|XONXOFF_SM_ps
+Name XONXOFF_SM_ps.XOFFHLD XONXOFF_SM_ps.XOFF XONXOFF_SM_ps.XON XONXOFF_SM_ps.XIDLE 
+XONXOFF_SM_ps.XIDLE 0 0 0 0 
+XONXOFF_SM_ps.XON 0 0 1 1 
+XONXOFF_SM_ps.XOFF 0 1 0 1 
+XONXOFF_SM_ps.XOFFHLD 1 0 0 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[2].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|pause_frm_gen_inst|csr_pause_req_inst|XONXOFF_SM_ps
+Name XONXOFF_SM_ps.XOFFHLD XONXOFF_SM_ps.XOFF XONXOFF_SM_ps.XON XONXOFF_SM_ps.XIDLE 
+XONXOFF_SM_ps.XIDLE 0 0 0 0 
+XONXOFF_SM_ps.XON 0 0 1 1 
+XONXOFF_SM_ps.XOFF 0 1 0 1 
+XONXOFF_SM_ps.XOFFHLD 1 0 0 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[3].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|data_frm_gen_inst|ING_CTRL_SM_ps
+Name ING_CTRL_SM_ps.PREAM0 ING_CTRL_SM_ps.PAD ING_CTRL_SM_ps.PYLD ING_CTRL_SM_ps.IDLE ING_CTRL_SM_ps.PREAM1 
+ING_CTRL_SM_ps.IDLE 0 0 0 0 0 
+ING_CTRL_SM_ps.PYLD 0 0 1 1 0 
+ING_CTRL_SM_ps.PAD 0 1 0 1 0 
+ING_CTRL_SM_ps.PREAM0 1 0 0 1 0 
+ING_CTRL_SM_ps.PREAM1 0 0 0 1 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[4].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|data_frm_gen_inst|tx_srcaddr_inserter|STCNT_SM_ps
+Name STCNT_SM_ps.ST5 STCNT_SM_ps.ST4 STCNT_SM_ps.ST3 STCNT_SM_ps.ST2 STCNT_SM_ps.ST1 STCNT_SM_ps.ST0 
+STCNT_SM_ps.ST0 0 0 0 0 0 0 
+STCNT_SM_ps.ST1 0 0 0 0 1 1 
+STCNT_SM_ps.ST2 0 0 0 1 0 1 
+STCNT_SM_ps.ST3 0 0 1 0 0 1 
+STCNT_SM_ps.ST4 0 1 0 0 0 1 
+STCNT_SM_ps.ST5 1 0 0 0 0 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[5].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|tx_path.tx_top_inst|frm_muxer_inst|arbiter_inst|arb_sm_ps
+Name arb_sm_ps.PRGNT0 arb_sm_ps.PRGNT2 arb_sm_ps.PRGNT1 
+arb_sm_ps.PRGNT2 0 0 0 
+arb_sm_ps.PRGNT0 1 1 0 
+arb_sm_ps.PRGNT1 0 1 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[6].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_mem|state
+Name state.STM_TYPE_INC_CNT state.STM_TYPE_RST_CNT state.STM_TYPE_RST_DONE state.STM_TYPE_IDLE 
+state.STM_TYPE_IDLE 0 0 0 0 
+state.STM_TYPE_RST_DONE 0 0 1 1 
+state.STM_TYPE_RST_CNT 0 1 0 1 
+state.STM_TYPE_INC_CNT 1 0 0 1 
 
-State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|pfc_flow_control_inst|pausebeat_convertion|PFC_BACKPRESSURE_GEN[7].pause_quanta_backpressure_conversion|state
-Name state.MSBD state.LSBD state.LOAD state.IDLE state.PEND 
-state.IDLE 0 0 0 0 0 
-state.LOAD 0 0 1 1 0 
-state.PEND 0 0 0 1 1 
-state.LSBD 0 1 0 1 0 
-state.MSBD 1 0 0 1 0 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts64Octets
+Name case_etherStatsPkts64Octets.CASE_UNCHANGED case_etherStatsPkts64Octets.CASE_UPDATE case_etherStatsPkts64Octets.CASE_CLEAR_UPDATE case_etherStatsPkts64Octets.CASE_RESET_VALUE 
+case_etherStatsPkts64Octets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts64Octets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts64Octets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts64Octets.CASE_UNCHANGED 1 0 0 1 
 
-State Machine - jtag_master|master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|write_state
-Name write_state.ST_WRITE_DATA write_state.ST_HEADER_2 write_state.ST_HEADER_1 write_state.ST_BYPASS 
-write_state.ST_BYPASS 0 0 0 0 
-write_state.ST_HEADER_1 0 0 1 1 
-write_state.ST_HEADER_2 0 1 0 1 
-write_state.ST_WRITE_DATA 1 0 0 1 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts65to127Octets
+Name case_etherStatsPkts65to127Octets.CASE_UNCHANGED case_etherStatsPkts65to127Octets.CASE_UPDATE case_etherStatsPkts65to127Octets.CASE_CLEAR_UPDATE case_etherStatsPkts65to127Octets.CASE_RESET_VALUE 
+case_etherStatsPkts65to127Octets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts65to127Octets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts65to127Octets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts65to127Octets.CASE_UNCHANGED 1 0 0 1 
 
-State Machine - jtag_master|master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|read_state
-Name read_state.ST_HEADER read_state.ST_READ_DATA read_state.ST_PADDED 
-read_state.ST_HEADER 0 0 0 
-read_state.ST_READ_DATA 1 1 0 
-read_state.ST_PADDED 1 0 1 
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts128to255Octets
+Name case_etherStatsPkts128to255Octets.CASE_UNCHANGED case_etherStatsPkts128to255Octets.CASE_UPDATE case_etherStatsPkts128to255Octets.CASE_CLEAR_UPDATE case_etherStatsPkts128to255Octets.CASE_RESET_VALUE 
+case_etherStatsPkts128to255Octets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts128to255Octets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts128to255Octets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts128to255Octets.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts256to511Octets
+Name case_etherStatsPkts256to511Octets.CASE_UNCHANGED case_etherStatsPkts256to511Octets.CASE_UPDATE case_etherStatsPkts256to511Octets.CASE_CLEAR_UPDATE case_etherStatsPkts256to511Octets.CASE_RESET_VALUE 
+case_etherStatsPkts256to511Octets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts256to511Octets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts256to511Octets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts256to511Octets.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts512to1023Octets
+Name case_etherStatsPkts512to1023Octets.CASE_UNCHANGED case_etherStatsPkts512to1023Octets.CASE_UPDATE case_etherStatsPkts512to1023Octets.CASE_CLEAR_UPDATE case_etherStatsPkts512to1023Octets.CASE_RESET_VALUE 
+case_etherStatsPkts512to1023Octets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts512to1023Octets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts512to1023Octets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts512to1023Octets.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts1024to1518Octets
+Name case_etherStatsPkts1024to1518Octets.CASE_UNCHANGED case_etherStatsPkts1024to1518Octets.CASE_UPDATE case_etherStatsPkts1024to1518Octets.CASE_CLEAR_UPDATE case_etherStatsPkts1024to1518Octets.CASE_RESET_VALUE 
+case_etherStatsPkts1024to1518Octets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts1024to1518Octets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts1024to1518Octets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts1024to1518Octets.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_etherStatsPkts1519toXOctets
+Name case_etherStatsPkts1519toXOctets.CASE_UNCHANGED case_etherStatsPkts1519toXOctets.CASE_UPDATE case_etherStatsPkts1519toXOctets.CASE_CLEAR_UPDATE case_etherStatsPkts1519toXOctets.CASE_RESET_VALUE 
+case_etherStatsPkts1519toXOctets.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsPkts1519toXOctets.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsPkts1519toXOctets.CASE_UPDATE 0 1 0 1 
+case_etherStatsPkts1519toXOctets.CASE_UNCHANGED 1 0 0 1 
 
 State Machine - ETH_TRAFFIC_CTRL_PAIR_CHANNEL[0].eth_traffic_controller|ETH_STD_TRAFFIC_CONTROLLER[1].eth_std_traffic_controller_u0|GEN|ps
 Name ps.state_data ps.state_src_len_seq ps.state_dest_src ps.state_idle ps.state_transition 
@@ -1372,5 +1244,133 @@ case_etherStatsOctets.CASE_RESET_VALUE 0 0 0 0
 case_etherStatsOctets.CASE_CLEAR_UPDATE 0 0 1 1 
 case_etherStatsOctets.CASE_UPDATE 0 1 0 1 
 case_etherStatsOctets.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|rs_layer|i_rx_rs_gmii16b_top|i_alt_em10g32_rx_rs_gmii16b|state
+Name state.STATE_DATA state.STATE_EOP state.STATE_SOP state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 0 
+state.STATE_SOP 0 0 1 1 
+state.STATE_EOP 0 1 0 1 
+state.STATE_DATA 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_framesCRCErr
+Name case_framesCRCErr.CASE_UNCHANGED case_framesCRCErr.CASE_UPDATE case_framesCRCErr.CASE_CLEAR_UPDATE case_framesCRCErr.CASE_RESET_VALUE 
+case_framesCRCErr.CASE_RESET_VALUE 0 0 0 0 
+case_framesCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
+case_framesCRCErr.CASE_UPDATE 0 1 0 1 
+case_framesCRCErr.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_pfcMACCtrlFrames
+Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
+case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
+case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
+case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
+case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsFragments
+Name case_etherStatsFragments.CASE_UNCHANGED case_etherStatsFragments.CASE_UPDATE case_etherStatsFragments.CASE_CLEAR_UPDATE case_etherStatsFragments.CASE_RESET_VALUE 
+case_etherStatsFragments.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsFragments.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsFragments.CASE_UPDATE 0 1 0 1 
+case_etherStatsFragments.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsJabbers
+Name case_etherStatsJabbers.CASE_UNCHANGED case_etherStatsJabbers.CASE_UPDATE case_etherStatsJabbers.CASE_CLEAR_UPDATE case_etherStatsJabbers.CASE_RESET_VALUE 
+case_etherStatsJabbers.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsJabbers.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsJabbers.CASE_UPDATE 0 1 0 1 
+case_etherStatsJabbers.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsCRCErr
+Name case_etherStatsCRCErr.CASE_UNCHANGED case_etherStatsCRCErr.CASE_UPDATE case_etherStatsCRCErr.CASE_CLEAR_UPDATE case_etherStatsCRCErr.CASE_RESET_VALUE 
+case_etherStatsCRCErr.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsCRCErr.CASE_UPDATE 0 1 0 1 
+case_etherStatsCRCErr.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_pfcMACCtrlFrames
+Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
+case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
+case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
+case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
+case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[0].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|tx|tx_fifo|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
+Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
+state.START 0 0 0 0 
+state.BIT_14 0 0 1 1 
+state.BIT_17 0 1 0 1 
+state.BIT_19 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|rx_path.rx_top_inst|rs_layer|i_rx_rs_gmii16b_top|i_alt_em10g32_rx_rs_gmii16b|state
+Name state.STATE_DATA state.STATE_EOP state.STATE_SOP state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 0 
+state.STATE_SOP 0 0 1 1 
+state.STATE_EOP 0 1 0 1 
+state.STATE_DATA 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_framesCRCErr
+Name case_framesCRCErr.CASE_UNCHANGED case_framesCRCErr.CASE_UPDATE case_framesCRCErr.CASE_CLEAR_UPDATE case_framesCRCErr.CASE_RESET_VALUE 
+case_framesCRCErr.CASE_RESET_VALUE 0 0 0 0 
+case_framesCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
+case_framesCRCErr.CASE_UPDATE 0 1 0 1 
+case_framesCRCErr.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_pfcMACCtrlFrames
+Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
+case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
+case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
+case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
+case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsFragments
+Name case_etherStatsFragments.CASE_UNCHANGED case_etherStatsFragments.CASE_UPDATE case_etherStatsFragments.CASE_CLEAR_UPDATE case_etherStatsFragments.CASE_RESET_VALUE 
+case_etherStatsFragments.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsFragments.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsFragments.CASE_UPDATE 0 1 0 1 
+case_etherStatsFragments.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsJabbers
+Name case_etherStatsJabbers.CASE_UNCHANGED case_etherStatsJabbers.CASE_UPDATE case_etherStatsJabbers.CASE_CLEAR_UPDATE case_etherStatsJabbers.CASE_RESET_VALUE 
+case_etherStatsJabbers.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsJabbers.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsJabbers.CASE_UPDATE 0 1 0 1 
+case_etherStatsJabbers.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.tx_stat_reg|case_etherStatsCRCErr
+Name case_etherStatsCRCErr.CASE_UNCHANGED case_etherStatsCRCErr.CASE_UPDATE case_etherStatsCRCErr.CASE_CLEAR_UPDATE case_etherStatsCRCErr.CASE_RESET_VALUE 
+case_etherStatsCRCErr.CASE_RESET_VALUE 0 0 0 0 
+case_etherStatsCRCErr.CASE_CLEAR_UPDATE 0 0 1 1 
+case_etherStatsCRCErr.CASE_UPDATE 0 1 0 1 
+case_etherStatsCRCErr.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|mac|alt_em10g32_0|alt_em10g32unit_inst|creg_top_inst|STAT_TX_RX_CLK.rx_stat_reg|case_pfcMACCtrlFrames
+Name case_pfcMACCtrlFrames.CASE_UNCHANGED case_pfcMACCtrlFrames.CASE_UPDATE case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE case_pfcMACCtrlFrames.CASE_RESET_VALUE 
+case_pfcMACCtrlFrames.CASE_RESET_VALUE 0 0 0 0 
+case_pfcMACCtrlFrames.CASE_CLEAR_UPDATE 0 0 1 1 
+case_pfcMACCtrlFrames.CASE_UPDATE 0 1 0 1 
+case_pfcMACCtrlFrames.CASE_UNCHANGED 1 0 0 1 
+
+State Machine - DUT|CHANNEL_GEN[1].u_channel|phy|alt_mge_phy_0|mge_pcs|USXGMII_PCS.usxgmii_pcs|tx|tx_fifo|alt_mge_phy_usxgmii_1588_latency|ppm_cntr|state
+Name state.BIT_19 state.BIT_17 state.BIT_14 state.START 
+state.START 0 0 0 0 
+state.BIT_14 0 0 1 1 
+state.BIT_17 0 1 0 1 
+state.BIT_19 1 0 0 1 
+
+State Machine - ETH_TRAFFIC_CTRL_PAIR_CHANNEL[0].eth_traffic_controller|eth_1588_traffic_controller_u0|master_gen_mon_inst|master_state
+Name master_state.DELAY_REQ_RCV master_state.SYNC master_state.WAIT master_state.INIT master_state.DELAY_RESP 
+master_state.INIT 0 0 0 0 0 
+master_state.WAIT 0 0 1 1 0 
+master_state.SYNC 0 1 0 1 0 
+master_state.DELAY_REQ_RCV 1 0 0 1 0 
+master_state.DELAY_RESP 0 0 0 1 1 
+
+State Machine - ETH_TRAFFIC_CTRL_PAIR_CHANNEL[0].eth_traffic_controller|eth_1588_traffic_controller_u0|slave_gen_mon_inst|slave_state
+Name slave_state.DELAY_RESP_RCV slave_state.DELAY_REQ slave_state.SYNC_RCV slave_state.INIT slave_state.COMPUTE 
+slave_state.INIT 0 0 0 0 0 
+slave_state.SYNC_RCV 0 0 1 1 0 
+slave_state.DELAY_REQ 0 1 0 1 0 
+slave_state.DELAY_RESP_RCV 1 0 0 1 0 
+slave_state.COMPUTE 0 0 0 1 1 
 
 State Machine - Summary
