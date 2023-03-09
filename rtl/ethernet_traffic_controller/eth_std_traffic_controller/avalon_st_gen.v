@@ -87,6 +87,9 @@ wire    [91:0] random_seed;                     // Random seed number for PRBS g
 wire    S_IDLE;
 wire    S_DEST_SRC;
 wire    S_SRC_LEN_SEQ;
+wire    S_SRC_LEN_IP1;
+wire    S_SRC_LEN_IP2;
+wire    S_SRC_LEN_IP3;
 wire    S_DATA;
 wire    S_TRANSITION;
 
@@ -94,14 +97,18 @@ reg[31:0] cnt_dasa, cnt_satlen, cnt_data, cnt_trnstn;
 
 reg     [2:0] ns;
 reg     [2:0] ps;
+reg do_IP = 1'b1; // whether to add IP header
 
 // State machine parameters
 // --------------------------
 localparam state_idle         = 3'b000;         // Idle State
 localparam state_dest_src     = 3'b001;         // Dest(47:0) & Src(47:32) State
 localparam state_src_len_seq  = 3'b010;         // Src(31:0) & Length(15:0) & SeqNr(15:0) State
-localparam state_data         = 3'b011;         // Data Pattern State
-localparam state_transition   = 3'b100;         // Transition State
+localparam state_src_len_ip1  = 3'b011;
+localparam state_src_len_ip2  = 3'b100;
+localparam state_src_len_ip3  = 3'b101;
+localparam state_data         = 3'b110;         // Data Pattern State
+localparam state_transition   = 3'b111;         // Transition State
 
 
 wire    [91:0] tx_prbs;
@@ -447,6 +454,28 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
+               if (do_IP) ns = state_src_len_ip1;
+					else ns = state_data;
+            end
+         end
+			state_src_len_ip1:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
+               ns = state_src_len_ip2;
+            end
+         end
+			state_src_len_ip2:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
+               ns = state_src_len_ip3;
+            end
+         end
+			state_src_len_ip3:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
                ns = state_data;
             end
          end
@@ -469,6 +498,9 @@ always @ (*)
  assign S_IDLE        = (ns == state_idle)        ? 1'b1 : 1'b0;
  assign S_DEST_SRC    = (ns == state_dest_src)    ? 1'b1 : 1'b0;
  assign S_SRC_LEN_SEQ = (ns == state_src_len_seq) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP1 = (ns == state_src_len_ip1) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP2 = (ns == state_src_len_ip2) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP3 = (ns == state_src_len_ip3) ? 1'b1 : 1'b0;
  assign S_DATA        = (ns == state_data)        ? 1'b1 : 1'b0;
  assign S_TRANSITION  = (ns == state_transition)  ? 1'b1 : 1'b0;
 
@@ -560,7 +592,17 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[31: 0] <= {DA1,DA0,SA5,SA4};
          end else if (S_SRC_LEN_SEQ) begin
             tx_data_reg[63:32] <= {SA3,SA2,SA1,SA0};
-            tx_data_reg[31: 0] <= {length + 16'h6, seq_num}; // First 2B of data payload are seq_num
+            if (do_IP) tx_data_reg[31: 0] <= {length + 16'h6, 16'h4500}; // Eth length , IP version IHL DSCP ECN
+				else tx_data_reg[31: 0] <= {length + 16'h6, seq_num};
+			end else if (S_SRC_LEN_IP1) begin
+            tx_data_reg[63:32] <= {length - 16'h12, seq_num}; // IP length , seq_num
+            tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
+			end else if (S_SRC_LEN_IP2) begin
+            tx_data_reg[63:32] <= {16'h00, 16'hC0A8}; // Header chksum , src ip
+            tx_data_reg[31: 0] <= {16'h0A0A, 16'hD8A5}; // src ip , dest ip
+			end else if (S_SRC_LEN_IP3) begin
+            tx_data_reg[63:32] <= {16'h1509, 16'hCA02}; // dest ip , src port
+            tx_data_reg[31: 0] <= {16'hCA03, length - 16'h12 - 16'h08}; // dest port , UDP length
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end

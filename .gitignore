@@ -5,3 +5,4 @@ qdb/*
 *.bak
 tmp-clearbox/*
 *.syn.smsg
+*.sld
