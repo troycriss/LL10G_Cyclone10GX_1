@@ -594,7 +594,7 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[31: 0] <= {DA1,DA0,SA5,SA4};
          end else if (S_SRC_LEN_SEQ) begin
             tx_data_reg[63:32] <= {SA3,SA2,SA1,SA0};
-            if (do_IP) tx_data_reg[31: 0] <= {length + 16'h6, 16'h4500}; // Eth length , IP version IHL DSCP ECN
+            if (do_IP) tx_data_reg[31: 0] <= {16'h0800, 16'h4500}; // Eth type (ipv4) , IP version IHL DSCP ECN
 				else tx_data_reg[31: 0] <= {length + 16'h6, seq_num};
 			end else if (S_SRC_LEN_IP1) begin
             tx_data_reg[63:32] <= {length - 16'h12, seq_num}; // IP length , seq_num
@@ -603,8 +603,8 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[63:32] <= {16'h00, 16'hC0A8}; // Header chksum , src ip
             tx_data_reg[31: 0] <= {16'h0A0A, 16'hD8A5}; // src ip , dest ip
 			end else if (S_SRC_LEN_IP3) begin
-            tx_data_reg[63:32] <= {16'h1509, 16'hCA02}; // dest ip , src port
-            tx_data_reg[31: 0] <= {16'hCA03, length - 16'h12 - 16'h08}; // dest port , UDP length
+            tx_data_reg[63:32] <= {16'h1509, 16'h07E6}; // dest ip , src port
+            tx_data_reg[31: 0] <= {16'h07E7, length - 16'h26}; // dest port , UDP length
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end
