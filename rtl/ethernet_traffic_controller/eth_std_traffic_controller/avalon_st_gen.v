@@ -87,6 +87,9 @@ wire    [91:0] random_seed;                     // Random seed number for PRBS g
 wire    S_IDLE;
 wire    S_DEST_SRC;
 wire    S_SRC_LEN_SEQ;
+wire    S_SRC_LEN_IP1;
+wire    S_SRC_LEN_IP2;
+wire    S_SRC_LEN_IP3;
 wire    S_DATA;
 wire    S_TRANSITION;
 
@@ -95,13 +98,19 @@ reg[31:0] cnt_dasa, cnt_satlen, cnt_data, cnt_trnstn;
 reg     [2:0] ns;
 reg     [2:0] ps;
 
+reg do_IP = 1'b1; // whether to add IP header
+//wire do_IP; assign do_IP = fmc_in[1];
+
 // State machine parameters
 // --------------------------
 localparam state_idle         = 3'b000;         // Idle State
 localparam state_dest_src     = 3'b001;         // Dest(47:0) & Src(47:32) State
 localparam state_src_len_seq  = 3'b010;         // Src(31:0) & Length(15:0) & SeqNr(15:0) State
-localparam state_data         = 3'b011;         // Data Pattern State
-localparam state_transition   = 3'b100;         // Transition State
+localparam state_src_len_ip1  = 3'b011;
+localparam state_src_len_ip2  = 3'b100;
+localparam state_src_len_ip3  = 3'b101;
+localparam state_data         = 3'b110;         // Data Pattern State
+localparam state_transition   = 3'b111;         // Transition State
 
 
 wire    [91:0] tx_prbs;
@@ -375,7 +384,7 @@ prbs23 prbs_tx0
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[22:0]),
    .d          (tx_prbs[22:0]),
    .m          (tx_prbs[22:0])
@@ -386,7 +395,7 @@ prbs23 prbs_tx1
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[45:23]),
    .d          (tx_prbs[45:23]),
    .m          (tx_prbs[45:23])
@@ -397,7 +406,7 @@ prbs23 prbs_tx2
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[68:46]),
    .d          (tx_prbs[68:46]),
    .m          (tx_prbs[68:46])
@@ -408,7 +417,7 @@ prbs23 prbs_tx3
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[91:69]),
    .d          (tx_prbs[91:69]),
    .m          (tx_prbs[91:69])
@@ -447,6 +456,28 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
+               if (do_IP) ns = state_src_len_ip1;
+					else ns = state_data;
+            end
+         end
+			state_src_len_ip1:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
+               ns = state_src_len_ip2;
+            end
+         end
+			state_src_len_ip2:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
+               ns = state_src_len_ip3;
+            end
+         end
+			state_src_len_ip3:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
                ns = state_data;
             end
          end
@@ -469,6 +500,9 @@ always @ (*)
  assign S_IDLE        = (ns == state_idle)        ? 1'b1 : 1'b0;
  assign S_DEST_SRC    = (ns == state_dest_src)    ? 1'b1 : 1'b0;
  assign S_SRC_LEN_SEQ = (ns == state_src_len_seq) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP1 = (ns == state_src_len_ip1) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP2 = (ns == state_src_len_ip2) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP3 = (ns == state_src_len_ip3) ? 1'b1 : 1'b0;
  assign S_DATA        = (ns == state_data)        ? 1'b1 : 1'b0;
  assign S_TRANSITION  = (ns == state_transition)  ? 1'b1 : 1'b0;
 
@@ -506,7 +540,7 @@ always @ (posedge reset or posedge clk)
       end else begin
          if (S_DEST_SRC) begin
             byte_count <= length;
-         end else if (S_DATA & tx_ready) begin
+         end else if ( (S_DATA|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3) & tx_ready) begin
             byte_count <= byte_count - 16'h8;
          end
       end
@@ -560,7 +594,17 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[31: 0] <= {DA1,DA0,SA5,SA4};
          end else if (S_SRC_LEN_SEQ) begin
             tx_data_reg[63:32] <= {SA3,SA2,SA1,SA0};
-            tx_data_reg[31: 0] <= {length + 16'h6, seq_num}; // First 2B of data payload are seq_num
+            if (do_IP) tx_data_reg[31: 0] <= {16'h0800, 16'h4500}; // Eth type (ipv4) , IP version IHL DSCP ECN
+				else tx_data_reg[31: 0] <= {length + 16'h6, seq_num};
+			end else if (S_SRC_LEN_IP1) begin
+            tx_data_reg[63:32] <= {length - 16'h12, seq_num}; // IP length , seq_num
+            tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
+			end else if (S_SRC_LEN_IP2) begin
+            tx_data_reg[63:32] <= {16'h00, 16'hC0A8}; // Header chksum , src ip
+            tx_data_reg[31: 0] <= {16'h0A0A, 16'hD8A5}; // src ip , dest ip
+			end else if (S_SRC_LEN_IP3) begin
+            tx_data_reg[63:32] <= {16'h1509, 16'h07E6}; // dest ip , src port
+            tx_data_reg[31: 0] <= {16'h07E7, length - 16'h26}; // dest port , UDP length
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end
