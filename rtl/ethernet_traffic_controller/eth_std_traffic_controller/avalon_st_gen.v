@@ -97,7 +97,9 @@ reg[31:0] cnt_dasa, cnt_satlen, cnt_data, cnt_trnstn;
 
 reg     [2:0] ns;
 reg     [2:0] ps;
+
 reg do_IP = 1'b1; // whether to add IP header
+//wire do_IP; assign do_IP = fmc_in[1];
 
 // State machine parameters
 // --------------------------
@@ -382,7 +384,7 @@ prbs23 prbs_tx0
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[22:0]),
    .d          (tx_prbs[22:0]),
    .m          (tx_prbs[22:0])
@@ -393,7 +395,7 @@ prbs23 prbs_tx1
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[45:23]),
    .d          (tx_prbs[45:23]),
    .m          (tx_prbs[45:23])
@@ -404,7 +406,7 @@ prbs23 prbs_tx2
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[68:46]),
    .d          (tx_prbs[68:46]),
    .m          (tx_prbs[68:46])
@@ -415,7 +417,7 @@ prbs23 prbs_tx3
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & (S_SRC_LEN_SEQ | S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
    .seed       (random_seed[91:69]),
    .d          (tx_prbs[91:69]),
    .m          (tx_prbs[91:69])
@@ -538,7 +540,7 @@ always @ (posedge reset or posedge clk)
       end else begin
          if (S_DEST_SRC) begin
             byte_count <= length;
-         end else if (S_DATA & tx_ready) begin
+         end else if ( (S_DATA|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3) & tx_ready) begin
             byte_count <= byte_count - 16'h8;
          end
       end
