@@ -491,9 +491,9 @@ always @ (*)
             end
          end
 			state_fifo_wait:begin
-            //if (fifo_rdusedw > 200) begin // wait until fifo has enough in it to make a packet
+            if (fifo_rdusedw > 200) begin // wait until fifo has enough in it to make a packet
                ns = state_dest_src;
-            //end
+            end
          end
          state_dest_src:begin
             if (tx_ready) begin
@@ -546,7 +546,10 @@ always @ (*)
                ns = state_fifo_wait;//state_dest_src;//state_fifo_wait;
             end      
          end
-         default:   ns = state_idle;
+         default: begin
+				ns = state_idle;
+				fifo_rdreq=1'b0;
+			end
       endcase
    end
 
