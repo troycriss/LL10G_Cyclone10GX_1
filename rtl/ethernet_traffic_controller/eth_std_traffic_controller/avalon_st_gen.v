@@ -113,7 +113,6 @@ localparam state_src_len_ip3  = 4'b0101;
 localparam state_data         = 4'b0110;         // Data Pattern State
 localparam state_transition   = 4'b0111;         // Transition State
 
-
 wire    [91:0] tx_prbs;
 reg     [15:0] byte_count;
 reg     [63:0] data_pattern;
@@ -179,7 +178,7 @@ wire fifo_wrfull; //full synced to write clk
 			counter_datain = 8'h00;
 		end
       else begin
-			fifo_datain <= {(fifo_datain<<2)[61:0],fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
+			fifo_datain <= {fifo_datain[61:0]<<2,fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
 			if (counter_datain == 8'h40) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
 				fifo_wrreq<=1'b1;
@@ -475,7 +474,7 @@ always @ (posedge reset or posedge clk)
          ps <= state_idle;
       end else begin
          if (start) begin
-            ps <= state_fifo_wait;
+            ps <= state_fifo_wait;//state_dest_src;//state_fifo_wait;
          end else begin
             ps <= ns;
          end
@@ -488,13 +487,13 @@ always @ (*)
       case (ps)
          state_idle:begin
             if (start) begin
-               ns = state_fifo_wait;
+               ns = state_fifo_wait;//state_dest_src;//state_fifo_wait;
             end
          end
 			state_fifo_wait:begin
-            if (tx_ready & (fifo_rdusedw > 200)) begin // wait until fifo has enough in it to make a packet
+            //if (fifo_rdusedw > 200) begin // wait until fifo has enough in it to make a packet
                ns = state_dest_src;
-            end
+            //end
          end
          state_dest_src:begin
             if (tx_ready) begin
@@ -544,7 +543,7 @@ always @ (*)
             if (stop | packet_tx_count == number_packet) begin
                ns = state_idle;
             end else if (tx_ready) begin
-               ns = state_fifo_wait;
+               ns = state_fifo_wait;//state_dest_src;//state_fifo_wait;
             end      
          end
          default:   ns = state_idle;
@@ -571,7 +570,7 @@ always @ (posedge reset or posedge clk)
       if (reset) begin
          length <= 16'h0;
       end else begin
-         if (S_IDLE | S_TRANSITION) begin
+         if (S_IDLE | S_FIFO_WAIT | S_TRANSITION) begin
             if (~random_length & (pkt_length < 14'h0018)) begin
                length <= 16'h0;
             end else if (~random_length & (pkt_length > 14'h2580)) begin
@@ -674,7 +673,7 @@ always @ (posedge reset or posedge clk)
       if (reset) begin
          tx_valid_reg <= 1'b0;
       end else begin
-         if (S_IDLE | S_TRANSITION) begin
+         if (S_IDLE | S_FIFO_WAIT | S_TRANSITION) begin
             tx_valid_reg <= 1'b0;
          end else begin
             tx_valid_reg <= 1'b1;

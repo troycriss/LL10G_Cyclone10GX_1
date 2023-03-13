@@ -31,3 +31,5 @@ mac64b_clk; // 156.25 MHz via pll<br>
 C10GX kit download: https://www.dropbox.com/s/qehok7muoahcpib/cyclone-10-gx-kit-collateral.zip?dl=0 <br>
   Board test system: https://www.dropbox.com/sh/13s1js1465clt0y/AADcKpqSJ-fH7NIdkqhGLnxYa?dl=0 <br>
   Factory recovery: https://www.dropbox.com/sh/fvxx9ef50a99x4v/AAATVMVC8e21aiI6xPSL01WCa?dl=0 <br>
+
+https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html
