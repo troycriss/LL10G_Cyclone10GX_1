@@ -96,11 +96,10 @@ wire    S_TRANSITION;
 
 reg[31:0] cnt_dasa, cnt_satlen, cnt_data, cnt_trnstn;
 
-reg     [2:0] ns;
-reg     [2:0] ps;
+reg     [3:0] ns;
+reg     [3:0] ps;
 
 reg do_IP = 1'b1; // whether to add IP header
-//wire do_IP; assign do_IP = fmc_in[1];
 
 // State machine parameters
 // --------------------------
@@ -476,7 +475,7 @@ always @ (posedge reset or posedge clk)
          ps <= state_idle;
       end else begin
          if (start) begin
-            ps <= state_dest_src;
+            ps <= state_fifo_wait;
          end else begin
             ps <= ns;
          end
@@ -508,7 +507,7 @@ always @ (*)
             end else if (tx_ready) begin
                if (do_IP) ns = state_src_len_ip1;
 					else begin
-						fifo_rdreq<=1'b1;//read from fifo (starting in the next clk tick)
+						fifo_rdreq=1'b1;//read from fifo (starting in the next clk tick)
 						ns = state_data;
 					end
             end
@@ -531,14 +530,14 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
-					fifo_rdreq<=1'b1;//read from fifo (starting in the next clk tick)
+					fifo_rdreq=1'b1;//read from fifo (starting in the next clk tick)
                ns = state_data;
             end
          end
          state_data:begin
             if (tx_ready & (byte_count[15] | byte_count == 16'h0)) begin
                ns = state_transition;
-					fifo_rdreq<=1'b0;//done reading from fifo
+					fifo_rdreq=1'b0;//done reading from fifo
             end
          end
          state_transition:begin

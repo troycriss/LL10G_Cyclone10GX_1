@@ -121,6 +121,7 @@ set_location_assignment PIN_U3 -to fmc_in[4]
 set_location_assignment PIN_U4 -to fmc_in[5]
 set_location_assignment PIN_Y1 -to fmc_in[6]
 set_location_assignment PIN_Y2 -to fmc_in[7]
+set_global_assignment -name SOURCE_FILE README.md
 set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
 set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
 set_global_assignment -name SDC_FILE altera_eth_top.sdc

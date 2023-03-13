@@ -12,9 +12,13 @@ See heartbeat LED<br>
 Reset Arduino with soft_i2c_cyclone10gx to program SFP outputs (level shifted to 1.8 V)<br>
 See red, then green, SFP LEDs<br>
 Open system console<br>
- cd hwtesting\\system_console<br>
- source main.tcl<br>
- TEST_EXT_LB 0 10G 80<br>
+
+ cd hwtesting\\system_console
+ 
+ source main.tcl
+ 
+ TEST_EXT_LB 0 10G 80
+ 
 With loopback optical see 9.84 Gbps<br>
 
 https://en.wikipedia.org/wiki/Ethernet_frame <br>
