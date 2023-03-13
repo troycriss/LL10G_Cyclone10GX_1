@@ -179,7 +179,7 @@ wire fifo_wrfull; //full synced to write clk
 			counter_datain = 8'h00;
 		end
       else begin
-			fifo_datain <= {fifo_datain<<2,fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
+			fifo_datain <= {(fifo_datain<<2)[61:0],fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
 			if (counter_datain == 8'h40) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
 				fifo_wrreq<=1'b1;
