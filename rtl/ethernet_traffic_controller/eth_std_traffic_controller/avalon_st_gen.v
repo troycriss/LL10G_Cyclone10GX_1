@@ -187,7 +187,7 @@ wire fifo_wrfull; //full synced to write clk
 			end
 			else begin
 				counter_datain <= counter_datain+8'h02; // remember we stored 2 more bits
-				fifo_wrreq<=01'b0;
+				fifo_wrreq<=1'b0;
 			end
 		end
    end
@@ -493,7 +493,7 @@ always @ (*)
             end
          end
 			state_fifo_wait:begin
-            if (tx_ready && (fifo_rdusedw > 200)) begin // wait until fifo has enough in it to make a packet
+            if (tx_ready & (fifo_rdusedw > 200)) begin // wait until fifo has enough in it to make a packet
                ns = state_dest_src;
             end
          end
