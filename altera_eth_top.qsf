@@ -121,10 +121,11 @@ set_location_assignment PIN_U3 -to fmc_in[4]
 set_location_assignment PIN_U4 -to fmc_in[5]
 set_location_assignment PIN_Y1 -to fmc_in[6]
 set_location_assignment PIN_Y2 -to fmc_in[7]
-set_global_assignment -name SOURCE_FILE README.md
 set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
-set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
 set_global_assignment -name SDC_FILE altera_eth_top.sdc
+set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
+set_global_assignment -name SOURCE_FILE README.md
+set_global_assignment -name TCL_SCRIPT_FILE hwtesting/system_console/test_parameter/parameter.tcl
 set_global_assignment -name VERILOG_FILE rtl/alt_mge_reset_synchronizer.v
 set_global_assignment -name VERILOG_FILE rtl/alt_mge_channel.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/alt_mge_multi_channel.sv
