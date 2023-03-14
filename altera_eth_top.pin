@@ -100,7 +100,7 @@ GND                          : A25       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : A26       :        :                   :         : 2K        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A27       :        :                   :         : 2K        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA1       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA2       :        :                   :         : 3A        :                
+fmc_out[0]                   : AA2       : output : 1.8 V             :         : 3A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 3A        :                
 VCCIO3A                      : AA5       : power  :                   : 1.8V    : 3A        :                
@@ -129,10 +129,10 @@ GXB_NC                       : AA27      :        :                   :         
 GXB_NC                       : AA28      :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB1       :        :                   :         : 3A        :                
 GND                          : AB2       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 3A        :                
+fmc_out[1]                   : AB3       : output : 1.8 V             :         : 3A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB6       :        :                   :         : 3A        :                
+fmc_out[3]                   : AB5       : output : 1.8 V             :         : 3A        : Y              
+fmc_out[2]                   : AB6       : output : 1.8 V             :         : 3A        : Y              
 GND                          : AB7       : gnd    :                   :         :           :                
 MSEL2                        : AB8       : input  :                   :         : CSS       :                
 nCE                          : AB9       :        :                   :         : CSS       :                
@@ -716,7 +716,7 @@ GXB_NC                       : R28       :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : T1        :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 3B        :                
+fmc_out[6]                   : T4        : output : 1.8 V             :         : 3B        : Y              
 VCCIO3B                      : T5        : power  :                   : 1.8V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 3B        :                
@@ -745,7 +745,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :      
 GND                          : U2        : gnd    :                   :         :           :                
 fmc_in[4]                    : U3        : input  : 1.8 V             :         : 3B        : Y              
 fmc_in[5]                    : U4        : input  : 1.8 V             :         : 3B        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 3B        :                
+fmc_out[7]                   : U5        : output : 1.8 V             :         : 3B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U6        :        :                   :         : 3B        :                
 VCCIO3B                      : U7        : power  :                   : 1.8V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U8        :        :                   :         : 3B        :                
@@ -800,7 +800,7 @@ GND                          : V28       : gnd    :                   :         
 GND                          : W1        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 3A        :                
+fmc_out[4]                   : W4        : output : 1.8 V             :         : 3A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W5        :        :                   :         : 3A        :                
 VCCIO3A                      : W6        : power  :                   : 1.8V    : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W7        :        :                   :         : 3A        :                
@@ -828,7 +828,7 @@ GXB_NC                       : W28       :        :                   :         
 fmc_in[6]                    : Y1        : input  : 1.8 V             :         : 3A        : Y              
 fmc_in[7]                    : Y2        : input  : 1.8 V             :         : 3A        : Y              
 GND                          : Y3        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 3A        :                
+fmc_out[5]                   : Y4        : output : 1.8 V             :         : 3A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 3A        :                

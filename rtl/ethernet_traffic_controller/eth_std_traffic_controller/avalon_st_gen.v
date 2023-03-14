@@ -20,6 +20,7 @@ module avalon_st_gen
 ,input                 reset           // Reset signal
 
 ,input			 [7:0]  fmc_in          // Inputs from FMC
+,output         [3:0]  fmc_out			// Outputs to FMC
 
 ,input          [7:0]  address         // Register Address
 ,input                 write           // Register Write Strobe
@@ -152,7 +153,7 @@ reg fifo_wrreq=1'b0;
 reg fifo_rdreq=1'b0;
 reg fifo_aclr=1'b0;
 wire [63:0] fifo_dataout;
-wire [7:0] fifo_rdusedw;//number of entries (out of 256)
+wire [9:0] fifo_rdusedw;//number of entries (out of 1024)
 wire fifo_rdfull; //full synced to read clk
 wire fifo_rdempty; //empty synced to read clk
 wire fifo_wrfull; //full synced to write clk
@@ -164,7 +165,7 @@ wire fifo_wrfull; //full synced to write clk
 		.rdclk   (clk),   //   input,   width = 1,            .rdclk
 		.aclr    (fifo_aclr),    //   input,   width = 1,            .aclr
 		.q       (fifo_dataout),       //  output,  width = 64, fifo_output.dataout
-		.rdusedw (fifo_rdusedw), //  output,   width = 8,            .rdusedw
+		.rdusedw (fifo_rdusedw), //  output,   width = 10,            .rdusedw
 		.rdfull  (fifo_rdfull),  //  output,   width = 1,            .rdfull
 		.rdempty (fifo_rdempty), //  output,   width = 1,            .rdempty
 		.wrfull  (fifo_wrfull)   //  output,   width = 1,            .wrfull
@@ -189,6 +190,11 @@ wire fifo_wrfull; //full synced to write clk
 			end
 		end
    end
+	
+	assign fmc_out[3] = fifo_wrreq;
+	assign fmc_out[2] = clk;
+	
+	assign fmc_out[1:0] = fifo_rdusedw[1:0];
 
 // ____________________________________________________________________________
 // number packet register
@@ -474,7 +480,7 @@ always @ (posedge reset or posedge clk)
          ps <= state_idle;
       end else begin
          if (start) begin
-            ps <= state_fifo_wait;//state_dest_src;//state_fifo_wait;
+            ps <= state_fifo_wait;
          end else begin
             ps <= ns;
          end
@@ -484,14 +490,15 @@ always @ (posedge reset or posedge clk)
 always @ (*)
    begin
       ns = ps;
+		fifo_rdreq=1'b0;
       case (ps)
          state_idle:begin
             if (start) begin
-               ns = state_fifo_wait;//state_dest_src;//state_fifo_wait;
+               ns = state_fifo_wait;
             end
          end
 			state_fifo_wait:begin
-            if (fifo_rdusedw > 200) begin // wait until fifo has enough in it to make a packet
+            if ( (fifo_rdusedw > 10'h00C8) || fifo_rdfull) begin // wait until fifo has enough in it to make a packet (200)
                ns = state_dest_src;
             end
          end
@@ -543,7 +550,7 @@ always @ (*)
             if (stop | packet_tx_count == number_packet) begin
                ns = state_idle;
             end else if (tx_ready) begin
-               ns = state_fifo_wait;//state_dest_src;//state_fifo_wait;
+               ns = state_fifo_wait;
             end      
          end
          default: begin
