@@ -20,7 +20,10 @@ module avalon_st_gen
 ,input                 reset           // Reset signal
 
 ,input			 [7:0]  fmc_in          // Inputs from FMC
-,output         [3:0]  fmc_out			// Outputs to FMC
+,output         [7:0]  fmc_out			// Outputs to FMC
+
+,input fast1_clk // 
+,input fast2_clk // 
 
 ,input          [7:0]  address         // Register Address
 ,input                 write           // Register Write Strobe
@@ -57,6 +60,9 @@ module avalon_st_gen
  parameter ADDR_RNDSEED1 	= 8'hb;
  parameter ADDR_RNDSEED2 	= 8'hc;
  parameter ADDR_PKTLENGTH 	= 8'hd;
+ 
+ parameter ADDR_do_test_data = 8'h10;
+ parameter ADDR_do_test_counter_data = 8'h11;
 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -171,7 +177,12 @@ wire fifo_wrfull; //full synced to write clk
 		.wrfull  (fifo_wrfull)   //  output,   width = 1,            .wrfull
 	);
 	
+	reg do_test_data;
+	reg do_test_counter_data;
+	reg [1:0] test_data = 2'b00;
+	reg [7:0] test_counter_data = 8'h75;
 	reg [7:0] counter_datain = 8'h00;
+	reg [7:0] counter_datain_max;
 	always @ (posedge reset or posedge clk)
    begin
       if (reset) begin
@@ -179,23 +190,53 @@ wire fifo_wrfull; //full synced to write clk
 			counter_datain = 8'h00;
 		end
       else begin
-			fifo_datain <= {fifo_datain[61:0]<<2,fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
-			if (counter_datain == 8'h40) begin // ready to write it to the fifo
+		
+			if (do_test_data) begin
+				counter_datain_max <= 8'h40-8'h02;
+				if (counter_datain>=8'h20) test_data = 2'b11;
+				else test_data = 2'b00;
+				fifo_datain <= {fifo_datain[61:0],test_data}; // take 2 more bits of test input and shift into fifo_datain
+			end
+			else if (do_test_counter_data) begin
+				counter_datain_max <= 8'h40-8'h08;
+				test_counter_data<=test_counter_data+8'h01;
+				fifo_datain <= {fifo_datain[55:0],test_counter_data};
+			end
+			else begin
+				fifo_datain <= {fifo_datain[61:0],fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
+				counter_datain_max <= 8'h40-8'h02;
+			end
+			
+			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
 				fifo_wrreq<=1'b1;
 			end
 			else begin
-				counter_datain <= counter_datain+8'h02; // remember we stored 2 more bits
+				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
+				else counter_datain <= counter_datain+8'h02; // remember we stored 2 more bits
 				fifo_wrreq<=1'b0;
 			end
 		end
    end
 	
-	assign fmc_out[3] = fifo_wrreq;
-	assign fmc_out[2] = clk;
-	
-	assign fmc_out[1:0] = fifo_rdusedw[1:0];
+	//debugging outputs
+	assign fmc_out[7] = fifo_wrreq;
+	assign fmc_out[6] = fifo_rdreq;
+	assign fmc_out[5] = fifo_wrfull;
+	assign fmc_out[4] = fifo_rdusedw[2];
+	assign fmc_out[3:0] = ns;
 
+	//Read registers
+	always @ (posedge reset or posedge clk)
+   begin
+      if (reset) begin
+			do_test_data <= 1'b0;
+			do_test_counter_data <= 1'b0;
+		end
+      else if (write & address == ADDR_do_test_data) do_test_data <= writedata[0];
+		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
+   end
+	
 // ____________________________________________________________________________
 // number packet register
 // ____________________________________________________________________________
@@ -490,7 +531,7 @@ always @ (posedge reset or posedge clk)
 always @ (*)
    begin
       ns = ps;
-		fifo_rdreq=1'b0;
+		fifo_rdreq=1'b0;//not reading from fifo by default
       case (ps)
          state_idle:begin
             if (start) begin
@@ -505,6 +546,7 @@ always @ (*)
          state_dest_src:begin
             if (tx_ready) begin
                ns = state_src_len_seq;
+					if (~do_IP) fifo_rdreq=1'b1;//read from fifo
             end
          end
          state_src_len_seq:begin
@@ -529,6 +571,7 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
+					fifo_rdreq=1'b1;//read from fifo
                ns = state_src_len_ip3;
             end
          end
@@ -543,8 +586,11 @@ always @ (*)
          state_data:begin
             if (tx_ready & (byte_count[15] | byte_count == 16'h0)) begin
                ns = state_transition;
-					fifo_rdreq=1'b0;//done reading from fifo
             end
+				else if (tx_ready & (byte_count == 16'h08)) begin
+               fifo_rdreq=1'b0;//stop reading from fifo
+            end
+				else fifo_rdreq=1'b1;//read from fifo
          end
          state_transition:begin
             if (stop | packet_tx_count == number_packet) begin
@@ -637,7 +683,7 @@ always @ (posedge reset or posedge clk)
             data_pattern <= 64'h0000000000000000; //64'h0001020304050607;
          //end else if (S_DATA & ~random_payload & tx_ready & data_pattern == 64'hF8F9FAFBFCFDFEFF) begin
          //   data_pattern <= 64'h0001020304050607;
-         end else if (S_DATA & ~random_payload & tx_ready) begin
+         end else if ((S_DATA|S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3) & ~random_payload & tx_ready) begin
 				//data_pattern <= data_pattern + 64'h0808080808080808;
             //data_pattern <= {56'h0000000000000000,fmc_in};
 				data_pattern <= fifo_dataout;

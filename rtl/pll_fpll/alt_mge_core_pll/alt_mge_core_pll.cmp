@@ -1,0 +1,13 @@
+	component alt_mge_core_pll is
+		port (
+			pll_refclk0   : in  std_logic := 'X'; -- clk
+			pll_powerdown : in  std_logic := 'X'; -- pll_powerdown
+			pll_locked    : out std_logic;        -- pll_locked
+			outclk0       : out std_logic;        -- clk
+			outclk1       : out std_logic;        -- clk
+			outclk2       : out std_logic;        -- clk
+			outclk3       : out std_logic;        -- clk
+			pll_cal_busy  : out std_logic         -- pll_cal_busy
+		);
+	end component alt_mge_core_pll;
+
