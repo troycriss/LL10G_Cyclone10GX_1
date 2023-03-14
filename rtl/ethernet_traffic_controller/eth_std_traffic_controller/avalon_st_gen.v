@@ -63,6 +63,8 @@ module avalon_st_gen
  
  parameter ADDR_do_test_data = 8'h10;
  parameter ADDR_do_test_counter_data = 8'h11;
+ parameter ADDR_fifo_clk_prescale = 8'h12;
+ parameter ADDR_use_fifo_fast_clk = 8'h13; 
 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -163,11 +165,13 @@ wire [9:0] fifo_rdusedw;//number of entries (out of 1024)
 wire fifo_rdfull; //full synced to read clk
 wire fifo_rdempty; //empty synced to read clk
 wire fifo_wrfull; //full synced to write clk
+wire fifo_clk;//fifo_clk is what is used for writing 
+
 	myfifo u0 (
 		.data    (fifo_datain),    //   input,  width = 64,  fifo_input.datain
 		.wrreq   (fifo_wrreq),   //   input,   width = 1,            .wrreq
 		.rdreq   (fifo_rdreq),   //   input,   width = 1,            .rdreq
-		.wrclk   (clk),   //   input,   width = 1,            .wrclk
+		.wrclk   (fifo_clk),   //   input,   width = 1,            .wrclk
 		.rdclk   (clk),   //   input,   width = 1,            .rdclk
 		.aclr    (fifo_aclr),    //   input,   width = 1,            .aclr
 		.q       (fifo_dataout),       //  output,  width = 64, fifo_output.dataout
@@ -177,13 +181,35 @@ wire fifo_wrfull; //full synced to write clk
 		.wrfull  (fifo_wrfull)   //  output,   width = 1,            .wrfull
 	);
 	
+	reg fifo_p_clk;
+	reg [31:0] fifo_clk_counter=0;
+	reg [31:0] fifo_clk_prescale=0;
+	wire fifo_base_clk;
+	always @ (posedge fifo_base_clk)
+   begin
+		if (fifo_clk_counter>=fifo_clk_prescale) begin
+			fifo_p_clk<= ~fifo_p_clk;
+			fifo_clk_counter<=0;
+		end
+		else fifo_clk_counter<=fifo_clk_counter+1;
+	end
+	
+	//fifo_clk is assigned to the fifo_base_clk if fifo_clk_prescale is 0, otherwise to the prescale fifo_p_clk
+	assign fifo_clk=(fifo_clk_prescale==0)?fifo_base_clk:fifo_p_clk;
+	
+	//use_fifo_fast_clk will select which clk to use for the fifo_base_clk (0=clk,1=fast1_clk,2=fast2_clk)
+	wire fifo_fast_clk;
+	reg [1:0] use_fifo_fast_clk=2'b00;
+	assign fifo_base_clk=(use_fifo_fast_clk==2'b00)?clk:fifo_fast_clk;
+	assign fifo_fast_clk=(use_fifo_fast_clk==2'b01)?fast1_clk:fast2_clk;
+	
 	reg do_test_data;
 	reg do_test_counter_data;
 	reg [1:0] test_data = 2'b00;
 	reg [7:0] test_counter_data = 8'h75;
 	reg [7:0] counter_datain = 8'h00;
 	reg [7:0] counter_datain_max;
-	always @ (posedge reset or posedge clk)
+	always @ (posedge reset or posedge fifo_clk)
    begin
       if (reset) begin
 			fifo_datain <= 64'h0;
@@ -235,6 +261,8 @@ wire fifo_wrfull; //full synced to write clk
 		end
       else if (write & address == ADDR_do_test_data) do_test_data <= writedata[0];
 		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
+		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
+		else if (write & address == ADDR_use_fifo_fast_clk) use_fifo_fast_clk <= writedata[1:0];
    end
 	
 // ____________________________________________________________________________
