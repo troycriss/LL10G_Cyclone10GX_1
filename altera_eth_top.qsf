@@ -129,14 +129,14 @@ set_location_assignment PIN_W4 -to fmc_out[4]
 set_location_assignment PIN_Y4 -to fmc_out[5]
 set_location_assignment PIN_T4 -to fmc_out[6]
 set_location_assignment PIN_U5 -to fmc_out[7]
-set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE COMPILE TIME"
+set_global_assignment -name OPTIMIZATION_MODE BALANCED
 set_global_assignment -name PROJECT_IP_REGENERATION_POLICY NEVER_REGENERATE_IP
 set_global_assignment -name PROJECT_IP_GEN_PARALLEL_ENABLED on
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS OFF
-set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
 set_global_assignment -name SDC_FILE altera_eth_top.sdc
 set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
