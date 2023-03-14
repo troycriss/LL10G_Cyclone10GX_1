@@ -18,6 +18,7 @@ module eth_traffic_controller_top  #(
 	input 	wire 												clk,
 	input 	wire 												reset_n,
 	input		wire[7:0]  										fmc_in, // Inputs from FMC
+	output   wire[7:0]										fmc_out, // Outputs to the FMC
 	                        									
 	//Avalon MM             									
 	input 	wire														avl_mm_read,
@@ -339,6 +340,7 @@ generate
 			.clk					(clk),
 			.reset_n				(reset_n),
 			.fmc_in (fmc_in),
+			.fmc_out (fmc_out[4*i+3:4*i]),
 		    
 			.mac_rx_status_data	(avl_st_rx_status_data[i]),
 			.mac_rx_status_valid	(avl_st_rx_status_valid[i]),

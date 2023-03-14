@@ -15,6 +15,7 @@
 	input 	wire 		clk,
 	input 	wire 		reset_n,
 	input    wire[7:0]   fmc_in,
+	output   wire[3:0]   fmc_out,
 
 	input 	wire		avl_mm_read,
 	input 	wire		avl_mm_write,
@@ -107,6 +108,7 @@
 	.clk         (clk), 	 			// Tx clock
 	.reset       (sync_reset), 			// Reset signal
 	.fmc_in (fmc_in),
+	.fmc_out (fmc_out),
 	.address     (avl_mm_address[7:0]), 		// Avalon-MM Address
 	.write       (avl_mm_write & blk_sel_gen), 	// Avalon-MM Write Strobe
 	.writedata   (avl_mm_writedata), 		// Avalon-MM Write Data

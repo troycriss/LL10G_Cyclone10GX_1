@@ -293,7 +293,7 @@
           <ipxact:vectors>
             <ipxact:vector>
               <ipxact:left>0</ipxact:left>
-              <ipxact:right>7</ipxact:right>
+              <ipxact:right>9</ipxact:right>
             </ipxact:vector>
           </ipxact:vectors>
           <ipxact:wireTypeDefs>
@@ -404,7 +404,7 @@
         <ipxact:parameter parameterId="GUI_Depth" type="int">
           <ipxact:name>GUI_Depth</ipxact:name>
           <ipxact:displayName>How deep should the FIFO be?</ipxact:displayName>
-          <ipxact:value>256</ipxact:value>
+          <ipxact:value>1024</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_output_width" type="int">
           <ipxact:name>GUI_output_width</ipxact:name>
@@ -424,7 +424,7 @@
         <ipxact:parameter parameterId="GUI_MAX_DEPTH" type="string">
           <ipxact:name>GUI_MAX_DEPTH</ipxact:name>
           <ipxact:displayName>Set the maximum block depth to</ipxact:displayName>
-          <ipxact:value>Auto</ipxact:value>
+          <ipxact:value>1024</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT" type="bit">
           <ipxact:name>GUI_DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT</ipxact:name>
@@ -554,12 +554,12 @@
         <ipxact:parameter parameterId="GUI_RdUsedw_width" type="int">
           <ipxact:name>GUI_RdUsedw_width</ipxact:name>
           <ipxact:displayName>GUI_RdUsedw_width</ipxact:displayName>
-          <ipxact:value>8</ipxact:value>
+          <ipxact:value>10</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_WrUsedw_width" type="int">
           <ipxact:name>GUI_WrUsedw_width</ipxact:name>
           <ipxact:displayName>GUI_WrUsedw_width</ipxact:displayName>
-          <ipxact:value>8</ipxact:value>
+          <ipxact:value>10</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_TESTBENCH" type="bit">
           <ipxact:name>GUI_TESTBENCH</ipxact:name>

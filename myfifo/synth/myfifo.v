@@ -11,13 +11,13 @@ module myfifo (
 		input  wire        rdclk,   //            .rdclk
 		input  wire        aclr,    //            .aclr
 		output wire [63:0] q,       // fifo_output.dataout
-		output wire [7:0]  rdusedw, //            .rdusedw
+		output wire [9:0]  rdusedw, //            .rdusedw
 		output wire        rdfull,  //            .rdfull
 		output wire        rdempty, //            .rdempty
 		output wire        wrfull   //            .wrfull
 	);
 
-	myfifo_fifo_181_st4essa fifo_0 (
+	myfifo_fifo_181_6fkyycq fifo_0 (
 		.data    (data),    //   input,  width = 64,  fifo_input.datain
 		.wrreq   (wrreq),   //   input,   width = 1,            .wrreq
 		.rdreq   (rdreq),   //   input,   width = 1,            .rdreq
@@ -25,7 +25,7 @@ module myfifo (
 		.rdclk   (rdclk),   //   input,   width = 1,            .rdclk
 		.aclr    (aclr),    //   input,   width = 1,            .aclr
 		.q       (q),       //  output,  width = 64, fifo_output.dataout
-		.rdusedw (rdusedw), //  output,   width = 8,            .rdusedw
+		.rdusedw (rdusedw), //  output,  width = 10,            .rdusedw
 		.rdfull  (rdfull),  //  output,   width = 1,            .rdfull
 		.rdempty (rdempty), //  output,   width = 1,            .rdempty
 		.wrfull  (wrfull)   //  output,   width = 1,            .wrfull

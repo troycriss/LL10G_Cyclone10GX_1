@@ -59,7 +59,7 @@
           </parameter>
           <parameter>
             <name>GUI_Depth</name>
-            <value>256</value>
+            <value>1024</value>
           </parameter>
           <parameter>
             <name>GUI_ENABLE_ECC</name>
@@ -83,7 +83,7 @@
           </parameter>
           <parameter>
             <name>GUI_MAX_DEPTH</name>
-            <value>Auto</value>
+            <value>1024</value>
           </parameter>
           <parameter>
             <name>GUI_MAX_DEPTH_BY_9</name>
@@ -107,7 +107,7 @@
           </parameter>
           <parameter>
             <name>GUI_RdUsedw_width</name>
-            <value>8</value>
+            <value>10</value>
           </parameter>
           <parameter>
             <name>GUI_TESTBENCH</name>
@@ -131,7 +131,7 @@
           </parameter>
           <parameter>
             <name>GUI_WrUsedw_width</name>
-            <value>8</value>
+            <value>10</value>
           </parameter>
           <parameter>
             <name>GUI_dc_aclr</name>
@@ -202,7 +202,7 @@
         <className>fifo</className>
         <version>18.1</version>
         <name>fifo_0</name>
-        <uniqueName>myfifo_fifo_181_st4essa</uniqueName>
+        <uniqueName>myfifo_fifo_181_6fkyycq</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>myfifo.fifo_0</path>

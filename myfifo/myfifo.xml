@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.03.13.11:22:52"
+ date="2023.03.13.19:16:44"
  outputDirectory="C:/gitwork/LL10G_Cyclone10GX_1/myfifo/">
  <perimeter>
   <parameter
@@ -49,7 +49,7 @@
    <property name="associatedReset" value="" />
    <property name="prSafe" value="false" />
    <port name="q" direction="output" role="dataout" width="64" />
-   <port name="rdusedw" direction="output" role="rdusedw" width="8" />
+   <port name="rdusedw" direction="output" role="rdusedw" width="10" />
    <port name="rdfull" direction="output" role="rdfull" width="1" />
    <port name="rdempty" direction="output" role="rdempty" width="1" />
    <port name="wrfull" direction="output" role="wrfull" width="1" />
@@ -79,12 +79,12 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="myfifo">"Generating: myfifo"</message>
-   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_st4essa"</message>
+   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_6fkyycq"</message>
   </messages>
  </entity>
- <entity kind="fifo" version="18.1" name="myfifo_fifo_181_st4essa">
+ <entity kind="fifo" version="18.1" name="myfifo_fifo_181_6fkyycq">
   <parameter name="GUI_Full" value="true" />
-  <parameter name="GUI_RdUsedw_width" value="8" />
+  <parameter name="GUI_RdUsedw_width" value="10" />
   <parameter name="GUI_AlmostFullThr" value="1" />
   <parameter name="GUI_AlmostEmpty" value="false" />
   <parameter name="DEVICE_FAMILY" value="Cyclone 10 GX" />
@@ -92,10 +92,10 @@
   <parameter name="GUI_Empty" value="true" />
   <parameter name="GUI_wsEmpty" value="false" />
   <parameter name="GUI_msb_usedw" value="false" />
-  <parameter name="GUI_WrUsedw_width" value="8" />
+  <parameter name="GUI_WrUsedw_width" value="10" />
   <parameter name="GUI_rsEmpty" value="true" />
   <parameter name="GUI_Optimize" value="0" />
-  <parameter name="GUI_Depth" value="256" />
+  <parameter name="GUI_Depth" value="1024" />
   <parameter name="GUI_LE_BasedFIFO" value="false" />
   <parameter name="GUI_UsedW" value="true" />
   <parameter name="GUI_wsUsedW" value="false" />
@@ -106,7 +106,7 @@
   <parameter name="GUI_rsUsedW" value="true" />
   <parameter name="GUI_read_aclr_synch" value="true" />
   <parameter name="GUI_AlmostFull" value="false" />
-  <parameter name="GUI_MAX_DEPTH" value="Auto" />
+  <parameter name="GUI_MAX_DEPTH" value="1024" />
   <parameter name="GUI_OVERFLOW_CHECKING" value="false" />
   <parameter name="GUI_UNDERFLOW_CHECKING" value="false" />
   <parameter name="GUI_output_width" value="8" />
@@ -128,18 +128,18 @@
   <parameter name="GUI_Width" value="64" />
   <generatedFiles>
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_st4essa.v"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.v"
        attributes="" />
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_st4essa.sdc"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_st4essa.v"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.v"
        attributes="" />
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_st4essa.sdc"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -148,7 +148,7 @@
   <childSourceFiles/>
   <instantiator instantiator="myfifo" as="fifo_0" />
   <messages>
-   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_st4essa"</message>
+   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_6fkyycq"</message>
   </messages>
  </entity>
 </deploy>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="myfifo" kind="myfifo" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 222 (Future versions may contain additional information.) -->
- <!-- 2023.03.13.11:22:52 -->
+ <!-- 2023.03.13.19:16:44 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -151,7 +151,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_Depth">
    <type>int</type>
-   <value>256</value>
+   <value>1024</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -183,7 +183,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_MAX_DEPTH">
    <type>java.lang.String</type>
-   <value>Auto</value>
+   <value>1024</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -391,7 +391,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_RdUsedw_width">
    <type>int</type>
-   <value>8</value>
+   <value>10</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -399,7 +399,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_WrUsedw_width">
    <type>int</type>
-   <value>8</value>
+   <value>10</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -575,7 +575,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>rdusedw</name>
     <direction>Output</direction>
-    <width>8</width>
+    <width>10</width>
     <role>rdusedw</role>
    </port>
    <port>

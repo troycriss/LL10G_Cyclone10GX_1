@@ -7,7 +7,7 @@
 			rdclk   : in  std_logic                     := 'X';             -- rdclk
 			aclr    : in  std_logic                     := 'X';             -- aclr
 			q       : out std_logic_vector(63 downto 0);                    -- dataout
-			rdusedw : out std_logic_vector(7 downto 0);                     -- rdusedw
+			rdusedw : out std_logic_vector(9 downto 0);                     -- rdusedw
 			rdfull  : out std_logic;                                        -- rdfull
 			rdempty : out std_logic;                                        -- rdempty
 			wrfull  : out std_logic                                         -- wrfull

@@ -75,8 +75,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 224 88)
 		(output)
-		(text "rdusedw[7..0]" (rect 0 0 53 12)(font "Arial" (font_size 8)))
-		(text "rdusedw[7..0]" (rect 154 77 232 88)(font "Arial" (font_size 8)))
+		(text "rdusedw[9..0]" (rect 0 0 53 12)(font "Arial" (font_size 8)))
+		(text "rdusedw[9..0]" (rect 154 77 232 88)(font "Arial" (font_size 8)))
 		(line (pt 224 88)(pt 144 88)(line_width 3))
 	)
 	(port

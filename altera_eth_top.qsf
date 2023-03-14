@@ -171,3 +171,11 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_8_9.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_10_11.ip
 set_global_assignment -name IP_FILE myfifo.ip
+set_location_assignment PIN_AA2 -to fmc_out[0]
+set_location_assignment PIN_AB3 -to fmc_out[1]
+set_location_assignment PIN_AB6 -to fmc_out[2]
+set_location_assignment PIN_AB5 -to fmc_out[3]
+set_location_assignment PIN_W4 -to fmc_out[4]
+set_location_assignment PIN_Y4 -to fmc_out[5]
+set_location_assignment PIN_T4 -to fmc_out[6]
+set_location_assignment PIN_U5 -to fmc_out[7]
