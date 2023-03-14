@@ -51,7 +51,7 @@ module altera_eth_top # (
 	 
 	 //FMC inputs / outputs
 	 input fmc_in[7:0],
-	 output fmc_out[7:0]
+	 output fmc_out[15:0] // only 7:0 used by first eth port
 );
 
 	 // I2C interface
@@ -84,8 +84,10 @@ module altera_eth_top # (
     
     // Clock
     wire                                csr_clk;
-    wire                                mac32b_clk; // 312.5  MHz via pll
     wire                                mac64b_clk; // 156.25 MHz via pll
+    wire                                mac32b_clk; // 312.5  MHz (156.25 MHz *2)
+	 wire   										 fast1_clk;  // 625.0  MHz (156.25 MHz * 4)
+	 wire   										 fast2_clk;  // 937.5  MHz (156.25 MHz * 6)
     
     // Reset
     wire [NUM_OF_CHANNEL-1:0]           tx_digitalreset;
@@ -203,6 +205,10 @@ module altera_eth_top # (
         
         // XGMII Clock
         .mac64b_clk                     (mac64b_clk),
+		  
+		  // more clocks
+		  .fast1_clk (fast1_clk),
+		  .fast2_clk (fast2_clk),
         
         // Reset
         .reset                          (~reset_n),
@@ -280,6 +286,8 @@ module altera_eth_top # (
                         .reset_n                                    (~reset_mac64b_clk),
 								.fmc_in (fmc_in),
 								.fmc_out (fmc_out),
+								.fast_clk1 (fast_clk1),
+								.fast_clk2 (fast_clk2),
                         
                         .avl_mm_baddress                            (csr_traffic_controller_address[i]),
                         .avl_mm_read                                (csr_traffic_controller_read[i]),
@@ -344,6 +352,8 @@ module altera_eth_top # (
                         .reset_n                                    (~reset_mac64b_clk),
 								.fmc_in (fmc_in),
 								.fmc_out (fmc_out),
+								.fast1_clk (fast1_clk),
+								.fast2_clk (fast2_clk),
                         
                         .avl_mm_baddress                            (csr_traffic_controller_address[i]),
                         .avl_mm_read                                (csr_traffic_controller_read[i]),

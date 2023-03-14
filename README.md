@@ -17,7 +17,9 @@ Open system console<br>
  
  source main.tcl
  
- TEST_EXT_LB 0 10G 80
+ SEND 0 10G 80
+ 
+ SENDAGAIN
  
 With loopback optical see 9.84 Gbps<br>
 
