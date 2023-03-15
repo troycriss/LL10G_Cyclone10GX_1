@@ -64,6 +64,7 @@ module avalon_st_gen
  parameter ADDR_do_test_data = 8'h10;
  parameter ADDR_do_test_counter_data = 8'h11;
  parameter ADDR_fifo_clk_prescale = 8'h12;
+ parameter ADDR_destip = 8'h13;
 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -153,6 +154,7 @@ reg     add_extra_qword;
 reg     valid_extended;
 reg     eop_extended;
 reg     [2:0] empty_extended;
+reg 	  [31:0] destip=32'hC0A80A0b;
 
 //FIFO for reading in input data
 reg [63:0] fifo_datain;
@@ -259,6 +261,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
       else if (write & address == ADDR_do_test_data) do_test_data <= writedata[0];
 		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
 		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
+		else if (write & address == ADDR_destip) destip <= writedata;
    end
 	
 // ____________________________________________________________________________
@@ -736,9 +739,9 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
 			end else if (S_SRC_LEN_IP2) begin
             tx_data_reg[63:32] <= {16'h00, 16'hC0A8}; // Header chksum , src ip
-            tx_data_reg[31: 0] <= {16'h0A0A, 16'hD8A5}; // src ip , dest ip
+            tx_data_reg[31: 0] <= {16'h0A0A, destip[31:16]}; // src ip , dest ip
 			end else if (S_SRC_LEN_IP3) begin
-            tx_data_reg[63:32] <= {16'h1509, 16'h07E6}; // dest ip , src port
+            tx_data_reg[63:32] <= {destip[15:0], 16'h07E6}; // dest ip , src port
             tx_data_reg[31: 0] <= {16'h07E7, length - 16'h26}; // dest port , UDP length
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;

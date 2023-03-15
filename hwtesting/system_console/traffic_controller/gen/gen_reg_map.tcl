@@ -35,6 +35,7 @@ set GEN_PKTLENGTH 		0x00000034
 set GEN_DO_TEST_DATA 			0x00000040
 set GEN_DO_TEST_COUNTER_DATA 	0x00000044
 set GEN_fifo_clk_prescale  	0x00000048;
+set GEN_destip					  	0x0000004C;
 
 #--with 1588
 
