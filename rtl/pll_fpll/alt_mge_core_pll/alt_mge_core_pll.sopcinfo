@@ -5,7 +5,7 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 222 (Future versions may contain additional information.) -->
- <!-- 2023.03.14.13:42:25 -->
+ <!-- 2023.03.15.12:46:04 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -917,7 +917,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cmu_fpll_pll_c_counter_2">
    <type>int</type>
-   <value>3</value>
+   <value>6</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -981,7 +981,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cmu_fpll_pll_c_counter_3">
    <type>int</type>
-   <value>2</value>
+   <value>4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -1669,7 +1669,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cmu_fpll_output_clock_frequency_2">
    <type>java.lang.String</type>
-   <value>625.0 MHz</value>
+   <value>312.5 MHz</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -1677,7 +1677,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cmu_fpll_output_clock_frequency_3">
    <type>java.lang.String</type>
-   <value>937.5 MHz</value>
+   <value>468.75 MHz</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -1781,7 +1781,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cmu_fpll_f_out_c3">
    <type>java.lang.String</type>
-   <value>000000110111111000010001110101100000</value>
+   <value>000000011011111100001000111010110000</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -1805,7 +1805,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="cmu_fpll_f_out_c2">
    <type>java.lang.String</type>
-   <value>000000100101010000001011111001000000</value>
+   <value>000000010010101000000101111100100000</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -3323,7 +3323,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="gui_desired_outclk2_frequency">
    <type>double</type>
-   <value>625.0</value>
+   <value>300.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3331,7 +3331,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="gui_actual_outclk2_frequency">
    <type>java.lang.String</type>
-   <value>562.5</value>
+   <value>312.5</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3339,7 +3339,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="full_actual_outclk2_frequency">
    <type>java.lang.String</type>
-   <value>625.0</value>
+   <value>312.5</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3347,7 +3347,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="output_clock_frequency_2">
    <type>java.lang.String</type>
-   <value>625.0 MHz</value>
+   <value>312.5 MHz</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3403,7 +3403,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="gui_desired_outclk3_frequency">
    <type>double</type>
-   <value>937.5</value>
+   <value>500.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3411,7 +3411,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="gui_actual_outclk3_frequency">
    <type>java.lang.String</type>
-   <value>100.0</value>
+   <value>468.75</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3419,7 +3419,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="full_actual_outclk3_frequency">
    <type>java.lang.String</type>
-   <value>937.5</value>
+   <value>468.75</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3427,7 +3427,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="output_clock_frequency_3">
    <type>java.lang.String</type>
-   <value>937.5 MHz</value>
+   <value>468.75 MHz</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3603,7 +3603,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="core_c_counter_2">
    <type>int</type>
-   <value>3</value>
+   <value>6</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -3651,7 +3651,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="core_c_counter_3">
    <type>int</type>
-   <value>2</value>
+   <value>4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -3939,7 +3939,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pll_c_counter_2">
    <type>int</type>
-   <value>3</value>
+   <value>6</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -3987,7 +3987,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="pll_c_counter_3">
    <type>int</type>
-   <value>2</value>
+   <value>4</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -4243,7 +4243,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="f_out_c2_bitvec">
    <type>java.lang.String</type>
-   <value>000000100101010000001011111001000000</value>
+   <value>000000010010101000000101111100100000</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4251,7 +4251,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="f_out_c3_bitvec">
    <type>java.lang.String</type>
-   <value>000000110111111000010001110101100000</value>
+   <value>000000011011111100001000111010110000</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4723,7 +4723,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="gui_parameter_values">
    <type>[Ljava.lang.String;</type>
-   <value>12,6,3,2,1,64,11,7500.0 MHz,1</value>
+   <value>12,6,6,4,1,64,11,7500.0 MHz,1</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5088,7 +5088,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>562500000</value>
+    <value>312500000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -5161,7 +5161,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>100000000</value>
+    <value>468750000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>

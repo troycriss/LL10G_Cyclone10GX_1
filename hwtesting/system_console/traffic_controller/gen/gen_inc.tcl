@@ -40,13 +40,6 @@ proc SETGEN_fifo_clk_prescale {value} {
     reg_write $GEN_BASE_ADDR $GEN_fifo_clk_prescale $value
 }
 
-proc SETGEN_use_fifo_fast_clk {value} {
-    global GEN_BASE_ADDR
-    global GEN_use_fifo_fast_clk
-    puts "\t GEN_use_fifo_fast_clk $value "
-    reg_write $GEN_BASE_ADDR $GEN_use_fifo_fast_clk $value
-}
-
 #########
 
 proc SET_1588_GO_MASTER {} {

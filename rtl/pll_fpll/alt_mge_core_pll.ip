@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<ipxact:component xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions">
+<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>alt_mge_core_pll</ipxact:library>
   <ipxact:name>xcvr_fpll_a10_0</ipxact:name>
@@ -288,7 +288,7 @@
         <ipxact:parameter parameterId="clockRate" type="longint">
           <ipxact:name>clockRate</ipxact:name>
           <ipxact:displayName>Clock rate</ipxact:displayName>
-          <ipxact:value>562500000</ipxact:value>
+          <ipxact:value>312500000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="clockRateKnown" type="bit">
           <ipxact:name>clockRateKnown</ipxact:name>
@@ -345,7 +345,7 @@
         <ipxact:parameter parameterId="clockRate" type="longint">
           <ipxact:name>clockRate</ipxact:name>
           <ipxact:displayName>Clock rate</ipxact:displayName>
-          <ipxact:value>100000000</ipxact:value>
+          <ipxact:value>468750000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="clockRateKnown" type="bit">
           <ipxact:name>clockRateKnown</ipxact:name>
@@ -1055,7 +1055,7 @@
         <ipxact:parameter parameterId="cmu_fpll_pll_c_counter_2" type="int">
           <ipxact:name>cmu_fpll_pll_c_counter_2</ipxact:name>
           <ipxact:displayName>C-counter-2</ipxact:displayName>
-          <ipxact:value>3</ipxact:value>
+          <ipxact:value>6</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_pll_c_counter_2_min_tco_enable" type="string">
           <ipxact:name>cmu_fpll_pll_c_counter_2_min_tco_enable</ipxact:name>
@@ -1095,7 +1095,7 @@
         <ipxact:parameter parameterId="cmu_fpll_pll_c_counter_3" type="int">
           <ipxact:name>cmu_fpll_pll_c_counter_3</ipxact:name>
           <ipxact:displayName>C-counter-3</ipxact:displayName>
-          <ipxact:value>2</ipxact:value>
+          <ipxact:value>4</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_pll_c_counter_3_min_tco_enable" type="string">
           <ipxact:name>cmu_fpll_pll_c_counter_3_min_tco_enable</ipxact:name>
@@ -1525,12 +1525,12 @@
         <ipxact:parameter parameterId="cmu_fpll_output_clock_frequency_2" type="string">
           <ipxact:name>cmu_fpll_output_clock_frequency_2</ipxact:name>
           <ipxact:displayName>cmu_fpll_output_clock_frequency_2</ipxact:displayName>
-          <ipxact:value>625.0 MHz</ipxact:value>
+          <ipxact:value>312.5 MHz</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_output_clock_frequency_3" type="string">
           <ipxact:name>cmu_fpll_output_clock_frequency_3</ipxact:name>
           <ipxact:displayName>cmu_fpll_output_clock_frequency_3</ipxact:displayName>
-          <ipxact:value>937.5 MHz</ipxact:value>
+          <ipxact:value>468.75 MHz</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_phase_shift_0" type="string">
           <ipxact:name>cmu_fpll_phase_shift_0</ipxact:name>
@@ -1595,7 +1595,7 @@
         <ipxact:parameter parameterId="cmu_fpll_f_out_c3" type="string">
           <ipxact:name>cmu_fpll_f_out_c3</ipxact:name>
           <ipxact:displayName>cmu_fpll_f_out_c3</ipxact:displayName>
-          <ipxact:value>000000110111111000010001110101100000</ipxact:value>
+          <ipxact:value>000000011011111100001000111010110000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_f_out_c1" type="string">
           <ipxact:name>cmu_fpll_f_out_c1</ipxact:name>
@@ -1610,7 +1610,7 @@
         <ipxact:parameter parameterId="cmu_fpll_f_out_c2" type="string">
           <ipxact:name>cmu_fpll_f_out_c2</ipxact:name>
           <ipxact:displayName>cmu_fpll_f_out_c2</ipxact:displayName>
-          <ipxact:value>000000100101010000001011111001000000</ipxact:value>
+          <ipxact:value>000000010010101000000101111100100000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_output_tolerance" type="int">
           <ipxact:name>cmu_fpll_output_tolerance</ipxact:name>
@@ -2550,22 +2550,22 @@
         <ipxact:parameter parameterId="gui_desired_outclk2_frequency" type="real">
           <ipxact:name>gui_desired_outclk2_frequency</ipxact:name>
           <ipxact:displayName>Desired frequency</ipxact:displayName>
-          <ipxact:value>625.0</ipxact:value>
+          <ipxact:value>300.0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_actual_outclk2_frequency" type="string">
           <ipxact:name>gui_actual_outclk2_frequency</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>562.5</ipxact:value>
+          <ipxact:value>312.5</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="full_actual_outclk2_frequency" type="string">
           <ipxact:name>full_actual_outclk2_frequency</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>625.0</ipxact:value>
+          <ipxact:value>312.5</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="output_clock_frequency_2" type="string">
           <ipxact:name>output_clock_frequency_2</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>625.0 MHz</ipxact:value>
+          <ipxact:value>312.5 MHz</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_outclk2_phase_shift_unit" type="string">
           <ipxact:name>gui_outclk2_phase_shift_unit</ipxact:name>
@@ -2600,22 +2600,22 @@
         <ipxact:parameter parameterId="gui_desired_outclk3_frequency" type="real">
           <ipxact:name>gui_desired_outclk3_frequency</ipxact:name>
           <ipxact:displayName>Desired frequency</ipxact:displayName>
-          <ipxact:value>937.5</ipxact:value>
+          <ipxact:value>500.0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_actual_outclk3_frequency" type="string">
           <ipxact:name>gui_actual_outclk3_frequency</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>100.0</ipxact:value>
+          <ipxact:value>468.75</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="full_actual_outclk3_frequency" type="string">
           <ipxact:name>full_actual_outclk3_frequency</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>937.5</ipxact:value>
+          <ipxact:value>468.75</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="output_clock_frequency_3" type="string">
           <ipxact:name>output_clock_frequency_3</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>937.5 MHz</ipxact:value>
+          <ipxact:value>468.75 MHz</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_outclk3_phase_shift_unit" type="string">
           <ipxact:name>gui_outclk3_phase_shift_unit</ipxact:name>
@@ -2725,7 +2725,7 @@
         <ipxact:parameter parameterId="core_c_counter_2" type="int">
           <ipxact:name>core_c_counter_2</ipxact:name>
           <ipxact:displayName>pll_c_counter_2</ipxact:displayName>
-          <ipxact:value>3</ipxact:value>
+          <ipxact:value>6</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="core_c_counter_2_in_src" type="string">
           <ipxact:name>core_c_counter_2_in_src</ipxact:name>
@@ -2755,7 +2755,7 @@
         <ipxact:parameter parameterId="core_c_counter_3" type="int">
           <ipxact:name>core_c_counter_3</ipxact:name>
           <ipxact:displayName>pll_c_counter_3</ipxact:displayName>
-          <ipxact:value>2</ipxact:value>
+          <ipxact:value>4</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="core_c_counter_3_in_src" type="string">
           <ipxact:name>core_c_counter_3_in_src</ipxact:name>
@@ -2935,7 +2935,7 @@
         <ipxact:parameter parameterId="pll_c_counter_2" type="int">
           <ipxact:name>pll_c_counter_2</ipxact:name>
           <ipxact:displayName>pll_c_counter_2</ipxact:displayName>
-          <ipxact:value>3</ipxact:value>
+          <ipxact:value>6</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="pll_c_counter_2_in_src" type="string">
           <ipxact:name>pll_c_counter_2_in_src</ipxact:name>
@@ -2965,7 +2965,7 @@
         <ipxact:parameter parameterId="pll_c_counter_3" type="int">
           <ipxact:name>pll_c_counter_3</ipxact:name>
           <ipxact:displayName>pll_c_counter_3</ipxact:displayName>
-          <ipxact:value>2</ipxact:value>
+          <ipxact:value>4</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="pll_c_counter_3_in_src" type="string">
           <ipxact:name>pll_c_counter_3_in_src</ipxact:name>
@@ -3125,12 +3125,12 @@
         <ipxact:parameter parameterId="f_out_c2_bitvec" type="string">
           <ipxact:name>f_out_c2_bitvec</ipxact:name>
           <ipxact:displayName>PLL output frequency</ipxact:displayName>
-          <ipxact:value>000000100101010000001011111001000000</ipxact:value>
+          <ipxact:value>000000010010101000000101111100100000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="f_out_c3_bitvec" type="string">
           <ipxact:name>f_out_c3_bitvec</ipxact:name>
           <ipxact:displayName>PLL output frequency</ipxact:displayName>
-          <ipxact:value>000000110111111000010001110101100000</ipxact:value>
+          <ipxact:value>000000011011111100001000111010110000</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="l_counter_bitvec" type="int">
           <ipxact:name>l_counter_bitvec</ipxact:name>
@@ -3425,7 +3425,7 @@
         <ipxact:parameter parameterId="gui_parameter_values" type="string">
           <ipxact:name>gui_parameter_values</ipxact:name>
           <ipxact:displayName>Parameter Values</ipxact:displayName>
-          <ipxact:value>12,6,3,2,1,64,11,7500.0 MHz,1</ipxact:value>
+          <ipxact:value>12,6,6,4,1,64,11,7500.0 MHz,1</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_module_parameters>
@@ -3469,7 +3469,7 @@
         <ipxact:parameter parameterId="systemInfos" type="string">
           <ipxact:name>systemInfos</ipxact:name>
           <ipxact:displayName>systemInfos</ipxact:displayName>
-          <ipxact:value>&lt;systemInfosDefinition&gt;&#xa;    &lt;connPtSystemInfos&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk0&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk0&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;100000000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk1&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk1&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;100000000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk2&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk2&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;562500000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk3&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk3&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;100000000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;    &lt;/connPtSystemInfos&gt;&#xa;&lt;/systemInfosDefinition&gt;</ipxact:value>
+          <ipxact:value>&lt;systemInfosDefinition&gt;&#xa;    &lt;connPtSystemInfos&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk0&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk0&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;100000000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk1&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk1&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;100000000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk2&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk2&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;312500000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;        &lt;entry&gt;&#xa;            &lt;key&gt;outclk3&lt;/key&gt;&#xa;            &lt;value&gt;&#xa;                &lt;connectionPointName&gt;outclk3&lt;/connectionPointName&gt;&#xa;                &lt;suppliedSystemInfos/&gt;&#xa;                &lt;consumedSystemInfos&gt;&#xa;                    &lt;entry&gt;&#xa;                        &lt;key&gt;CLOCK_RATE&lt;/key&gt;&#xa;                        &lt;value&gt;468750000&lt;/value&gt;&#xa;                    &lt;/entry&gt;&#xa;                &lt;/consumedSystemInfos&gt;&#xa;            &lt;/value&gt;&#xa;        &lt;/entry&gt;&#xa;    &lt;/connPtSystemInfos&gt;&#xa;&lt;/systemInfosDefinition&gt;</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_system_parameters>
