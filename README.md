@@ -12,9 +12,15 @@ See heartbeat LED<br>
 Reset Arduino with soft_i2c_cyclone10gx to program SFP outputs (level shifted to 1.8 V)<br>
 See red, then green, SFP LEDs<br>
 Open system console<br>
- cd hwtesting\\system_console<br>
- source main.tcl<br>
- TEST_EXT_LB 0 10G 80<br>
+
+ cd hwtesting\\system_console
+ 
+ source main.tcl
+ 
+ SEND 0 10G 80
+ 
+ SENDAGAIN
+ 
 With loopback optical see 9.84 Gbps<br>
 
 https://en.wikipedia.org/wiki/Ethernet_frame <br>
@@ -27,3 +33,5 @@ mac64b_clk; // 156.25 MHz via pll<br>
 C10GX kit download: https://www.dropbox.com/s/qehok7muoahcpib/cyclone-10-gx-kit-collateral.zip?dl=0 <br>
   Board test system: https://www.dropbox.com/sh/13s1js1465clt0y/AADcKpqSJ-fH7NIdkqhGLnxYa?dl=0 <br>
   Factory recovery: https://www.dropbox.com/sh/fvxx9ef50a99x4v/AAATVMVC8e21aiI6xPSL01WCa?dl=0 <br>
+
+https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html

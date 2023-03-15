@@ -28,6 +28,10 @@ module alt_mge_multi_channel #(
     
     // XGMII Clock
     output                                  mac64b_clk,
+	 
+	 //more clocks
+	 output fast1_clk,
+	 output fast2_clk,
     
     // Reset
     input                                   reset,
@@ -128,6 +132,8 @@ module alt_mge_multi_channel #(
         .pll_powerdown      (reset),
         .outclk0            (mac64b_clk),
         .outclk1            (mac32b_clk),
+		  .outclk2 (fast1_clk),
+		  .outclk3 (fast2_clk),
         .pll_locked         (core_pll_locked),
         .pll_cal_busy       ()
     );

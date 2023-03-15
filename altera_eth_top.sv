@@ -33,12 +33,6 @@ module altera_eth_top # (
 	 output										 led_heartbeat,
 	 output										 led_other,
     
-    // SFP
-    output                              sfp0_txdisable,
-    output                              sfp1_txdisable,
-    output      [1:0]                   SFPP0_RATE_SEL,
-    output      [1:0]                   SFPP1_RATE_SEL,	 
-	 
 	 // I2C interface
 	 output          sfp_scl_0,
 	 output          sfp_scl_1,
@@ -49,8 +43,9 @@ module altera_eth_top # (
 	 input arduino_scl,
 	 input arduino_sda,
 	 
-	 //FMC inputs
-	 input fmc_in[7:0]
+	 //FMC inputs / outputs
+	 input fmc_in[7:0],
+	 output fmc_out[15:0] // only 7:0 used by first eth port
 );
 
 	 // I2C interface
@@ -83,8 +78,23 @@ module altera_eth_top # (
     
     // Clock
     wire                                csr_clk;
-    wire                                mac32b_clk; // 312.5  MHz via pll
     wire                                mac64b_clk; // 156.25 MHz via pll
+    wire                                mac32b_clk; // 312.5  MHz (156.25 MHz *2)
+	 wire   										 fast1_clk;  //
+	 wire   										 fast2_clk;  //
+	 
+	 // Heartbeat fast
+	 reg [31:0] cnt_fast = 32'd0;
+	 reg led_clk_reg_fast;
+	 assign led_other = led_clk_reg_fast;
+	 always @(posedge mac32b_clk) begin
+		if (cnt_fast == 32'h7735940) // 125000000 (so should go at 312.5/125 times other heartbeat)
+		begin
+			cnt_fast <= 32'd0;
+			led_clk_reg_fast <= ~led_clk_reg_fast;
+		end
+		else cnt_fast <= cnt_fast + 32'd1;
+	 end
     
     // Reset
     wire [NUM_OF_CHANNEL-1:0]           tx_digitalreset;
@@ -150,12 +160,6 @@ module altera_eth_top # (
     // Channel Ready
     assign channel_ready_n = ~(channel_tx_ready & channel_rx_ready);
     
-    // SFP
-    assign sfp0_txdisable = 1'b0;
-    assign sfp1_txdisable = 1'b0;
-    assign SFPP0_RATE_SEL = 2'b11;
-    assign SFPP1_RATE_SEL = 2'b11;
-    
     // Unused ports
     reg  [NUM_OF_CHANNEL-1:0][ 1:0]     avalon_st_pause_data_reg                /* synthesis noprune */;
     reg  [NUM_OF_CHANNEL-1:0]           avalon_st_rxstatus_valid_reg            /* synthesis noprune */;
@@ -202,6 +206,10 @@ module altera_eth_top # (
         
         // XGMII Clock
         .mac64b_clk                     (mac64b_clk),
+		  
+		  // more clocks
+		  .fast1_clk (fast1_clk),
+		  .fast2_clk (fast2_clk),
         
         // Reset
         .reset                          (~reset_n),
@@ -278,6 +286,9 @@ module altera_eth_top # (
                         .clk                                        (mac64b_clk),
                         .reset_n                                    (~reset_mac64b_clk),
 								.fmc_in (fmc_in),
+								.fmc_out (fmc_out),
+								.fast1_clk (fast1_clk),
+								.fast2_clk (fast2_clk),
                         
                         .avl_mm_baddress                            (csr_traffic_controller_address[i]),
                         .avl_mm_read                                (csr_traffic_controller_read[i]),
@@ -341,6 +352,9 @@ module altera_eth_top # (
                         .clk                                        (mac64b_clk),
                         .reset_n                                    (~reset_mac64b_clk),
 								.fmc_in (fmc_in),
+								.fmc_out (fmc_out),
+								.fast1_clk (fast1_clk),
+								.fast2_clk (fast2_clk),
                         
                         .avl_mm_baddress                            (csr_traffic_controller_address[i]),
                         .avl_mm_read                                (csr_traffic_controller_read[i]),
@@ -428,7 +442,7 @@ module altera_eth_top # (
         .mac_clk_reset_reset_n                  (reset_n),
         
         // Byte addressing
-        .slave_address                          (jtag_if_address),
+        .slave_address                          (jtag_if_address[25:0]),
         .slave_write                            (jtag_if_write),
         .slave_read                             (jtag_if_read),
         .slave_writedata                        (jtag_if_writedata),
