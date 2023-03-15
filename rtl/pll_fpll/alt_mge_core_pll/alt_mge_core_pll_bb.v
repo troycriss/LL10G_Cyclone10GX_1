@@ -4,6 +4,8 @@ module alt_mge_core_pll (
 		output wire  pll_locked,    //    pll_locked.pll_locked
 		output wire  outclk0,       //       outclk0.clk
 		output wire  outclk1,       //       outclk1.clk
+		output wire  outclk2,       //       outclk2.clk
+		output wire  outclk3,       //       outclk3.clk
 		output wire  pll_cal_busy   //  pll_cal_busy.pll_cal_busy
 	);
 endmodule

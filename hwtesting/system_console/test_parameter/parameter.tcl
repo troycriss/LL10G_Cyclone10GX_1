@@ -24,7 +24,7 @@ set MAX_FRAME_LENGTH            1518
 # Traffic Controller
 set PACKET_TYPE                 FIXED
 #set PACKET_TYPE                 RANDOM
-set PACKET_SIZE                 1518
+set PACKET_SIZE                 1512
 #set PACKET_SIZE                 65000
 set BURST_TYPE                  FIXED
 #set BURST_TYPE                  RANDOM
