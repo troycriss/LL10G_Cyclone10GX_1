@@ -40,6 +40,13 @@ proc SETGEN_fifo_clk_prescale {value} {
     reg_write $GEN_BASE_ADDR $GEN_fifo_clk_prescale $value
 }
 
+proc SETGEN_destip {value} {
+    global GEN_BASE_ADDR
+    global GEN_destip
+    puts "\t GEN_destip $value "
+    reg_write $GEN_BASE_ADDR $GEN_destip $value
+}
+
 #########
 
 proc SET_1588_GO_MASTER {} {

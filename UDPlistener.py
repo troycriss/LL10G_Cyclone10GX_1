@@ -2,7 +2,7 @@ import socket
 import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-server_address = ("216.165.21.9", 2023)
+server_address = ("192.168.10.11", 2023)
 s.bind(server_address)
 print("Do Ctrl+c to exit the program !!")
 
