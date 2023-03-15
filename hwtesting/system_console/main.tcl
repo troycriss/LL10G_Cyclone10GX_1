@@ -82,3 +82,37 @@ proc TEST_EXT_LB {channel speed burst_size} {
     CHKMAC_TXSTATS
     CHKMAC_RXSTATS
 }
+
+# Test with internal packet generator
+proc SEND {channel speed burst_size} {
+    
+    global MAC_DST_ADDRESS
+    
+    puts "\t CONFIGURE CHANNEL $channel"
+    SET_CHANNEL_BASE_ADDR $channel
+    
+    # Configure PHY speed
+	 puts "\t SET SPEED $speed"
+    SETPHY_SPEED $speed
+    
+    # Configure MAC
+    CONFIG_MAC_BASIC $MAC_DST_ADDRESS
+    
+    # Configure Traffic Controller
+    #selector base address channel id = channel id /2
+    #for example if channel id = 2, this wil be set 1
+    #if channel id = 3, this will be set to 3/2 = 1
+    SET_TRAFFIC_CONTROLLER_SELECTOR_BASE_ADDR [expr $channel/2]  
+    SELECT_STD_ETHERNET_TRAFFIC_CONTROLLER
+    SET_TRAFFIC_CONTROLLER_STD_CHANNEL_BASE_ADDR $channel
+    RESET_AVALON_ST_LOOPBACK_ENA
+    
+    CONFIG_TRAFFIC_CONTROL $burst_size
+    SETGEN_START
+}
+
+# Test again with same settings with internal packet generator
+proc SENDAGAIN {} {      
+    SETGEN_START
+}
+
