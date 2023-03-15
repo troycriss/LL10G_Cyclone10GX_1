@@ -80,15 +80,15 @@ module altera_eth_top # (
     wire                                csr_clk;
     wire                                mac64b_clk; // 156.25 MHz via pll
     wire                                mac32b_clk; // 312.5  MHz (156.25 MHz *2)
-	 wire   										 fast1_clk;  // 625.0  MHz (156.25 MHz * 4)
-	 wire   										 fast2_clk;  // 937.5  MHz (156.25 MHz * 6)
+	 wire   										 fast1_clk;  //
+	 wire   										 fast2_clk;  //
 	 
 	 // Heartbeat fast
 	 reg [31:0] cnt_fast = 32'd0;
 	 reg led_clk_reg_fast;
 	 assign led_other = led_clk_reg_fast;
-	 always @(posedge fast1_clk) begin
-		if (cnt_fast == 32'h7735940) // 125000000 (so should go at 625/125 = 5 times fast than the other
+	 always @(posedge mac32b_clk) begin
+		if (cnt_fast == 32'h7735940) // 125000000 (so should go at 312.5/125 times other heartbeat)
 		begin
 			cnt_fast <= 32'd0;
 			led_clk_reg_fast <= ~led_clk_reg_fast;

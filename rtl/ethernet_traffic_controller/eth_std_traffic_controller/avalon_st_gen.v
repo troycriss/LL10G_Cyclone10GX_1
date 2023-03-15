@@ -64,7 +64,6 @@ module avalon_st_gen
  parameter ADDR_do_test_data = 8'h10;
  parameter ADDR_do_test_counter_data = 8'h11;
  parameter ADDR_fifo_clk_prescale = 8'h12;
- parameter ADDR_use_fifo_fast_clk = 8'h13; 
 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -194,14 +193,12 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		else fifo_clk_counter<=fifo_clk_counter+1;
 	end
 	
-	//fifo_clk is assigned to the fifo_base_clk if fifo_clk_prescale is 0, otherwise to the prescale fifo_p_clk
-	assign fifo_clk=(fifo_clk_prescale==0)?fifo_base_clk:fifo_p_clk;
+	assign fifo_clk=fifo_base_clk;
+	//assign fifo_clk=fifo_p_clk; // to use prescale logic
 	
-	//use_fifo_fast_clk will select which clk to use for the fifo_base_clk (0=clk,1=fast1_clk,2=fast2_clk)
-	wire fifo_fast_clk;
-	reg [1:0] use_fifo_fast_clk=2'b00;
-	assign fifo_base_clk=(use_fifo_fast_clk==2'b00)?clk:fifo_fast_clk;
-	assign fifo_fast_clk=(use_fifo_fast_clk==2'b01)?fast1_clk:fast2_clk;
+	//assign fifo_base_clk=clk;//156.25
+	//assign fifo_base_clk=fast1_clk;//out2 from pll
+	assign fifo_base_clk=fast2_clk;//out3 from pll
 	
 	reg do_test_data;
 	reg do_test_counter_data;
@@ -262,7 +259,6 @@ wire fifo_clk;//fifo_clk is what is used for writing
       else if (write & address == ADDR_do_test_data) do_test_data <= writedata[0];
 		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
 		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
-		else if (write & address == ADDR_use_fifo_fast_clk) use_fifo_fast_clk <= writedata[1:0];
    end
 	
 // ____________________________________________________________________________
