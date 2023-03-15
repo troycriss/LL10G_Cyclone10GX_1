@@ -19,6 +19,29 @@ source traffic_controller/gen/gen_reg_map.tcl
 source basic/basic.tcl
 source system_base_addr_map.tcl
 
+proc SETGEN_DO_TEST_DATA {value} {
+    global GEN_BASE_ADDR
+    global GEN_DO_TEST_DATA
+    puts "\t GEN_DO_TEST_DATA $value "
+    reg_write $GEN_BASE_ADDR $GEN_DO_TEST_DATA $value
+}
+
+proc SETGEN_DO_TEST_COUNTER_DATA {value} {
+    global GEN_BASE_ADDR
+    global GEN_DO_TEST_COUNTER_DATA
+    puts "\t GEN_DO_TEST_COUNTER_DATA $value "
+    reg_write $GEN_BASE_ADDR $GEN_DO_TEST_COUNTER_DATA $value
+}
+
+proc SETGEN_fifo_clk_prescale {value} {
+    global GEN_BASE_ADDR
+    global GEN_fifo_clk_prescale
+    puts "\t GEN_fifo_clk_prescale $value "
+    reg_write $GEN_BASE_ADDR $GEN_fifo_clk_prescale $value
+}
+
+#########
+
 proc SET_1588_GO_MASTER {} {
     global TRAFFIC_CONTROLLER_BASE_ADDR
     global GO_MASTER

@@ -9,6 +9,8 @@ module alt_mge_core_pll (
 		output wire  pll_locked,    //    pll_locked.pll_locked
 		output wire  outclk0,       //       outclk0.clk
 		output wire  outclk1,       //       outclk1.clk
+		output wire  outclk2,       //       outclk2.clk
+		output wire  outclk3,       //       outclk3.clk
 		output wire  pll_cal_busy   //  pll_cal_busy.pll_cal_busy
 	);
 
@@ -72,16 +74,16 @@ module alt_mge_core_pll (
 		.cmu_fpll_pll_c_counter_1_prst                                                (1),
 		.cmu_fpll_pll_c_counter_1_coarse_dly                                          ("0 ps"),
 		.cmu_fpll_pll_c_counter_1_fine_dly                                            ("0 ps"),
-		.cmu_fpll_pll_c2_pllcout_enable                                               ("false"),
-		.cmu_fpll_pll_c_counter_2                                                     (1),
+		.cmu_fpll_pll_c2_pllcout_enable                                               ("true"),
+		.cmu_fpll_pll_c_counter_2                                                     (6),
 		.cmu_fpll_pll_c_counter_2_min_tco_enable                                      ("true"),
 		.cmu_fpll_pll_c_counter_2_in_src                                              ("m_cnt_in_src_ph_mux_clk"),
 		.cmu_fpll_pll_c_counter_2_ph_mux_prst                                         (0),
 		.cmu_fpll_pll_c_counter_2_prst                                                (1),
 		.cmu_fpll_pll_c_counter_2_coarse_dly                                          ("0 ps"),
 		.cmu_fpll_pll_c_counter_2_fine_dly                                            ("0 ps"),
-		.cmu_fpll_pll_c3_pllcout_enable                                               ("false"),
-		.cmu_fpll_pll_c_counter_3                                                     (1),
+		.cmu_fpll_pll_c3_pllcout_enable                                               ("true"),
+		.cmu_fpll_pll_c_counter_3                                                     (4),
 		.cmu_fpll_pll_c_counter_3_min_tco_enable                                      ("true"),
 		.cmu_fpll_pll_c_counter_3_in_src                                              ("m_cnt_in_src_ph_mux_clk"),
 		.cmu_fpll_pll_c_counter_3_ph_mux_prst                                         (0),
@@ -149,12 +151,12 @@ module alt_mge_core_pll (
 		.cmu_fpll_is_cascaded_pll                                                     ("false"),
 		.cmu_fpll_output_clock_frequency_0                                            ("156.25 MHz"),
 		.cmu_fpll_output_clock_frequency_1                                            ("312.5 MHz"),
-		.cmu_fpll_output_clock_frequency_2                                            ("0 ps"),
-		.cmu_fpll_output_clock_frequency_3                                            ("0 ps"),
+		.cmu_fpll_output_clock_frequency_2                                            ("312.5 MHz"),
+		.cmu_fpll_output_clock_frequency_3                                            ("468.75 MHz"),
 		.cmu_fpll_phase_shift_0                                                       ("0.0 ps"),
 		.cmu_fpll_phase_shift_1                                                       ("0.0 ps"),
-		.cmu_fpll_phase_shift_2                                                       ("0 ps"),
-		.cmu_fpll_phase_shift_3                                                       ("0 ps"),
+		.cmu_fpll_phase_shift_2                                                       ("0.0 ps"),
+		.cmu_fpll_phase_shift_3                                                       ("0.0 ps"),
 		.cmu_fpll_reference_clock_frequency                                           ("644.53125 MHz"),
 		.cmu_fpll_vco_frequency                                                       ("7500.0 MHz"),
 		.cmu_fpll_cgb_div                                                             (1),
@@ -163,10 +165,10 @@ module alt_mge_core_pll (
 		.cmu_fpll_f_out_c1_hz                                                         ("0 hz"),
 		.cmu_fpll_f_out_c0_hz                                                         ("0 hz"),
 		.cmu_fpll_f_out_c2_hz                                                         ("0 hz"),
-		.cmu_fpll_f_out_c3                                                            ("000000000000000000000000000000000000"),
+		.cmu_fpll_f_out_c3                                                            ("000000011011111100001000111010110000"),
 		.cmu_fpll_f_out_c1                                                            ("000000010010101000000101111100100000"),
 		.cmu_fpll_f_out_c0                                                            ("000000001001010100000010111110010000"),
-		.cmu_fpll_f_out_c2                                                            ("000000000000000000000000000000000000"),
+		.cmu_fpll_f_out_c2                                                            ("000000010010101000000101111100100000"),
 		.cmu_fpll_initial_settings                                                    ("true"),
 		.cmu_fpll_m_counter_c2                                                        (1),
 		.cmu_fpll_m_counter_c3                                                        (1),
@@ -235,14 +237,14 @@ module alt_mge_core_pll (
 		.pll_locked               (pll_locked),                           //  output,  width = 1,    pll_locked.pll_locked
 		.outclk0                  (outclk0),                              //  output,  width = 1,       outclk0.clk
 		.outclk1                  (outclk1),                              //  output,  width = 1,       outclk1.clk
+		.outclk2                  (outclk2),                              //  output,  width = 1,       outclk2.clk
+		.outclk3                  (outclk3),                              //  output,  width = 1,       outclk3.clk
 		.pll_cal_busy             (pll_cal_busy),                         //  output,  width = 1,  pll_cal_busy.pll_cal_busy
 		.pll_refclk1              (1'b0),                                 // (terminated),                           
 		.pll_refclk2              (1'b0),                                 // (terminated),                           
 		.pll_refclk3              (1'b0),                                 // (terminated),                           
 		.pll_refclk4              (1'b0),                                 // (terminated),                           
 		.tx_serial_clk            (),                                     // (terminated),                           
-		.outclk2                  (),                                     // (terminated),                           
-		.outclk3                  (),                                     // (terminated),                           
 		.pll_pcie_clk             (),                                     // (terminated),                           
 		.fpll_to_fpll_cascade_clk (),                                     // (terminated),                           
 		.hssi_pll_cascade_clk     (),                                     // (terminated),                           
