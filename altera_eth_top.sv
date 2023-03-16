@@ -20,6 +20,7 @@ module altera_eth_top # (
     // Clock
     input                               clk_125,
     input                               refclk_10g,
+	 output										 clk_out,
     
     // Reset
     input                               reset_n,
@@ -44,7 +45,7 @@ module altera_eth_top # (
 	 input arduino_sda,
 	 
 	 //FMC inputs / outputs
-	 input fmc_in[7:0],
+	 input fmc_in[15:0], // only 7:0 used by first eth port
 	 output fmc_out[15:0] // only 7:0 used by first eth port
 );
 
@@ -77,18 +78,19 @@ module altera_eth_top # (
     genvar i;
     
     // Clock
-    wire                                csr_clk;
+    wire                                csr_clk;    // 125 MHz
     wire                                mac64b_clk; // 156.25 MHz via pll
-    wire                                mac32b_clk; // 312.5  MHz (156.25 MHz *2)
-	 wire   										 fast1_clk;  //
-	 wire   										 fast2_clk;  //
+    wire                                mac32b_clk; // 312.5  MHz via pll   (156.25 MHz *2)
+	 wire   										 fast1_clk;  // 9.765625 MHz via pll (156.25 MHz /16)
+	 wire   										 fast2_clk;  // 468.75 MHz  via pll  (156.25 MHz *3)
+	 assign clk_out = fast1_clk; // output for sync
 	 
 	 // Heartbeat fast
 	 reg [31:0] cnt_fast = 32'd0;
 	 reg led_clk_reg_fast;
 	 assign led_other = led_clk_reg_fast;
-	 always @(posedge mac32b_clk) begin
-		if (cnt_fast == 32'h7735940) // 125000000 (so should go at 312.5/125 times other heartbeat)
+	 always @(posedge fast1_clk) begin
+		if (cnt_fast == 32'h773594) // 12500000 (so should go at 9.765625*16/125 = 156.25/125 times other heartbeat)
 		begin
 			cnt_fast <= 32'd0;
 			led_clk_reg_fast <= ~led_clk_reg_fast;

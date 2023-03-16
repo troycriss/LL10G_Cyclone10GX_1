@@ -1055,7 +1055,7 @@
         <ipxact:parameter parameterId="cmu_fpll_pll_c_counter_2" type="int">
           <ipxact:name>cmu_fpll_pll_c_counter_2</ipxact:name>
           <ipxact:displayName>C-counter-2</ipxact:displayName>
-          <ipxact:value>6</ipxact:value>
+          <ipxact:value>192</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_pll_c_counter_2_min_tco_enable" type="string">
           <ipxact:name>cmu_fpll_pll_c_counter_2_min_tco_enable</ipxact:name>
@@ -1525,7 +1525,7 @@
         <ipxact:parameter parameterId="cmu_fpll_output_clock_frequency_2" type="string">
           <ipxact:name>cmu_fpll_output_clock_frequency_2</ipxact:name>
           <ipxact:displayName>cmu_fpll_output_clock_frequency_2</ipxact:displayName>
-          <ipxact:value>312.5 MHz</ipxact:value>
+          <ipxact:value>9.765625 MHz</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_output_clock_frequency_3" type="string">
           <ipxact:name>cmu_fpll_output_clock_frequency_3</ipxact:name>
@@ -1610,7 +1610,7 @@
         <ipxact:parameter parameterId="cmu_fpll_f_out_c2" type="string">
           <ipxact:name>cmu_fpll_f_out_c2</ipxact:name>
           <ipxact:displayName>cmu_fpll_f_out_c2</ipxact:displayName>
-          <ipxact:value>000000010010101000000101111100100000</ipxact:value>
+          <ipxact:value>000000000000100101010000001011111001</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="cmu_fpll_output_tolerance" type="int">
           <ipxact:name>cmu_fpll_output_tolerance</ipxact:name>
@@ -2550,7 +2550,7 @@
         <ipxact:parameter parameterId="gui_desired_outclk2_frequency" type="real">
           <ipxact:name>gui_desired_outclk2_frequency</ipxact:name>
           <ipxact:displayName>Desired frequency</ipxact:displayName>
-          <ipxact:value>300.0</ipxact:value>
+          <ipxact:value>9.765625</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_actual_outclk2_frequency" type="string">
           <ipxact:name>gui_actual_outclk2_frequency</ipxact:name>
@@ -2560,12 +2560,12 @@
         <ipxact:parameter parameterId="full_actual_outclk2_frequency" type="string">
           <ipxact:name>full_actual_outclk2_frequency</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>312.5</ipxact:value>
+          <ipxact:value>9.765625</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="output_clock_frequency_2" type="string">
           <ipxact:name>output_clock_frequency_2</ipxact:name>
           <ipxact:displayName>Actual frequency</ipxact:displayName>
-          <ipxact:value>312.5 MHz</ipxact:value>
+          <ipxact:value>9.765625 MHz</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_outclk2_phase_shift_unit" type="string">
           <ipxact:name>gui_outclk2_phase_shift_unit</ipxact:name>
@@ -2600,7 +2600,7 @@
         <ipxact:parameter parameterId="gui_desired_outclk3_frequency" type="real">
           <ipxact:name>gui_desired_outclk3_frequency</ipxact:name>
           <ipxact:displayName>Desired frequency</ipxact:displayName>
-          <ipxact:value>500.0</ipxact:value>
+          <ipxact:value>468.75</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_actual_outclk3_frequency" type="string">
           <ipxact:name>gui_actual_outclk3_frequency</ipxact:name>
@@ -2725,7 +2725,7 @@
         <ipxact:parameter parameterId="core_c_counter_2" type="int">
           <ipxact:name>core_c_counter_2</ipxact:name>
           <ipxact:displayName>pll_c_counter_2</ipxact:displayName>
-          <ipxact:value>6</ipxact:value>
+          <ipxact:value>192</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="core_c_counter_2_in_src" type="string">
           <ipxact:name>core_c_counter_2_in_src</ipxact:name>
@@ -2935,7 +2935,7 @@
         <ipxact:parameter parameterId="pll_c_counter_2" type="int">
           <ipxact:name>pll_c_counter_2</ipxact:name>
           <ipxact:displayName>pll_c_counter_2</ipxact:displayName>
-          <ipxact:value>6</ipxact:value>
+          <ipxact:value>192</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="pll_c_counter_2_in_src" type="string">
           <ipxact:name>pll_c_counter_2_in_src</ipxact:name>
@@ -3125,7 +3125,7 @@
         <ipxact:parameter parameterId="f_out_c2_bitvec" type="string">
           <ipxact:name>f_out_c2_bitvec</ipxact:name>
           <ipxact:displayName>PLL output frequency</ipxact:displayName>
-          <ipxact:value>000000010010101000000101111100100000</ipxact:value>
+          <ipxact:value>000000000000100101010000001011111001</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="f_out_c3_bitvec" type="string">
           <ipxact:name>f_out_c3_bitvec</ipxact:name>
@@ -3425,7 +3425,7 @@
         <ipxact:parameter parameterId="gui_parameter_values" type="string">
           <ipxact:name>gui_parameter_values</ipxact:name>
           <ipxact:displayName>Parameter Values</ipxact:displayName>
-          <ipxact:value>12,6,6,4,1,64,11,7500.0 MHz,1</ipxact:value>
+          <ipxact:value>12,6,192,4,1,64,11,7500.0 MHz,1</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_module_parameters>

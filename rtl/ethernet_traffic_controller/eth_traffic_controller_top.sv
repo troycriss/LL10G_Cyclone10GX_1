@@ -17,7 +17,7 @@ module eth_traffic_controller_top  #(
 )(
 	input 	wire 												clk,
 	input 	wire 												reset_n,
-	input		wire[7:0]  										fmc_in, // Inputs from FMC
+	input		wire[15:0]  										fmc_in, // Inputs from FMC
 	output   wire[15:0]										fmc_out, // Outputs to the FMC
 	input wire fast1_clk,
 	input wire fast2_clk,
@@ -341,7 +341,7 @@ generate
 		    
 			.clk					(clk),
 			.reset_n				(reset_n),
-			.fmc_in (fmc_in),
+			.fmc_in (fmc_in[8*i+7:8*i]),
 			.fmc_out (fmc_out[8*i+7:8*i]),
 			.fast1_clk (fast1_clk),
 			.fast2_clk (fast2_clk),
