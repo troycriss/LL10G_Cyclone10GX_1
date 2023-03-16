@@ -1,12 +1,11 @@
 import socket
-import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server_address = ("192.168.10.11", 2023)
 s.bind(server_address)
-print("Do Ctrl+c to exit the program !!")
-
+print("Ctrl+c to exit the program!")
+npacket=1
 while True:
-    print("####### Server is listening #######")
-    data, address = s.recvfrom(4096)
-    print("\n\n 2. Server received: ", data.decode('utf-8'), "\n\n")
+    data, address = s.recvfrom(2000)
+    if npacket%100==0: print("Got packet", npacket) #, "Data", data, "\n")
+    npacket=npacket+1
