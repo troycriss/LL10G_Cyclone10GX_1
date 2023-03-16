@@ -211,6 +211,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [7:0] test_counter_data = 8'h75;
 	reg [7:0] counter_datain = 8'h00;
 	reg [7:0] counter_datain_max;
+	parameter nbitstosample=6'd1;
 	always @ (posedge reset or posedge fifo_clk)
    begin
       if (reset) begin
@@ -231,8 +232,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
 			end
 			else begin
-				fifo_datain <= {fifo_datain[61:0],fmc_in[2-1:0]}; // take 2 more bits of input and shift into fifo_datain
-				counter_datain_max <= 8'h40-8'h02;
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:0]}; // take nbitstosample more bits of input and shift into fifo_datain
+				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
@@ -241,7 +242,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
-				else counter_datain <= counter_datain+8'h02; // remember we stored 2 more bits
+				else if (do_test_data) counter_datain <= counter_datain+8'h02; // remember we stored 2 more bits
+				else counter_datain <= counter_datain+nbitstosample; // remember we stored 2 more bits
 				fifo_wrreq<=1'b0;
 			end
 		end
