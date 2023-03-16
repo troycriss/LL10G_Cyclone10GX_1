@@ -100,6 +100,7 @@ wire    S_SRC_LEN_SEQ;
 wire    S_SRC_LEN_IP1;
 wire    S_SRC_LEN_IP2;
 wire    S_SRC_LEN_IP3;
+wire    S_SRC_LEN_IP4;
 wire    S_DATA;
 wire    S_TRANSITION;
 
@@ -112,15 +113,16 @@ reg do_IP = 1'b1; // whether to add IP header
 
 // State machine parameters
 // --------------------------
-localparam state_idle         = 4'b0000;         // Idle State
-localparam state_fifo_wait    = 4'b1000;         // Waiting for data to be in the fifo
-localparam state_dest_src     = 4'b0001;         // Dest(47:0) & Src(47:32) State
-localparam state_src_len_seq  = 4'b0010;         // Src(31:0) & Length(15:0) & SeqNr(15:0) State
-localparam state_src_len_ip1  = 4'b0011;
-localparam state_src_len_ip2  = 4'b0100;
-localparam state_src_len_ip3  = 4'b0101;
-localparam state_data         = 4'b0110;         // Data Pattern State
-localparam state_transition   = 4'b0111;         // Transition State
+localparam state_idle         = 4'h0;         // Idle State
+localparam state_dest_src     = 4'h1;         // Dest(47:0) & Src(47:32) State
+localparam state_src_len_seq  = 4'h2;         // Src(31:0) & Length(15:0) & SeqNr(15:0) State
+localparam state_src_len_ip1  = 4'h3;
+localparam state_src_len_ip2  = 4'h4;
+localparam state_src_len_ip3  = 4'h5;
+localparam state_data         = 4'h6;         // Data Pattern State
+localparam state_transition   = 4'h7;         // Transition State
+localparam state_fifo_wait    = 4'h8;         // Waiting for data to be in the fifo
+localparam state_src_len_ip4  = 4'h9;
 
 wire    [91:0] tx_prbs;
 reg     [15:0] byte_count;
@@ -606,6 +608,13 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
+               ns = state_src_len_ip4;
+            end
+         end
+			state_src_len_ip4:begin
+            if (tx_ready & (length == 16'h0)) begin
+               ns = state_transition;
+            end else if (tx_ready) begin
 					fifo_rdreq=1'b1;//read from fifo (starting in the next clk tick)
                ns = state_data;
             end
@@ -640,6 +649,7 @@ always @ (*)
  assign S_SRC_LEN_IP1 = (ns == state_src_len_ip1) ? 1'b1 : 1'b0;
  assign S_SRC_LEN_IP2 = (ns == state_src_len_ip2) ? 1'b1 : 1'b0;
  assign S_SRC_LEN_IP3 = (ns == state_src_len_ip3) ? 1'b1 : 1'b0;
+ assign S_SRC_LEN_IP4 = (ns == state_src_len_ip4) ? 1'b1 : 1'b0;
  assign S_DATA        = (ns == state_data)        ? 1'b1 : 1'b0;
  assign S_TRANSITION  = (ns == state_transition)  ? 1'b1 : 1'b0;
 
@@ -677,7 +687,7 @@ always @ (posedge reset or posedge clk)
       end else begin
          if (S_DEST_SRC) begin
             byte_count <= length;
-         end else if ( (S_DATA|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3) & tx_ready) begin
+         end else if ( (S_DATA|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4) & tx_ready) begin
             byte_count <= byte_count - 16'h8;
          end
       end
@@ -710,7 +720,7 @@ always @ (posedge reset or posedge clk)
             data_pattern <= 64'h0000000000000000; //64'h0001020304050607;
          //end else if (S_DATA & ~random_payload & tx_ready & data_pattern == 64'hF8F9FAFBFCFDFEFF) begin
          //   data_pattern <= 64'h0001020304050607;
-         end else if ((S_DATA|S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3) & ~random_payload & tx_ready) begin
+         end else if ((S_DATA|S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4) & ~random_payload & tx_ready) begin
 				//data_pattern <= data_pattern + 64'h0808080808080808;
             //data_pattern <= {56'h0000000000000000,fmc_in};
 				data_pattern <= fifo_dataout;
@@ -738,11 +748,14 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[63:32] <= {length - 16'h12, seq_num}; // IP length , seq_num
             tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
 			end else if (S_SRC_LEN_IP2) begin
-            tx_data_reg[63:32] <= {16'h00, 16'hC0A8}; // Header chksum , src ip
+            tx_data_reg[63:32] <= {16'hAFC9 - seq_num, 16'hC0A8}; // Header chksum , src ip
             tx_data_reg[31: 0] <= {16'h0A0A, destip[31:16]}; // src ip , dest ip
 			end else if (S_SRC_LEN_IP3) begin
             tx_data_reg[63:32] <= {destip[15:0], 16'h07E6}; // dest ip , src port
             tx_data_reg[31: 0] <= {16'h07E7, length - 16'h26}; // dest port , UDP length
+			end else if (S_SRC_LEN_IP4) begin
+            tx_data_reg[63:32] <= {16'h0, 16'h0}; // UDP dummy checksum , blank
+            tx_data_reg[31: 0] <= {16'h0, 16'h0}; // blank , blank
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end
