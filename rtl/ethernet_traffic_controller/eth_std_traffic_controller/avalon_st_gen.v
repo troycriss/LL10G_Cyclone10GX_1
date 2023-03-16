@@ -745,17 +745,17 @@ always @ (posedge reset or posedge clk)
             if (do_IP) tx_data_reg[31: 0] <= {16'h0800, 16'h4500}; // Eth type (ipv4) , IP version IHL DSCP ECN
 				else tx_data_reg[31: 0] <= {length + 16'h6, seq_num};
 			end else if (S_SRC_LEN_IP1) begin
-            tx_data_reg[63:32] <= {length - 16'h12, seq_num}; // IP length , seq_num
+            tx_data_reg[63:32] <= {length - 16'h12, 16'h0}; // IP length , blank (don't want to mess up checksum)
             tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
 			end else if (S_SRC_LEN_IP2) begin
-            tx_data_reg[63:32] <= {16'hAFC9 - seq_num, 16'hC0A8}; // Header chksum , src ip
+            tx_data_reg[63:32] <= {16'hAFC9, 16'hC0A8}; // Header chksum , src ip
             tx_data_reg[31: 0] <= {16'h0A0A, destip[31:16]}; // src ip , dest ip
 			end else if (S_SRC_LEN_IP3) begin
             tx_data_reg[63:32] <= {destip[15:0], 16'h07E6}; // dest ip , src port
             tx_data_reg[31: 0] <= {16'h07E7, length - 16'h26}; // dest port , UDP length
 			end else if (S_SRC_LEN_IP4) begin
-            tx_data_reg[63:32] <= {16'h0, 16'h0}; // UDP dummy checksum , blank
-            tx_data_reg[31: 0] <= {16'h0, 16'h0}; // blank , blank
+            tx_data_reg[63:32] <= {16'h0, seq_num}; // UDP dummy checksum , seq_num
+            tx_data_reg[31: 0] <= {packet_tx_count[15:0], {6'h0,fifo_rdusedw}}; // padding , padding
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end
