@@ -190,3 +190,4 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_8_9.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_10_11.ip
 set_global_assignment -name IP_FILE myfifo.ip
+set_location_assignment PIN_J22 -to clk_out
