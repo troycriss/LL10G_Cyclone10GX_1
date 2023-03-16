@@ -748,7 +748,7 @@ fmc_in[5]                    : U4        : input  : 1.8 V             :         
 fmc_out[7]                   : U5        : output : 1.8 V             :         : 3B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U6        :        :                   :         : 3B        :                
 VCCIO3B                      : U7        : power  :                   : 1.8V    : 3B        :                
-fmc_out[14]                  : U8        : output : 1.8 V             :         : 3B        : N              
+fmc_out[13]                  : U8        : output : 1.8 V             :         : 3B        : N              
 VREFB3BN0                    : U9        : power  :                   : GND     : 3B        :                
 VCC                          : U10       : power  :                   : 0.9V    :           :                
 VCCP                         : U11       : power  :                   : 0.9V    :           :                
@@ -776,7 +776,7 @@ VCCIO3B                      : V4        : power  :                   : 1.8V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : V5        :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V6        :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 3B        :                
-fmc_out[13]                  : V8        : output : 1.8 V             :         : 3B        : N              
+fmc_out[14]                  : V8        : output : 1.8 V             :         : 3B        : N              
 GND                          : V9        : gnd    :                   :         :           :                
 VCC                          : V10       : power  :                   : 0.9V    :           :                
 VCC                          : V11       : power  :                   : 0.9V    :           :                

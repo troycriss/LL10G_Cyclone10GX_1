@@ -123,6 +123,7 @@ localparam state_data         = 4'h6;         // Data Pattern State
 localparam state_transition   = 4'h7;         // Transition State
 localparam state_fifo_wait    = 4'h8;         // Waiting for data to be in the fifo
 localparam state_src_len_ip4  = 4'h9;
+localparam state_fifo_start   = 4'ha;
 
 wire    [91:0] tx_prbs;
 reg     [15:0] byte_count;
@@ -249,8 +250,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	//debugging outputs
 	assign fmc_out[7] = fifo_wrreq;
 	assign fmc_out[6] = fifo_rdreq;
-	assign fmc_out[5] = fifo_wrfull;
-	assign fmc_out[4] = fifo_rdusedw[2];
+	assign fmc_out[5] = fifo_aclr;
+	assign fmc_out[4] = fifo_rdusedw[0];
 	assign fmc_out[3:0] = ns;
 
 	//Read registers
@@ -550,7 +551,7 @@ always @ (posedge reset or posedge clk)
          ps <= state_idle;
       end else begin
          if (start) begin
-            ps <= state_fifo_wait;
+            ps <= state_fifo_start;
          end else begin
             ps <= ns;
          end
@@ -561,9 +562,16 @@ always @ (*)
    begin
       ns = ps;
 		fifo_rdreq=1'b0;//not reading from fifo by default
+		fifo_aclr=1'b0;//not clearing fifo
       case (ps)
          state_idle:begin
-            if (start) begin
+            if (start) begin					
+               ns = state_fifo_start;
+            end
+         end
+			state_fifo_start:begin
+            if (tx_ready) begin
+					fifo_aclr=1'b1;//clear fifo
                ns = state_fifo_wait;
             end
          end
@@ -644,6 +652,7 @@ always @ (*)
 
  assign S_IDLE        = (ns == state_idle)        ? 1'b1 : 1'b0;
  assign S_FIFO_WAIT   = (ns == state_fifo_wait)   ? 1'b1 : 1'b0;
+ assign S_FIFO_START  = (ns == state_fifo_start)  ? 1'b1 : 1'b0;
  assign S_DEST_SRC    = (ns == state_dest_src)    ? 1'b1 : 1'b0;
  assign S_SRC_LEN_SEQ = (ns == state_src_len_seq) ? 1'b1 : 1'b0;
  assign S_SRC_LEN_IP1 = (ns == state_src_len_ip1) ? 1'b1 : 1'b0;
@@ -748,7 +757,7 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[63:32] <= {length - 16'h12, 16'h0}; // IP length , blank (don't want to mess up checksum)
             tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
 			end else if (S_SRC_LEN_IP2) begin
-            tx_data_reg[63:32] <= {16'hAFC9, 16'hC0A8}; // Header chksum , src ip
+            tx_data_reg[63:32] <= {16'hAFC5, 16'hC0A8}; // Header chksum (for PACKET_SIZE 1516), src ip
             tx_data_reg[31: 0] <= {16'h0A0A, destip[31:16]}; // src ip , dest ip
 			end else if (S_SRC_LEN_IP3) begin
             tx_data_reg[63:32] <= {destip[15:0], 16'h07E6}; // dest ip , src port
@@ -769,7 +778,7 @@ always @ (posedge reset or posedge clk)
       if (reset) begin
          tx_valid_reg <= 1'b0;
       end else begin
-         if (S_IDLE | S_FIFO_WAIT | S_TRANSITION) begin
+         if (S_IDLE | S_FIFO_START |S_FIFO_WAIT | S_TRANSITION) begin
             tx_valid_reg <= 1'b0;
          end else begin
             tx_valid_reg <= 1'b1;
