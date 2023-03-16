@@ -7370,8 +7370,8 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <parts>
 <part name="J12" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
-<part name="SMB1" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="SMB2" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="OPIN" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="OPOUT_H10" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value="50"/>
 <part name="J2" library="ASP-134604-01" deviceset="ASP-134604-01" device=""/>
 <part name="IC1" library="OPA699ID" deviceset="OPA699ID" device=""/>
@@ -7400,7 +7400,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="U1" library="Seeed-IC" library_urn="urn:adsk.eagle:library:470" deviceset="LOGIC-TXS0108EPWR(TSSOP20)" device="" package3d_urn="urn:adsk.eagle:package:32642/1" value="TXS0108EPWR-TSSOP20"/>
+<part name="U1" library="Seeed-IC" library_urn="urn:adsk.eagle:library:470" deviceset="LOGIC-TXS0108EPWR(TSSOP20)" device="" package3d_urn="urn:adsk.eagle:package:32642/1" value="TXS0108EPWR"/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C3" library="SparkFun-Passives" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="C5" library="SparkFun-Passives" deviceset="CAP" device="0805" value="0.1uF"/>
@@ -7422,7 +7422,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SMB3" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="IO_H11" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value="50"/>
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -7462,10 +7462,10 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <instances>
 <instance part="J12" gate="G$1" x="167.64" y="1.27" smashed="yes"/>
 <instance part="J1" gate="G$1" x="137.16" y="30.48" smashed="yes" rot="R180"/>
-<instance part="SMB1" gate="G1" x="20.32" y="162.56" smashed="yes">
+<instance part="OPIN" gate="G1" x="20.32" y="162.56" smashed="yes">
 <attribute name="NAME" x="15.24" y="165.862" size="1.778" layer="95"/>
 </instance>
-<instance part="SMB2" gate="G1" x="119.38" y="137.16" smashed="yes" rot="MR0">
+<instance part="OPOUT_H10" gate="G1" x="119.38" y="137.16" smashed="yes" rot="MR0">
 <attribute name="NAME" x="124.46" y="140.462" size="1.778" layer="95" rot="MR0"/>
 </instance>
 <instance part="R2" gate="G$1" x="27.94" y="162.56" smashed="yes" rot="R180">
@@ -7596,7 +7596,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <instance part="SUPPLY16" gate="GND" x="104.14" y="-2.54" smashed="yes"/>
 <instance part="SUPPLY17" gate="GND" x="111.76" y="-2.54" smashed="yes"/>
 <instance part="SUPPLY18" gate="GND" x="20.32" y="124.46" smashed="yes"/>
-<instance part="SMB3" gate="G1" x="22.86" y="86.36" smashed="yes">
+<instance part="IO_H11" gate="G1" x="22.86" y="86.36" smashed="yes">
 <attribute name="NAME" x="17.78" y="89.662" size="1.778" layer="95"/>
 </instance>
 <instance part="R6" gate="G$1" x="30.48" y="86.36" smashed="yes" rot="R180">
@@ -7627,7 +7627,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <nets>
 <net name="GND" class="1">
 <segment>
-<pinref part="SMB2" gate="G1" pin="2"/>
+<pinref part="OPOUT_H10" gate="G1" pin="2"/>
 <wire x1="116.84" y1="134.62" x2="116.84" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="GND" pin="GND"/>
 </segment>
@@ -7727,7 +7727,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <pinref part="GND1" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="SMB1" gate="G1" pin="2"/>
+<pinref part="OPIN" gate="G1" pin="2"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
 <wire x1="22.86" y1="157.48" x2="22.86" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -7803,7 +7803,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <pinref part="SUPPLY18" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="SMB3" gate="G1" pin="2"/>
+<pinref part="IO_H11" gate="G1" pin="2"/>
 <pinref part="SUPPLY19" gate="GND" pin="GND"/>
 <wire x1="25.4" y1="81.28" x2="25.4" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
@@ -7836,7 +7836,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 </net>
 <net name="IO1" class="0">
 <segment>
-<pinref part="SMB1" gate="G1" pin="1"/>
+<pinref part="OPIN" gate="G1" pin="1"/>
 <label x="12.7" y="165.1" size="1.778" layer="95" rot="R180"/>
 <wire x1="22.86" y1="162.56" x2="22.86" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="NONINVERTING_INPUT"/>
@@ -7851,7 +7851,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <label x="63.5" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="1V8" class="0">
+<net name="1V8" class="1">
 <segment>
 <pinref part="J12" gate="G$1" pin="P$3"/>
 <wire x1="160.02" y1="0" x2="147.32" y2="0" width="0.1524" layer="91"/>
@@ -7886,7 +7886,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <label x="109.22" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="3V3" class="0">
+<net name="3V3" class="1">
 <segment>
 <pinref part="J12" gate="G$1" pin="P$2"/>
 <wire x1="124.46" y1="2.54" x2="132.08" y2="2.54" width="0.1524" layer="91"/>
@@ -7909,7 +7909,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <label x="101.6" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="12V" class="0">
+<net name="12V" class="1">
 <segment>
 <pinref part="J12" gate="G$1" pin="P$1"/>
 <wire x1="124.46" y1="5.08" x2="132.08" y2="5.08" width="0.1524" layer="91"/>
@@ -8084,7 +8084,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <pinref part="SV2" gate="G$1" pin="4"/>
 </segment>
 </net>
-<net name="+VS" class="0">
+<net name="+VS" class="1">
 <segment>
 <pinref part="IC1" gate="G$1" pin="+VS"/>
 <wire x1="106.68" y1="147.32" x2="101.6" y2="147.32" width="0.1524" layer="91"/>
@@ -8133,7 +8133,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <pinref part="ARDUINO_NANO1" gate="G$1" pin="5V"/>
 </segment>
 </net>
-<net name="-VS" class="0">
+<net name="-VS" class="1">
 <segment>
 <pinref part="IC2" gate="G$1" pin="-VS"/>
 <wire x1="53.34" y1="165.1" x2="48.26" y2="165.1" width="0.1524" layer="91"/>
@@ -8288,7 +8288,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 </net>
 <net name="OPOUT1_H10" class="0">
 <segment>
-<pinref part="SMB2" gate="G1" pin="1"/>
+<pinref part="OPOUT_H10" gate="G1" pin="1"/>
 <wire x1="116.84" y1="144.78" x2="116.84" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="OUTPUT"/>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -8402,7 +8402,7 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 </net>
 <net name="IO2_H11" class="0">
 <segment>
-<pinref part="SMB3" gate="G1" pin="1"/>
+<pinref part="IO_H11" gate="G1" pin="1"/>
 <label x="15.24" y="88.9" size="1.778" layer="95" rot="R180"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <junction x="25.4" y="86.36"/>
@@ -8426,8 +8426,14 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <errors>
 <approved hash="104,1,63.5,27.94,IC3,V+,+VS,,,"/>
 <approved hash="104,1,63.5,0,IC4,V+,+VS,,,"/>
+<approved hash="202,1,60.96,-68.58,ARDUINO_NANO1,!RESET,,,,"/>
+<approved hash="202,1,20.32,-43.18,ARDUINO_NANO1,AREF,,,,"/>
+<approved hash="104,1,20.32,-66.04,ARDUINO_NANO1,5V,+VS,,,"/>
+<approved hash="202,1,20.32,-68.58,ARDUINO_NANO1,!RESET,,,,"/>
+<approved hash="204,1,20.32,-73.66,ARDUINO_NANO1,VIN,,,,"/>
 <approved hash="206,1,63.5,38.1,-VS,,,,,"/>
 <approved hash="206,1,63.5,10.16,-VS,,,,,"/>
+<approved hash="113,1,40.64,-53.1072,ARDUINO_NANO1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
