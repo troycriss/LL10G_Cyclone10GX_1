@@ -171,10 +171,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="74" x2="0" y2="0" width="0" layer="21"/>
-<wire x1="0" y1="0" x2="98" y2="0" width="0" layer="21"/>
-<wire x1="98" y1="0" x2="98" y2="74" width="0" layer="21"/>
-<wire x1="98" y1="74" x2="0" y2="74" width="0" layer="21"/>
+<wire x1="0" y1="74" x2="0" y2="0" width="0.3048" layer="20"/>
+<wire x1="0" y1="0" x2="98" y2="0" width="0.3048" layer="20"/>
+<wire x1="98" y1="0" x2="98" y2="74" width="0.3048" layer="20"/>
+<wire x1="98" y1="74" x2="0" y2="74" width="0.3048" layer="20"/>
 <hole x="11.4" y="4.6" drill="2.9"/>
 <hole x="94.8" y="70.5" drill="2.9"/>
 <hole x="11.6" y="68.6" drill="2.9"/>
