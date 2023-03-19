@@ -238,7 +238,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
-				fifo_wrreq<=1'b1;
+				if (S_FIFO_START | S_IDLE | fifo_wrfull) fifo_wrreq<=1'b0; // don't write yet, or if full
+				else fifo_wrreq<=1'b1;
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
@@ -506,7 +507,7 @@ prbs23 prbs_tx0
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4| S_DATA)),
    .seed       (random_seed[22:0]),
    .d          (tx_prbs[22:0]),
    .m          (tx_prbs[22:0])
@@ -517,7 +518,7 @@ prbs23 prbs_tx1
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4| S_DATA)),
    .seed       (random_seed[45:23]),
    .d          (tx_prbs[45:23]),
    .m          (tx_prbs[45:23])
@@ -528,7 +529,7 @@ prbs23 prbs_tx2
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4| S_DATA)),
    .seed       (random_seed[68:46]),
    .d          (tx_prbs[68:46]),
    .m          (tx_prbs[68:46])
@@ -539,7 +540,7 @@ prbs23 prbs_tx3
    .clk        (clk),
    .rst_n      (~reset),
    .load       (S_IDLE),
-   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3| S_DATA)),
+   .enable     (tx_ready & ( S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4| S_DATA)),
    .seed       (random_seed[91:69]),
    .d          (tx_prbs[91:69]),
    .m          (tx_prbs[91:69])
@@ -610,7 +611,6 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
-					fifo_rdreq=1'b1;//read from fifo
                ns = state_src_len_ip3;
             end
          end
@@ -618,6 +618,7 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
+					fifo_rdreq=1'b1;//read from fifo (starting in the next clk tick)
                ns = state_src_len_ip4;
             end
          end
@@ -625,7 +626,7 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
-					fifo_rdreq=1'b1;//read from fifo (starting in the next clk tick)
+					fifo_rdreq=1'b1;//read from fifo
                ns = state_data;
             end
          end
@@ -633,7 +634,7 @@ always @ (*)
             if (tx_ready & (byte_count[15] | byte_count == 16'h0)) begin
                ns = state_transition;
             end
-				else if (tx_ready & (byte_count == 16'h08)) begin
+				else if (tx_ready & (byte_count == 16'h10)) begin
                fifo_rdreq=1'b0;//stop reading from fifo
             end
 				else fifo_rdreq=1'b1;//read from fifo
@@ -653,8 +654,8 @@ always @ (*)
    end
 
  assign S_IDLE        = (ns == state_idle)        ? 1'b1 : 1'b0;
- assign S_FIFO_WAIT   = (ns == state_fifo_wait)   ? 1'b1 : 1'b0;
  assign S_FIFO_START  = (ns == state_fifo_start)  ? 1'b1 : 1'b0;
+ assign S_FIFO_WAIT   = (ns == state_fifo_wait)   ? 1'b1 : 1'b0;
  assign S_DEST_SRC    = (ns == state_dest_src)    ? 1'b1 : 1'b0;
  assign S_SRC_LEN_SEQ = (ns == state_src_len_seq) ? 1'b1 : 1'b0;
  assign S_SRC_LEN_IP1 = (ns == state_src_len_ip1) ? 1'b1 : 1'b0;
@@ -756,14 +757,14 @@ always @ (posedge reset or posedge clk)
             if (do_IP) tx_data_reg[31: 0] <= {16'h0800, 16'h4500}; // Eth type (ipv4) , IP version IHL DSCP ECN
 				else tx_data_reg[31: 0] <= {length + 16'h6, seq_num};
 			end else if (S_SRC_LEN_IP1) begin
-            tx_data_reg[63:32] <= {length - 16'h12, 16'h0}; // IP length , blank (don't want to mess up checksum)
+            tx_data_reg[63:32] <= {length + 16'h02, 16'h0}; // IP length , blank (don't want to mess up checksum)
             tx_data_reg[31: 0] <= {16'h4000, 16'h3011}; // Don't fragment, TTL and UDP
 			end else if (S_SRC_LEN_IP2) begin
-            tx_data_reg[63:32] <= {16'hAFC5, 16'hC0A8}; // Header chksum (for PACKET_SIZE 1516), src ip
+            tx_data_reg[63:32] <= {16'hAFB5, 16'hC0A8}; // Header chksum (for PACKET_SIZE 1512), src ip
             tx_data_reg[31: 0] <= {16'h0A0A, destip[31:16]}; // src ip , dest ip
 			end else if (S_SRC_LEN_IP3) begin
             tx_data_reg[63:32] <= {destip[15:0], 16'h07E6}; // dest ip , src port
-            tx_data_reg[31: 0] <= {16'h07E7, length - 16'h26}; // dest port , UDP length
+            tx_data_reg[31: 0] <= {16'h07E7, length - 16'h12}; // dest port , UDP length (20 less than IP length (header))
 			end else if (S_SRC_LEN_IP4) begin
             tx_data_reg[63:32] <= {16'h0, seq_num}; // UDP dummy checksum , seq_num
             tx_data_reg[31: 0] <= {packet_tx_count[15:0], {6'h0,fifo_rdusedw}}; // padding , padding
