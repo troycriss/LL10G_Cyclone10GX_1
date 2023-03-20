@@ -171,7 +171,7 @@ wire fifo_rdempty; //empty synced to read clk
 wire fifo_wrfull; //full synced to write clk
 wire fifo_clk;//fifo_clk is what is used for writing 
 
-	myfifo u0 (
+	myfifo fifo1 (
 		.data    (fifo_datain),    //   input,  width = 64,  fifo_input.datain
 		.wrreq   (fifo_wrreq),   //   input,   width = 1,            .wrreq
 		.rdreq   (fifo_rdreq),   //   input,   width = 1,            .rdreq
@@ -238,8 +238,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
-				if (S_FIFO_START | S_IDLE | fifo_wrfull) fifo_wrreq<=1'b0; // don't write yet, or if full
-				else fifo_wrreq<=1'b1;
+				fifo_wrreq<=1'b1;
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
@@ -611,6 +610,7 @@ always @ (*)
             if (tx_ready & (length == 16'h0)) begin
                ns = state_transition;
             end else if (tx_ready) begin
+					if (seq_num==16'h0) fifo_rdreq=1'b1; // read one extra early?
                ns = state_src_len_ip3;
             end
          end
@@ -729,7 +729,7 @@ always @ (posedge reset or posedge clk)
          data_pattern <= 64'h0;
       end else begin
          if (S_IDLE & ~random_payload) begin
-            data_pattern <= 64'h0000000000000000; //64'h0001020304050607;
+            data_pattern <= 64'hd0000c0000b0000a; //64'h0000000000000000; //64'h0001020304050607;
          //end else if (S_DATA & ~random_payload & tx_ready & data_pattern == 64'hF8F9FAFBFCFDFEFF) begin
          //   data_pattern <= 64'h0001020304050607;
          end else if ((S_DATA|S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4) & ~random_payload & tx_ready) begin
