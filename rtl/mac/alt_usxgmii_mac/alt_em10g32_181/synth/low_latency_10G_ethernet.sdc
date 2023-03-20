@@ -295,7 +295,7 @@ set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em1
 set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_max_datafrmlen[*]}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
 set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|txvlandet_dis}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
 set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_pipg10g_dic[*]}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
-set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_pipg1g_fixed[*]}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
+#set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_pipg1g_fixed[*]}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
 set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_pausefrm_pqt[*]}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
 set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_pausefrm_xoff_hqt[*]}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
 set_false_path -from [get_registers {*alt_em10g32_creg_top:creg_top_inst|alt_em10g32_creg_map:alt_em10g32_creg_map_inst|tx_pausefrm_en}] -to [get_registers {*alt_em10g32_tx_top:tx_path.tx_top_inst|*}]
