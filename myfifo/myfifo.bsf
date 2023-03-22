@@ -114,7 +114,7 @@ refer to the applicable agreement for further details.
 		(text "rdfull" (rect 119 99 274 208)(font "Arial" (color 0 0 0)))
 		(text "rdempty" (rect 105 115 252 240)(font "Arial" (color 0 0 0)))
 		(text "wrfull" (rect 118 131 272 272)(font "Arial" (color 0 0 0)))
-		(text " system " (rect 189 168 426 346)(font "Arial" ))
+		(text " myfifo " (rect 192 168 432 346)(font "Arial" ))
 		(line (pt 64 32)(pt 144 32)(line_width 1))
 		(line (pt 144 32)(pt 144 168)(line_width 1))
 		(line (pt 64 168)(pt 144 168)(line_width 1))
