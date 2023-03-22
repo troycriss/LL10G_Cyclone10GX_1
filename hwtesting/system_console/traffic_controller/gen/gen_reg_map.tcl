@@ -32,14 +32,12 @@ set GEN_RNDSEED2 			0x00000030
 set GEN_PKTLENGTH 		0x00000034
 
 #custom
-set GEN_DO_TEST_DATA 			0x00000040
-set GEN_DO_TEST_COUNTER_DATA 	0x00000044
-set GEN_fifo_clk_prescale  	0x00000048;
-set GEN_destip					  	0x0000004C;
+set GEN_DO_TEST_COUNTER_DATA 	0x00000040
+set GEN_fifo_clk_prescale  	0x00000044
+set GEN_destip					  	0x00000048
 
 #--with 1588
-
-set GO_MASTER 				0x00
+set GO_MASTER 					 0x00
 set START_TOD_SYNC 		    0x04
 set DELAY_FNS_H_ADDR        0x08;
 set DELAY_FNS_L_ADDR        0x0C;

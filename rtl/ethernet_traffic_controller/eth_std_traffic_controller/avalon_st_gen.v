@@ -61,10 +61,9 @@ module avalon_st_gen
  parameter ADDR_RNDSEED2 	= 8'hc;
  parameter ADDR_PKTLENGTH 	= 8'hd;
  
- parameter ADDR_do_test_data = 8'h10;
- parameter ADDR_do_test_counter_data = 8'h11;
- parameter ADDR_fifo_clk_prescale = 8'h12;
- parameter ADDR_destip = 8'h13;
+ parameter ADDR_do_test_counter_data = 8'h10;
+ parameter ADDR_fifo_clk_prescale = 8'h11;
+ parameter ADDR_destip = 8'h12;
 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -205,28 +204,19 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	//assign fifo_base_clk=fast1_clk;//out2 from pll
 	assign fifo_base_clk=fast2_clk;//out3 from pll
 	
-	reg do_test_data;
-	reg do_test_counter_data;
-	reg [1:0] test_data = 2'b00;
-	reg [7:0] test_counter_data = 8'h75;
-	reg [7:0] counter_datain = 8'h00;
-	reg [7:0] counter_datain_max;
-	parameter nbitstosample=6'd1;
+	reg do_test_counter_data=1'b0;
+	reg [7:0] test_counter_data=8'h00;
+	reg [7:0] counter_datain=8'h00;
+	reg [7:0] counter_datain_max=8'h40;
+	parameter nbitstosample=6'd1; // should be a power of 2, to fit into 64 bit word!
 	always @ (posedge reset or posedge fifo_clk)
-   begin
+   begin		
       if (reset) begin
 			fifo_datain <= 64'h0;
-			counter_datain = 8'h00;
+			counter_datain <= 8'h00;
 		end
-      else begin
-		
-			if (do_test_data) begin
-				counter_datain_max <= 8'h40-8'h02;
-				if (counter_datain>=8'h20) test_data = 2'b11;
-				else test_data = 2'b00;
-				fifo_datain <= {fifo_datain[61:0],test_data}; // take 2 more bits of test input and shift into fifo_datain
-			end
-			else if (do_test_counter_data) begin
+      else begin		
+			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
@@ -242,8 +232,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
-				else if (do_test_data) counter_datain <= counter_datain+8'h02; // remember we stored 2 more bits
-				else counter_datain <= counter_datain+nbitstosample; // remember we stored 2 more bits
+				else counter_datain <= counter_datain+nbitstosample; // remember we stored nbitstosample more bits
 				fifo_wrreq<=1'b0;
 			end
 		end
@@ -260,10 +249,10 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	always @ (posedge reset or posedge clk)
    begin
       if (reset) begin
-			do_test_data <= 1'b0;
 			do_test_counter_data <= 1'b0;
+			fifo_clk_prescale <= 32'h0;
+			destip <= 32'hC0A80A0b;
 		end
-      else if (write & address == ADDR_do_test_data) do_test_data <= writedata[0];
 		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
 		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
 		else if (write & address == ADDR_destip) destip <= writedata;
