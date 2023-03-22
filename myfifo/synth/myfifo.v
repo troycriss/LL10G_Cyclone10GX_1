@@ -17,7 +17,7 @@ module myfifo (
 		output wire        wrfull   //            .wrfull
 	);
 
-	myfifo_fifo_181_6fkyycq fifo_0 (
+	myfifo_fifo_181_3qmqbnq fifo_0 (
 		.data    (data),    //   input,  width = 64,  fifo_input.datain
 		.wrreq   (wrreq),   //   input,   width = 1,            .wrreq
 		.rdreq   (rdreq),   //   input,   width = 1,            .rdreq

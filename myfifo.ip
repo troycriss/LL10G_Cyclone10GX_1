@@ -369,7 +369,7 @@
         <ipxact:parameter parameterId="GUI_delaypipe" type="int">
           <ipxact:name>GUI_delaypipe</ipxact:name>
           <ipxact:displayName>Which type of optimization do you want?</ipxact:displayName>
-          <ipxact:value>4</ipxact:value>
+          <ipxact:value>5</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_synStage" type="int">
           <ipxact:name>GUI_synStage</ipxact:name>

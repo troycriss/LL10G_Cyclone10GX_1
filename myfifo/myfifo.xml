@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.03.13.19:16:44"
+ date="2023.03.22.12:36:18"
  outputDirectory="C:/gitwork/LL10G_Cyclone10GX_1/myfifo/">
  <perimeter>
   <parameter
@@ -79,10 +79,10 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="myfifo">"Generating: myfifo"</message>
-   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_6fkyycq"</message>
+   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_3qmqbnq"</message>
   </messages>
  </entity>
- <entity kind="fifo" version="18.1" name="myfifo_fifo_181_6fkyycq">
+ <entity kind="fifo" version="18.1" name="myfifo_fifo_181_3qmqbnq">
   <parameter name="GUI_Full" value="true" />
   <parameter name="GUI_RdUsedw_width" value="10" />
   <parameter name="GUI_AlmostFullThr" value="1" />
@@ -110,7 +110,7 @@
   <parameter name="GUI_OVERFLOW_CHECKING" value="false" />
   <parameter name="GUI_UNDERFLOW_CHECKING" value="false" />
   <parameter name="GUI_output_width" value="8" />
-  <parameter name="GUI_delaypipe" value="4" />
+  <parameter name="GUI_delaypipe" value="5" />
   <parameter name="GUI_wsFull" value="true" />
   <parameter name="GUI_ENABLE_ECC" value="false" />
   <parameter name="GUI_Clock" value="4" />
@@ -128,18 +128,18 @@
   <parameter name="GUI_Width" value="64" />
   <generatedFiles>
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.v"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_3qmqbnq.v"
        attributes="" />
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.sdc"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_3qmqbnq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.v"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_3qmqbnq.v"
        attributes="" />
    <file
-       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_6fkyycq.sdc"
+       path="C:\gitwork\LL10G_Cyclone10GX_1\myfifo\fifo_181\synth\myfifo_fifo_181_3qmqbnq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -148,7 +148,7 @@
   <childSourceFiles/>
   <instantiator instantiator="myfifo" as="fifo_0" />
   <messages>
-   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_6fkyycq"</message>
+   <message level="Info" culprit="myfifo">"Generating: myfifo_fifo_181_3qmqbnq"</message>
   </messages>
  </entity>
 </deploy>

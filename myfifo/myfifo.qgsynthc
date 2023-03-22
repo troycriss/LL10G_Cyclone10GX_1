@@ -139,7 +139,7 @@
           </parameter>
           <parameter>
             <name>GUI_delaypipe</name>
-            <value>4</value>
+            <value>5</value>
           </parameter>
           <parameter>
             <name>GUI_diff_widths</name>
@@ -202,7 +202,7 @@
         <className>fifo</className>
         <version>18.1</version>
         <name>fifo_0</name>
-        <uniqueName>myfifo_fifo_181_6fkyycq</uniqueName>
+        <uniqueName>myfifo_fifo_181_3qmqbnq</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>myfifo.fifo_0</path>
