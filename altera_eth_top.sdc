@@ -29,6 +29,11 @@ set reset_sync_clrn_counter 0
 set reset_sync_aclr_collection [get_pins -compatibility_mode -nocase -nowarn *alt_mge_reset_synchronizer:*|alt_mge_reset_synchronizer_int_chain*|aclr]
 set reset_sync_clrn_collection [get_pins -compatibility_mode -nocase -nowarn *alt_mge_reset_synchronizer:*|alt_mge_reset_synchronizer_int_chain*|clrn]
 
+set_false_path -to *dcfifo:dcfifo_component|dcfifo_*:auto_generated|dffpipe_*:wraclr|dffe*a[0]
+set_false_path -to *dcfifo:dcfifo_component|dcfifo_*:auto_generated|dffpipe_*:rdaclr|dffe*a[0]
+
+set_false_path -from *eth_std_traffic_controller*|GEN|do_test_counter_data*
+
 foreach_in_collection reset_sync_aclr_pin $reset_sync_aclr_collection {
     set reset_sync_aclr_counter [expr $reset_sync_aclr_counter + 1]
 }

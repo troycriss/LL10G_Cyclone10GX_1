@@ -43,9 +43,9 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:28:45  JANUARY 05, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Pro Edition"
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 4
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity altera_eth_top -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity altera_eth_top -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity altera_eth_top -section_id Top
 
 
 # Reset
@@ -53,26 +53,26 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 # LED
 
 # SFP
-set_instance_assignment -name VIRTUAL_PIN ON -to sfp0_txdisable
-set_instance_assignment -name VIRTUAL_PIN ON -to SFPP0_RATE_SEL
-set_instance_assignment -name VIRTUAL_PIN ON -to sfp1_txdisable
-set_instance_assignment -name VIRTUAL_PIN ON -to SFPP1_RATE_SEL
+set_instance_assignment -name VIRTUAL_PIN ON -to sfp0_txdisable -entity altera_eth_top
+set_instance_assignment -name VIRTUAL_PIN ON -to SFPP0_RATE_SEL -entity altera_eth_top
+set_instance_assignment -name VIRTUAL_PIN ON -to sfp1_txdisable -entity altera_eth_top
+set_instance_assignment -name VIRTUAL_PIN ON -to SFPP1_RATE_SEL -entity altera_eth_top
 
 
 
 
 
 # IO Standard
-set_instance_assignment -name IO_STANDARD LVDS -to clk_125
-set_instance_assignment -name IO_STANDARD LVDS -to refclk_10g
-set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to tx_serial_data[*]
-set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to rx_serial_data[*]
-set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to tx_serial_data[*]
-set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to rx_serial_data[*]
+set_instance_assignment -name IO_STANDARD LVDS -to clk_125 -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD LVDS -to refclk_10g -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to tx_serial_data[*] -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to rx_serial_data[*] -entity altera_eth_top
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to tx_serial_data[*] -entity altera_eth_top
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to rx_serial_data[*] -entity altera_eth_top
 
 # Clock termination setting
-set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to clk_125
-set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to refclk_10g
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to clk_125 -entity altera_eth_top
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to refclk_10g -entity altera_eth_top
 
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
@@ -93,8 +93,8 @@ set_location_assignment PIN_G28 -to tx_serial_data[0]
 set_location_assignment PIN_G27 -to "tx_serial_data[0](n)"
 set_location_assignment PIN_J28 -to tx_serial_data[1]
 set_location_assignment PIN_J27 -to "tx_serial_data[1](n)"
-set_instance_assignment -name IO_STANDARD "1.8 V" -to channel_ready_n[0]
-set_instance_assignment -name IO_STANDARD "1.8 V" -to channel_ready_n[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to channel_ready_n[0] -entity altera_eth_top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to channel_ready_n[1] -entity altera_eth_top
 set_location_assignment PIN_AC7 -to channel_ready_n[1]
 set_location_assignment PIN_AC6 -to channel_ready_n[0]
 set_location_assignment PIN_E21 -to sfp_scl_0
@@ -129,7 +129,7 @@ set_location_assignment PIN_W4 -to fmc_out[4]
 set_location_assignment PIN_Y4 -to fmc_out[5]
 set_location_assignment PIN_T4 -to fmc_out[6]
 set_location_assignment PIN_U5 -to fmc_out[7]
-set_global_assignment -name OPTIMIZATION_MODE "SUPERIOR PERFORMANCE WITH MAXIMUM PLACEMENT EFFORT"
+set_global_assignment -name OPTIMIZATION_MODE BALANCED
 set_global_assignment -name PROJECT_IP_REGENERATION_POLICY NEVER_REGENERATE_IP
 set_global_assignment -name PROJECT_IP_GEN_PARALLEL_ENABLED on
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
@@ -137,24 +137,25 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
+set_location_assignment PIN_J22 -to clk_out
 set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
 set_global_assignment -name SDC_FILE altera_eth_top.sdc
 set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
-set_global_assignment -name SOURCE_FILE README.md
 set_global_assignment -name TCL_SCRIPT_FILE hwtesting/system_console/main.tcl
 set_global_assignment -name TCL_SCRIPT_FILE hwtesting/system_console/test_parameter/parameter.tcl
 set_global_assignment -name TCL_SCRIPT_FILE hwtesting/system_console/traffic_controller/gen/gen_inc.tcl
 set_global_assignment -name TCL_SCRIPT_FILE hwtesting/system_console/traffic_controller/gen/gen_reg_map.tcl
 set_global_assignment -name VERILOG_FILE rtl/alt_mge_reset_synchronizer.v
-set_global_assignment -name VERILOG_FILE rtl/alt_mge_channel.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/alt_mge_multi_channel.sv
+set_global_assignment -name VERILOG_FILE rtl/alt_mge_channel.v
+set_global_assignment -name IP_FILE myfifo.ip
+set_global_assignment -name IP_FILE rtl/pll_fpll/alt_mge_core_pll.ip
+set_global_assignment -name IP_FILE rtl/pll_atxpll/alt_mge_xcvr_atx_pll_10g.ip
 set_global_assignment -name QIP_FILE rtl/ethernet_traffic_controller/eth_traffic_controller_top.qip
 set_global_assignment -name IP_FILE rtl/xcvr_reset_controller/alt_mge_xcvr_reset_ctrl_txpll.ip
 set_global_assignment -name IP_FILE rtl/xcvr_reset_controller/alt_mge_xcvr_reset_ctrl_channel.ip
-set_global_assignment -name IP_FILE rtl/pll_atxpll/alt_mge_xcvr_atx_pll_10g.ip
 set_global_assignment -name IP_FILE rtl/mac/alt_usxgmii_mac.ip
 set_global_assignment -name IP_FILE rtl/phy/alt_usxgmii_phy.ip
-set_global_assignment -name IP_FILE rtl/pll_fpll/alt_mge_core_pll.ip
 set_global_assignment -name IP_FILE rtl/jtag_avalon_master/alt_jtag_csr_master.ip
 set_global_assignment -name QSYS_FILE rtl/address_decoder/address_decoder_channel.qsys
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_channel/address_decoder_channel_csr_clk.ip
@@ -189,5 +190,3 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_6_7.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_8_9.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_10_11.ip
-set_global_assignment -name IP_FILE myfifo.ip
-set_location_assignment PIN_J22 -to clk_out

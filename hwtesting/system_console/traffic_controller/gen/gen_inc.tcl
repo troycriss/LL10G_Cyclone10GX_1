@@ -19,13 +19,6 @@ source traffic_controller/gen/gen_reg_map.tcl
 source basic/basic.tcl
 source system_base_addr_map.tcl
 
-proc SETGEN_DO_TEST_DATA {value} {
-    global GEN_BASE_ADDR
-    global GEN_DO_TEST_DATA
-    puts "\t GEN_DO_TEST_DATA $value "
-    reg_write $GEN_BASE_ADDR $GEN_DO_TEST_DATA $value
-}
-
 proc SETGEN_DO_TEST_COUNTER_DATA {value} {
     global GEN_BASE_ADDR
     global GEN_DO_TEST_COUNTER_DATA
