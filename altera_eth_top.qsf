@@ -53,10 +53,6 @@ set_global_assignment -name PARTITION_COLOR 16764057 -entity altera_eth_top -sec
 # LED
 
 # SFP
-set_instance_assignment -name VIRTUAL_PIN ON -to sfp0_txdisable -entity altera_eth_top
-set_instance_assignment -name VIRTUAL_PIN ON -to SFPP0_RATE_SEL -entity altera_eth_top
-set_instance_assignment -name VIRTUAL_PIN ON -to sfp1_txdisable -entity altera_eth_top
-set_instance_assignment -name VIRTUAL_PIN ON -to SFPP1_RATE_SEL -entity altera_eth_top
 
 
 
@@ -65,14 +61,9 @@ set_instance_assignment -name VIRTUAL_PIN ON -to SFPP1_RATE_SEL -entity altera_e
 # IO Standard
 set_instance_assignment -name IO_STANDARD LVDS -to clk_125 -entity altera_eth_top
 set_instance_assignment -name IO_STANDARD LVDS -to refclk_10g -entity altera_eth_top
-set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to tx_serial_data[*] -entity altera_eth_top
-set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to rx_serial_data[*] -entity altera_eth_top
-set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to tx_serial_data[*] -entity altera_eth_top
-set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to rx_serial_data[*] -entity altera_eth_top
 
 # Clock termination setting
 set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to clk_125 -entity altera_eth_top
-set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to refclk_10g -entity altera_eth_top
 
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
