@@ -623,8 +623,8 @@ VCC                          : M19       : power  :                   : 0.9V    
 VCC                          : M20       : power  :                   : 0.9V    :           :                
 GND                          : M21       : gnd    :                   :         :           :                
 VCCH_GXBL                    : M22       : power  :                   : 1.8V    :           :                
-VCCT_GXBL1D                  : M23       : power  :                   : 1.03V   :           :                
-VCCT_GXBL1D                  : M24       : power  :                   : 1.03V   :           :                
+VCCT_GXBL1D                  : M23       : power  :                   : 0.95V   :           :                
+VCCT_GXBL1D                  : M24       : power  :                   : 0.95V   :           :                
 GXB_GND*                     : M25       :        :                   :         : 1D        :                
 GXB_GND*                     : M26       :        :                   :         : 1D        :                
 GND                          : M27       : gnd    :                   :         :           :                
@@ -679,8 +679,8 @@ VCC                          : P19       : power  :                   : 0.9V    
 VCC                          : P20       : power  :                   : 0.9V    :           :                
 GND                          : P21       : gnd    :                   :         :           :                
 GND                          : P22       : gnd    :                   :         :           :                
-VCCR_GXBL1D                  : P23       : power  :                   : 1.03V   :           :                
-VCCR_GXBL1D                  : P24       : power  :                   : 1.03V   :           :                
+VCCR_GXBL1D                  : P23       : power  :                   : 0.95V   :           :                
+VCCR_GXBL1D                  : P24       : power  :                   : 0.95V   :           :                
 GXB_GND*                     : P25       :        :                   :         : 1D        :                
 GXB_GND*                     : P26       :        :                   :         : 1D        :                
 GND                          : P27       : gnd    :                   :         :           :                
@@ -735,8 +735,8 @@ VCC                          : T19       : power  :                   : 0.9V    
 GND                          : T20       : gnd    :                   :         :           :                
 GND                          : T21       : gnd    :                   :         :           :                
 VCCH_GXBL                    : T22       : power  :                   : 1.8V    :           :                
-VCCT_GXBL1C                  : T23       : power  :                   : 1.03V   :           :                
-VCCT_GXBL1C                  : T24       : power  :                   : 1.03V   :           :                
+VCCT_GXBL1C                  : T23       : power  :                   : 0.95V   :           :                
+VCCT_GXBL1C                  : T24       : power  :                   : 0.95V   :           :                
 GXB_GND*                     : T25       :        :                   :         : 1C        :                
 GXB_GND*                     : T26       :        :                   :         : 1C        :                
 GND                          : T27       : gnd    :                   :         :           :                
@@ -791,8 +791,8 @@ GND                          : V19       : gnd    :                   :         
 VCC                          : V20       : power  :                   : 0.9V    :           :                
 GND                          : V21       : gnd    :                   :         :           :                
 GND                          : V22       : gnd    :                   :         :           :                
-VCCR_GXBL1C                  : V23       : power  :                   : 1.03V   :           :                
-VCCR_GXBL1C                  : V24       : power  :                   : 1.03V   :           :                
+VCCR_GXBL1C                  : V23       : power  :                   : 0.95V   :           :                
+VCCR_GXBL1C                  : V24       : power  :                   : 0.95V   :           :                
 GXB_GND*                     : V25       :        :                   :         : 1C        :                
 GXB_GND*                     : V26       :        :                   :         : 1C        :                
 GND                          : V27       : gnd    :                   :         :           :                
