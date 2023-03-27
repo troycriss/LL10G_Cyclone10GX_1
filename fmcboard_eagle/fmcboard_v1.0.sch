@@ -7975,9 +7975,9 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <pinref part="SV1" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="B2"/>
-<wire x1="160.02" y1="86.36" x2="170.18" y2="86.36" width="0.1524" layer="91"/>
-<label x="162.56" y="86.36" size="1.778" layer="95"/>
+<pinref part="U1" gate="G$1" pin="A2"/>
+<wire x1="134.62" y1="86.36" x2="124.46" y2="86.36" width="0.1524" layer="91"/>
+<label x="121.92" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="H13" class="0">
@@ -8361,17 +8361,12 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <pinref part="SV1" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="B7"/>
-<wire x1="160.02" y1="73.66" x2="170.18" y2="73.66" width="0.1524" layer="91"/>
-<label x="162.56" y="73.66" size="1.778" layer="95"/>
+<pinref part="U1" gate="G$1" pin="A7"/>
+<wire x1="134.62" y1="73.66" x2="124.46" y2="73.66" width="0.1524" layer="91"/>
+<label x="121.92" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AR_SDAIN" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="A2"/>
-<wire x1="134.62" y1="86.36" x2="124.46" y2="86.36" width="0.1524" layer="91"/>
-<label x="121.92" y="86.36" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="J5" gate="G$1" pin="6"/>
 <wire x1="78.74" y1="76.2" x2="63.5" y2="76.2" width="0.1524" layer="91"/>
@@ -8382,13 +8377,13 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <label x="66.04" y="-40.64" size="1.778" layer="95"/>
 <pinref part="ARDUINO_NANO1" gate="G$1" pin="D11"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="B2"/>
+<wire x1="160.02" y1="86.36" x2="170.18" y2="86.36" width="0.1524" layer="91"/>
+<label x="162.56" y="86.36" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="AR_SCLIN" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="A7"/>
-<wire x1="134.62" y1="73.66" x2="124.46" y2="73.66" width="0.1524" layer="91"/>
-<label x="121.92" y="73.66" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="J5" gate="G$1" pin="7"/>
 <wire x1="78.74" y1="73.66" x2="63.5" y2="73.66" width="0.1524" layer="91"/>
@@ -8398,6 +8393,11 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <wire x1="60.96" y1="-45.72" x2="68.58" y2="-45.72" width="0.1524" layer="91"/>
 <label x="66.04" y="-45.72" size="1.778" layer="95"/>
 <pinref part="ARDUINO_NANO1" gate="G$1" pin="D9"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="B7"/>
+<wire x1="160.02" y1="73.66" x2="170.18" y2="73.66" width="0.1524" layer="91"/>
+<label x="162.56" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO2_H11" class="0">
