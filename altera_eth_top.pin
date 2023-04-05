@@ -490,7 +490,7 @@ GND                          : G26       : gnd    :                   :         
 tx_serial_data[0](n)         : G27       : output : High Speed Differential I/O :         : 1D        : Y              
 tx_serial_data[0]            : G28       : output : High Speed Differential I/O :         : 1D        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 3B        :                
-arduino_sda                  : H2        : input  : 1.8 V             :         : 3B        : Y              
+arduino_scl                  : H2        : input  : 1.8 V             :         : 3B        : Y              
 NC                           : H3        :        :                   :         :           :                
 GND                          : H4        : gnd    :                   :         :           :                
 NC                           : H5        :        :                   :         :           :                
@@ -519,7 +519,7 @@ GND                          : H27       : gnd    :                   :         
 GND                          : H28       : gnd    :                   :         :           :                
 GND                          : J1        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J2        :        :                   :         : 3B        :                
-arduino_scl                  : J3        : input  : 1.8 V             :         : 3B        : Y              
+arduino_sda                  : J3        : input  : 1.8 V             :         : 3B        : Y              
 NC                           : J4        :        :                   :         :           :                
 NC                           : J5        :        :                   :         :           :                
 GND                          : J6        : gnd    :                   :         :           :                

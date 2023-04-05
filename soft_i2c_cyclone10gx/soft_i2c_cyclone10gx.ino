@@ -44,11 +44,6 @@ void sendOutputCommandOn() {
 void setup() {
   Serial.begin(115200);
 
-  //for power to level shifter
-  pinMode(6,OUTPUT);
-  digitalWrite(6,HIGH);
-  delay(100);
-
   //program outputs
   sendConfigOutputCommand();
   delay(100);
@@ -58,15 +53,7 @@ void setup() {
   delay(100);
 }
 
-bool controlpin;
 void loop() {
-  bool tempcontrolpin = digitalRead(2);
-  if (controlpin != tempcontrolpin){
-    controlpin = tempcontrolpin;
-    Serial.print("control pin now "); Serial.println(controlpin);
-    if (controlpin) sendOutputCommandOn();
-    else sendOutputCommandOff();
-  }
   digitalWrite(LED_BUILTIN,HIGH);
   delay(1000);
   digitalWrite(LED_BUILTIN,LOW);
