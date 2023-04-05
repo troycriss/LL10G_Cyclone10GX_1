@@ -100,8 +100,8 @@ set_location_assignment PIN_H20 -to sfp_sda_1
 set_location_assignment PIN_D22 -to sfp_sda_0
 set_location_assignment PIN_E23 -to sfp_int_0
 set_location_assignment PIN_D23 -to sfp_int_1
-set_location_assignment PIN_H2 -to arduino_sda
-set_location_assignment PIN_J3 -to arduino_scl
+set_location_assignment PIN_J3 -to arduino_sda
+set_location_assignment PIN_H2 -to arduino_scl
 set_location_assignment PIN_AF6 -to led_heartbeat
 set_location_assignment PIN_AE6 -to led_other
 set_location_assignment PIN_L1 -to fmc_in[0]
