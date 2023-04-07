@@ -12071,11 +12071,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY23" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="ARDUINO_NANO1" library="ArduinoNanoV30" deviceset="ARDUINO_NANO" device=""/>
+<part name="ARDUINO_NANO1" library="ArduinoNanoV30" deviceset="ARDUINO_NANO" device="" value="1"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="150"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="150"/>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
 <part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
 <part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -12124,6 +12124,8 @@ and offset</text>
 <wire x1="-86.36" y1="109.22" x2="0" y2="109.22" width="0.1524" layer="97"/>
 <text x="-83.82" y="104.14" size="1.778" layer="90">Arduino</text>
 <text x="-22.86" y="114.3" size="1.778" layer="90">Extra op amp</text>
+<text x="53.34" y="162.56" size="1.778" layer="90">x10 gain</text>
+<text x="101.6" y="124.46" size="1.778" layer="90">x10 /2 gain</text>
 </plain>
 <instances>
 <instance part="J12" gate="G$1" x="167.64" y="1.27" smashed="yes"/>
@@ -13433,7 +13435,6 @@ and offset</text>
 <approved hash="104,1,53.34,127,IC5G1,V-,VS-,,,"/>
 <approved hash="206,1,63.5,38.1,VS-,,,,,"/>
 <approved hash="206,1,63.5,10.16,VS-,,,,,"/>
-<approved hash="113,1,-45.72,81.5128,ARDUINO_NANO1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
