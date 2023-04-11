@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
@@ -202,18 +202,18 @@ NYU, 2023</text>
 <text x="92.6" y="20.5" size="0.8128" layer="21" rot="R180">OFFSETIN1</text>
 <text x="92.6" y="23.5" size="0.8128" layer="21" rot="R180">OPOUT H10</text>
 <text x="92.6" y="25.5" size="0.8128" layer="21" rot="R180">IO H11</text>
-<text x="20.6" y="11.5" size="0.8128" layer="21" rot="R180">H10</text>
-<text x="20.6" y="13.5" size="0.8128" layer="21" rot="R180">H11</text>
-<text x="20.6" y="18.5" size="0.8128" layer="21" rot="R180">H13</text>
-<text x="20.6" y="20.5" size="0.8128" layer="21" rot="R180">H14</text>
-<text x="20.6" y="28.5" size="0.8128" layer="21" rot="R180">H17</text>
-<text x="20.6" y="26.5" size="0.8128" layer="21" rot="R180">H16</text>
-<text x="20.6" y="36.5" size="0.8128" layer="21" rot="R180">H20</text>
-<text x="20.6" y="34.5" size="0.8128" layer="21" rot="R180">H19</text>
-<text x="20.6" y="43.5" size="0.8128" layer="21" rot="R180">H23</text>
-<text x="20.6" y="41.5" size="0.8128" layer="21" rot="R180">H22</text>
-<text x="20.6" y="49.5" size="0.8128" layer="21" rot="R180">H25</text>
-<text x="20.6" y="51.5" size="0.8128" layer="21" rot="R180">H26</text>
+<text x="20.6" y="11.5" size="0.8128" layer="21" rot="R180">H10_FMCIN0</text>
+<text x="20.6" y="13.5" size="0.8128" layer="21" rot="R180">H11_FMCIN1</text>
+<text x="20.6" y="18.5" size="0.8128" layer="21" rot="R180">H13_FMCIN2</text>
+<text x="20.6" y="20.5" size="0.8128" layer="21" rot="R180">H14_FMCIN3</text>
+<text x="20.6" y="28.5" size="0.8128" layer="21" rot="R180">H17_FMCIN5</text>
+<text x="20.6" y="26.5" size="0.8128" layer="21" rot="R180">H16_FMCIN4</text>
+<text x="20.6" y="36.5" size="0.8128" layer="21" rot="R180">H20_FMCIN7</text>
+<text x="20.6" y="34.5" size="0.8128" layer="21" rot="R180">H19_FMCIN6</text>
+<text x="19.6" y="43.5" size="0.8128" layer="21" rot="R180">H23_FMCOUT1</text>
+<text x="19.6" y="41.5" size="0.8128" layer="21" rot="R180">H22_FMCOUT0</text>
+<text x="19.6" y="49.5" size="0.8128" layer="21" rot="R180">H25_FMCOUT2</text>
+<text x="19.6" y="51.5" size="0.8128" layer="21" rot="R180">H26_FMCOUT3</text>
 <text x="33.6" y="70.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="33.6" y="63.5" size="0.8128" layer="21" rot="R180">G3</text>
 <text x="33.6" y="66.5" size="0.8128" layer="21" rot="R180">GND</text>
@@ -222,10 +222,10 @@ NYU, 2023</text>
 <text x="33.6" y="46.5" size="0.8128" layer="21" rot="R180">H37</text>
 <text x="33.6" y="40.5" size="0.8128" layer="21" rot="R180">H35</text>
 <text x="33.6" y="38.5" size="0.8128" layer="21" rot="R180">H34</text>
-<text x="33.6" y="33.5" size="0.8128" layer="21" rot="R180">H32</text>
-<text x="33.6" y="31.5" size="0.8128" layer="21" rot="R180">H31</text>
-<text x="33.6" y="25.5" size="0.8128" layer="21" rot="R180">H28</text>
-<text x="33.6" y="23.5" size="0.8128" layer="21" rot="R180">H27</text>
+<text x="33.1" y="32.2" size="0.8128" layer="21" rot="R180">H32_FMCOUT7</text>
+<text x="33.1" y="29.6" size="0.8128" layer="21" rot="R180">H31_FMCOUT6</text>
+<text x="33.1" y="24.6" size="0.8128" layer="21" rot="R180">H29_FMCOUT5</text>
+<text x="33.1" y="22" size="0.8128" layer="21" rot="R180">H28_FMCOUT4</text>
 <text x="20.6" y="5.5" size="0.8128" layer="21" rot="R180">H8</text>
 <text x="20.6" y="3.5" size="0.8128" layer="21" rot="R180">H7</text>
 <text x="33.6" y="61.5" size="0.8128" layer="21" rot="R180">G2</text>
@@ -241,7 +241,7 @@ Adj</text>
 <text x="33.6" y="51.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="33.6" y="43.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="33.6" y="35.5" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="33.6" y="28.5" size="0.8128" layer="21" rot="R180">GND</text>
+<text x="33.6" y="27.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="20.6" y="8.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="20.6" y="16.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="20.6" y="22.5" size="0.8128" layer="21" rot="R180">GND</text>

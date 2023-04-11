@@ -43,6 +43,11 @@ void sendOutputCommandOn() {
 
 void setup() {
   Serial.begin(115200);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+
+  pinMode(PIN_SCL, OUTPUT);
+  pinMode(PIN_SDA, OUTPUT);
 
   //program outputs
   sendConfigOutputCommand();
@@ -54,6 +59,9 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(5,HIGH);
+  digitalWrite(6,HIGH);
+  
   digitalWrite(LED_BUILTIN,HIGH);
   delay(1000);
   digitalWrite(LED_BUILTIN,LOW);
