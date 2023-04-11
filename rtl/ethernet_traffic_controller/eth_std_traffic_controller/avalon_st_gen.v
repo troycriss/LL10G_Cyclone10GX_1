@@ -239,11 +239,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
    end
 	
 	//debugging outputs
-	assign fmc_out[7] = fifo_wrreq;
-	assign fmc_out[6] = fifo_rdreq;
-	assign fmc_out[5] = fifo_aclr;
-	assign fmc_out[4] = fifo_rdusedw[0];
-	assign fmc_out[3:0] = ns;
+	assign fmc_out[7:4] = ns;
+	assign fmc_out[3:0] = fmc_in[3:0];
 
 	//Read registers
 	always @ (posedge reset or posedge clk)
