@@ -181,3 +181,13 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_6_7.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_8_9.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_10_11.ip
+set_location_assignment PIN_U6 -to fmc_out[8]
+set_location_assignment PIN_V7 -to fmc_out[9]
+set_location_assignment PIN_T6 -to fmc_out[10]
+set_location_assignment PIN_T7 -to fmc_out[11]
+set_location_assignment PIN_R4 -to fmc_out[12]
+set_location_assignment PIN_R5 -to fmc_out[13]
+set_location_assignment PIN_T1 -to fmc_out[14]
+set_location_assignment PIN_R1 -to fmc_out[15]
+set_location_assignment PIN_T8 -to fmc_in[14]
+set_location_assignment PIN_T9 -to fmc_in[15]

@@ -14,8 +14,8 @@
  module eth_std_traffic_controller_top (
 	input 	wire 		clk,
 	input 	wire 		reset_n,
-	input    wire[7:0]   fmc_in,
-	output   wire[7:0]   fmc_out,
+	input    wire[15:0]   fmc_in,
+	output   wire[15:0]   fmc_out,
 	input wire fast1_clk,
 	input wire fast2_clk,
 
