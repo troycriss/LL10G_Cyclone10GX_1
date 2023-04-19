@@ -45,8 +45,8 @@ module altera_eth_top # (
 	 input arduino_sda,
 	 
 	 //FMC inputs / outputs
-	 input fmc_in[15:0], // only 7:0 used by first eth port
-	 output fmc_out[15:0] // only 7:0 used by first eth port
+	 input fmc_in[31:0], // only 15:0 used by first eth port, next 16 used by second eth port
+	 output fmc_out[31:0] // ""
 );
 
 	 // I2C interface

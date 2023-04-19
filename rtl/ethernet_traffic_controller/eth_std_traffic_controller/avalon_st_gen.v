@@ -19,8 +19,8 @@ module avalon_st_gen
  input                 clk             // TX FIFO Interface clock
 ,input                 reset           // Reset signal
 
-,input			 [7:0]  fmc_in          // Inputs from FMC
-,output         [7:0]  fmc_out			// Outputs to FMC
+,input			 [15:0]  fmc_in         // Inputs from FMC (14-15 are from arduino)
+,output         [15:0]  fmc_out			// Outputs to FMC (8-15 are for pulses)
 
 ,input fast1_clk // 
 ,input fast2_clk // 
