@@ -21,8 +21,6 @@ Open system console<br>
  
  SENDAGAIN
  
-With loopback optical see 9.84 Gbps<br>
-
 https://en.wikipedia.org/wiki/Ethernet_frame <br>
 https://en.wikipedia.org/wiki/Internet_Protocol_version_4 <br>
 https://en.wikipedia.org/wiki/User_Datagram_Protocol <br>
@@ -36,4 +34,9 @@ C10GX kit download: https://www.dropbox.com/s/qehok7muoahcpib/cyclone-10-gx-kit-
 
 Simulation of amps: 
 https://tinyurl.com/297t5xo8
+
+Simulation of pulse generators:
+https://tinyurl.com/27l9ev2u
+
+
 
