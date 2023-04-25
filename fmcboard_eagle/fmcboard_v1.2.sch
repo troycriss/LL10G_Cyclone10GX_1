@@ -12267,13 +12267,13 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <part name="R38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="36"/>
 <part name="C34" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
 <part name="C35" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
 <part name="C36" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
 <part name="C37" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
 <part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
-<part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="2pF"/>
+<part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
 </parts>
 <sheets>
 <sheet>
