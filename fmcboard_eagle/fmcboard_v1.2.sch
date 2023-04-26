@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -12200,8 +12200,7 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <part name="IC10" library="LTC6229IMS8E#TRPBF" deviceset="LTC6229IMS8E#TRPBF" device=""/>
 <part name="R31" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-TRIMM" device="3296W" package3d_urn="urn:adsk.eagle:package:26033/1" value="1k"/>
 <part name="SUPPLY38" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IO_PULSESUMOUT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
-<part name="R34" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value="50"/>
+<part name="PULSESUMOUT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="SUPPLY41" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R35" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-TRIMM" device="3296W" package3d_urn="urn:adsk.eagle:package:26033/1" value="1k"/>
 <part name="SUPPLY42" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -12220,7 +12219,6 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <part name="J6" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 <part name="J7" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 <part name="SUPPLY49" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY50" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C6" library="SparkFun-Passives" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="C15" library="SparkFun-Passives" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="SUPPLY51" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -12267,13 +12265,16 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <part name="R38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="36"/>
-<part name="C34" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
-<part name="C35" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
-<part name="C36" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
-<part name="C37" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
-<part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="5pF"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50"/>
+<part name="C34" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="C35" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="C36" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="C37" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
 <part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50"/>
+<part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50"/>
+<part name="J8" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 </parts>
 <sheets>
 <sheet>
@@ -12292,12 +12293,14 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <wire x1="5.08" y1="55.88" x2="109.22" y2="55.88" width="0.1524" layer="97"/>
 <wire x1="114.3" y1="55.88" x2="175.26" y2="55.88" width="0.1524" layer="97"/>
 <text x="-86.36" y="48.26" size="1.778" layer="90">Decoupling</text>
+<text x="121.92" y="43.18" size="1.778" layer="90">Can use jumper to connect 
+AR_5V and VS+</text>
 </plain>
 <instances>
-<instance part="J12" gate="G$1" x="167.64" y="1.27" smashed="yes"/>
+<instance part="J12" gate="G$1" x="172.72" y="1.27" smashed="yes"/>
 <instance part="J1" gate="G$1" x="137.16" y="30.48" smashed="yes" rot="R180"/>
-<instance part="J3" gate="G$1" x="154.94" y="1.27" smashed="yes"/>
-<instance part="J4" gate="G$1" x="139.7" y="1.27" smashed="yes"/>
+<instance part="J3" gate="G$1" x="160.02" y="1.27" smashed="yes"/>
+<instance part="J4" gate="G$1" x="134.62" y="1.27" smashed="yes"/>
 <instance part="C1" gate="G$1" x="10.16" y="20.32" smashed="yes">
 <attribute name="NAME" x="11.684" y="23.241" size="1.778" layer="95"/>
 <attribute name="VALUE" x="11.684" y="18.161" size="1.778" layer="96"/>
@@ -12310,7 +12313,7 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <attribute name="VALUE" x="50.8" y="7.366" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="J5" gate="G$1" x="99.06" y="83.82" smashed="yes" rot="R180"/>
-<instance part="SUPPLY7" gate="GND" x="132.08" y="-5.08" smashed="yes"/>
+<instance part="SUPPLY7" gate="GND" x="127" y="-5.08" smashed="yes"/>
 <instance part="U1" gate="G$1" x="147.32" y="81.28" smashed="yes">
 <attribute name="NAME" x="138.43" y="95.25" size="1.27" layer="95" ratio="10"/>
 <attribute name="VALUE" x="151.13" y="95.25" size="1.27" layer="96" ratio="10"/>
@@ -12374,7 +12377,6 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <instance part="SUPPLY24" gate="GND" x="-17.78" y="66.04" smashed="yes"/>
 <instance part="ARDUINO_NANO1" gate="G$1" x="-45.72" y="73.66" smashed="yes" rot="R180">
 <attribute name="NAME" x="-30.48" y="104.14" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-30.48" y="106.68" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="IO_G2" gate="G1" x="53.34" y="99.06" smashed="yes">
 <attribute name="NAME" x="48.26" y="102.362" size="1.778" layer="95"/>
@@ -12418,18 +12420,13 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <instance part="GND4" gate="1" x="60.96" y="20.32" smashed="yes">
 <attribute name="VALUE" x="60.96" y="20.066" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="IO_PULSESUMOUT" gate="G1" x="17.78" y="81.28" smashed="yes">
+<instance part="PULSESUMOUT" gate="G1" x="17.78" y="81.28" smashed="yes">
 <attribute name="NAME" x="12.7" y="71.882" size="1.778" layer="95"/>
-</instance>
-<instance part="R34" gate="G$1" x="27.94" y="81.28" smashed="yes" rot="R180">
-<attribute name="NAME" x="29.21" y="79.7814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="29.21" y="84.582" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SUPPLY41" gate="GND" x="20.32" y="76.2" smashed="yes"/>
 <instance part="J6" gate="G$1" x="86.36" y="11.43" smashed="yes"/>
 <instance part="J7" gate="G$1" x="86.36" y="-1.27" smashed="yes"/>
 <instance part="SUPPLY49" gate="GND" x="132.08" y="17.78" smashed="yes"/>
-<instance part="SUPPLY50" gate="GND" x="144.78" y="35.56" smashed="yes"/>
 <instance part="C6" gate="G$1" x="-86.36" y="33.02" smashed="yes">
 <attribute name="NAME" x="-84.836" y="35.941" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-84.836" y="30.861" size="1.778" layer="96"/>
@@ -12520,6 +12517,11 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 </instance>
 <instance part="SUPPLY67" gate="GND" x="-35.56" y="-12.7" smashed="yes"/>
 <instance part="SUPPLY68" gate="GND" x="-25.4" y="-12.7" smashed="yes"/>
+<instance part="R34" gate="G$1" x="27.94" y="81.28" smashed="yes" rot="R180">
+<attribute name="NAME" x="31.75" y="79.7814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="31.75" y="84.582" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="J8" gate="G$1" x="147.32" y="1.27" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -12528,12 +12530,16 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <segment>
 <pinref part="J4" gate="G$1" pin="P$4"/>
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
-<pinref part="J3" gate="G$1" pin="P$4"/>
-<wire x1="132.08" y1="-2.54" x2="147.32" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="132.08" y="-2.54"/>
-<pinref part="J12" gate="G$1" pin="P$4"/>
-<wire x1="147.32" y1="-2.54" x2="160.02" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="147.32" y="-2.54"/>
+<pinref part="J4" gate="G$1" pin="P$3"/>
+<wire x1="127" y1="-2.54" x2="127" y2="0" width="0.1524" layer="91"/>
+<junction x="127" y="-2.54"/>
+<pinref part="J4" gate="G$1" pin="P$2"/>
+<wire x1="127" y1="0" x2="127" y2="2.54" width="0.1524" layer="91"/>
+<junction x="127" y="0"/>
+<pinref part="J4" gate="G$1" pin="P$1"/>
+<wire x1="127" y1="2.54" x2="127" y2="5.08" width="0.1524" layer="91"/>
+<junction x="127" y="2.54"/>
+<junction x="127" y="5.08"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
@@ -12637,7 +12643,7 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <wire x1="17.78" y1="22.86" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IO_PULSESUMOUT" gate="G1" pin="2"/>
+<pinref part="PULSESUMOUT" gate="G1" pin="2"/>
 <pinref part="SUPPLY41" gate="GND" pin="GND"/>
 </segment>
 <segment>
@@ -12646,14 +12652,6 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <pinref part="J1" gate="G$1" pin="7"/>
 <wire x1="132.08" y1="22.86" x2="132.08" y2="20.32" width="0.1524" layer="91"/>
 <junction x="132.08" y="20.32"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="2"/>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="35.56" x2="132.08" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="SUPPLY50" gate="GND" pin="GND"/>
-<wire x1="132.08" y1="38.1" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
-<junction x="132.08" y="38.1"/>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="2"/>
@@ -12737,17 +12735,6 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 </net>
 <net name="1V8" class="1">
 <segment>
-<pinref part="J12" gate="G$1" pin="P$3"/>
-<wire x1="160.02" y1="0" x2="147.32" y2="0" width="0.1524" layer="91"/>
-<label x="124.46" y="0" size="1.778" layer="95"/>
-<pinref part="J3" gate="G$1" pin="P$3"/>
-<wire x1="147.32" y1="0" x2="132.08" y2="0" width="0.1524" layer="91"/>
-<junction x="147.32" y="0"/>
-<pinref part="J4" gate="G$1" pin="P$3"/>
-<wire x1="132.08" y1="0" x2="124.46" y2="0" width="0.1524" layer="91"/>
-<junction x="132.08" y="0"/>
-</segment>
-<segment>
 <pinref part="U1" gate="G$1" pin="VCCA"/>
 <wire x1="144.78" y1="97.79" x2="144.78" y2="104.14" width="0.1524" layer="91"/>
 <label x="139.7" y="104.14" size="1.778" layer="95"/>
@@ -12764,41 +12751,61 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <wire x1="111.76" y1="7.62" x2="111.76" y2="15.24" width="0.1524" layer="91"/>
 <label x="109.22" y="15.24" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="J12" gate="G$1" pin="P$4"/>
+<pinref part="J12" gate="G$1" pin="P$3"/>
+<wire x1="165.1" y1="-2.54" x2="165.1" y2="0" width="0.1524" layer="91"/>
+<pinref part="J12" gate="G$1" pin="P$2"/>
+<wire x1="165.1" y1="0" x2="165.1" y2="2.54" width="0.1524" layer="91"/>
+<junction x="165.1" y="0"/>
+<pinref part="J12" gate="G$1" pin="P$1"/>
+<wire x1="165.1" y1="2.54" x2="165.1" y2="5.08" width="0.1524" layer="91"/>
+<junction x="165.1" y="2.54"/>
+<wire x1="165.1" y1="5.08" x2="165.1" y2="10.16" width="0.1524" layer="91"/>
+<junction x="165.1" y="5.08"/>
+<label x="165.1" y="10.16" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="3V3" class="1">
-<segment>
-<pinref part="J12" gate="G$1" pin="P$2"/>
-<wire x1="124.46" y1="2.54" x2="132.08" y2="2.54" width="0.1524" layer="91"/>
-<label x="124.46" y="2.54" size="1.778" layer="95"/>
-<pinref part="J3" gate="G$1" pin="P$2"/>
-<wire x1="132.08" y1="2.54" x2="147.32" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="2.54" x2="160.02" y2="2.54" width="0.1524" layer="91"/>
-<junction x="147.32" y="2.54"/>
-<pinref part="J4" gate="G$1" pin="P$2"/>
-<junction x="132.08" y="2.54"/>
-</segment>
 <segment>
 <pinref part="C13" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="7.62" x2="104.14" y2="15.24" width="0.1524" layer="91"/>
 <label x="101.6" y="15.24" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="J3" gate="G$1" pin="P$4"/>
+<pinref part="J3" gate="G$1" pin="P$3"/>
+<wire x1="152.4" y1="-2.54" x2="152.4" y2="0" width="0.1524" layer="91"/>
+<pinref part="J3" gate="G$1" pin="P$2"/>
+<wire x1="152.4" y1="0" x2="152.4" y2="2.54" width="0.1524" layer="91"/>
+<junction x="152.4" y="0"/>
+<pinref part="J3" gate="G$1" pin="P$1"/>
+<wire x1="152.4" y1="2.54" x2="152.4" y2="5.08" width="0.1524" layer="91"/>
+<junction x="152.4" y="2.54"/>
+<wire x1="152.4" y1="5.08" x2="152.4" y2="10.16" width="0.1524" layer="91"/>
+<junction x="152.4" y="5.08"/>
+<label x="152.4" y="10.16" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="12V" class="1">
-<segment>
-<pinref part="J12" gate="G$1" pin="P$1"/>
-<wire x1="124.46" y1="5.08" x2="132.08" y2="5.08" width="0.1524" layer="91"/>
-<label x="124.46" y="5.08" size="1.778" layer="95"/>
-<pinref part="J3" gate="G$1" pin="P$1"/>
-<wire x1="132.08" y1="5.08" x2="147.32" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="5.08" x2="160.02" y2="5.08" width="0.1524" layer="91"/>
-<junction x="147.32" y="5.08"/>
-<pinref part="J4" gate="G$1" pin="P$1"/>
-<junction x="132.08" y="5.08"/>
-</segment>
 <segment>
 <pinref part="C12" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="7.62" x2="96.52" y2="15.24" width="0.1524" layer="91"/>
 <label x="93.98" y="15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J8" gate="G$1" pin="P$4"/>
+<pinref part="J8" gate="G$1" pin="P$3"/>
+<wire x1="139.7" y1="-2.54" x2="139.7" y2="0" width="0.1524" layer="91"/>
+<pinref part="J8" gate="G$1" pin="P$2"/>
+<wire x1="139.7" y1="0" x2="139.7" y2="2.54" width="0.1524" layer="91"/>
+<junction x="139.7" y="0"/>
+<pinref part="J8" gate="G$1" pin="P$1"/>
+<wire x1="139.7" y1="2.54" x2="139.7" y2="5.08" width="0.1524" layer="91"/>
+<junction x="139.7" y="2.54"/>
+<wire x1="139.7" y1="5.08" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
+<junction x="139.7" y="5.08"/>
+<label x="139.7" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TRANSOUT" class="0">
@@ -12837,11 +12844,6 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <pinref part="R_VH" gate="G$1" pin="E"/>
 <wire x1="154.94" y1="33.02" x2="154.94" y2="38.1" width="0.1524" layer="91"/>
 <label x="154.94" y="33.02" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<wire x1="-66.04" y1="68.58" x2="-73.66" y2="68.58" width="0.1524" layer="91"/>
-<label x="-78.74" y="68.58" size="1.778" layer="95"/>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="5V"/>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="V+"/>
@@ -12906,6 +12908,11 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <pinref part="C30" gate="G$1" pin="1"/>
 <wire x1="-35.56" y1="-2.54" x2="-35.56" y2="2.54" width="0.1524" layer="91"/>
 <label x="-38.1" y="0" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="35.56" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
+<label x="121.92" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VS-" class="1">
@@ -13188,17 +13195,29 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <label x="78.74" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R34" gate="G$1" pin="1"/>
 <wire x1="33.02" y1="81.28" x2="33.02" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="88.9" x2="15.24" y2="88.9" width="0.1524" layer="91"/>
 <label x="15.24" y="88.9" size="1.778" layer="95"/>
+<pinref part="R34" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="R34" gate="G$1" pin="2"/>
-<pinref part="IO_PULSESUMOUT" gate="G1" pin="1"/>
+<pinref part="PULSESUMOUT" gate="G1" pin="1"/>
 <wire x1="22.86" y1="81.28" x2="20.32" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R34" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="AR_5V" class="1">
+<segment>
+<wire x1="-66.04" y1="68.58" x2="-76.2" y2="68.58" width="0.1524" layer="91"/>
+<label x="-76.2" y="68.58" size="1.778" layer="95"/>
+<pinref part="ARDUINO_NANO1" gate="G$1" pin="5V"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="38.1" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
+<label x="121.92" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -13886,15 +13905,15 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <text x="231.14" y="129.54" size="1.778" layer="90">Pulse summing amp</text>
 </plain>
 <instances>
-<instance part="OPIN" gate="G1" x="152.4" y="116.84" smashed="yes">
-<attribute name="NAME" x="147.32" y="120.142" size="1.778" layer="95"/>
+<instance part="OPIN" gate="G1" x="149.86" y="116.84" smashed="yes">
+<attribute name="NAME" x="144.78" y="120.142" size="1.778" layer="95"/>
 </instance>
 <instance part="IC1" gate="G$1" x="175.26" y="66.04" smashed="yes">
 <attribute name="NAME" x="181.61" y="71.12" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="186.69" y="71.12" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="SUPPLY1" gate="GND" x="167.64" y="38.1" smashed="yes"/>
-<instance part="SUPPLY5" gate="GND" x="154.94" y="111.76" smashed="yes"/>
+<instance part="SUPPLY5" gate="GND" x="152.4" y="104.14" smashed="yes"/>
 <instance part="R9" gate="G$1" x="198.12" y="50.8" smashed="yes">
 <attribute name="NAME" x="194.31" y="52.2986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="194.31" y="47.498" size="1.778" layer="96"/>
@@ -13994,8 +14013,8 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 </instance>
 <instance part="SUPPLY25" gate="GND" x="228.6" y="106.68" smashed="yes"/>
 <instance part="R2" gate="G$1" x="162.56" y="116.84" smashed="yes" rot="R180">
-<attribute name="NAME" x="166.37" y="115.3414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="166.37" y="120.142" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="163.83" y="115.3414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="163.83" y="120.142" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C32" gate="G$1" x="238.76" y="99.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="235.839" y="100.584" size="1.778" layer="95" rot="R90"/>
@@ -14004,6 +14023,10 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <instance part="C33" gate="G$1" x="193.04" y="127" smashed="yes" rot="R90">
 <attribute name="NAME" x="190.119" y="128.524" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="195.199" y="128.524" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R42" gate="G$1" x="157.48" y="111.76" smashed="yes" rot="R270">
+<attribute name="NAME" x="158.9786" y="113.03" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="154.178" y="113.03" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -14044,16 +14067,22 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <segment>
 <pinref part="OPIN" gate="G1" pin="2"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
+<wire x1="152.4" y1="106.68" x2="152.4" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="R42" gate="G$1" pin="2"/>
+<wire x1="152.4" y1="106.68" x2="157.48" y2="106.68" width="0.1524" layer="91"/>
+<junction x="152.4" y="106.68"/>
 </segment>
 </net>
 <net name="IO1" class="0">
 <segment>
 <pinref part="OPIN" gate="G1" pin="1"/>
 <label x="144.78" y="119.38" size="1.778" layer="95" rot="R180"/>
-<wire x1="154.94" y1="116.84" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="116.84" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="154.94" y1="116.84" x2="157.48" y2="116.84" width="0.1524" layer="91"/>
-<junction x="154.94" y="116.84"/>
+<wire x1="152.4" y1="116.84" x2="157.48" y2="116.84" width="0.1524" layer="91"/>
+<junction x="152.4" y="116.84"/>
+<pinref part="R42" gate="G$1" pin="1"/>
+<junction x="157.48" y="116.84"/>
 </segment>
 </net>
 <net name="TRANSOUT" class="0">
@@ -14850,7 +14879,7 @@ Source: &lt;a href="https://www.analog.com/media/en/technical-documentation/data
 <errors>
 <approved hash="202,1,-25.4,66.04,ARDUINO_NANO1,!RESET,,,,"/>
 <approved hash="202,1,-66.04,91.44,ARDUINO_NANO1,AREF,,,,"/>
-<approved hash="104,1,-66.04,68.58,ARDUINO_NANO1,5V,VS+,,,"/>
+<approved hash="104,1,-66.04,68.58,ARDUINO_NANO1,5V,AR_5V,,,"/>
 <approved hash="202,1,-66.04,66.04,ARDUINO_NANO1,!RESET,,,,"/>
 <approved hash="204,1,-66.04,60.96,ARDUINO_NANO1,VIN,,,,"/>
 <approved hash="104,3,78.74,142.24,IC5G1,V+,VS+,,,"/>
