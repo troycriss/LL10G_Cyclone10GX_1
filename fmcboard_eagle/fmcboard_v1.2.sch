@@ -15995,7 +15995,7 @@ AR_5V and VS+</text>
 <label x="121.92" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VIN+CLEAN" class="0">
+<net name="VIN+CLEAN" class="1">
 <segment>
 <pinref part="IC11" gate="A1" pin="VI"/>
 <wire x1="27.94" y1="38.1" x2="20.32" y2="38.1" width="0.1524" layer="91"/>
@@ -16007,7 +16007,7 @@ AR_5V and VS+</text>
 <label x="17.78" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VIN-CLEAN" class="0">
+<net name="VIN-CLEAN" class="1">
 <segment>
 <pinref part="IC12" gate="A1" pin="VI"/>
 <wire x1="27.94" y1="12.7" x2="20.32" y2="12.7" width="0.1524" layer="91"/>
@@ -16019,7 +16019,7 @@ AR_5V and VS+</text>
 <label x="17.78" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VIN+" class="0">
+<net name="VIN+" class="1">
 <segment>
 <pinref part="L1" gate="G$1" pin="1"/>
 <pinref part="C39" gate="G$1" pin="1"/>
@@ -16036,7 +16036,7 @@ AR_5V and VS+</text>
 <label x="121.92" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VIN-" class="0">
+<net name="VIN-" class="1">
 <segment>
 <pinref part="L2" gate="G$1" pin="1"/>
 <pinref part="C40" gate="G$1" pin="1"/>
