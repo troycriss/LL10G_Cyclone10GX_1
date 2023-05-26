@@ -16,8 +16,9 @@
 
 module avalon_st_gen
 (
- input                 clk             // TX FIFO Interface clock
-,input                 reset           // Reset signal
+ input wire 				refclk_10g     // Fastest clock
+,input                 	clk            // TX FIFO Interface clock
+,input                 	reset          // Reset signal
 
 ,input			 [15:0]  fmc_in         // Inputs from FMC (14-15 are from arduino)
 ,output         [15:0]  fmc_out			// Outputs to FMC (8-15 are for pulses)
@@ -61,9 +62,14 @@ module avalon_st_gen
  parameter ADDR_RNDSEED2 	= 8'hc;
  parameter ADDR_PKTLENGTH 	= 8'hd;
  
+ //Andre/Andy variables
  parameter ADDR_do_test_counter_data = 8'h10;
  parameter ADDR_fifo_clk_prescale = 8'h11;
  parameter ADDR_destip = 8'h12;
+ parameter ADDR_pos1pulsedur = 8'h13;
+ parameter ADDR_pos2pulsedur = 8'h14;
+ parameter ADDR_pos3pulsedur = 8'h15;
+ parameter ADDR_pos4pulsedur = 8'h16;
 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -241,6 +247,23 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	//debugging outputs
 	assign fmc_out[7:4] = ns;
 	assign fmc_out[3:0] = fmc_in[3:0];
+	
+	//pulse outputs
+	reg [31:0] pos1pulsedur = 3'd3;
+	reg [31:0] pos2pulsedur = 3'd5;
+	reg [31:0] pos3pulsedur = 0;
+	reg [31:0] pos4pulsedur = 0;
+	
+	PulseController pulser (
+		.clk_in(fast2_clk),
+		
+		.pos1dur(pos1pulsedur),
+		.pos2dur(pos2pulsedur),
+		.pos3dur(pos3pulsedur),
+		.pos4dur(pos4pulsedur),
+		
+		.signal_out(fmc_out[15:8])
+	);
 
 	//Read registers
 	always @ (posedge reset or posedge clk)
@@ -249,10 +272,18 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			do_test_counter_data <= 1'b0;
 			fifo_clk_prescale <= 32'h0;
 			destip <= 32'hC0A80A0b;
+			pos1pulsedur <= 5'd30;
+			pos2pulsedur <= 6'd40;
+			pos3pulsedur <= 0;
+			pos4pulsedur <= 0;
 		end
 		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
 		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
 		else if (write & address == ADDR_destip) destip <= writedata;
+		else if (write & address == ADDR_pos1pulsedur) pos1pulsedur<= writedata;
+		else if (write & address == ADDR_pos2pulsedur) pos2pulsedur<= 6'd60;
+		else if (write & address == ADDR_pos3pulsedur) pos3pulsedur<= writedata;
+		else if (write & address == ADDR_pos4pulsedur) pos4pulsedur<= writedata;
    end
 	
 // ____________________________________________________________________________
