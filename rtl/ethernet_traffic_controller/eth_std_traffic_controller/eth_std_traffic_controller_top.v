@@ -12,6 +12,7 @@
 
 
  module eth_std_traffic_controller_top (
+	input    wire 		refclk_10g,
 	input 	wire 		clk,
 	input 	wire 		reset_n,
 	input    wire[15:0]   fmc_in,
@@ -107,6 +108,7 @@
 // _______________________________________________________________
  	avalon_st_gen  GEN (
 // _______________________________________________________________
+	.refclk_10g  (refclk_10g),
 	.clk         (clk), 	 			// Tx clock
 	.reset       (sync_reset), 			// Reset signal
 	.fmc_in (fmc_in),
