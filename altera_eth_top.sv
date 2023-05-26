@@ -285,6 +285,7 @@ module altera_eth_top # (
                         .NUM_CHANNELS       (2),
                         .TSTAMP_FP_WIDTH    (4)
                     ) eth_traffic_controller (
+								.refclk_10g                     				  (refclk_10g),
                         .clk                                        (mac64b_clk),
                         .reset_n                                    (~reset_mac64b_clk),
 								.fmc_in (fmc_in),
