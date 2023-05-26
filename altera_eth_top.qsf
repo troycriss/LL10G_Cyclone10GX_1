@@ -191,3 +191,4 @@ set_location_assignment PIN_T1 -to fmc_out[14]
 set_location_assignment PIN_R1 -to fmc_out[15]
 set_location_assignment PIN_T8 -to fmc_in[14]
 set_location_assignment PIN_T9 -to fmc_in[15]
+set_global_assignment -name VERILOG_FILE pulse/PulseController.v
