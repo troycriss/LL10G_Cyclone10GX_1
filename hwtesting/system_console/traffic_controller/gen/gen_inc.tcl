@@ -47,6 +47,13 @@ proc SETGEN_pos1pulsedur {value} {
     reg_write $GEN_BASE_ADDR $GEN_pos1pulsedur $value
 }
 
+proc SETGEN_pos1pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos1pausedur
+    puts "\t GEN_pos1pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos1pausedur $value
+}
+
 #########
 
 proc SET_1588_GO_MASTER {} {

@@ -36,6 +36,7 @@ set GEN_DO_TEST_COUNTER_DATA 	0x00000040
 set GEN_fifo_clk_prescale  	0x00000044
 set GEN_destip					  	0x00000048
 set GEN_pos1pulsedur			  	0x0000004C
+set GEN_pos1pausedur			  	0x00000050
 
 #--with 1588
 set GO_MASTER 					 0x00
