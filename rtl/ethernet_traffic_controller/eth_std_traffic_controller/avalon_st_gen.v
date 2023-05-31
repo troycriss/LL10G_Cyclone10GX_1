@@ -257,7 +257,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [31:0] pos4pulsedur = 0;
 	
 	PulseController pulser (
-		.clk_in(fast2_clk),
+		.clk_in(fast1_clk),
 		
 		.pos1dur(pos1pulsedur),
 		.pos1pausedur(pos1pausedur),
