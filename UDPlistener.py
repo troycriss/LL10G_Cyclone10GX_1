@@ -1,7 +1,28 @@
 import socket
+SEND_BUF_SIZE = 65536*1000
+RECV_BUF_SIZE = 65536*1000
+def modify_buff_size(sock):
+    bufsize = sock.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF)
+    print("Send buffer size [Before]:%d" % bufsize)
+    bufsize = sock.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF)
+    print("Recv buffer size [Before]:%d" % bufsize)
+    #sock.setsockopt(socket.SOL_TCP,socket.TCP_NODELAY, 1)
+    sock.setsockopt(
+        socket.SOL_SOCKET,
+        socket.SO_SNDBUF,
+        SEND_BUF_SIZE)
+    sock.setsockopt(
+        socket.SOL_SOCKET,
+        socket.SO_RCVBUF,
+        RECV_BUF_SIZE)
+    bufsize = sock.getsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF)
+    print("Send buffer size [After]:%d" % bufsize)
+    bufsize = sock.getsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF)
+    print("Recv buffer size [After]:%d" % bufsize)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-server_address = ("192.168.10.11", 2023)
+modify_buff_size(s)
+server_address = ("localhost", 2023)
 s.bind(server_address)
 print("Ctrl+c to exit the program!")
 npacket=0
