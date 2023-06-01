@@ -21,6 +21,7 @@ module avalon_st_gen
 ,input                 	reset          // Reset signal
 
 ,input			 [15:0]  fmc_in         // Inputs from FMC (14-15 are from arduino)
+													// fmc_in 0 is H10, 1 is H11
 ,output         [15:0]  fmc_out			// Outputs to FMC (8-15 are for pulses)
 
 ,input fast1_clk // 
@@ -215,7 +216,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
-	parameter nbitstosample=6'd1; // should be a power of 2, to fit into 64 bit word!
+	parameter nbitstosampleoffset=5'd1; // if 1, start counting at H11?
+	parameter nbitstosample=6'd1+nbitstosampleoffset; // should be a power of 2, to fit into 64 bit word!
 	always @ (posedge reset or posedge fifo_clk)
    begin		
       if (reset) begin
@@ -229,7 +231,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
 			end
 			else begin
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:0]}; // take nbitstosample more bits of input and shift into fifo_datain
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:nbitstosampleoffset]}; // take nbitstosample more bits of input and shift into fifo_datain
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			
@@ -257,7 +259,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [31:0] pos4pulsedur = 0;
 	
 	PulseController pulser (
-		.clk_in(fast1_clk),
+		.clk_in(fast2_clk),
 		
 		.pos1dur(pos1pulsedur),
 		.pos1pausedur(pos1pausedur),
