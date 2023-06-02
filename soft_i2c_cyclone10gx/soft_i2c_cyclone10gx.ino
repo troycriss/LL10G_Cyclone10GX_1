@@ -45,6 +45,7 @@ void setup() {
   Serial.begin(115200);
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 
   pinMode(PIN_SCL, OUTPUT);
   pinMode(PIN_SDA, OUTPUT);
