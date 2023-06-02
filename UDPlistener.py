@@ -22,7 +22,7 @@ def modify_buff_size(sock):
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 modify_buff_size(s)
-server_address = ("localhost", 2023)
+server_address = ("", 2023)
 s.bind(server_address)
 print("Ctrl+c to exit the program!")
 npacket=0
