@@ -1,3 +1,5 @@
+#Set 10G ethernet card (manually in OS) to have an ip address of 192.168.10.11, subnet mask 255.255.255.0
+
 import socket
 SEND_BUF_SIZE = 65536*1000
 RECV_BUF_SIZE = 65536*1000
