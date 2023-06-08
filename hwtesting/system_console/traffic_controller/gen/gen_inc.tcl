@@ -40,18 +40,129 @@ proc SETGEN_destip {value} {
     reg_write $GEN_BASE_ADDR $GEN_destip $value
 }
 
-proc SETGEN_pos1pulsedur {value} {
+###PULSES
+
+#commands for positive sequence
+#1+
+proc PULSES_pos1dur {value} {
     global GEN_BASE_ADDR
-    global GEN_pos1pulsedur
-    puts "\t GEN_pos1pulsedur $value "
-    reg_write $GEN_BASE_ADDR $GEN_pos1pulsedur $value
+    global GEN_pos1dur
+    puts "\t GEN_pos1dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos1dur $value
 }
 
-proc SETGEN_pos1pausedur {value} {
+proc PULSES_pos1pausedur {value} {
     global GEN_BASE_ADDR
     global GEN_pos1pausedur
     puts "\t GEN_pos1pausedur $value "
     reg_write $GEN_BASE_ADDR $GEN_pos1pausedur $value
+}
+
+#2+
+proc PULSES_pos2dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos2dur
+    puts "\t GEN_pos2dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos2dur $value
+}
+
+proc PULSES_pos2pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos2pausedur
+    puts "\t GEN_pos2pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos2pausedur $value
+}
+
+#3+
+proc PULSES_pos3dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos3dur
+    puts "\t GEN_pos3dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos3dur $value
+}
+
+proc PULSES_pos3pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos3pausedur
+    puts "\t GEN_pos3pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos3pausedur $value
+}
+
+#4+
+proc PULSES_pos4dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos4dur
+    puts "\t GEN_pos4dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos4dur $value
+}
+
+proc PULSES_pos4pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_pos4pausedur
+    puts "\t GEN_pos4pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_pos4pausedur $value
+}
+
+
+#commands for negative sequence
+#1-
+proc PULSES_neg1dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg1dur
+    puts "\t GEN_neg1dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg1dur $value
+}
+
+proc PULSES_neg1pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg1pausedur
+    puts "\t GEN_neg1pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg1pausedur $value
+}
+
+#2-
+proc PULSES_neg2dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg2dur
+    puts "\t GEN_neg2dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg2dur $value
+}
+
+proc PULSES_neg2pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg2pausedur
+    puts "\t GEN_neg2pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg2pausedur $value
+}
+
+#3-
+proc PULSES_neg3dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg3dur
+    puts "\t GEN_neg3dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg3dur $value
+}
+
+proc PULSES_neg3pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_ne3pausedur
+    puts "\t GEN_neg3pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg3pausedur $value
+}
+
+#4-
+proc PULSES_neg4dur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg4dur
+    puts "\t GEN_neg4dur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg4dur $value
+}
+
+proc PULSES_neg4pausedur {value} {
+    global GEN_BASE_ADDR
+    global GEN_neg4pausedur
+    puts "\t GEN_neg4pausedur $value "
+    reg_write $GEN_BASE_ADDR $GEN_neg4pausedur $value
 }
 
 #########

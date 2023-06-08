@@ -67,12 +67,24 @@ module avalon_st_gen
  parameter ADDR_do_test_counter_data = 8'h10;
  parameter ADDR_fifo_clk_prescale = 8'h11;
  parameter ADDR_destip = 8'h12;
- parameter ADDR_pos1pulsedur = 8'h13;
+ 
+ parameter ADDR_pos1dur = 8'h13;
  parameter ADDR_pos1pausedur = 8'h14;
- parameter ADDR_pos2pulsedur = 8'h15;
- parameter ADDR_pos3pulsedur = 8'h16;
- parameter ADDR_pos4pulsedur = 8'h17;
-
+ parameter ADDR_pos2dur = 8'h15;
+ parameter ADDR_pos2pausedur = 8'h16;
+ parameter ADDR_pos3dur = 8'h17;
+ parameter ADDR_pos3pausedur = 8'h18;
+ parameter ADDR_pos4dur = 8'h19;
+ parameter ADDR_pos4pausedur = 8'h20;
+ parameter ADDR_neg1dur = 8'h21;
+ parameter ADDR_neg1pausedur = 8'h22;
+ parameter ADDR_neg2dur = 8'h23;
+ parameter ADDR_neg2pausedur = 8'h24;
+ parameter ADDR_neg3dur = 8'h25;
+ parameter ADDR_neg3pausedur = 8'h26;
+ parameter ADDR_neg4dur = 8'h27;
+ parameter ADDR_neg4pausedur = 8'h28;
+ 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
  parameter ADDR_CNTDATA		= 8'hf2;
@@ -251,21 +263,52 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	assign fmc_out[7:4] = ns;
 	assign fmc_out[3:0] = fmc_in[3:0];
 	
-	//pulse outputs
-	reg [31:0] pos1pulsedur = 0;
-	reg [31:0] pos1pausedur = 0;
-	reg [31:0] pos2pulsedur = 0;
-	reg [31:0] pos3pulsedur = 0;
-	reg [31:0] pos4pulsedur = 0;
+	//pulse outputs and pauses
+	reg [31:0] pos1dur = 10;
+	reg [31:0] pos1pausedur = 10;
+	
+	reg [31:0] pos2dur = 10;
+	reg [31:0] pos2pausedur = 10;
+	
+	reg [31:0] pos3dur = 10;
+	reg [31:0] pos3pausedur = 10;
+	
+	reg [31:0] pos4dur = 10;
+	reg [31:0] pos4pausedur = 10;
+	
+	reg [31:0] neg1dur = 10;
+	reg [31:0] neg1pausedur = 10;
+	
+	reg [31:0] neg2dur = 10;
+	reg [31:0] neg2pausedur = 10;
+	
+	reg [31:0] neg3dur = 10;
+	reg [31:0] neg3pausedur = 10;
+	
+	reg [31:0] neg4dur = 10;
+	reg [31:0] neg4pausedur = 10;
+	
 	
 	PulseController pulser (
 		.clk_in(fast2_clk),
 		
-		.pos1dur(pos1pulsedur),
+		.pos1dur(pos1dur),
 		.pos1pausedur(pos1pausedur),
-		.pos2dur(pos2pulsedur),
-		.pos3dur(pos3pulsedur),
-		.pos4dur(pos4pulsedur),
+		.pos2dur(pos2dur),
+		.pos2pausedur(pos2pausedur),
+		.pos3dur(pos3dur),
+		.pos3pausedur(pos3pausedur),
+		.pos4dur(pos4dur),
+		.pos4pausedur(pos4pausedur),
+		
+		.neg1dur(pos1dur),
+		.neg1pausedur(pos1pausedur),
+		.neg2dur(pos2dur),
+		.neg2pausedur(pos2pausedur),
+		.neg3dur(pos3dur),
+		.neg3pausedur(pos3pausedur),
+		.neg4dur(pos4dur),
+		.neg4pausedur(pos4pausedur),
 		
 		.signal_out(fmc_out[15:8])
 	);
@@ -277,20 +320,47 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			do_test_counter_data <= 1'b0;
 			fifo_clk_prescale <= 32'h0;
 			destip <= 32'hC0A80A0b;
-			pos1pulsedur <= 0;
+			
+			pos1dur <= 0;
 			pos1pausedur <= 0;
-			pos2pulsedur <= 0;
-			pos3pulsedur <= 0;
-			pos4pulsedur <= 0;
+			pos2dur <= 0;
+			pos2pausedur <= 0;
+			pos3dur <= 0;
+			pos3pausedur <= 0;
+			pos4dur <= 0;
+			pos4pausedur <= 0;
+			
+			neg1dur <= 0;
+			neg1pausedur <= 0;
+			neg2dur <= 0;
+			neg2pausedur <= 0;
+			neg3dur <= 0;
+			neg3pausedur <= 0;
+			neg4dur <= 0;
+			neg4pausedur <= 0;
 		end
+		
 		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
 		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
 		else if (write & address == ADDR_destip) destip <= writedata;
-		else if (write & address == ADDR_pos1pulsedur) pos1pulsedur<= writedata;
+		
+		else if (write & address == ADDR_pos1dur) pos1dur<= writedata;
 		else if (write & address == ADDR_pos1pausedur) pos1pausedur<= writedata;
-		else if (write & address == ADDR_pos2pulsedur) pos2pulsedur<= writedata;
-		else if (write & address == ADDR_pos3pulsedur) pos3pulsedur<= writedata;
-		else if (write & address == ADDR_pos4pulsedur) pos4pulsedur<= writedata;
+		else if (write & address == ADDR_pos2dur) pos2dur<= writedata;
+		else if (write & address == ADDR_pos2pausedur) pos2pausedur<= writedata;
+		else if (write & address == ADDR_pos3dur) pos3dur<= writedata;
+		else if (write & address == ADDR_pos3pausedur) pos3pausedur<= writedata;
+		else if (write & address == ADDR_pos4dur) pos4dur<= writedata;
+		else if (write & address == ADDR_pos4pausedur) pos4pausedur<= writedata;
+		
+		else if (write & address == ADDR_pos1dur) neg1dur<= writedata;
+		else if (write & address == ADDR_pos1pausedur) neg1pausedur<= writedata;
+		else if (write & address == ADDR_neg2dur) neg2dur<= writedata;
+		else if (write & address == ADDR_neg2pausedur) neg2pausedur<= writedata;
+		else if (write & address == ADDR_neg3dur) neg3dur<= writedata;
+		else if (write & address == ADDR_neg3pausedur) neg3pausedur<= writedata;
+		else if (write & address == ADDR_neg4dur) neg4dur<= writedata;
+		else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
    end
 	
 // ____________________________________________________________________________
