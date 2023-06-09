@@ -15,6 +15,7 @@ module eth_traffic_controller_top  #(
 	parameter 	NUM_CHANNELS = 2,					// must set to 2 only
 	parameter 	TSTAMP_FP_WIDTH = 4
 )(
+	input		wire				                     	refclk_10g,
 	input 	wire 												clk,
 	input 	wire 												reset_n,
 	input		wire[31:0]  									fmc_in, // Inputs from FMC
@@ -339,6 +340,7 @@ generate
 			.avl_mm_readdata  		(eth_std_traffic_controller_avl_mm_readdata[i]),
 			.avl_mm_writedata 		(eth_std_traffic_controller_avl_mm_writedata[i]),
 		    
+			.refclk_10g       (refclk_10g), 
 			.clk					(clk),
 			.reset_n				(reset_n),
 			.fmc_in (fmc_in[16*i+15:16*i]), // first 16 go to generator 1 , next 16 go to generator 2

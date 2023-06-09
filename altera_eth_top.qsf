@@ -120,7 +120,7 @@ set_location_assignment PIN_W4 -to fmc_out[4]
 set_location_assignment PIN_Y4 -to fmc_out[5]
 set_location_assignment PIN_T4 -to fmc_out[6]
 set_location_assignment PIN_U5 -to fmc_out[7]
-set_global_assignment -name OPTIMIZATION_MODE BALANCED
+set_global_assignment -name OPTIMIZATION_MODE "SUPERIOR PERFORMANCE"
 set_global_assignment -name PROJECT_IP_REGENERATION_POLICY NEVER_REGENERATE_IP
 set_global_assignment -name PROJECT_IP_GEN_PARALLEL_ENABLED on
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
@@ -129,6 +129,18 @@ set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
 set_location_assignment PIN_J22 -to clk_out
+set_location_assignment PIN_U6 -to fmc_out[8]
+set_location_assignment PIN_V7 -to fmc_out[9]
+set_location_assignment PIN_T6 -to fmc_out[10]
+set_location_assignment PIN_T7 -to fmc_out[11]
+set_location_assignment PIN_R4 -to fmc_out[12]
+set_location_assignment PIN_R5 -to fmc_out[13]
+set_location_assignment PIN_T1 -to fmc_out[14]
+set_location_assignment PIN_R1 -to fmc_out[15]
+set_location_assignment PIN_T8 -to fmc_in[14]
+set_location_assignment PIN_T9 -to fmc_in[15]
+set_instance_assignment -name PARTITION_COLOUR 4289174527 -to altera_eth_top -entity altera_eth_top
+set_instance_assignment -name PARTITION_COLOUR 4288806722 -to auto_fab_0 -entity altera_eth_top
 set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
 set_global_assignment -name SDC_FILE altera_eth_top.sdc
 set_global_assignment -name CDF_FILE altera_eth_top_time_limited.cdf
@@ -139,6 +151,7 @@ set_global_assignment -name TCL_SCRIPT_FILE hwtesting/system_console/traffic_con
 set_global_assignment -name VERILOG_FILE rtl/alt_mge_reset_synchronizer.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/alt_mge_multi_channel.sv
 set_global_assignment -name VERILOG_FILE rtl/alt_mge_channel.v
+set_global_assignment -name VERILOG_FILE pulse/PulseController.v
 set_global_assignment -name IP_FILE myfifo.ip
 set_global_assignment -name IP_FILE rtl/pll_fpll/alt_mge_core_pll.ip
 set_global_assignment -name IP_FILE rtl/pll_atxpll/alt_mge_xcvr_atx_pll_10g.ip
@@ -181,13 +194,3 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_6_7.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_8_9.ip
 set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/address_decoder_top_traffic_controller_ch_10_11.ip
-set_location_assignment PIN_U6 -to fmc_out[8]
-set_location_assignment PIN_V7 -to fmc_out[9]
-set_location_assignment PIN_T6 -to fmc_out[10]
-set_location_assignment PIN_T7 -to fmc_out[11]
-set_location_assignment PIN_R4 -to fmc_out[12]
-set_location_assignment PIN_R5 -to fmc_out[13]
-set_location_assignment PIN_T1 -to fmc_out[14]
-set_location_assignment PIN_R1 -to fmc_out[15]
-set_location_assignment PIN_T8 -to fmc_in[14]
-set_location_assignment PIN_T9 -to fmc_in[15]
