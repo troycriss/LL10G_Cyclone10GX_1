@@ -49,8 +49,8 @@ set GEN_neg2dur				  	0x00000074
 set GEN_neg2pausedur			  	0x00000078
 set GEN_neg3dur				  	0x0000007C
 set GEN_neg3pausedur			  	0x00000080
-set GEN_neg4dur				  	0x0000008C
-set GEN_neg4pausedur			  	0x00000084
+set GEN_neg4dur				  	0x00000084
+set GEN_neg4pausedur			  	0x00000088
 
 
 #--with 1588

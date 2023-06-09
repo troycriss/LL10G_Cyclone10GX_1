@@ -67,7 +67,7 @@ module avalon_st_gen
  parameter ADDR_do_test_counter_data = 8'h10;
  parameter ADDR_fifo_clk_prescale = 8'h11;
  parameter ADDR_destip = 8'h12;
- 
+
  parameter ADDR_pos1dur = 8'h13;
  parameter ADDR_pos1pausedur = 8'h14;
  parameter ADDR_pos2dur = 8'h15;
@@ -75,15 +75,15 @@ module avalon_st_gen
  parameter ADDR_pos3dur = 8'h17;
  parameter ADDR_pos3pausedur = 8'h18;
  parameter ADDR_pos4dur = 8'h19;
- parameter ADDR_pos4pausedur = 8'h20;
- parameter ADDR_neg1dur = 8'h21;
- parameter ADDR_neg1pausedur = 8'h22;
- parameter ADDR_neg2dur = 8'h23;
- parameter ADDR_neg2pausedur = 8'h24;
- parameter ADDR_neg3dur = 8'h25;
- parameter ADDR_neg3pausedur = 8'h26;
- parameter ADDR_neg4dur = 8'h27;
- parameter ADDR_neg4pausedur = 8'h28;
+ parameter ADDR_pos4pausedur = 8'h1A;
+ parameter ADDR_neg1dur = 8'h1B;
+ parameter ADDR_neg1pausedur = 8'h1C;
+ parameter ADDR_neg2dur = 8'h1D;
+ parameter ADDR_neg2pausedur = 8'h1E;
+ parameter ADDR_neg3dur = 8'h1F;
+ parameter ADDR_neg3pausedur = 8'h20;
+ parameter ADDR_neg4dur = 8'h21;
+ parameter ADDR_neg4pausedur = 8'h22;
  
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -301,14 +301,14 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		.pos4dur(pos4dur),
 		.pos4pausedur(pos4pausedur),
 		
-		.neg1dur(pos1dur),
-		.neg1pausedur(pos1pausedur),
-		.neg2dur(pos2dur),
-		.neg2pausedur(pos2pausedur),
-		.neg3dur(pos3dur),
-		.neg3pausedur(pos3pausedur),
-		.neg4dur(pos4dur),
-		.neg4pausedur(pos4pausedur),
+		.neg1dur(neg1dur),
+		.neg1pausedur(neg1pausedur),
+		.neg2dur(neg2dur),
+		.neg2pausedur(neg2pausedur),
+		.neg3dur(neg3dur),
+		.neg3pausedur(neg3pausedur),
+		.neg4dur(neg4dur),
+		.neg4pausedur(neg4pausedur),
 		
 		.signal_out(fmc_out[15:8])
 	);
@@ -353,8 +353,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		else if (write & address == ADDR_pos4dur) pos4dur<= writedata;
 		else if (write & address == ADDR_pos4pausedur) pos4pausedur<= writedata;
 		
-		else if (write & address == ADDR_pos1dur) neg1dur<= writedata;
-		else if (write & address == ADDR_pos1pausedur) neg1pausedur<= writedata;
+		else if (write & address == ADDR_neg1dur) neg1dur<= writedata;
+		else if (write & address == ADDR_neg1pausedur) neg1pausedur<= writedata;
 		else if (write & address == ADDR_neg2dur) neg2dur<= writedata;
 		else if (write & address == ADDR_neg2pausedur) neg2pausedur<= writedata;
 		else if (write & address == ADDR_neg3dur) neg3dur<= writedata;

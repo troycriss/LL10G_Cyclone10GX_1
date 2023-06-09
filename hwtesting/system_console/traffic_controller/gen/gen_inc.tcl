@@ -145,7 +145,7 @@ proc PULSES_neg3dur {value} {
 
 proc PULSES_neg3pausedur {value} {
     global GEN_BASE_ADDR
-    global GEN_ne3pausedur
+    global GEN_neg3pausedur
     puts "\t GEN_neg3pausedur $value "
     reg_write $GEN_BASE_ADDR $GEN_neg3pausedur $value
 }
