@@ -35,6 +35,23 @@ set GEN_PKTLENGTH 		0x00000034
 set GEN_DO_TEST_COUNTER_DATA 	0x00000040
 set GEN_fifo_clk_prescale  	0x00000044
 set GEN_destip					  	0x00000048
+set GEN_pos1dur				  	0x0000004C
+set GEN_pos1pausedur			  	0x00000050
+set GEN_pos2dur				  	0x00000054
+set GEN_pos2pausedur			  	0x00000058
+set GEN_pos3dur				  	0x0000005C
+set GEN_pos3pausedur			  	0x00000060
+set GEN_pos4dur				  	0x00000064
+set GEN_pos4pausedur			  	0x00000068
+set GEN_neg1dur				  	0x0000006C
+set GEN_neg1pausedur			  	0x00000070
+set GEN_neg2dur				  	0x00000074
+set GEN_neg2pausedur			  	0x00000078
+set GEN_neg3dur				  	0x0000007C
+set GEN_neg3pausedur			  	0x00000080
+set GEN_neg4dur				  	0x00000084
+set GEN_neg4pausedur			  	0x00000088
+
 
 #--with 1588
 set GO_MASTER 					 0x00
