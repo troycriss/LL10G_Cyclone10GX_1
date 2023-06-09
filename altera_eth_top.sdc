@@ -32,6 +32,9 @@ set reset_sync_clrn_collection [get_pins -compatibility_mode -nocase -nowarn *al
 set_false_path -to *dcfifo:dcfifo_component|dcfifo_*:auto_generated|dffpipe_*:wraclr|dffe*a[0]
 set_false_path -to *dcfifo:dcfifo_component|dcfifo_*:auto_generated|dffpipe_*:rdaclr|dffe*a[0]
 
+set_false_path -from *eth_std_traffic_controller*|GEN|pos*dur*
+set_false_path -from *eth_std_traffic_controller*|GEN|neg*dur*
+
 set_false_path -from *eth_std_traffic_controller*|GEN|do_test_counter_data*
 
 foreach_in_collection reset_sync_aclr_pin $reset_sync_aclr_collection {

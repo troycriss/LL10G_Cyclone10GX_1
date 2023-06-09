@@ -33,34 +33,34 @@ input [31:0] neg4pausedur,
 output reg [7:0] signal_out
 );
 
-parameter maxl = 16-1;
+parameter maxl = 22-1; // max length of timer and pulses
 
 reg [3:0] pulse_index = 4'd0;
 
 reg [maxl:0] pulse_durations [11:0];
 
-reg [maxl:0] timer = 16'd0;
+reg [maxl:0] timer = 1'd0;
 
-reg [maxl:0] currentpuldur = 16'd1;
+reg [maxl:0] currentpuldur = 1'd1;
 
 always@(posedge clk_in)
 
 //(R)eset then (W)rite then (M)easure, then do it again with reversed polarity for R and W
 //M pulse is always positive
 begin
-	pulse_durations[11] <= pos1dur; 			//R+
-	pulse_durations[0] <= pos1pausedur;		//pause
-	pulse_durations[1] <= pos2dur; 			//W-
-	pulse_durations[2] <= pos2pausedur;		//pause
-	pulse_durations[3] <= pos3dur; 			//M
-	pulse_durations[4] <= pos3pausedur;		//pause
+	pulse_durations[11] <= pos1dur[maxl:0]; 			//R+
+	pulse_durations[0]  <= pos1pausedur[maxl:0];	//pause
+	pulse_durations[1]  <= pos2dur[maxl:0]; 			//W-
+	pulse_durations[2]  <= pos2pausedur[maxl:0];	//pause
+	pulse_durations[3]  <= pos3dur[maxl:0]; 			//M
+	pulse_durations[4]  <= pos3pausedur[maxl:0];	//pause
 	
-	pulse_durations[5] <= neg1dur; 			//R-
-	pulse_durations[6] <= neg1pausedur;		//pause
-	pulse_durations[7] <= neg2dur; 			//W+
-	pulse_durations[8] <= neg2pausedur;		//pause
-	pulse_durations[9] <= neg3dur; 	   	//M
-	pulse_durations[10] <= neg3pausedur;	//pause
+	pulse_durations[5]  <= neg1dur[maxl:0]; 			//R-
+	pulse_durations[6]  <= neg1pausedur[maxl:0];	//pause
+	pulse_durations[7]  <= neg2dur[maxl:0]; 			//W+
+	pulse_durations[8]  <= neg2pausedur[maxl:0];	//pause
+	pulse_durations[9]  <= neg3dur[maxl:0]; 	   	//M
+	pulse_durations[10] <= neg3pausedur[maxl:0];	//pause
 end
 
 always@(posedge clk_in)
@@ -118,10 +118,10 @@ always@(posedge clk_in)
 		if(timer == currentpuldur) begin
 			currentpuldur<=pulse_durations[pulse_index];
 			if(pulse_index == 11) pulse_index <= 0;
-			else pulse_index <= pulse_index + 1;
+			else pulse_index <= pulse_index + 1'd1;
 			timer <= 0;			
 		end
-		else timer <= timer + 1;
+		else timer <= timer + 1'd1;
 
 	end
 
