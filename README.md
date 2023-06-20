@@ -21,7 +21,16 @@ Open system console<br>
  SEND 0 10G 80
  
  SENDAGAIN
- 
+
+Set reset pulse duration with (ex: 8) :
+ PULSES_pos1dur <duration>
+
+Set write pulse duration with (ex: 7) :
+ PULSES_pos2dur <duration>
+
+Set read pulse duration with (ex: 30) :
+ PULSES_pos3dur <duration>
+
 https://en.wikipedia.org/wiki/Ethernet_frame <br>
 https://en.wikipedia.org/wiki/Internet_Protocol_version_4 <br>
 https://en.wikipedia.org/wiki/User_Datagram_Protocol <br>

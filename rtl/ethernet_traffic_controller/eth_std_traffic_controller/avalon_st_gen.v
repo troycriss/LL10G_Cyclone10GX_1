@@ -228,8 +228,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
-	parameter nbitstosampleoffset=5'd1; // if 1, start counting at H11?
-	parameter nbitstosample=6'd1+nbitstosampleoffset; // should be a power of 2, to fit into 64 bit word!
+	parameter nbitstosample=6'd2; // should be a power of 2, to fit into 64 bit word!
 	always @ (posedge reset or posedge fifo_clk)
    begin		
       if (reset) begin
@@ -243,7 +242,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
 			end
 			else begin
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:nbitstosampleoffset]}; // take nbitstosample more bits of input and shift into fifo_datain
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],fmc_out[13]}; // take nbitstosample more bits of input and shift into fifo_datain
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			
