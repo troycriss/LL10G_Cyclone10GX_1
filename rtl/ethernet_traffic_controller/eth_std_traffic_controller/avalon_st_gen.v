@@ -23,6 +23,7 @@ module avalon_st_gen
 ,input			 [15:0]  fmc_in         // Inputs from FMC (14-15 are from arduino)
 													// fmc_in 0 is H10, 1 is H11
 ,output         [15:0]  fmc_out			// Outputs to FMC (8-15 are for pulses)
+,output						trigger
 
 ,input fast1_clk // 
 ,input fast2_clk // 
@@ -188,7 +189,11 @@ wire [9:0] fifo_rdusedw;//number of entries (out of 1024)
 wire fifo_rdfull; //full synced to read clk
 wire fifo_rdempty; //empty synced to read clk
 wire fifo_wrfull; //full synced to write clk
-wire fifo_clk;//fifo_clk is what is used for writing 
+wire fifo_clk;//fifo_clk is what is used for writing
+
+
+//trigger for fifo
+//reg trigger = 1'b0;
 
 	myfifo fifo1 (
 		.data    (fifo_datain),    //   input,  width = 64,  fifo_input.datain
@@ -242,7 +247,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
 			end
 			else begin
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],fmc_out[13]}; // take nbitstosample more bits of input and shift into fifo_datain
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],trigger}; // take nbitstosample more bits of input and shift into fifo_datain
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			
@@ -309,7 +314,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		.neg4dur(neg4dur),
 		.neg4pausedur(neg4pausedur),
 		
-		.signal_out(fmc_out[15:8])
+		.signal_out(fmc_out[15:8]),
+		.trigger(trigger)
 	);
 
 	//Read registers
