@@ -76,7 +76,7 @@ always@(posedge clk_in)
 	begin
 		
 		trigger<=1'b0;
-		is_new_pulse <= old_pulse_index != pulse_index;
+		//is_new_pulse <= old_pulse_index != pulse_index;
 		case (pulse_index)
 		
 			4'd0: begin
@@ -88,7 +88,7 @@ always@(posedge clk_in)
 			
 			4'd2: begin
 				signal_out<=8'b1000_0101;	//M
-				if(is_new_pulse) trigger<=1'b1;
+				//if(is_new_pulse) trigger<=1'b1;
 			end
 			4'd3: begin
 				signal_out<=8'b1000_0001;
@@ -99,11 +99,13 @@ always@(posedge clk_in)
 			end
 			4'd5: begin
 				signal_out<=8'b1000_0001;
+				is_new_pulse <= 1'b1;
 			end
 			
 			4'd6: begin
 				signal_out<=8'b1000_0101;	//M
 				if(is_new_pulse) trigger<=1'b1;
+				is_new_pulse <= 1'b0;
 			end
 			4'd7: begin
 				signal_out<=8'b1000_0001;
@@ -144,7 +146,7 @@ always@(posedge clk_in)
 			default: signal_out<=8'b1000_0001;
 		endcase
 		
-		old_pulse_index <= pulse_index;
+		//old_pulse_index <= pulse_index;
 		
 		if(timer == currentpuldur) begin
 			currentpuldur<=pulse_durations[pulse_index];
