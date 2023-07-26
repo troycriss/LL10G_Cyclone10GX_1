@@ -230,24 +230,30 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	assign fifo_base_clk=fast2_clk;//out3 from pll
 	
 	reg do_test_counter_data=1'b0;
+	reg do_full_data=0'b0;
+	
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
 	parameter nbitstosample=6'd2; // should be a power of 2, to fit into 64 bit word!
 	always @ (posedge reset or posedge fifo_clk)
-   begin		
+   begin
       if (reset) begin
 			fifo_datain <= 64'h0;
 			counter_datain <= 8'h00;
 		end
-      else begin		
+      else if (do_full_data || do_test_counter_data || do_selected_data_bit) begin		
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
 			end
-			else begin
+			else if (do_full_data) begin
 				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],trigger}; // take nbitstosample more bits of input and shift into fifo_datain
+				counter_datain_max <= 8'h40-nbitstosample;
+			end
+			else begin //assuming nbitstosample is 1 when do_full_data is set to false
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			
@@ -262,6 +268,18 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			end
 		end
    end
+	
+	reg do_selected_data_bit = 1'b1;
+	reg [15:0] trigger_offset = 16'd100;
+	reg [15:0] random_bit_timer = 16'b0;
+	always @ (posedge fifo_clk)
+	begin
+		if(trigger_offset == random_bit_timer) do_selected_data_bit <= 1'b1;
+		else do_selected_data_bit <= 1'b0;
+		
+		if(trigger) random_bit_timer <= 0;
+		else random_bit_timer <= random_bit_timer + 1'b1;
+	end
 	
 	//debugging outputs
 	assign fmc_out[7:4] = ns;
