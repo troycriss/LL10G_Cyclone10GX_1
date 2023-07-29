@@ -16208,12 +16208,12 @@ AR_5V and VS+</text>
 <text x="200.66" y="114.3" size="1.778" layer="90">Negative output inverting buffers</text>
 <text x="132.08" y="114.3" size="1.778" layer="90">Positive output buffers</text>
 <wire x1="190.5" y1="30.48" x2="190.5" y2="119.38" width="0.1524" layer="97"/>
-<text x="81.28" y="114.3" size="1.778" layer="90">Pulse switches</text>
+<text x="86.36" y="114.3" size="1.778" layer="90">Pulse switches</text>
 <wire x1="116.84" y1="27.94" x2="15.24" y2="27.94" width="0.1524" layer="97"/>
 <wire x1="119.38" y1="-15.24" x2="119.38" y2="25.4" width="0.1524" layer="97"/>
 <text x="17.78" y="22.86" size="1.778" layer="90">Pulse resistors for summing</text>
 <wire x1="309.88" y1="27.94" x2="121.92" y2="27.94" width="0.1524" layer="97"/>
-<text x="132.08" y="20.32" size="1.778" layer="90">Pulse DACs</text>
+<text x="132.08" y="20.32" size="1.778" layer="90">Pulse and offset DACs</text>
 </plain>
 <instances>
 <instance part="SUPPLY20" gate="GND" x="223.52" y="81.28" smashed="yes"/>
@@ -16506,46 +16506,6 @@ AR_5V and VS+</text>
 <pinref part="C48" gate="G$1" pin="1"/>
 <wire x1="259.08" y1="0" x2="259.08" y2="7.62" width="0.1524" layer="91"/>
 <label x="259.08" y="7.62" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C52" gate="G$1" pin="1"/>
-<wire x1="83.82" y1="73.66" x2="83.82" y2="81.28" width="0.1524" layer="91"/>
-<label x="81.28" y="81.28" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C53" gate="G$1" pin="1"/>
-<wire x1="91.44" y1="73.66" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
-<label x="88.9" y="81.28" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C50" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="73.66" x2="99.06" y2="81.28" width="0.1524" layer="91"/>
-<label x="96.52" y="81.28" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="C51" gate="G$1" pin="1"/>
-<wire x1="106.68" y1="73.66" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
-<label x="104.14" y="81.28" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC12" gate="G$1" pin="VCC"/>
-<wire x1="55.88" y1="111.76" x2="71.12" y2="111.76" width="0.1524" layer="91"/>
-<label x="58.42" y="111.76" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC13" gate="G$1" pin="VCC"/>
-<wire x1="55.88" y1="88.9" x2="71.12" y2="88.9" width="0.1524" layer="91"/>
-<label x="58.42" y="88.9" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC14" gate="G$1" pin="VCC"/>
-<wire x1="55.88" y1="66.04" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
-<label x="58.42" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC15" gate="G$1" pin="VCC"/>
-<wire x1="55.88" y1="43.18" x2="71.12" y2="43.18" width="0.1524" layer="91"/>
-<label x="58.42" y="43.18" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC16" gate="G$1" pin="AVDD"/>
@@ -17015,6 +16975,46 @@ AR_5V and VS+</text>
 <pinref part="C55" gate="G$1" pin="1"/>
 <wire x1="266.7" y1="-27.94" x2="266.7" y2="-20.32" width="0.1524" layer="91"/>
 <label x="266.7" y="-20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C52" gate="G$1" pin="1"/>
+<wire x1="83.82" y1="73.66" x2="83.82" y2="81.28" width="0.1524" layer="91"/>
+<label x="81.28" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C53" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="73.66" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
+<label x="88.9" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C50" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="73.66" x2="99.06" y2="81.28" width="0.1524" layer="91"/>
+<label x="96.52" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C51" gate="G$1" pin="1"/>
+<wire x1="106.68" y1="73.66" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
+<label x="104.14" y="81.28" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC12" gate="G$1" pin="VCC"/>
+<wire x1="55.88" y1="111.76" x2="71.12" y2="111.76" width="0.1524" layer="91"/>
+<label x="58.42" y="111.76" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC13" gate="G$1" pin="VCC"/>
+<wire x1="55.88" y1="88.9" x2="71.12" y2="88.9" width="0.1524" layer="91"/>
+<label x="58.42" y="88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC14" gate="G$1" pin="VCC"/>
+<wire x1="55.88" y1="66.04" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
+<label x="58.42" y="66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC15" gate="G$1" pin="VCC"/>
+<wire x1="55.88" y1="43.18" x2="71.12" y2="43.18" width="0.1524" layer="91"/>
+<label x="58.42" y="43.18" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AR_SDAIN" class="0">
