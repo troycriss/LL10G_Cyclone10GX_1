@@ -16224,7 +16224,7 @@ AR_5V and VS+</text>
 <text x="200.66" y="114.3" size="1.778" layer="90">Negative output inverting buffers</text>
 <text x="132.08" y="114.3" size="1.778" layer="90">Positive output buffers</text>
 <wire x1="190.5" y1="30.48" x2="190.5" y2="119.38" width="0.1524" layer="97"/>
-<text x="-2.54" y="116.84" size="1.778" layer="90">Pulse switches</text>
+<text x="25.4" y="116.84" size="1.778" layer="90">Pulse switches</text>
 <wire x1="116.84" y1="27.94" x2="15.24" y2="27.94" width="0.1524" layer="97"/>
 <wire x1="119.38" y1="-15.24" x2="119.38" y2="25.4" width="0.1524" layer="97"/>
 <text x="17.78" y="22.86" size="1.778" layer="90">Pulse resistors for summing</text>
@@ -16367,26 +16367,26 @@ AR_5V and VS+</text>
 </instance>
 <instance part="SUPPLY34" gate="GND" x="259.08" y="-10.16" smashed="yes"/>
 <instance part="SUPPLY36" gate="GND" x="266.7" y="-10.16" smashed="yes"/>
-<instance part="C50" gate="G$1" x="10.16" y="93.98" smashed="yes">
-<attribute name="NAME" x="11.684" y="96.901" size="1.778" layer="95"/>
-<attribute name="VALUE" x="11.684" y="91.821" size="1.778" layer="96"/>
+<instance part="C50" gate="G$1" x="20.32" y="60.96" smashed="yes">
+<attribute name="NAME" x="21.844" y="63.881" size="1.778" layer="95"/>
+<attribute name="VALUE" x="21.844" y="58.801" size="1.778" layer="96"/>
 </instance>
-<instance part="C51" gate="G$1" x="17.78" y="93.98" smashed="yes">
-<attribute name="NAME" x="19.304" y="96.901" size="1.778" layer="95"/>
-<attribute name="VALUE" x="19.304" y="91.821" size="1.778" layer="96"/>
+<instance part="C51" gate="G$1" x="20.32" y="38.1" smashed="yes">
+<attribute name="NAME" x="21.844" y="41.021" size="1.778" layer="95"/>
+<attribute name="VALUE" x="21.844" y="35.941" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY37" gate="GND" x="10.16" y="88.9" smashed="yes"/>
-<instance part="SUPPLY39" gate="GND" x="17.78" y="88.9" smashed="yes"/>
-<instance part="C52" gate="G$1" x="-5.08" y="93.98" smashed="yes">
-<attribute name="NAME" x="-3.556" y="96.901" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-3.556" y="91.821" size="1.778" layer="96"/>
+<instance part="SUPPLY37" gate="GND" x="20.32" y="55.88" smashed="yes"/>
+<instance part="SUPPLY39" gate="GND" x="20.32" y="33.02" smashed="yes"/>
+<instance part="C52" gate="G$1" x="20.32" y="106.68" smashed="yes">
+<attribute name="NAME" x="21.844" y="109.601" size="1.778" layer="95"/>
+<attribute name="VALUE" x="21.844" y="104.521" size="1.778" layer="96"/>
 </instance>
-<instance part="C53" gate="G$1" x="2.54" y="93.98" smashed="yes">
-<attribute name="NAME" x="4.064" y="96.901" size="1.778" layer="95"/>
-<attribute name="VALUE" x="4.064" y="91.821" size="1.778" layer="96"/>
+<instance part="C53" gate="G$1" x="20.32" y="83.82" smashed="yes">
+<attribute name="NAME" x="21.844" y="86.741" size="1.778" layer="95"/>
+<attribute name="VALUE" x="21.844" y="81.661" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY40" gate="GND" x="-5.08" y="88.9" smashed="yes"/>
-<instance part="SUPPLY42" gate="GND" x="2.54" y="88.9" smashed="yes"/>
+<instance part="SUPPLY40" gate="GND" x="20.32" y="101.6" smashed="yes"/>
+<instance part="SUPPLY42" gate="GND" x="20.32" y="78.74" smashed="yes"/>
 <instance part="IC16" gate="G$1" x="142.24" y="-20.32" smashed="yes">
 <attribute name="NAME" x="148.59" y="-15.24" size="1.778" layer="95" align="center-left"/>
 </instance>
@@ -17074,23 +17074,23 @@ AR_5V and VS+</text>
 </segment>
 <segment>
 <pinref part="C52" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="99.06" x2="-5.08" y2="106.68" width="0.1524" layer="91"/>
-<label x="-7.62" y="106.68" size="1.778" layer="95"/>
+<wire x1="20.32" y1="111.76" x2="20.32" y2="119.38" width="0.1524" layer="91"/>
+<label x="17.78" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C53" gate="G$1" pin="1"/>
-<wire x1="2.54" y1="99.06" x2="2.54" y2="106.68" width="0.1524" layer="91"/>
-<label x="0" y="106.68" size="1.778" layer="95"/>
+<wire x1="20.32" y1="88.9" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
+<label x="17.78" y="96.52" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C50" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="99.06" x2="10.16" y2="106.68" width="0.1524" layer="91"/>
-<label x="7.62" y="106.68" size="1.778" layer="95"/>
+<wire x1="20.32" y1="66.04" x2="20.32" y2="73.66" width="0.1524" layer="91"/>
+<label x="17.78" y="73.66" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C51" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="99.06" x2="17.78" y2="106.68" width="0.1524" layer="91"/>
-<label x="15.24" y="106.68" size="1.778" layer="95"/>
+<wire x1="20.32" y1="43.18" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
+<label x="17.78" y="50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC12" gate="G$1" pin="VCC"/>
