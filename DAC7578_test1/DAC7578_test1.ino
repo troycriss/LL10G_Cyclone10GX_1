@@ -14,8 +14,10 @@ unsigned createMask(unsigned a, unsigned b){
    return r;
 }
 
-//chip=0 is for pulses (chan 0 =P1, 1=P2, 2=P3, 3=P4, 4=N1, 5=N2, 6=N3, 7=N4)
-//chip=1 is for offsets and unused extras (chan 0 =offset1, 1=offset2, 2=extra3, 3=4, 4=5, 5=6, 6=7, 7=8)
+//chip=0 is for pulses (DAC 0 =P1, 1=P2, 2=P3, 3=P4, 4=N1, 5=N2, 6=N3, 7=N4)
+//chip=1 is for offsets and unused extras (DAC 0 =offset1, 1=offset2, 2=extra3, 3=4, 4=5, 5=6, 6=7, 7=8)
+//DAC is which of the 8 DACs on the chip to alter
+//value is 0 -- 4095 (12 bit) where 0 is 0V and 4095 is the input voltage (1.8V), and linear in between, e.g. 2048 = 1.8V/2
 void writeDAC(uint16_t value, uint8_t DAC, uint8_t chip){
   uint16_t MSDB2, LSDB2;
   
