@@ -14,8 +14,8 @@ unsigned createMask(unsigned a, unsigned b){
    return r;
 }
 
-//chip=0 is for pulses (P1,P2,P3,P4,N1,N2,N3,N4)
-//chip=1 is for offsets and unused extras (offset1, offset2, extra3,4,5,6,7,8)
+//chip=0 is for pulses (chan 0 =P1, 1=P2, 2=P3, 3=P4, 4=N1, 5=N2, 6=N3, 7=N4)
+//chip=1 is for offsets and unused extras (chan 0 =offset1, 1=offset2, 2=extra3, 3=4, 4=5, 5=6, 6=7, 7=8)
 void writeDAC(uint16_t value, uint8_t DAC, uint8_t chip){
   uint16_t MSDB2, LSDB2;
   
