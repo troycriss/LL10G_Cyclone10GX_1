@@ -1,19 +1,22 @@
 /*
 Test of DAC7578
 For Uno: A4 (SDA), A5 (SCL)
+
+Board: Arduino Nano
+Processor: ATmega168
 */
 
 #include <Wire.h>
 byte CA = 0x30;
-
-unsigned createMask(unsigned a, unsigned b)
-{
+unsigned createMask(unsigned a, unsigned b){
    unsigned r = 0;
    for (unsigned i=a; i<=b; i++) r |= 1 << i;
    return r;
 }
 
-void writeDAC(uint16_t value, uint8_t DAC){
+//chip=0 is for pulses (P1,P2,P3,P4,N1,N2,N3,N4)
+//chip=1 is for offsets and unused extras (offset1, offset2, extra3,4,5,6,7,8)
+void writeDAC(uint16_t value, uint8_t DAC, uint8_t chip){
   uint16_t MSDB2, LSDB2;
   
   unsigned r = createMask(0, 3);
@@ -25,10 +28,9 @@ void writeDAC(uint16_t value, uint8_t DAC){
   MSDB2 = MSDB2 >> 4;
   
   Wire.begin();
-  // B1001100 0x4C floating 
-  // B1001010 0x4A vcc
-  // B1001000 0x48 gnd
-  Wire.beginTransmission(0x4C); 
+  // B1001100 0x4C floating , B1001010 0x4A vcc, B1001000 0x48 gnd
+  if (chip==0) Wire.beginTransmission(0x4C);
+  if (chip==1) Wire.beginTransmission(0x48);
   Wire.write(CA + DAC);    //CA byte
   Wire.write(MSDB2);  //MSDB
   Wire.write(LSDB2);  //LSDB
@@ -42,20 +44,16 @@ void setup() {
   Serial.println("Arduino Connected");
 }
 
-void loop() {
+void blink(){
   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(100);                      // wait for a second
+  delay(10);                      // wait
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-  delay(100);                      // wait for a second
+}
 
-  writeDAC(4096/2, 0); // 1.8V/2 = 0.9V?
-  /*
-  for(int i=0; i<=4095; i++){
-    writeDAC(i, 0);
-    delay(5);
-    //writeDAC(i, 1);
-    //delay(5);
-    //Serial.println(analogRead(A0));
-  }
-  */
+void loop() {  
+  for(int value=0; value<=4095; value++){
+    for (int chan=0; chan<8; chan++) writeDAC(value, chan, 0);//chip 0 (pulses)
+    for (int chan=0; chan<8; chan++) writeDAC(value, chan, 1);//chip 1 (offsets and extra channels)
+    blink();
+  }  
 }
