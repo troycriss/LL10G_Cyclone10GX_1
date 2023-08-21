@@ -165,6 +165,14 @@ proc PULSES_neg4pausedur {value} {
     reg_write $GEN_BASE_ADDR $GEN_neg4pausedur $value
 }
 
+#trigger offset
+proc offset {value} {
+    global GEN_BASE_ADDR
+    global GEN_offset
+    puts "\t GEN_offset $value "
+    reg_write $GEN_BASE_ADDR $GEN_offset $value
+}
+
 #########
 
 proc SET_1588_GO_MASTER {} {
