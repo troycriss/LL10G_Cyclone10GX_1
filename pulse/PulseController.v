@@ -31,7 +31,8 @@ input [31:0] neg4dur,
 input [31:0] neg4pausedur,
 
 output reg [7:0] signal_out,
-output reg trigger
+output reg trigger,
+output reg verify_trigger
 );
 
 
@@ -53,21 +54,21 @@ always@(posedge clk_in)
 begin
 	pulse_durations[15] <= pos1dur[maxl:0]; 			//R+
 	pulse_durations[0]  <= pos1pausedur[maxl:0];	//pause
-	pulse_durations[1]  <= pos3dur[maxl:0]; 			//M
-	pulse_durations[2]  <= pos3pausedur[maxl:0];	//pause
-	pulse_durations[3]  <= pos2dur[maxl:0]; 			//W-
-	pulse_durations[4]  <= pos2pausedur[maxl:0];	//pause
-	pulse_durations[5]  <= pos3dur[maxl:0]; 			//M
-	pulse_durations[6]  <= pos3pausedur[maxl:0];	//pause
+	pulse_durations[1]  <= pos2dur[maxl:0]; 			//M
+	pulse_durations[2]  <= pos2pausedur[maxl:0];	//pause
+	pulse_durations[3]  <= pos3dur[maxl:0]; 			//W-
+	pulse_durations[4]  <= pos3pausedur[maxl:0];	//pause
+	pulse_durations[5]  <= pos4dur[maxl:0]; 			//M
+	pulse_durations[6]  <= pos4pausedur[maxl:0];	//pause
 	
 	pulse_durations[7]  <= neg1dur[maxl:0]; 			//R-
 	pulse_durations[8]  <= neg1pausedur[maxl:0];	//pause
-	pulse_durations[9]  <= neg3dur[maxl:0]; 	   	//M
-	pulse_durations[10] <= neg3pausedur[maxl:0];	//pause
-	pulse_durations[11] <= neg2dur[maxl:0]; 			//W+
-	pulse_durations[12] <= neg2pausedur[maxl:0];	//pause
-	pulse_durations[13] <= neg3dur[maxl:0]; 	   	//M
-	pulse_durations[14] <= neg3pausedur[maxl:0];	//pause
+	pulse_durations[9]  <= neg2dur[maxl:0]; 	   	//M
+	pulse_durations[10] <= neg2pausedur[maxl:0];	//pause
+	pulse_durations[11] <= neg3dur[maxl:0]; 			//W+
+	pulse_durations[12] <= neg3pausedur[maxl:0];	//pause
+	pulse_durations[13] <= neg4dur[maxl:0]; 	   	//M
+	pulse_durations[14] <= neg4pausedur[maxl:0];	//pause
 end
 
 
@@ -76,7 +77,8 @@ always@(posedge clk_in)
 	begin
 		
 		trigger<=1'b0;
-		//is_new_pulse <= old_pulse_index != pulse_index;
+		verify_trigger<=1'b0;
+		
 		case (pulse_index)
 		
 			4'd0: begin
@@ -84,11 +86,13 @@ always@(posedge clk_in)
 			end
 			4'd1: begin
 				signal_out<=8'b1000_0001;
+				is_new_pulse <= 1'b1;
 			end
 			
 			4'd2: begin
 				signal_out<=8'b1000_0101;	//M
-				//if(is_new_pulse) trigger<=1'b1;
+				if(is_new_pulse) verify_trigger<=1'b1;
+				is_new_pulse <= 1'b0;
 			end
 			4'd3: begin
 				signal_out<=8'b1000_0001;
