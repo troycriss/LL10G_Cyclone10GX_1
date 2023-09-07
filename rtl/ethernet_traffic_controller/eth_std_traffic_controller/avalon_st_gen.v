@@ -1,4 +1,5 @@
 // (C) 2001-2018 Intel Corporation. All rights reserved.
+// (C) 2001-2018 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -23,6 +24,8 @@ module avalon_st_gen
 ,input			 [15:0]  fmc_in         // Inputs from FMC (14-15 are from arduino)
 													// fmc_in 0 is H10, 1 is H11
 ,output         [15:0]  fmc_out			// Outputs to FMC (8-15 are for pulses)
+,output						trigger
+,output			 			verify_trigger
 
 ,input fast1_clk // 
 ,input fast2_clk // 
@@ -84,6 +87,8 @@ module avalon_st_gen
  parameter ADDR_neg3pausedur = 8'h20;
  parameter ADDR_neg4dur = 8'h21;
  parameter ADDR_neg4pausedur = 8'h22;
+ 
+ parameter ADDR_offset = 8'h23;
  
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -188,7 +193,11 @@ wire [9:0] fifo_rdusedw;//number of entries (out of 1024)
 wire fifo_rdfull; //full synced to read clk
 wire fifo_rdempty; //empty synced to read clk
 wire fifo_wrfull; //full synced to write clk
-wire fifo_clk;//fifo_clk is what is used for writing 
+wire fifo_clk;//fifo_clk is what is used for writing
+
+
+//trigger for fifo
+//reg trigger = 1'b0;
 
 	myfifo fifo1 (
 		.data    (fifo_datain),    //   input,  width = 64,  fifo_input.datain
@@ -225,24 +234,34 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	assign fifo_base_clk=fast2_clk;//out3 from pll
 	
 	reg do_test_counter_data=1'b0;
+	reg do_selected_data_bit = 1'b1;
+	reg do_selected_verify_bit = 1'b1;
+	reg do_full_data=1'b0;
+	
+	reg verified = 1'b0;
+	
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
-	parameter nbitstosample=6'd2; // should be a power of 2, to fit into 64 bit word!
+	parameter nbitstosample=6'd1; // should be a power of 2, to fit into 64 bit word!
 	always @ (posedge reset or posedge fifo_clk)
-   begin		
+   begin
       if (reset) begin
 			fifo_datain <= 64'h0;
 			counter_datain <= 8'h00;
 		end
-      else begin		
+      else if (do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) begin		
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
 				fifo_datain <= {fifo_datain[55:0],test_counter_data};
 			end
-			else begin
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],fmc_out[13]}; // take nbitstosample more bits of input and shift into fifo_datain
+			else if (do_full_data) begin
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],trigger}; // take nbitstosample more bits of input and shift into fifo_datain
+				counter_datain_max <= 8'h40-nbitstosample;
+			end
+			else begin //assuming nbitstosample is 1 when do_full_data is set to false
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			
@@ -255,11 +274,46 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				else counter_datain <= counter_datain+nbitstosample; // remember we stored nbitstosample more bits
 				fifo_wrreq<=1'b0;
 			end
+		end else begin
+			fifo_wrreq<=1'b0;
 		end
    end
 	
+	reg [7:0] trigger_offset = 8'd100;
+	reg [7:0] random_bit_timer = 8'b0;
+	always @ (posedge fifo_clk)
+	begin
+		if(trigger_offset == random_bit_timer) do_selected_data_bit <= 1'b1;
+		else do_selected_data_bit <= 1'b0;
+		if(trigger) random_bit_timer <= 8'd0;
+		else random_bit_timer <= random_bit_timer + 1'b1;
+	end
+	
+	reg [7:0] verify_bit_timer = 8'b0;
+	reg [15:0] verify_error_count = 16'd0;
+	
+	always @ (posedge fifo_clk)
+	begin
+		if(trigger_offset == verify_bit_timer) begin //same trigger_offset variable as for random trigger
+			if(fmc_in[1] == 1'h1) begin
+				do_selected_verify_bit <= 1'b1;
+				verified <= 1'b1;
+			end else begin
+				if (verify_error_count!=16'hffff) verify_error_count <= verify_error_count + 1'b1;
+				do_selected_verify_bit <= 1'b0;
+				verified <= 1'b0;
+			end
+		end
+		else do_selected_verify_bit <= 1'b0;
+		
+		if(verify_trigger) verify_bit_timer <= 0;
+		else verify_bit_timer <= verify_bit_timer + 1'b1;
+		
+		if(S_TRANSITION) verify_error_count <= 16'b0;
+	end
+	
 	//debugging outputs
-	assign fmc_out[7:4] = ns;
+	assign fmc_out[7:4] = {trigger, verify_trigger, do_selected_data_bit, do_selected_verify_bit};
 	assign fmc_out[3:0] = fmc_in[3:0];
 	
 	//pulse outputs and pauses
@@ -309,7 +363,9 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		.neg4dur(neg4dur),
 		.neg4pausedur(neg4pausedur),
 		
-		.signal_out(fmc_out[15:8])
+		.signal_out(fmc_out[15:8]),
+		.trigger(trigger),
+		.verify_trigger(verify_trigger)
 	);
 
 	//Read registers
@@ -360,6 +416,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		else if (write & address == ADDR_neg3pausedur) neg3pausedur<= writedata;
 		else if (write & address == ADDR_neg4dur) neg4dur<= writedata;
 		else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
+		
+		else if (write & address == ADDR_offset) trigger_offset<= writedata[7:0];
    end
 	
 // ____________________________________________________________________________
@@ -837,6 +895,8 @@ always @ (posedge reset or posedge clk)
 
 // Avalon-ST tx_data interface to CRC generator
 // ---------------------------------------------
+
+
 always @ (posedge reset or posedge clk)
    begin
       if (reset) begin
@@ -860,7 +920,8 @@ always @ (posedge reset or posedge clk)
             tx_data_reg[31: 0] <= {16'h07E7, length - 16'h12}; // dest port , UDP length (20 less than IP length (header))
 			end else if (S_SRC_LEN_IP4) begin
             tx_data_reg[63:32] <= {16'h0, seq_num}; // UDP dummy checksum , seq_num
-            tx_data_reg[31: 0] <= {packet_tx_count[15:0], {6'h0,fifo_rdusedw}}; // padding , padding
+            //tx_data_reg[31: 0] <= {packet_tx_count[15:0], {6'h0,fifo_rdusedw}}; // padding , padding
+            tx_data_reg[31: 0] <= {packet_tx_count[15:0], verify_error_count}; // add count of verify errors
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end

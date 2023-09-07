@@ -36,6 +36,8 @@ set_false_path -from *eth_std_traffic_controller*|GEN|pos*dur*
 set_false_path -from *eth_std_traffic_controller*|GEN|neg*dur*
 
 set_false_path -from *eth_std_traffic_controller*|GEN|do_test_counter_data*
+set_false_path -from *eth_std_traffic_controller*|GEN|trigger_offset*
+
 
 foreach_in_collection reset_sync_aclr_pin $reset_sync_aclr_collection {
     set reset_sync_aclr_counter [expr $reset_sync_aclr_counter + 1]
