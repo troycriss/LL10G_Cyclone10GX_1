@@ -14558,12 +14558,12 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/sn74auc2g66"&gt; Datasheet &lt;/a&
 </deviceset>
 </devicesets>
 </library>
-<library name="74LVC2G06GW_125">
-<description>&lt;74LVC2G06 - Inverters with open-drain outputs@en-us&lt;/b&gt;&lt;p&gt;
+<library name="74AUP2GU04GW_125">
+<description>&lt;Inverters DUAL UNBUFF INVERTER 1.8V&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
 <package name="SOT65P210X110-6N">
-<description>&lt;b&gt;SOT363-2 (TSSOP6)&lt;/b&gt;&lt;br&gt;
+<description>&lt;b&gt;SOT363-2&lt;/b&gt;&lt;br&gt;
 </description>
 <smd name="1" x="-0.95" y="0.65" dx="1.2" dy="0.4" layer="1"/>
 <smd name="2" x="-0.95" y="0" dx="1.2" dy="0.4" layer="1"/>
@@ -14586,7 +14586,7 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/sn74auc2g66"&gt; Datasheet &lt;/a&
 </package>
 </packages>
 <symbols>
-<symbol name="74LVC2G06GW,125">
+<symbol name="74AUP2GU04GW,125">
 <wire x1="5.08" y1="2.54" x2="20.32" y2="2.54" width="0.254" layer="94"/>
 <wire x1="20.32" y1="-7.62" x2="20.32" y2="2.54" width="0.254" layer="94"/>
 <wire x1="20.32" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
@@ -14602,11 +14602,11 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/sn74auc2g66"&gt; Datasheet &lt;/a&
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="74LVC2G06GW,125" prefix="IC">
-<description>&lt;b&gt;74LVC2G06 - Inverters with open-drain outputs@en-us&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2G06.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<deviceset name="74AUP2GU04GW,125" prefix="IC">
+<description>&lt;b&gt;Inverters DUAL UNBUFF INVERTER 1.8V&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/74AUP2GU04GW,125.pdf"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="74LVC2G06GW,125" x="0" y="0"/>
+<gate name="G$1" symbol="74AUP2GU04GW,125" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="SOT65P210X110-6N">
@@ -14620,12 +14620,12 @@ Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2G06.p
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DESCRIPTION" value="74LVC2G06 - Inverters with open-drain outputs@en-us" constant="no"/>
+<attribute name="DESCRIPTION" value="Inverters DUAL UNBUFF INVERTER 1.8V" constant="no"/>
 <attribute name="HEIGHT" value="1.1mm" constant="no"/>
 <attribute name="MANUFACTURER_NAME" value="Nexperia" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="74LVC2G06GW,125" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="771-LVC2G06GW125" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Nexperia/74LVC2G06GW125?qs=me8TqzrmIYX9rpcZEPRR6g%3D%3D" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW,125" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="771-74AUP2GU04GW-G" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=771-74AUP2GU04GW-G" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -14893,10 +14893,10 @@ Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2G06.p
 <part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY81" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY82" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IC21" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
-<part name="IC22" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
-<part name="IC23" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
-<part name="IC24" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
+<part name="IC21" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
+<part name="IC22" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
+<part name="IC23" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
+<part name="IC24" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY84" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY85" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
