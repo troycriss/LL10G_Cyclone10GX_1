@@ -14558,39 +14558,35 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/sn74auc2g66"&gt; Datasheet &lt;/a&
 </deviceset>
 </devicesets>
 </library>
-<library name="74LVC2GU04GV_125">
-<description>&lt;74LVC2GU04 - Dual unbuffered inverter@en-us&lt;/b&gt;&lt;p&gt;
+<library name="74LVC2G06GW_125">
+<description>&lt;74LVC2G06 - Inverters with open-drain outputs@en-us&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="SOT95P275X110-6N">
-<description>&lt;b&gt;SOT457 (SC-74)&lt;/b&gt;&lt;br&gt;
+<package name="SOT65P210X110-6N">
+<description>&lt;b&gt;SOT363-2 (TSSOP6)&lt;/b&gt;&lt;br&gt;
 </description>
-<smd name="1" x="-1.25" y="0.95" dx="1.25" dy="0.5" layer="1"/>
-<smd name="2" x="-1.25" y="0" dx="1.25" dy="0.5" layer="1"/>
-<smd name="3" x="-1.25" y="-0.95" dx="1.25" dy="0.5" layer="1"/>
-<smd name="4" x="1.25" y="-0.95" dx="1.25" dy="0.5" layer="1"/>
-<smd name="5" x="1.25" y="0" dx="1.25" dy="0.5" layer="1"/>
-<smd name="6" x="1.25" y="0.95" dx="1.25" dy="0.5" layer="1"/>
+<smd name="1" x="-0.95" y="0.65" dx="1.2" dy="0.4" layer="1"/>
+<smd name="2" x="-0.95" y="0" dx="1.2" dy="0.4" layer="1"/>
+<smd name="3" x="-0.95" y="-0.65" dx="1.2" dy="0.4" layer="1"/>
+<smd name="4" x="0.95" y="-0.65" dx="1.2" dy="0.4" layer="1"/>
+<smd name="5" x="0.95" y="0" dx="1.2" dy="0.4" layer="1"/>
+<smd name="6" x="0.95" y="0.65" dx="1.2" dy="0.4" layer="1"/>
 <text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
 <text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-2.125" y1="1.8" x2="2.125" y2="1.8" width="0.05" layer="51"/>
-<wire x1="2.125" y1="1.8" x2="2.125" y2="-1.8" width="0.05" layer="51"/>
-<wire x1="2.125" y1="-1.8" x2="-2.125" y2="-1.8" width="0.05" layer="51"/>
-<wire x1="-2.125" y1="-1.8" x2="-2.125" y2="1.8" width="0.05" layer="51"/>
-<wire x1="-0.75" y1="1.45" x2="0.75" y2="1.45" width="0.1" layer="51"/>
-<wire x1="0.75" y1="1.45" x2="0.75" y2="-1.45" width="0.1" layer="51"/>
-<wire x1="0.75" y1="-1.45" x2="-0.75" y2="-1.45" width="0.1" layer="51"/>
-<wire x1="-0.75" y1="-1.45" x2="-0.75" y2="1.45" width="0.1" layer="51"/>
-<wire x1="-0.75" y1="0.5" x2="0.2" y2="1.45" width="0.1" layer="51"/>
-<wire x1="-0.275" y1="1.45" x2="0.275" y2="1.45" width="0.2" layer="21"/>
-<wire x1="0.275" y1="1.45" x2="0.275" y2="-1.45" width="0.2" layer="21"/>
-<wire x1="0.275" y1="-1.45" x2="-0.275" y2="-1.45" width="0.2" layer="21"/>
-<wire x1="-0.275" y1="-1.45" x2="-0.275" y2="1.45" width="0.2" layer="21"/>
-<wire x1="-1.875" y1="1.55" x2="-0.625" y2="1.55" width="0.2" layer="21"/>
+<wire x1="-1.8" y1="1.35" x2="1.8" y2="1.35" width="0.05" layer="51"/>
+<wire x1="1.8" y1="1.35" x2="1.8" y2="-1.35" width="0.05" layer="51"/>
+<wire x1="1.8" y1="-1.35" x2="-1.8" y2="-1.35" width="0.05" layer="51"/>
+<wire x1="-1.8" y1="-1.35" x2="-1.8" y2="1.35" width="0.05" layer="51"/>
+<wire x1="-0.625" y1="1" x2="0.625" y2="1" width="0.1" layer="51"/>
+<wire x1="0.625" y1="1" x2="0.625" y2="-1" width="0.1" layer="51"/>
+<wire x1="0.625" y1="-1" x2="-0.625" y2="-1" width="0.1" layer="51"/>
+<wire x1="-0.625" y1="-1" x2="-0.625" y2="1" width="0.1" layer="51"/>
+<wire x1="-0.625" y1="0.35" x2="0.025" y2="1" width="0.1" layer="51"/>
+<wire x1="-1.55" y1="1.2" x2="-0.35" y2="1.2" width="0.2" layer="21"/>
 </package>
 </packages>
 <symbols>
-<symbol name="74LVC2GU04GV,125">
+<symbol name="74LVC2G06GW,125">
 <wire x1="5.08" y1="2.54" x2="20.32" y2="2.54" width="0.254" layer="94"/>
 <wire x1="20.32" y1="-7.62" x2="20.32" y2="2.54" width="0.254" layer="94"/>
 <wire x1="20.32" y1="-7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
@@ -14606,14 +14602,14 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/sn74auc2g66"&gt; Datasheet &lt;/a&
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="74LVC2GU04GV,125" prefix="IC">
-<description>&lt;b&gt;74LVC2GU04 - Dual unbuffered inverter@en-us&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2GU04.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<deviceset name="74LVC2G06GW,125" prefix="IC">
+<description>&lt;b&gt;74LVC2G06 - Inverters with open-drain outputs@en-us&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2G06.pdf"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="74LVC2GU04GV,125" x="0" y="0"/>
+<gate name="G$1" symbol="74LVC2G06GW,125" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT95P275X110-6N">
+<device name="" package="SOT65P210X110-6N">
 <connects>
 <connect gate="G$1" pin="1A" pad="1"/>
 <connect gate="G$1" pin="1Y" pad="6"/>
@@ -14624,12 +14620,12 @@ Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2GU04.
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DESCRIPTION" value="74LVC2GU04 - Dual unbuffered inverter@en-us" constant="no"/>
+<attribute name="DESCRIPTION" value="74LVC2G06 - Inverters with open-drain outputs@en-us" constant="no"/>
 <attribute name="HEIGHT" value="1.1mm" constant="no"/>
 <attribute name="MANUFACTURER_NAME" value="Nexperia" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="74LVC2GU04GV,125" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="771-LVC2GU04GV125" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Nexperia/74LVC2GU04GV125?qs=me8TqzrmIYWfK4lIwWJZiA%3D%3D" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="74LVC2G06GW,125" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="771-LVC2G06GW125" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Nexperia/74LVC2G06GW125?qs=me8TqzrmIYX9rpcZEPRR6g%3D%3D" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -14897,10 +14893,10 @@ Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/74LVC2GU04.
 <part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY81" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY82" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IC21" library="74LVC2GU04GV_125" deviceset="74LVC2GU04GV,125" device=""/>
-<part name="IC22" library="74LVC2GU04GV_125" deviceset="74LVC2GU04GV,125" device=""/>
-<part name="IC23" library="74LVC2GU04GV_125" deviceset="74LVC2GU04GV,125" device=""/>
-<part name="IC24" library="74LVC2GU04GV_125" deviceset="74LVC2GU04GV,125" device=""/>
+<part name="IC21" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
+<part name="IC22" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
+<part name="IC23" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
+<part name="IC24" library="74LVC2G06GW_125" deviceset="74LVC2G06GW,125" device=""/>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY84" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY85" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
