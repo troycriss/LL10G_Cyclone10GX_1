@@ -45,15 +45,15 @@ void setup() {
   delay(100);
   Serial.println("Arduino Connected");
 
-  writeDAC(1000, 0, 0);//chip 0 (pulses)
-  writeDAC(1000, 1, 0);//chip 0 (pulses)
-  writeDAC(1000, 2, 0);//chip 0 (pulses)
-  writeDAC(1000, 3, 0);//chip 0 (pulses)
+  writeDAC(4095/4, 0, 0);//1p, chip 0 (pulses)
+  writeDAC(0, 1, 0);//chip 0 (pulses)
+  writeDAC(0, 2, 0);//chip 0 (pulses)
+  writeDAC(0, 3, 0);//chip 0 (pulses)
   
-  writeDAC(1000, 4, 0);//chip 0 (pulses)
-  writeDAC(1000, 5, 0);//chip 0 (pulses)
-  writeDAC(1000, 6, 0);//chip 0 (pulses)
-  writeDAC(1000, 7, 0);//chip 0 (pulses)
+  writeDAC(4095/4, 4, 0);// 1n chip 0 (pulses)
+  writeDAC(0, 5, 0);//chip 0 (pulses)
+  writeDAC(0, 6, 0);//chip 0 (pulses)
+  writeDAC(0, 7, 0);//chip 0 (pulses)
 }
 
 void blink(){
