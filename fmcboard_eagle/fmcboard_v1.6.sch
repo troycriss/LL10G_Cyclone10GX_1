@@ -14816,8 +14816,8 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/74AUP2GU04GW,
 <part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
-<part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
-<part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF?"/>
+<part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF?"/>
 <part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
 <part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50?"/>
 <part name="J8" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
@@ -14952,10 +14952,10 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/74AUP2GU04GW,
 <part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY81" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY82" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IC21" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
-<part name="IC22" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
-<part name="IC23" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
-<part name="IC24" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
+<part name="IC21" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW"/>
+<part name="IC22" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW"/>
+<part name="IC23" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW"/>
+<part name="IC24" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW"/>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY84" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY85" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
