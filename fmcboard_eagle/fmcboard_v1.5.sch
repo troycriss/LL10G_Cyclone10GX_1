@@ -18102,10 +18102,6 @@ switches to DACs</text>
 <label x="38.1" y="142.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="78.74" y1="142.24" x2="83.82" y2="142.24" width="0.1524" layer="91"/>
-<label x="81.28" y="142.24" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="R_O2" gate="G$1" pin="E"/>
 <wire x1="40.64" y1="106.68" x2="40.64" y2="111.76" width="0.1524" layer="91"/>
 <label x="38.1" y="111.76" size="1.778" layer="95"/>
@@ -18141,10 +18137,6 @@ switches to DACs</text>
 <pinref part="R_O1" gate="G$1" pin="A"/>
 <wire x1="40.64" y1="127" x2="40.64" y2="121.92" width="0.1524" layer="91"/>
 <label x="38.1" y="119.38" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="78.74" y1="127" x2="83.82" y2="127" width="0.1524" layer="91"/>
-<label x="81.28" y="124.46" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R_O2" gate="G$1" pin="A"/>
