@@ -14677,6 +14677,132 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/74AUP2GU04GW,
 </deviceset>
 </devicesets>
 </library>
+<library name="burr-brown" urn="urn:adsk.eagle:library:111">
+<description>&lt;b&gt;Burr-Brown Components&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOT223" urn="urn:adsk.eagle:footprint:4834/1" library_version="4">
+<description>&lt;b&gt;Smal Outline Transistor&lt;/b&gt;</description>
+<wire x1="-3.124" y1="1.731" x2="-3.124" y2="-1.729" width="0.1524" layer="21"/>
+<wire x1="3.124" y1="-1.729" x2="3.124" y2="1.731" width="0.1524" layer="21"/>
+<wire x1="-3.124" y1="1.731" x2="3.124" y2="1.731" width="0.1524" layer="21"/>
+<wire x1="3.124" y1="-1.729" x2="-3.124" y2="-1.729" width="0.1524" layer="21"/>
+<smd name="1" x="-2.2606" y="-3.1496" dx="1.4986" dy="2.0066" layer="1"/>
+<smd name="2" x="0.0254" y="-3.1496" dx="1.4986" dy="2.0066" layer="1"/>
+<smd name="3" x="2.3114" y="-3.1496" dx="1.4986" dy="2.0066" layer="1"/>
+<smd name="4" x="0" y="3.1496" dx="3.81" dy="2.0066" layer="1"/>
+<text x="-2.54" y="4.318" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.794" y="-5.842" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-1.524" y1="1.778" x2="1.524" y2="3.302" layer="51"/>
+<rectangle x1="-2.667" y1="-3.302" x2="-1.905" y2="-1.778" layer="51"/>
+<rectangle x1="1.905" y1="-3.302" x2="2.667" y2="-1.778" layer="51"/>
+<rectangle x1="-0.381" y1="-3.302" x2="0.381" y2="-1.778" layer="51"/>
+</package>
+<package name="DD-3" urn="urn:adsk.eagle:footprint:4839/1" library_version="4">
+<description>&lt;b&gt;DPAC&lt;/b&gt;</description>
+<wire x1="-5.398" y1="-4.445" x2="-5.084" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="-5.084" y1="-4.445" x2="5.076" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="5.076" y1="-4.445" x2="5.398" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="-4.445" x2="5.398" y2="4.128" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="4.128" x2="-5.398" y2="4.128" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="4.128" x2="-5.398" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="-5.084" y1="3.81" x2="5.076" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="5.076" y1="3.81" x2="5.076" y2="-4.445" width="0.1524" layer="21"/>
+<wire x1="-5.084" y1="-4.445" x2="-5.084" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="4.128" x2="-5.084" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="4.128" x2="5.076" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="4.128" x2="-5.398" y2="5.08" width="0.1524" layer="21"/>
+<wire x1="-5.398" y1="5.08" x2="-4.445" y2="5.715" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="5.715" x2="4.445" y2="5.715" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="5.715" x2="5.398" y2="5.08" width="0.1524" layer="21"/>
+<wire x1="5.398" y1="5.08" x2="5.398" y2="4.128" width="0.1524" layer="21"/>
+<smd name="1" x="-2.54" y="-7.9375" dx="1.27" dy="5.08" layer="1"/>
+<smd name="2" x="0" y="-7.9375" dx="1.27" dy="5.08" layer="1"/>
+<smd name="3" x="2.54" y="-7.9375" dx="1.27" dy="5.08" layer="1"/>
+<text x="-3.81" y="-10.795" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-2.54" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-3.175" y1="-9.525" x2="-1.905" y2="-4.445" layer="51"/>
+<rectangle x1="-0.635" y1="-9.525" x2="0.635" y2="-4.445" layer="51"/>
+<rectangle x1="1.905" y1="-9.525" x2="3.175" y2="-4.445" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SOT223" urn="urn:adsk.eagle:package:4940/1" type="box" library_version="4">
+<description>Smal Outline Transistor</description>
+<packageinstances>
+<packageinstance name="SOT223"/>
+</packageinstances>
+</package3d>
+<package3d name="DD-3" urn="urn:adsk.eagle:package:4944/1" type="box" library_version="4">
+<description>DPAC</description>
+<packageinstances>
+<packageinstance name="DD-3"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="REG1118" urn="urn:adsk.eagle:symbol:4833/1" library_version="4">
+<wire x1="-7.62" y1="-7.62" x2="7.62" y2="-7.62" width="0.4064" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="7.62" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-7.62" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="-7.62" y2="-7.62" width="0.4064" layer="94"/>
+<text x="-7.62" y="5.715" size="1.778" layer="95" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="2.54" size="1.778" layer="96" ratio="10">&gt;VALUE</text>
+<pin name="VIN" x="-12.7" y="0" length="middle" direction="in"/>
+<pin name="VOUT" x="12.7" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="GND" x="0" y="-12.7" length="middle" direction="pwr" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="REG1117" urn="urn:adsk.eagle:component:5129/2" prefix="IC" library_version="4">
+<description>&lt;b&gt;800mA and 1A Low Dropout (LDO) Positive Regulator&lt;/b&gt;&lt;p&gt;
+1.8V, 2.5V, 2.85V, 3.3V, 5V, and Adj</description>
+<gates>
+<gate name="G$1" symbol="REG1118" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT223">
+<connects>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VOUT" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4940/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="REG1117" constant="no"/>
+<attribute name="OC_FARNELL" value="1097566" constant="no"/>
+<attribute name="OC_NEWARK" value="14P6981" constant="no"/>
+<attribute name="POPULARITY" value="49" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="F" package="DD-3">
+<connects>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VOUT" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:4944/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="MPN" value="REG1117FAKTTT" constant="no"/>
+<attribute name="OC_FARNELL" value="1296120" constant="no"/>
+<attribute name="OC_NEWARK" value="87H2562" constant="no"/>
+<attribute name="POPULARITY" value="2" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14986,6 +15112,11 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/74AUP2GU04GW,
 <part name="SUPPLY96" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="J11" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_08" device="&quot;" package3d_urn="urn:adsk.eagle:package:38138/1" value="8pin"/>
 <part name="SUPPLY97" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="IC26" library="burr-brown" library_urn="urn:adsk.eagle:library:111" deviceset="REG1117" device="" package3d_urn="urn:adsk.eagle:package:4940/1" value="AMS1117-1.8">
+<attribute name="JLC_ROTATION" value="270"/>
+</part>
+<part name="SUPPLY98" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="C34" library="SparkFun-Passives" deviceset="CAP" device="0805" value="10uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -15256,6 +15387,15 @@ AR_5V and VS+</text>
 </instance>
 <instance part="J11" gate="G$1" x="99.06" y="111.76" smashed="yes" rot="R180"/>
 <instance part="SUPPLY97" gate="GND" x="93.98" y="99.06" smashed="yes"/>
+<instance part="IC26" gate="G$1" x="20.32" y="-5.08" smashed="yes">
+<attribute name="NAME" x="12.7" y="0.635" size="1.778" layer="95" ratio="10"/>
+<attribute name="VALUE" x="15.24" y="-2.54" size="1.778" layer="96" ratio="10"/>
+<attribute name="JLC_ROTATION" x="20.32" y="-5.08" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SUPPLY98" gate="GND" x="20.32" y="-20.32" smashed="yes"/>
+<instance part="C34" gate="G$1" x="35.56" y="-10.16" smashed="yes">
+<attribute name="VALUE" x="32.004" y="-12.319" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -15499,6 +15639,14 @@ AR_5V and VS+</text>
 <pinref part="SUPPLY97" gate="GND" pin="GND"/>
 <junction x="93.98" y="101.6"/>
 </segment>
+<segment>
+<pinref part="IC26" gate="G$1" pin="GND"/>
+<pinref part="SUPPLY98" gate="GND" pin="GND"/>
+<pinref part="C34" gate="G$1" pin="2"/>
+<wire x1="35.56" y1="-12.7" x2="35.56" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-17.78" x2="20.32" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="20.32" y="-17.78"/>
+</segment>
 </net>
 <net name="IO1" class="0">
 <segment>
@@ -15526,18 +15674,23 @@ AR_5V and VS+</text>
 <label x="109.22" y="15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J12" gate="G$1" pin="P$4"/>
 <pinref part="J12" gate="G$1" pin="P$3"/>
-<wire x1="165.1" y1="-2.54" x2="165.1" y2="0" width="0.1524" layer="91"/>
 <pinref part="J12" gate="G$1" pin="P$2"/>
 <wire x1="165.1" y1="0" x2="165.1" y2="2.54" width="0.1524" layer="91"/>
-<junction x="165.1" y="0"/>
 <pinref part="J12" gate="G$1" pin="P$1"/>
 <wire x1="165.1" y1="2.54" x2="165.1" y2="5.08" width="0.1524" layer="91"/>
 <junction x="165.1" y="2.54"/>
 <wire x1="165.1" y1="5.08" x2="165.1" y2="10.16" width="0.1524" layer="91"/>
 <junction x="165.1" y="5.08"/>
 <label x="165.1" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC26" gate="G$1" pin="VOUT"/>
+<wire x1="33.02" y1="-5.08" x2="35.56" y2="-5.08" width="0.1524" layer="91"/>
+<label x="38.1" y="-5.08" size="1.778" layer="95"/>
+<pinref part="C34" gate="G$1" pin="1"/>
+<wire x1="35.56" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
+<junction x="35.56" y="-5.08"/>
 </segment>
 </net>
 <net name="3V3" class="1">
@@ -15678,6 +15831,11 @@ AR_5V and VS+</text>
 <pinref part="J1" gate="G$1" pin="2"/>
 <wire x1="132.08" y1="35.56" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
 <label x="121.92" y="35.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC26" gate="G$1" pin="VIN"/>
+<wire x1="7.62" y1="-5.08" x2="-2.54" y2="-5.08" width="0.1524" layer="91"/>
+<label x="0" y="-5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VS-" class="1">
@@ -16054,6 +16212,14 @@ AR_5V and VS+</text>
 <label x="43.18" y="88.9" size="1.778" layer="95"/>
 <pinref part="R5" gate="G$1" pin="2"/>
 <junction x="55.88" y="88.9"/>
+</segment>
+</net>
+<net name="1V8FMC" class="1">
+<segment>
+<pinref part="J12" gate="G$1" pin="P$4"/>
+<wire x1="165.1" y1="-2.54" x2="165.1" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="-7.62" x2="175.26" y2="-7.62" width="0.1524" layer="91"/>
+<label x="165.1" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -18760,18 +18926,6 @@ AR_5V and VS+</text>
 <junction x="-7.62" y="127"/>
 </segment>
 </net>
-<net name="1V8" class="1">
-<segment>
-<pinref part="J2" gate="G$1" pin="H40"/>
-<wire x1="48.26" y1="205.74" x2="38.1" y2="205.74" width="0.1524" layer="91"/>
-<label x="38.1" y="205.74" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="48.26" y1="101.6" x2="33.02" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="G39"/>
-<label x="35.56" y="101.6" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="3V3" class="1">
 <segment>
 <pinref part="J2" gate="G$1" pin="D40"/>
@@ -18991,14 +19145,14 @@ AR_5V and VS+</text>
 <net name="G36" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="G36"/>
-<wire x1="48.26" y1="93.98" x2="33.02" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="93.98" x2="35.56" y2="93.98" width="0.1524" layer="91"/>
 <label x="35.56" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="G37" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="G37"/>
-<wire x1="48.26" y1="96.52" x2="33.02" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="96.52" x2="35.56" y2="96.52" width="0.1524" layer="91"/>
 <label x="35.56" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -19056,6 +19210,18 @@ AR_5V and VS+</text>
 <pinref part="J2" gate="G$1" pin="C15"/>
 <wire x1="86.36" y1="40.64" x2="73.66" y2="40.64" width="0.1524" layer="91"/>
 <label x="81.28" y="40.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="1V8FMC" class="1">
+<segment>
+<wire x1="48.26" y1="101.6" x2="35.56" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="J2" gate="G$1" pin="G39"/>
+<label x="35.56" y="101.6" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="H40"/>
+<wire x1="48.26" y1="205.74" x2="35.56" y2="205.74" width="0.1524" layer="91"/>
+<label x="35.56" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
