@@ -14843,8 +14843,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C35" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
 <part name="C36" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
 <part name="C37" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
-<part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
-<part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF"/>
+<part name="C32" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF?"/>
+<part name="C33" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1pF?"/>
 <part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47"/>
 <part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50?"/>
 <part name="J8" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
@@ -14926,10 +14926,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY80" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY81" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY82" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IC21" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
-<part name="IC22" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
-<part name="IC23" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
-<part name="IC24" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device=""/>
+<part name="IC21" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW">
+<attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW"/>
+</part>
+<part name="IC22" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW">
+<attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW"/>
+</part>
+<part name="IC23" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW">
+<attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW"/>
+</part>
+<part name="IC24" library="74AUP2GU04GW_125" deviceset="74AUP2GU04GW,125" device="" value="74AUP2GU04GW">
+<attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW"/>
+</part>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY84" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY85" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
