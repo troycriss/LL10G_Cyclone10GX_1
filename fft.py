@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from numpy.fft import fft, ifft
+import random
 
 #read in data
 bytestream = bytearray(b'')
@@ -11,14 +13,16 @@ boolstream = []
 for b in bytestream:
     for i in range(8):
         boolstream.append((b >> i) & 0b1)
-boolstream=boolstream[200000:300000]
-print(boolstream[:100])
+
+#fake boolstream
+#boolstream = np.random.randint(2,size=len(boolstream))
+#print(boolstream[:100])
 
 # sampling rate, number of samples per second
 sr = 1/303e-9
 print("sr",sr)
 #number of samples
-ns = len(boolstream)
+ns = 500000
 print("ns",ns)
 
 # sampling period
@@ -31,19 +35,22 @@ t = np.arange(0,ns*ts,ts)
 #x += 1.0* (np.sin(2*np.pi*4*t)+1)
 #x += 0.5* 1 * (np.sin(2*np.pi*7*t)+1)
 #x[40:50]=17
-# #x=np.round(x)
+#x=np.round(x)
 #print(np.average(x))
 
-x=boolstream
+#plt.plot(t, x, 'r')
+#plt.xlabel('Time')
+#plt.ylabel('Amplitude')
+#plt.show()
 
-plt.plot(t, x, 'r')
-plt.xlabel('Time')
-plt.ylabel('Amplitude')
-plt.show()
-
-
-from numpy.fft import fft, ifft
+x=boolstream[:ns]
 X = fft(x)
+for i in range(ns,len(boolstream),ns):
+    print(i)
+    if i+ns>len(boolstream): continue
+    x=boolstream[i:i+ns]
+    X = X + fft(x)
+
 T = ns/sr
 freq = np.arange(ns)/T
 
@@ -56,17 +63,15 @@ plt.ylim(0,1.05*max(np.abs(X[1:])))
 print(  freq[np.where( np.abs(X[1:])==max(np.abs(X[1:int(ns/2)])) )[0]]  )
 plt.show()
 
-exit()
-
-ifftX = ifft(X)
-plt.plot(t, np.real(ifftX), 'r')
-plt.xlabel('Time (s)')
-plt.ylabel('Amplitude')
-plt.show()
-
-
-plt.plot(t, x-np.real(ifftX), 'r')
-plt.xlabel('Time (s)')
-plt.ylabel('Amplitude difference')
-plt.show()
+# ifftX = ifft(X)
+# plt.plot(t, np.real(ifftX), 'r')
+# plt.xlabel('Time (s)')
+# plt.ylabel('Amplitude')
+# plt.show()
+#
+#
+# plt.plot(t, x-np.real(ifftX), 'r')
+# plt.xlabel('Time (s)')
+# plt.ylabel('Amplitude difference')
+# plt.show()
 
