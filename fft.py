@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.fft import fft, ifft
 import random
+from scipy.signal import find_peaks
 
 #read in data
 bytestream = bytearray(b'')
@@ -19,7 +20,7 @@ for b in bytestream:
 #print(boolstream[:100])
 
 # sampling rate, number of samples per second
-sr = 1/303e-9
+sr = 3.28e6 # from Andre oscilloscope
 print("sr",sr)
 #number of samples
 ns = 500000
@@ -60,8 +61,14 @@ plt.ylabel('FFT Amplitude |X(freq)|')
 plt.xlim(1, freq[-1]/2.) # ignore 0 freq (DC offset), and only go up to half the max freq, since it's symmetric
 plt.ylim(0,1.05*max(np.abs(X[1:])))
 #plt.ylim(.01,1.25*max(np.abs(X[1:]))); plt.yscale("log")
-print(  freq[np.where( np.abs(X[1:])==max(np.abs(X[1:int(ns/2)])) )[0]]  )
 plt.show()
+
+#Find peaks
+peaks = find_peaks(np.abs(X), height=5000, threshold=500, distance=10)
+heights = peaks[1]['peak_heights'] #list of the heights of the peaks
+peakpos = freq[peaks[0]] #list of the peaks positions
+print("peak heights",np.round(heights))
+print("peak freqs",np.round(peakpos))
 
 # ifftX = ifft(X)
 # plt.plot(t, np.real(ifftX), 'r')
