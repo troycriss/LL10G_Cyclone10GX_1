@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -13555,13 +13555,13 @@ Source: &lt;a href="https://www.ti.com/lit/ds/symlink/opa695.pdf?HQS=dis-dk-null
 <part name="C76" library="SparkFun-Passives" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="SUPPLY105" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY106" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R78" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
-<part name="R80" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R78" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
+<part name="R80" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
 <part name="SUPPLY108" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R81" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R81" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
 <part name="SUPPLY109" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R82" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="R83" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R82" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
+<part name="R83" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
 <part name="SUPPLY110" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY111" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C77" library="SparkFun-Passives" deviceset="CAP" device="0805" value="1uF"/>
@@ -16834,17 +16834,17 @@ AR_5V and VS+</text>
 <attribute name="VALUE" x="27.94" y="119.38" size="1.778" layer="95" font="vector" rot="R90"/>
 </instance>
 <instance part="R71" gate="G$1" x="76.2" y="134.62" smashed="yes">
-<attribute name="VALUE" x="70.866" y="132.588" size="1.778" layer="96"/>
+<attribute name="VALUE" x="75.184" y="136.398" size="1.778" layer="96"/>
 </instance>
 <instance part="R72" gate="G$1" x="60.96" y="127" smashed="yes" rot="R180">
-<attribute name="VALUE" x="66.294" y="129.032" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="62.23" y="130.81" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SUPPLY47" gate="GND" x="66.04" y="119.38" smashed="yes"/>
 <instance part="R78" gate="G$1" x="88.9" y="124.46" smashed="yes" rot="R180">
-<attribute name="VALUE" x="94.234" y="126.492" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="90.424" y="128.27" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C77" gate="G$1" x="93.98" y="121.92" smashed="yes" rot="R180">
-<attribute name="VALUE" x="89.281" y="122.936" size="1.778" layer="96" rot="R270"/>
+<attribute name="VALUE" x="87.884" y="119.761" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY112" gate="GND" x="93.98" y="114.3" smashed="yes"/>
 <instance part="R3" gate="G$1" x="165.1" y="76.2" smashed="yes" rot="R270">
