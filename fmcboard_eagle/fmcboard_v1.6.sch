@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="19" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,19 +53,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="3" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="3" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -12919,9 +12919,180 @@ Source: &lt;a href="https://www.ti.com/lit/ds/symlink/opa695.pdf?HQS=dis-dk-null
 </deviceset>
 </devicesets>
 </library>
-<library name="adafruit" urn="urn:adsk.eagle:library:420">
+<library name="LM337KVURG3">
+<description>&lt;3 Pin 1.5A Adjustable Negative Voltage Regulator&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="TO92" urn="urn:adsk.eagle:footprint:6240023/1" library_version="2">
+<package name="LM337KVURG3">
+<description>&lt;b&gt;LM337KVURG3-1&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-2.29" y="-4.2" dx="2.75" dy="1" layer="1" rot="R90"/>
+<smd name="2" x="0" y="2.5" dx="6.15" dy="5.55" layer="1" rot="R90"/>
+<smd name="3" x="2.29" y="-4.2" dx="2.75" dy="1" layer="1" rot="R90"/>
+<text x="0" y="-0.188" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="-0.188" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-3.263" y1="3.047" x2="3.263" y2="3.047" width="0.2" layer="51"/>
+<wire x1="3.263" y1="3.047" x2="3.263" y2="-3.047" width="0.2" layer="51"/>
+<wire x1="3.263" y1="-3.047" x2="-3.263" y2="-3.047" width="0.2" layer="51"/>
+<wire x1="-3.263" y1="-3.047" x2="-3.263" y2="3.047" width="0.2" layer="51"/>
+<wire x1="-4.263" y1="6.575" x2="4.263" y2="6.575" width="0.1" layer="51"/>
+<wire x1="4.263" y1="6.575" x2="4.263" y2="-6.95" width="0.1" layer="51"/>
+<wire x1="4.263" y1="-6.95" x2="-4.263" y2="-6.95" width="0.1" layer="51"/>
+<wire x1="-4.263" y1="-6.95" x2="-4.263" y2="6.575" width="0.1" layer="51"/>
+<wire x1="3.263" y1="2.15" x2="3.263" y2="-3.047" width="0.1" layer="21"/>
+<wire x1="-3.263" y1="2.197" x2="-3.263" y2="-3.047" width="0.1" layer="21"/>
+<wire x1="-2.4" y1="-6.25" x2="-2.4" y2="-6.25" width="0.2" layer="21"/>
+<wire x1="-2.4" y1="-6.25" x2="-2.4" y2="-6.05" width="0.2" layer="21" curve="180"/>
+<wire x1="-2.4" y1="-6.05" x2="-2.4" y2="-6.05" width="0.2" layer="21"/>
+<wire x1="-2.4" y1="-6.05" x2="-2.4" y2="-6.25" width="0.2" layer="21" curve="180"/>
+<wire x1="-1" y1="-3.047" x2="1" y2="-3.047" width="0.1" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="LM337KVURG3">
+<wire x1="5.08" y1="2.54" x2="33.02" y2="2.54" width="0.254" layer="94"/>
+<wire x1="33.02" y1="-5.08" x2="33.02" y2="2.54" width="0.254" layer="94"/>
+<wire x1="33.02" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<text x="34.29" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="34.29" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="ADJUSTMENT" x="0" y="0" length="middle"/>
+<pin name="INPUT" x="38.1" y="0" length="middle" rot="R180"/>
+<pin name="OUTPUT" x="0" y="-2.54" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LM337KVURG3" prefix="IC">
+<description>&lt;b&gt;3 Pin 1.5A Adjustable Negative Voltage Regulator&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://www.ti.com/lit/gpn/lm337"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="LM337KVURG3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LM337KVURG3">
+<connects>
+<connect gate="G$1" pin="ADJUSTMENT" pad="1"/>
+<connect gate="G$1" pin="INPUT" pad="2"/>
+<connect gate="G$1" pin="OUTPUT" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="3 Pin 1.5A Adjustable Negative Voltage Regulator" constant="no"/>
+<attribute name="HEIGHT" value="2.65mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Texas Instruments" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LM337KVURG3" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="595-LM337KVURG3" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM337KVURG3?qs=iSMark9AYDXYOGB3Dr0rVg%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="MC7905ACD2TR4G">
+<description>&lt;ON SEMICONDUCTOR - MC7905ACD2TR4G - Fixed LDO Voltage Regulator, 7905, -35V in, 1.3V Dropout, -5V/1A out, TO-263-3&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="MC7905ACD2TR4G">
+<description>&lt;b&gt;D2PAK CASE 93603 ISSUE E_Thickness=4.572mm&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-2.54" y="-4.064" dx="3.504" dy="1.016" layer="1" rot="R90"/>
+<smd name="2" x="0" y="2.745" dx="5.08" dy="5.08" layer="1"/>
+<smd name="3" x="2.54" y="-4.064" dx="3.504" dy="1.016" layer="1" rot="R90"/>
+<text x="0" y="-1.143" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="-2.413" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-5.01" y1="4.597" x2="5.01" y2="4.597" width="0.1" layer="51"/>
+<wire x1="5.01" y1="4.597" x2="5.01" y2="-4.598" width="0.1" layer="51"/>
+<wire x1="5.01" y1="-4.598" x2="-5.01" y2="-4.598" width="0.1" layer="51"/>
+<wire x1="-5.01" y1="-4.598" x2="-5.01" y2="4.597" width="0.1" layer="51"/>
+<wire x1="-4.975" y1="5.395" x2="4.975" y2="5.395" width="0.1" layer="51"/>
+<wire x1="4.975" y1="5.395" x2="4.975" y2="-6.41" width="0.1" layer="51"/>
+<wire x1="4.975" y1="-6.41" x2="-4.975" y2="-6.41" width="0.1" layer="51"/>
+<wire x1="-4.975" y1="-6.41" x2="-4.975" y2="5.395" width="0.1" layer="51"/>
+<wire x1="-5.01" y1="-1.8" x2="-5.01" y2="-4.598" width="0.2" layer="21"/>
+<wire x1="-5.01" y1="-4.598" x2="5.01" y2="-4.598" width="0.2" layer="21"/>
+<wire x1="5.01" y1="-4.598" x2="5.01" y2="-1.8" width="0.2" layer="21"/>
+<wire x1="-2.54" y1="-6.09" x2="-2.54" y2="-5.99" width="0.2" layer="21" curve="180"/>
+<wire x1="-2.54" y1="-5.99" x2="-2.54" y2="-6.09" width="0.2" layer="21" curve="180"/>
+<wire x1="-2.54" y1="-6.09" x2="-2.54" y2="-5.99" width="0.2" layer="21" curve="180"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MC7905ACD2TR4G">
+<wire x1="5.08" y1="2.54" x2="27.94" y2="2.54" width="0.254" layer="94"/>
+<wire x1="27.94" y1="-5.08" x2="27.94" y2="2.54" width="0.254" layer="94"/>
+<wire x1="27.94" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<text x="29.21" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="29.21" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="GROUND" x="0" y="0" length="middle"/>
+<pin name="INPUT" x="33.02" y="0" length="middle" rot="R180"/>
+<pin name="OUTPUT" x="0" y="-2.54" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MC7905ACD2TR4G" prefix="IC">
+<description>&lt;b&gt;ON SEMICONDUCTOR - MC7905ACD2TR4G - Fixed LDO Voltage Regulator, 7905, -35V in, 1.3V Dropout, -5V/1A out, TO-263-3&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.onsemi.com/pdf/datasheet/mc7900-d.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="MC7905ACD2TR4G" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MC7905ACD2TR4G">
+<connects>
+<connect gate="G$1" pin="GROUND" pad="1"/>
+<connect gate="G$1" pin="INPUT" pad="2"/>
+<connect gate="G$1" pin="OUTPUT" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="ON SEMICONDUCTOR - MC7905ACD2TR4G - Fixed LDO Voltage Regulator, 7905, -35V in, 1.3V Dropout, -5V/1A out, TO-263-3" constant="no"/>
+<attribute name="HEIGHT" value="4.572mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="onsemi" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="MC7905ACD2TR4G" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="863-MC7905ACD2TR4G" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/onsemi/MC7905ACD2TR4G?qs=%252B9%2Fcbd0IE0ROAS%2F2lHbmwg%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="adafruit">
+<packages>
+<package name="TO252" urn="urn:adsk.eagle:footprint:6240026/1" locally_modified="yes">
+<description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;&lt;p&gt;
+TS-003</description>
+<wire x1="3.2766" y1="3.8354" x2="3.277" y2="-2.159" width="0.2032" layer="21"/>
+<wire x1="3.277" y1="-2.159" x2="-3.277" y2="-2.159" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="-2.159" x2="-3.2766" y2="3.8354" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="3.835" x2="3.2774" y2="3.8346" width="0.2032" layer="51"/>
+<wire x1="-2.5654" y1="3.937" x2="-2.5654" y2="4.6482" width="0.2032" layer="51"/>
+<wire x1="-2.5654" y1="4.6482" x2="-2.1082" y2="5.1054" width="0.2032" layer="51"/>
+<wire x1="-2.1082" y1="5.1054" x2="2.1082" y2="5.1054" width="0.2032" layer="51"/>
+<wire x1="2.1082" y1="5.1054" x2="2.5654" y2="4.6482" width="0.2032" layer="51"/>
+<wire x1="2.5654" y1="4.6482" x2="2.5654" y2="3.937" width="0.2032" layer="51"/>
+<wire x1="2.5654" y1="3.937" x2="-2.5654" y2="3.937" width="0.2032" layer="51"/>
+<smd name="3" x="0" y="2.5" dx="5.4" dy="6.2" layer="1"/>
+<smd name="1" x="-2.28" y="-3.556" dx="1" dy="3.048" layer="1"/>
+<smd name="2" x="2.28" y="-3.556" dx="1" dy="3.048" layer="1"/>
+<text x="-3.81" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.7178" y1="-5.1562" x2="-1.8542" y2="-2.2606" layer="51"/>
+<rectangle x1="1.8542" y1="-5.1562" x2="2.7178" y2="-2.2606" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.0226" x2="0.4318" y2="-2.2606" layer="21"/>
+<polygon width="0.1998" layer="51">
+<vertex x="-2.5654" y="3.937"/>
+<vertex x="-2.5654" y="4.6482"/>
+<vertex x="-2.1082" y="5.1054"/>
+<vertex x="2.1082" y="5.1054"/>
+<vertex x="2.5654" y="4.6482"/>
+<vertex x="2.5654" y="3.937"/>
+</polygon>
+</package>
+<package name="TO92" urn="urn:adsk.eagle:footprint:6240023/1">
 <description>&lt;b&gt;TO-92&lt;/b&gt;</description>
 <wire x1="-2.095" y1="-1.651" x2="-0.7869" y2="2.5484" width="0.1524" layer="21" curve="-111.097684" cap="flat"/>
 <wire x1="0.7869" y1="2.5484" x2="2.095" y2="-1.651" width="0.1524" layer="21" curve="-111.097684" cap="flat"/>
@@ -12938,7 +13109,7 @@ Source: &lt;a href="https://www.ti.com/lit/ds/symlink/opa695.pdf?HQS=dis-dk-null
 <text x="2.413" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="2.921" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="TO220H" urn="urn:adsk.eagle:footprint:6240024/1" library_version="2">
+<package name="TO220H" urn="urn:adsk.eagle:footprint:6240024/1">
 <description>&lt;b&gt;TO-220&lt;/b&gt;</description>
 <wire x1="-5.207" y1="-7.62" x2="5.207" y2="-7.62" width="0.1524" layer="21"/>
 <wire x1="5.207" y1="8.255" x2="-5.207" y2="8.255" width="0.1524" layer="21"/>
@@ -12972,7 +13143,7 @@ Source: &lt;a href="https://www.ti.com/lit/ds/symlink/opa695.pdf?HQS=dis-dk-null
 <rectangle x1="1.905" y1="-10.414" x2="3.175" y2="-7.62" layer="21"/>
 <hole x="0" y="4.826" drill="3.302"/>
 </package>
-<package name="TO39" urn="urn:adsk.eagle:footprint:6240025/1" library_version="2">
+<package name="TO39" urn="urn:adsk.eagle:footprint:6240025/1">
 <description>&lt;b&gt;Metal Can Package&lt;/b&gt;</description>
 <wire x1="-4.0386" y1="-3.5306" x2="-3.5052" y2="-2.9972" width="0.1524" layer="21"/>
 <wire x1="-2.9718" y1="-3.5306" x2="-3.5052" y2="-4.064" width="0.1524" layer="21"/>
@@ -12985,66 +13156,36 @@ Source: &lt;a href="https://www.ti.com/lit/ds/symlink/opa695.pdf?HQS=dis-dk-null
 <text x="-2.794" y="4.826" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-3.302" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="TO252" urn="urn:adsk.eagle:footprint:6240026/1" library_version="2">
-<description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;&lt;p&gt;
-TS-003</description>
-<wire x1="3.2766" y1="3.8354" x2="3.277" y2="-2.159" width="0.2032" layer="21"/>
-<wire x1="3.277" y1="-2.159" x2="-3.277" y2="-2.159" width="0.2032" layer="21"/>
-<wire x1="-3.277" y1="-2.159" x2="-3.2766" y2="3.8354" width="0.2032" layer="21"/>
-<wire x1="-3.277" y1="3.835" x2="3.2774" y2="3.8346" width="0.2032" layer="51"/>
-<wire x1="-2.5654" y1="3.937" x2="-2.5654" y2="4.6482" width="0.2032" layer="51"/>
-<wire x1="-2.5654" y1="4.6482" x2="-2.1082" y2="5.1054" width="0.2032" layer="51"/>
-<wire x1="-2.1082" y1="5.1054" x2="2.1082" y2="5.1054" width="0.2032" layer="51"/>
-<wire x1="2.1082" y1="5.1054" x2="2.5654" y2="4.6482" width="0.2032" layer="51"/>
-<wire x1="2.5654" y1="4.6482" x2="2.5654" y2="3.937" width="0.2032" layer="51"/>
-<wire x1="2.5654" y1="3.937" x2="-2.5654" y2="3.937" width="0.2032" layer="51"/>
-<smd name="3" x="0" y="2.5" dx="5.4" dy="6.2" layer="1"/>
-<smd name="1" x="-2.28" y="-4.8" dx="1" dy="1.6" layer="1"/>
-<smd name="2" x="2.28" y="-4.8" dx="1" dy="1.6" layer="1"/>
-<text x="-3.81" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-2.7178" y1="-5.1562" x2="-1.8542" y2="-2.2606" layer="51"/>
-<rectangle x1="1.8542" y1="-5.1562" x2="2.7178" y2="-2.2606" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.0226" x2="0.4318" y2="-2.2606" layer="21"/>
-<polygon width="0.1998" layer="51">
-<vertex x="-2.5654" y="3.937"/>
-<vertex x="-2.5654" y="4.6482"/>
-<vertex x="-2.1082" y="5.1054"/>
-<vertex x="2.1082" y="5.1054"/>
-<vertex x="2.5654" y="4.6482"/>
-<vertex x="2.5654" y="3.937"/>
-</polygon>
-</package>
 </packages>
 <packages3d>
-<package3d name="TO92" urn="urn:adsk.eagle:package:6240669/1" type="box" library_version="2">
-<description>&lt;b&gt;TO-92&lt;/b&gt;</description>
-<packageinstances>
-<packageinstance name="TO92"/>
-</packageinstances>
-</package3d>
-<package3d name="TO220H" urn="urn:adsk.eagle:package:6240670/1" type="box" library_version="2">
-<description>&lt;b&gt;TO-220&lt;/b&gt;</description>
-<packageinstances>
-<packageinstance name="TO220H"/>
-</packageinstances>
-</package3d>
-<package3d name="TO39" urn="urn:adsk.eagle:package:6240671/1" type="box" library_version="2">
-<description>&lt;b&gt;Metal Can Package&lt;/b&gt;</description>
-<packageinstances>
-<packageinstance name="TO39"/>
-</packageinstances>
-</package3d>
-<package3d name="TO252" urn="urn:adsk.eagle:package:6240672/1" type="box" library_version="2">
+<package3d name="TO252" urn="urn:adsk.eagle:package:6240672/1" type="box">
 <description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;&lt;p&gt;
 TS-003</description>
 <packageinstances>
 <packageinstance name="TO252"/>
 </packageinstances>
 </package3d>
+<package3d name="TO92" urn="urn:adsk.eagle:package:6240669/1" type="box">
+<description>&lt;b&gt;TO-92&lt;/b&gt;</description>
+<packageinstances>
+<packageinstance name="TO92"/>
+</packageinstances>
+</package3d>
+<package3d name="TO220H" urn="urn:adsk.eagle:package:6240670/1" type="box">
+<description>&lt;b&gt;TO-220&lt;/b&gt;</description>
+<packageinstances>
+<packageinstance name="TO220H"/>
+</packageinstances>
+</package3d>
+<package3d name="TO39" urn="urn:adsk.eagle:package:6240671/1" type="box">
+<description>&lt;b&gt;Metal Can Package&lt;/b&gt;</description>
+<packageinstances>
+<packageinstance name="TO39"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
-<symbol name="78XX" urn="urn:adsk.eagle:symbol:6239516/1" library_version="2">
+<symbol name="78XX">
 <wire x1="-7.62" y1="-5.08" x2="7.62" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="7.62" y1="-5.08" x2="7.62" y2="2.54" width="0.4064" layer="94"/>
 <wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.4064" layer="94"/>
@@ -13058,7 +13199,7 @@ TS-003</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="78*" urn="urn:adsk.eagle:component:6241006/1" prefix="IC" library_version="2">
+<deviceset name="78*" prefix="IC">
 <description>Positive &lt;b&gt;VOLTAGE REGULATOR&lt;/b&gt;
 &lt;p&gt;
 Added bigger pads to the TO-92 package</description>
@@ -13158,150 +13299,6 @@ Added bigger pads to the TO-92 package</description>
 <technology name="15"/>
 <technology name="18"/>
 <technology name="24"/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="LM337KVURG3">
-<description>&lt;3 Pin 1.5A Adjustable Negative Voltage Regulator&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="LM337KVURG3">
-<description>&lt;b&gt;LM337KVURG3-1&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-2.29" y="-4.2" dx="2.75" dy="1" layer="1" rot="R90"/>
-<smd name="2" x="0" y="2.5" dx="6.15" dy="5.55" layer="1" rot="R90"/>
-<smd name="3" x="2.29" y="-4.2" dx="2.75" dy="1" layer="1" rot="R90"/>
-<text x="0" y="-0.188" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="-0.188" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-3.263" y1="3.047" x2="3.263" y2="3.047" width="0.2" layer="51"/>
-<wire x1="3.263" y1="3.047" x2="3.263" y2="-3.047" width="0.2" layer="51"/>
-<wire x1="3.263" y1="-3.047" x2="-3.263" y2="-3.047" width="0.2" layer="51"/>
-<wire x1="-3.263" y1="-3.047" x2="-3.263" y2="3.047" width="0.2" layer="51"/>
-<wire x1="-4.263" y1="6.575" x2="4.263" y2="6.575" width="0.1" layer="51"/>
-<wire x1="4.263" y1="6.575" x2="4.263" y2="-6.95" width="0.1" layer="51"/>
-<wire x1="4.263" y1="-6.95" x2="-4.263" y2="-6.95" width="0.1" layer="51"/>
-<wire x1="-4.263" y1="-6.95" x2="-4.263" y2="6.575" width="0.1" layer="51"/>
-<wire x1="3.263" y1="2.15" x2="3.263" y2="-3.047" width="0.1" layer="21"/>
-<wire x1="-3.263" y1="2.197" x2="-3.263" y2="-3.047" width="0.1" layer="21"/>
-<wire x1="-2.4" y1="-6.25" x2="-2.4" y2="-6.25" width="0.2" layer="21"/>
-<wire x1="-2.4" y1="-6.25" x2="-2.4" y2="-6.05" width="0.2" layer="21" curve="180"/>
-<wire x1="-2.4" y1="-6.05" x2="-2.4" y2="-6.05" width="0.2" layer="21"/>
-<wire x1="-2.4" y1="-6.05" x2="-2.4" y2="-6.25" width="0.2" layer="21" curve="180"/>
-<wire x1="-1" y1="-3.047" x2="1" y2="-3.047" width="0.1" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="LM337KVURG3">
-<wire x1="5.08" y1="2.54" x2="33.02" y2="2.54" width="0.254" layer="94"/>
-<wire x1="33.02" y1="-5.08" x2="33.02" y2="2.54" width="0.254" layer="94"/>
-<wire x1="33.02" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<text x="34.29" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="34.29" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="ADJUSTMENT" x="0" y="0" length="middle"/>
-<pin name="INPUT" x="38.1" y="0" length="middle" rot="R180"/>
-<pin name="OUTPUT" x="0" y="-2.54" length="middle"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="LM337KVURG3" prefix="IC">
-<description>&lt;b&gt;3 Pin 1.5A Adjustable Negative Voltage Regulator&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://www.ti.com/lit/gpn/lm337"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="LM337KVURG3" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="LM337KVURG3">
-<connects>
-<connect gate="G$1" pin="ADJUSTMENT" pad="1"/>
-<connect gate="G$1" pin="INPUT" pad="2"/>
-<connect gate="G$1" pin="OUTPUT" pad="3"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="3 Pin 1.5A Adjustable Negative Voltage Regulator" constant="no"/>
-<attribute name="HEIGHT" value="2.65mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Texas Instruments" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="LM337KVURG3" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="595-LM337KVURG3" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM337KVURG3?qs=iSMark9AYDXYOGB3Dr0rVg%3D%3D" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="MC7905ACD2TR4G">
-<description>&lt;ON SEMICONDUCTOR - MC7905ACD2TR4G - Fixed LDO Voltage Regulator, 7905, -35V in, 1.3V Dropout, -5V/1A out, TO-263-3&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="MC7905ACD2TR4G">
-<description>&lt;b&gt;D2PAK CASE 93603 ISSUE E_Thickness=4.572mm&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-2.54" y="-7.468" dx="3.504" dy="1.016" layer="1" rot="R90"/>
-<smd name="2" x="0" y="2.745" dx="10.49" dy="8.38" layer="1"/>
-<smd name="3" x="2.54" y="-7.468" dx="3.504" dy="1.016" layer="1" rot="R90"/>
-<text x="0" y="-1.143" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="-1.143" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-5.01" y1="4.597" x2="5.01" y2="4.597" width="0.1" layer="51"/>
-<wire x1="5.01" y1="4.597" x2="5.01" y2="-4.598" width="0.1" layer="51"/>
-<wire x1="5.01" y1="-4.598" x2="-5.01" y2="-4.598" width="0.1" layer="51"/>
-<wire x1="-5.01" y1="-4.598" x2="-5.01" y2="4.597" width="0.1" layer="51"/>
-<wire x1="-6.245" y1="7.935" x2="6.245" y2="7.935" width="0.1" layer="51"/>
-<wire x1="6.245" y1="7.935" x2="6.245" y2="-10.22" width="0.1" layer="51"/>
-<wire x1="6.245" y1="-10.22" x2="-6.245" y2="-10.22" width="0.1" layer="51"/>
-<wire x1="-6.245" y1="-10.22" x2="-6.245" y2="7.935" width="0.1" layer="51"/>
-<wire x1="-5.01" y1="-1.8" x2="-5.01" y2="-4.598" width="0.2" layer="21"/>
-<wire x1="-5.01" y1="-4.598" x2="5.01" y2="-4.598" width="0.2" layer="21"/>
-<wire x1="5.01" y1="-4.598" x2="5.01" y2="-1.8" width="0.2" layer="21"/>
-<wire x1="-2.54" y1="-9.9" x2="-2.54" y2="-9.9" width="0.2" layer="21"/>
-<wire x1="-2.54" y1="-9.9" x2="-2.54" y2="-9.8" width="0.2" layer="21" curve="180"/>
-<wire x1="-2.54" y1="-9.8" x2="-2.54" y2="-9.8" width="0.2" layer="21"/>
-<wire x1="-2.54" y1="-9.8" x2="-2.54" y2="-9.9" width="0.2" layer="21" curve="180"/>
-<wire x1="-2.54" y1="-9.9" x2="-2.54" y2="-9.9" width="0.2" layer="21"/>
-<wire x1="-2.54" y1="-9.9" x2="-2.54" y2="-9.8" width="0.2" layer="21" curve="180"/>
-</package>
-</packages>
-<symbols>
-<symbol name="MC7905ACD2TR4G">
-<wire x1="5.08" y1="2.54" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-5.08" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<text x="29.21" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="29.21" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="GROUND" x="0" y="0" length="middle"/>
-<pin name="INPUT" x="33.02" y="0" length="middle" rot="R180"/>
-<pin name="OUTPUT" x="0" y="-2.54" length="middle"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MC7905ACD2TR4G" prefix="IC">
-<description>&lt;b&gt;ON SEMICONDUCTOR - MC7905ACD2TR4G - Fixed LDO Voltage Regulator, 7905, -35V in, 1.3V Dropout, -5V/1A out, TO-263-3&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://www.onsemi.com/pdf/datasheet/mc7900-d.pdf"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="MC7905ACD2TR4G" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="MC7905ACD2TR4G">
-<connects>
-<connect gate="G$1" pin="GROUND" pad="1"/>
-<connect gate="G$1" pin="INPUT" pad="2"/>
-<connect gate="G$1" pin="OUTPUT" pad="3"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="ON SEMICONDUCTOR - MC7905ACD2TR4G - Fixed LDO Voltage Regulator, 7905, -35V in, 1.3V Dropout, -5V/1A out, TO-263-3" constant="no"/>
-<attribute name="HEIGHT" value="4.572mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="onsemi" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MC7905ACD2TR4G" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="863-MC7905ACD2TR4G" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/onsemi/MC7905ACD2TR4G?qs=%252B9%2Fcbd0IE0ROAS%2F2lHbmwg%3D%3D" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -13647,7 +13644,7 @@ Source: &lt;a href="https://www.onsemi.com/pdf/datasheet/mc7900-d.pdf"&gt; Datas
 <part name="C85" library="passives" deviceset="CAPACITOR" device="0603_CAP" value="100pF"/>
 <part name="SUPPLY107" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY115" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="IC11" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="78*" device="DT" package3d_urn="urn:adsk.eagle:package:6240672/1" technology="05"/>
+<part name="IC11" library="adafruit" deviceset="78*" device="DT" package3d_urn="urn:adsk.eagle:package:6240672/1" technology="05"/>
 <part name="IC29" library="LM337KVURG3" deviceset="LM337KVURG3" device=""/>
 <part name="SUPPLY116" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C77" library="SparkFun-Passives" deviceset="CAP" device="0805" value="10uF"/>
@@ -16214,14 +16211,22 @@ AR_5V and VS+</text>
 <label x="-63.5" y="-7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="248.92" y1="73.66" x2="241.3" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="V-_2"/>
-<label x="241.3" y="73.66" size="1.778" layer="95"/>
+<wire x1="248.92" y1="73.66" x2="233.68" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="88.9" x2="228.6" y2="88.9" width="0.1524" layer="91"/>
+<label x="228.6" y="88.9" size="1.778" layer="95"/>
+<pinref part="IC3" gate="G$1" pin="V-_1"/>
+<wire x1="233.68" y1="73.66" x2="233.68" y2="88.9" width="0.1524" layer="91"/>
+<junction x="233.68" y="88.9"/>
 </segment>
 <segment>
-<wire x1="248.92" y1="38.1" x2="241.3" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="V-_2"/>
-<label x="241.3" y="38.1" size="1.778" layer="95"/>
+<wire x1="248.92" y1="38.1" x2="233.68" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="53.34" x2="228.6" y2="53.34" width="0.1524" layer="91"/>
+<label x="228.6" y="53.34" size="1.778" layer="95"/>
+<pinref part="IC5" gate="G$1" pin="V-_1"/>
+<wire x1="233.68" y1="38.1" x2="233.68" y2="53.34" width="0.1524" layer="91"/>
+<junction x="233.68" y="53.34"/>
 </segment>
 <segment>
 <pinref part="C72" gate="G$1" pin="1"/>
@@ -16232,16 +16237,6 @@ AR_5V and VS+</text>
 <pinref part="C23" gate="G$1" pin="1"/>
 <wire x1="261.62" y1="0" x2="261.62" y2="5.08" width="0.1524" layer="91"/>
 <label x="259.08" y="2.54" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="233.68" y1="53.34" x2="228.6" y2="53.34" width="0.1524" layer="91"/>
-<label x="228.6" y="53.34" size="1.778" layer="95"/>
-<pinref part="IC5" gate="G$1" pin="V-_1"/>
-</segment>
-<segment>
-<wire x1="233.68" y1="88.9" x2="228.6" y2="88.9" width="0.1524" layer="91"/>
-<label x="228.6" y="88.9" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="V-_1"/>
 </segment>
 <segment>
 <pinref part="C92" gate="G$1" pin="1"/>
