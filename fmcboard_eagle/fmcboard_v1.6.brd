@@ -266,6 +266,8 @@ NYU, 2023</text>
 1.8</text>
 <text x="95.5" y="31.4" size="0.8128" layer="21" rot="R90">GND</text>
 <text x="97.5" y="29.4" size="0.8128" layer="21" rot="R90">OP1BUF</text>
+<text x="123.4" y="26.5" size="1.27" layer="21">+</text>
+<text x="123.4" y="36.5" size="1.27" layer="21">-</text>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
@@ -4704,10 +4706,12 @@ design rules under a new name.
 <element name="C78" library="SparkFun-Passives" package="0805" value="0.1uF" x="97.3" y="60.2" smashed="yes"/>
 <element name="C79" library="SparkFun-Passives" package="0805" value="0.1uF" x="88.7" y="53.1" smashed="yes" rot="R180"/>
 <element name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="92.2" y="54" smashed="yes">
+<attribute name="LCSC" value="C17415" x="92.2" y="54" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="85" x="92.2" y="54" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="92.2" y="54" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="70" y="62" smashed="yes">
+<attribute name="LCSC" value="C17415" x="70" y="62" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="85" x="70" y="62" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="70" y="62" size="1.778" layer="27" display="off"/>
 </element>
@@ -4791,18 +4795,22 @@ design rules under a new name.
 <attribute name="MPN" value="F185-1104A1BSYA1" x="87" y="69" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R71" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="84" y="66" smashed="yes" rot="R180">
+<attribute name="LCSC" value="C17415" x="84" y="66" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="POPULARITY" value="85" x="84" y="66" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="84" y="66" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R72" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="90" y="66" smashed="yes" rot="R180">
+<attribute name="LCSC" value="C17415" x="90" y="66" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="POPULARITY" value="85" x="90" y="66" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="90" y="66" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R86" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="103" y="39.1" smashed="yes">
+<attribute name="LCSC" value="C17415" x="103" y="39.1" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="85" x="103" y="39.1" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="103" y="39.1" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R88" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="103" y="36.8" smashed="yes">
+<attribute name="LCSC" value="C17415" x="103" y="36.8" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="85" x="103" y="36.8" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="103" y="36.8" size="1.778" layer="27" display="off"/>
 </element>
@@ -4810,10 +4818,12 @@ design rules under a new name.
 <attribute name="MPN" value="F185-1104A1BSYA1" x="93" y="36" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R89" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10" x="97.6" y="41.8" smashed="yes" rot="R180">
+<attribute name="LCSC" value="C17415" x="97.6" y="41.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="POPULARITY" value="85" x="97.6" y="41.8" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="97.6" y="41.8" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C95" library="SparkFun-Passives" package="VISHAY_C" value="100uF" x="124" y="32" smashed="yes" rot="R180">
+<attribute name="JLC_ROTATION" value="90" x="124" y="32" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="LCSC" value="C7230" x="130" y="20" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="IC1" library="OPA699ID" package="SOIC127P600X175-8N" value="OPA699ID" x="92" y="58" smashed="yes">

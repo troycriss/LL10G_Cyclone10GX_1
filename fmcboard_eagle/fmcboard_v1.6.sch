@@ -14135,9 +14135,25 @@ Added bigger pads to the TO-92 package</description>
 <part name="C79" library="SparkFun-Passives" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="SUPPLY113" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY114" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
+<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="R61" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
@@ -14190,12 +14206,52 @@ Added bigger pads to the TO-92 package</description>
 <part name="SUPPLY124" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="J11" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 <part name="J13" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
-<part name="R71" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
-<part name="R72" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
-<part name="R86" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
-<part name="R88" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
+<part name="R71" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
+<part name="R72" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
+<part name="R86" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
+<part name="R88" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
 <part name="J5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
-<part name="R89" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
+<part name="R89" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C17415"/>
+</part>
 <part name="C95" library="SparkFun-Passives" deviceset="CAP_POL" device="SMD" value="100uF">
 <attribute name="LCSC" value="C7230"/>
 </part>
@@ -17246,11 +17302,13 @@ AR_5V and VS+</text>
 <instance part="R3" gate="G$1" x="165.1" y="76.2" smashed="yes" rot="R270">
 <attribute name="NAME" x="166.5986" y="77.47" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="161.798" y="77.47" size="1.778" layer="96" rot="R270"/>
+<attribute name="LCSC" x="165.1" y="76.2" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="SUPPLY18" gate="GND" x="165.1" y="68.58" smashed="yes"/>
 <instance part="R13" gate="G$1" x="160.02" y="116.84" smashed="yes" rot="R270">
 <attribute name="NAME" x="161.5186" y="118.11" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="156.718" y="118.11" size="1.778" layer="96" rot="R270"/>
+<attribute name="LCSC" x="160.02" y="116.84" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="SUPPLY21" gate="GND" x="160.02" y="109.22" smashed="yes"/>
 <instance part="R7" gate="G$1" x="157.48" y="43.18" smashed="yes" rot="R180">
@@ -17400,23 +17458,28 @@ AR_5V and VS+</text>
 <instance part="R71" gate="G$1" x="276.86" y="43.18" smashed="yes" rot="R180">
 <attribute name="NAME" x="278.13" y="49.3014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="278.13" y="46.482" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="276.86" y="43.18" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R72" gate="G$1" x="276.86" y="38.1" smashed="yes" rot="R180">
 <attribute name="NAME" x="278.13" y="36.6014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="278.13" y="33.782" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="276.86" y="38.1" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R86" gate="G$1" x="276.86" y="15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="278.13" y="13.7414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="278.13" y="10.922" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="276.86" y="15.24" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R88" gate="G$1" x="109.22" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="113.03" y="28.9814" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="113.03" y="33.782" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="109.22" y="30.48" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="J5" gate="G$1" x="289.56" y="16.51" smashed="yes"/>
 <instance part="R89" gate="G$1" x="276.86" y="20.32" smashed="yes" rot="R180">
 <attribute name="NAME" x="278.13" y="26.4414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="278.13" y="23.622" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="276.86" y="20.32" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="IC1" gate="G$1" x="175.26" y="88.9" smashed="yes">
 <attribute name="NAME" x="181.61" y="93.98" size="1.778" layer="95" align="center-left"/>
