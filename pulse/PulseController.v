@@ -82,7 +82,7 @@ always@(posedge clk_in)
 		case (pulse_index)
 		
 			4'd0: begin
-				signal_out<=8'b0000_0010;	//R+
+				signal_out<=8'b0000_0010;	//Reset (new pin)
 			end
 			4'd1: begin
 				signal_out<=8'b0000_0000;
