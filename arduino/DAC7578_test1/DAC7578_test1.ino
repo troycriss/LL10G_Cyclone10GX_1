@@ -44,6 +44,16 @@ void setup() {
   Serial.begin(9600);
   delay(100);
   Serial.println("Arduino Connected");
+
+  writeDAC(4095/4, 0, 0);//1p, chip 0 (pulses)
+  writeDAC(0, 1, 0);//chip 0 (pulses)
+  writeDAC(0, 2, 0);//chip 0 (pulses)
+  writeDAC(0, 3, 0);//chip 0 (pulses)
+  
+  writeDAC(4095/4, 4, 0);// 1n chip 0 (pulses)
+  writeDAC(0, 5, 0);//chip 0 (pulses)
+  writeDAC(0, 6, 0);//chip 0 (pulses)
+  writeDAC(0, 7, 0);//chip 0 (pulses)
 }
 
 void blink(){
@@ -52,10 +62,12 @@ void blink(){
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
 }
 
-void loop() {  
+void loop() {
+  /*
   for(int value=0; value<=4095; value++){
     for (int chan=0; chan<8; chan++) writeDAC(value, chan, 0);//chip 0 (pulses)
     for (int chan=0; chan<8; chan++) writeDAC(value, chan, 1);//chip 1 (offsets and extra channels)
     blink();
-  }  
+  }
+  */ 
 }
