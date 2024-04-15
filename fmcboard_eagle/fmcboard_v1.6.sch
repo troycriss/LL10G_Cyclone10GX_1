@@ -17235,11 +17235,11 @@ AR_5V and VS+</text>
 </instance>
 <instance part="SUPPLY107" gate="GND" x="274.32" y="111.76" smashed="yes"/>
 <instance part="SUPPLY115" gate="GND" x="284.48" y="111.76" smashed="yes"/>
-<instance part="R35" gate="G$1" x="86.36" y="129.54" smashed="yes" rot="R180">
-<attribute name="VALUE" x="91.694" y="131.572" size="1.778" layer="96" rot="R180"/>
+<instance part="R35" gate="G$1" x="76.2" y="134.62" smashed="yes">
+<attribute name="VALUE" x="75.946" y="135.128" size="1.778" layer="96"/>
 </instance>
 <instance part="R61" gate="G$1" x="60.96" y="127" smashed="yes" rot="R180">
-<attribute name="VALUE" x="66.294" y="129.032" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="60.706" y="127.508" size="1.778" layer="96"/>
 </instance>
 <instance part="R73" gate="G$1" x="86.36" y="124.46" smashed="yes" rot="R180">
 <attribute name="VALUE" x="89.154" y="126.492" size="1.778" layer="96" rot="R180"/>
@@ -17969,7 +17969,7 @@ AR_5V and VS+</text>
 <net name="N$36" class="0">
 <segment>
 <pinref part="R35" gate="G$1" pin="2"/>
-<wire x1="81.28" y1="129.54" x2="81.28" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="134.62" x2="81.28" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="R73" gate="G$1" pin="2"/>
 <pinref part="IC10" gate="G1" pin="OUT"/>
 <junction x="81.28" y="124.46"/>
@@ -17978,11 +17978,9 @@ AR_5V and VS+</text>
 <net name="N$37" class="0">
 <segment>
 <pinref part="R61" gate="G$1" pin="1"/>
-<wire x1="66.04" y1="127" x2="78.74" y2="127" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="127" x2="78.74" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="132.08" x2="91.44" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="127" x2="66.04" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="134.62" x2="71.12" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="R35" gate="G$1" pin="1"/>
-<wire x1="91.44" y1="132.08" x2="91.44" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="IC10" gate="G1" pin="-IN"/>
 <junction x="66.04" y="127"/>
 </segment>
@@ -17990,9 +17988,8 @@ AR_5V and VS+</text>
 <net name="PULSEOFFSET_N" class="0">
 <segment>
 <pinref part="R61" gate="G$1" pin="2"/>
-<wire x1="55.88" y1="127" x2="55.88" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="132.08" x2="66.04" y2="132.08" width="0.1524" layer="91"/>
-<label x="45.72" y="132.08" size="1.778" layer="95"/>
+<wire x1="55.88" y1="127" x2="35.56" y2="127" width="0.1524" layer="91"/>
+<label x="35.56" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$35" class="0">
