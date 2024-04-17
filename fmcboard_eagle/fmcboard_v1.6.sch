@@ -20060,7 +20060,7 @@ AR_5V and VS+</text>
 <label x="73.66" y="-22.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DACOFFSET" class="0">
+<net name="DACOFFSETP" class="0">
 <segment>
 <wire x1="83.82" y1="-30.48" x2="63.5" y2="-30.48" width="0.1524" layer="91"/>
 <label x="63.5" y="-30.48" size="1.778" layer="95"/>
@@ -20702,14 +20702,14 @@ AR_5V and VS+</text>
 <junction x="139.7" y="45.72"/>
 </segment>
 </net>
-<net name="PULSEOFFSET_P" class="0">
+<net name="PULSEOFFSETP" class="0">
 <segment>
 <wire x1="116.84" y1="-30.48" x2="149.86" y2="-30.48" width="0.1524" layer="91"/>
 <label x="129.54" y="-30.48" size="1.778" layer="95"/>
 <pinref part="IC16" gate="G$1" pin="VOUTB"/>
 </segment>
 </net>
-<net name="PULSEOFFSET_N" class="0">
+<net name="PULSEOFFSETN" class="0">
 <segment>
 <pinref part="IC16" gate="G$1" pin="VOUTC"/>
 <wire x1="83.82" y1="-33.02" x2="63.5" y2="-33.02" width="0.1524" layer="91"/>
@@ -21088,7 +21088,7 @@ AR_5V and VS+</text>
 <wire x1="193.04" y1="147.32" x2="193.04" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="DACOFFSET_N" class="0">
+<net name="DACOFFSETN" class="0">
 <segment>
 <pinref part="IC16" gate="G$1" pin="VOUTD"/>
 <wire x1="116.84" y1="-33.02" x2="149.86" y2="-33.02" width="0.1524" layer="91"/>
@@ -21921,7 +21921,7 @@ AR_5V and VS+</text>
 <label x="256.54" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DACOFFSET" class="0">
+<net name="DACOFFSETP" class="0">
 <segment>
 <pinref part="R31" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="48.26" x2="5.08" y2="48.26" width="0.1524" layer="91"/>
@@ -21999,14 +21999,14 @@ AR_5V and VS+</text>
 <label x="187.96" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="PULSEOFFSET_P" class="0">
+<net name="PULSEOFFSETP" class="0">
 <segment>
 <wire x1="134.62" y1="10.16" x2="152.4" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="R79" gate="G$1" pin="2"/>
 <label x="134.62" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="PULSEOFFSET_NI" class="0">
+<net name="PULSEOFFSETNI" class="0">
 <segment>
 <wire x1="185.42" y1="10.16" x2="203.2" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="R85" gate="G$1" pin="2"/>
@@ -22031,7 +22031,7 @@ AR_5V and VS+</text>
 <junction x="66.04" y="127"/>
 </segment>
 </net>
-<net name="PULSEOFFSET_N" class="0">
+<net name="PULSEOFFSETN" class="0">
 <segment>
 <pinref part="R61" gate="G$1" pin="2"/>
 <wire x1="55.88" y1="127" x2="35.56" y2="127" width="0.1524" layer="91"/>
@@ -22117,7 +22117,7 @@ AR_5V and VS+</text>
 <label x="187.96" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DACOFFSET_N" class="0">
+<net name="DACOFFSETN" class="0">
 <segment>
 <wire x1="55.88" y1="101.6" x2="35.56" y2="101.6" width="0.1524" layer="91"/>
 <label x="35.56" y="101.6" size="1.778" layer="95"/>
@@ -22134,7 +22134,7 @@ AR_5V and VS+</text>
 <junction x="66.04" y="101.6"/>
 </segment>
 </net>
-<net name="DACOFFSETOUT_N" class="0">
+<net name="DACOFFSETNI" class="0">
 <segment>
 <pinref part="R115" gate="G$1" pin="2"/>
 <pinref part="IC10" gate="G2" pin="OUT"/>
@@ -22146,7 +22146,7 @@ AR_5V and VS+</text>
 <segment>
 <pinref part="R25" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="55.88" x2="5.08" y2="55.88" width="0.1524" layer="91"/>
-<label x="0" y="55.88" size="1.778" layer="95"/>
+<label x="5.08" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
