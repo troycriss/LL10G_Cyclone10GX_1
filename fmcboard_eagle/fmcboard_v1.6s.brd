@@ -245,7 +245,7 @@ NYU, 2023-2024</text>
 <wire x1="67" y1="73" x2="67" y2="1" width="0.1524" layer="21"/>
 <wire x1="83" y1="73" x2="83" y2="1" width="0.1524" layer="21"/>
 <text x="33.7" y="55.6" size="0.8128" layer="21" rot="R180">FMC 1.8V</text>
-<text x="31.2" y="58" size="0.8128" layer="21" rot="R180">1.8V-</text>
+<text x="31.7" y="58" size="0.8128" layer="21" rot="R180">1.8V-</text>
 <wire x1="25.5" y1="58.9" x2="28.5" y2="58.9" width="0.1524" layer="21"/>
 <wire x1="25.5" y1="56.4" x2="28.5" y2="56.4" width="0.1524" layer="21"/>
 <wire x1="105" y1="1" x2="105" y2="73" width="0.1524" layer="21"/>
@@ -258,7 +258,7 @@ NYU, 2023-2024</text>
 <text x="44.4" y="47.5" size="0.8128" layer="21">Op1Buf</text>
 <text x="46.1" y="46.2" size="0.8128" layer="21">TransOut</text>
 <wire x1="39" y1="45" x2="66" y2="45" width="0.1524" layer="21"/>
-<wire x1="39" y1="20" x2="66" y2="20" width="0.1524" layer="21"/>
+<wire x1="39" y1="21" x2="66" y2="21" width="0.1524" layer="21"/>
 <wire x1="106" y1="53" x2="125" y2="53" width="0.1524" layer="21"/>
 <text x="146.1" y="48.4" size="0.8128" layer="21" rot="R90">GND</text>
 <text x="138" y="51.2" size="0.8128" layer="21" rot="R180">12V FMC</text>
@@ -3107,6 +3107,7 @@ design rules under a new name.
 <element name="IC7" library="OPA699ID" package="SOIC127P600X175-8N" value="OPA699ID" x="47" y="56" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="Texas Instruments OPA699ID Op Amp, 880MHz, 9 V, 8-Pin SOIC" x="48" y="43" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="1.75mm" x="48" y="43" size="0.8128" layer="27" rot="R180" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="47" y="56" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="48" y="43" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="OPA699ID" x="48" y="43" size="0.8128" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-OPA699ID" x="48" y="43" size="0.8128" layer="27" rot="R180" display="off"/>
@@ -3152,11 +3153,9 @@ design rules under a new name.
 <element name="L1" library="SparkFun-Passives" package="1210" value="10uH" x="102" y="26" smashed="yes" rot="R180">
 <attribute name="LCSC" value="C1882517" x="102" y="26" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="TFM322512ALVA100MTAA" x="102" y="26" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VALUE" x="102.5056" y="24.4106" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="L2" library="SparkFun-Passives" package="1210" value="10uH" x="102" y="19" smashed="yes" rot="R180">
 <attribute name="LCSC" value="C1882517" x="102" y="19" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="VALUE" x="102.5056" y="17.4106" size="0.8128" layer="21" rot="R180"/>
 </element>
 <element name="C42" library="passives" package="0402_CAP" value="0.1uF" x="103" y="23" smashed="yes" rot="R180"/>
 <element name="C43" library="passives" package="0402_CAP" value="0.1uF" x="96" y="11" smashed="yes"/>
@@ -3394,6 +3393,7 @@ design rules under a new name.
 <element name="IC4" library="OPA695IDR" package="SOIC127P600X175-8N" value="OPA695IDR" x="89" y="65" smashed="yes">
 <attribute name="DESCRIPTION" value="High Speed Operational Amplifiers Ultra-Wideband Curre nt Feedback" x="89" y="65" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.75mm" x="89" y="65" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="89" y="65" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="89" y="65" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="OPA695IDR" x="89" y="65" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-OPA695IDR" x="89" y="65" size="1.778" layer="27" display="off"/>
@@ -3403,6 +3403,7 @@ design rules under a new name.
 <element name="IC6" library="OPA695IDR" package="SOIC127P600X175-8N" value="OPA695IDR" x="60" y="56" smashed="yes" rot="R180">
 <attribute name="DESCRIPTION" value="High Speed Operational Amplifiers Ultra-Wideband Curre nt Feedback" x="60" y="56" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="HEIGHT" value="1.75mm" x="60" y="56" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="60" y="56" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="60" y="56" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="OPA695IDR" x="60" y="56" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-OPA695IDR" x="60" y="56" size="1.778" layer="27" rot="R180" display="off"/>
@@ -3486,13 +3487,14 @@ design rules under a new name.
 <element name="IC1" library="OPA699ID" package="SOIC127P600X175-8N" value="OPA699ID" x="60" y="66" smashed="yes">
 <attribute name="DESCRIPTION" value="Texas Instruments OPA699ID Op Amp, 880MHz, 9 V, 8-Pin SOIC" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.75mm" x="60" y="66" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Texas Instruments" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="OPA699ID" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="595-OPA699ID" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA699ID?qs=wgAEGBTxy7n0Nk%252BpyQzyiA%3D%3D" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="59.5" y="65.4" size="0.8128" layer="21" align="center"/>
 </element>
-<element name="R9" library="passives" package="0402_RES" value="1-3k" x="65" y="72.3" smashed="yes">
+<element name="R9" library="passives" package="0402_RES" value="1?-3?k" x="65" y="72.3" smashed="yes">
 <attribute name="VALUE" x="65.932" y="71.581" size="0.8128" layer="21" ratio="15" rot="R180"/>
 </element>
 <element name="R10" library="passives" package="0402_RES" value="100" x="25.4" y="9.8" smashed="yes" rot="R90"/>
@@ -3577,6 +3579,7 @@ design rules under a new name.
 <element name="IC34" library="74AUP2GU04GW_125" package="SOT65P210X110-6N" value="74AUP2GU04GW" x="71" y="40" smashed="yes">
 <attribute name="DESCRIPTION" value="Inverters DUAL UNBUFF INVERTER 1.8V" x="67" y="44" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.1mm" x="67" y="44" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="71" y="40" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Nexperia" x="67" y="44" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW,125" x="67" y="44" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="771-74AUP2GU04GW-G" x="67" y="44" size="1.778" layer="27" display="off"/>
@@ -3585,6 +3588,7 @@ design rules under a new name.
 <element name="IC35" library="74AUP2GU04GW_125" package="SOT65P210X110-6N" value="74AUP2GU04GW" x="71.1" y="27.8" smashed="yes">
 <attribute name="DESCRIPTION" value="Inverters DUAL UNBUFF INVERTER 1.8V" x="64.1" y="31.8" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.1mm" x="64.1" y="31.8" size="1.778" layer="27" display="off"/>
+<attribute name="JLC_ROTATION" value="270" x="71.1" y="27.8" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Nexperia" x="64.1" y="31.8" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="74AUP2GU04GW,125" x="64.1" y="31.8" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="771-74AUP2GU04GW-G" x="64.1" y="31.8" size="1.778" layer="27" display="off"/>
@@ -3632,10 +3636,12 @@ design rules under a new name.
 <attribute name="MPN" value="P125-1102A0BS116A1" x="143.4" y="49.7" size="1.778" layer="27" display="off"/>
 </element>
 <element name="L3" library="SparkFun-Passives" package="CDRH125" value="10uH" x="140" y="31" smashed="yes" rot="R180">
+<attribute name="JLC_ROTATION" value="90" x="140" y="31" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="LCSC" value="C339970" x="153" y="16" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R60" library="passives" package="0402_RES" value="1k" x="135" y="40" smashed="yes"/>
 <element name="D1" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A" x="131" y="42" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="180" x="131" y="42" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C64982" x="105" y="20" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="PROD_ID" value="DIO-09886" x="105" y="20" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
@@ -3656,10 +3662,12 @@ design rules under a new name.
 <attribute name="SPICEPREFIX" value="C" x="96" y="19" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="D2" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A" x="131" y="19" smashed="yes" rot="R90">
+<attribute name="JLC_ROTATION" value="180" x="131" y="19" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C64982" x="105" y="13" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="PROD_ID" value="DIO-09886" x="105" y="13" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="L4" library="SparkFun-Passives" package="CDRH125" value="10uH" x="140" y="8" smashed="yes">
+<attribute name="JLC_ROTATION" value="90" x="140" y="8" size="1.778" layer="27" display="off"/>
 <attribute name="LCSC" value="C339970" x="127" y="18" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C107" library="passives" package="0402_CAP" value="0.01uF" x="135" y="21" smashed="yes" rot="R90"/>

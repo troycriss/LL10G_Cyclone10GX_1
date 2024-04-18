@@ -10242,7 +10242,7 @@ Source: AVX .. aphvc.pdf</description>
 </part>
 <part name="SUPPLY125" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="IC1" library="OPA699ID" deviceset="OPA699ID" device=""/>
-<part name="R9" library="passives" deviceset="RESISTOR" device="0402_RES" value="1-3k"/>
+<part name="R9" library="passives" deviceset="RESISTOR" device="0402_RES" value="1?-3?k"/>
 <part name="R10" library="passives" deviceset="RESISTOR" device="0402_RES" value="100"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R78" library="passives" deviceset="RESISTOR" device="0402_RES" value="10"/>
