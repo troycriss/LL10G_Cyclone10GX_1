@@ -10137,7 +10137,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R13" library="passives" deviceset="RESISTOR" device="0402_RES" value="10">
@@ -10147,7 +10146,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R35" library="passives" deviceset="RESISTOR" device="0402_RES" value="1k"/>
@@ -10201,7 +10199,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="R72" library="passives" deviceset="RESISTOR" device="0402_RES" value="10">
 <spice>
@@ -10210,7 +10207,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="R86" library="passives" deviceset="RESISTOR" device="0402_RES" value="10">
 <spice>
@@ -10219,7 +10215,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="R88" library="passives" deviceset="RESISTOR" device="0402_RES" value="10">
 <spice>
@@ -10228,7 +10223,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="J5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 <part name="R89" library="passives" deviceset="RESISTOR" device="0402_RES" value="10">
@@ -10238,7 +10232,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="LCSC" value="C17415"/>
 </part>
 <part name="SUPPLY125" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="IC1" library="OPA699ID" deviceset="OPA699ID" device=""/>

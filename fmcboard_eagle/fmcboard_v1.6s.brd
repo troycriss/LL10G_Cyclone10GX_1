@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
@@ -3413,10 +3413,8 @@ design rules under a new name.
 <element name="C78" library="passives" package="0402_CAP" value="0.1uF" x="65" y="67" smashed="yes"/>
 <element name="C79" library="passives" package="0402_CAP" value="0.1uF" x="58.2" y="62.6" smashed="yes"/>
 <element name="R3" library="passives" package="0402_RES" value="10" x="54.9" y="65.4" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C17415" x="54.9" y="65.4" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R13" library="passives" package="0402_RES" value="10" x="84.1" y="64.2" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C17415" x="84.1" y="64.2" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R35" library="passives" package="0402_RES" value="1k" x="54" y="33" smashed="yes" rot="R180"/>
 <element name="R61" library="passives" package="0402_RES" value="1k" x="54" y="32" smashed="yes"/>
@@ -3467,22 +3465,17 @@ design rules under a new name.
 <attribute name="MPN" value="F185-1104A1BSYA1" x="90" y="53" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R71" library="passives" package="0402_RES" value="10" x="94" y="62.4" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C17415" x="94" y="62.4" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R72" library="passives" package="0402_RES" value="10" x="57.6" y="52.4" smashed="yes">
-<attribute name="LCSC" value="C17415" x="57.6" y="52.4" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R86" library="passives" package="0402_RES" value="10" x="41.5" y="52.8" smashed="yes" rot="R180">
-<attribute name="LCSC" value="C17415" x="41.5" y="52.8" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R88" library="passives" package="0402_RES" value="10" x="41.5" y="57.8" smashed="yes">
-<attribute name="LCSC" value="C17415" x="41.5" y="57.8" size="1.778" layer="27" display="off"/>
 </element>
 <element name="J5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" package="H4-2.54" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54" x="44" y="50" smashed="yes" rot="R270">
 <attribute name="MPN" value="F185-1104A1BSYA1" x="44" y="50" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="R89" library="passives" package="0402_RES" value="10" x="61.2" y="61.9" smashed="yes">
-<attribute name="LCSC" value="C17415" x="61.2" y="61.9" size="1.778" layer="27" display="off"/>
 </element>
 <element name="IC1" library="OPA699ID" package="SOIC127P600X175-8N" value="OPA699ID" x="60" y="66" smashed="yes">
 <attribute name="DESCRIPTION" value="Texas Instruments OPA699ID Op Amp, 880MHz, 9 V, 8-Pin SOIC" x="60" y="66" size="1.778" layer="27" display="off"/>
