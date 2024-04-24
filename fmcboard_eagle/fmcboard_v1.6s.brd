@@ -291,6 +291,7 @@ NYU, 2023-2024</text>
 <text x="120.6" y="60.5" size="0.8128" layer="21" rot="R180">SCLIN</text>
 <text x="120.6" y="57.5" size="0.8128" layer="21" rot="R180">C26_A0</text>
 <text x="120.6" y="55.5" size="0.8128" layer="21" rot="R180">C27_A1</text>
+<wire x1="68" y1="69" x2="82" y2="69" width="0.1524" layer="21"/>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
@@ -2791,6 +2792,22 @@ Metric Code Size 3216</description>
 <rectangle x1="-1.6" y1="-0.8" x2="-1.1" y2="0.8" layer="51"/>
 <rectangle x1="1.1" y1="-0.8" x2="1.6" y2="0.8" layer="51"/>
 </package>
+<package name="R0805" urn="urn:adsk.eagle:footprint:23045/1" library_version="11">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
+<wire x1="-0.41" y1="-0.635" x2="0.41" y2="-0.635" width="0.1524" layer="51"/>
+<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
+<smd name="1" x="-0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
+<smd name="2" x="0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
+<text x="-0.635" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.7015" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="C1206K" urn="urn:adsk.eagle:package:23682/2" type="model" library_version="11">
@@ -2798,6 +2815,12 @@ Metric Code Size 3216</description>
 Metric Code Size 3216</description>
 <packageinstances>
 <packageinstance name="C1206K"/>
+</packageinstances>
+</package3d>
+<package3d name="R0805" urn="urn:adsk.eagle:package:23553/2" type="model" library_version="11">
+<description>RESISTOR</description>
+<packageinstances>
+<packageinstance name="R0805"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -3484,8 +3507,10 @@ design rules under a new name.
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/OPA699ID?qs=wgAEGBTxy7n0Nk%252BpyQzyiA%3D%3D" x="60" y="66" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="59.5" y="65.4" size="0.8128" layer="21" align="center"/>
 </element>
-<element name="R9" library="passives" package="0402_RES" value="1?-3?k" x="65" y="72.3" smashed="yes">
-<attribute name="VALUE" x="65.932" y="71.581" size="0.8128" layer="21" ratio="15" rot="R180"/>
+<element name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1?-3?k" x="74.5" y="72" smashed="yes">
+<attribute name="POPULARITY" value="85" x="74.5" y="72" size="1.778" layer="27" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="74.5" y="72" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="76.132" y="70.881" size="0.8128" layer="21" ratio="15" rot="R180"/>
 </element>
 <element name="R10" library="passives" package="0402_RES" value="100" x="25.4" y="9.8" smashed="yes" rot="R90"/>
 <element name="R78" library="passives" package="0402_RES" value="10" x="25.4" y="11.9" smashed="yes" rot="R270"/>
@@ -4868,8 +4893,8 @@ design rules under a new name.
 <wire x1="56.86693125" y1="69.72793125" x2="57.4397" y2="70.3007" width="0.3048" layer="1"/>
 <wire x1="54.36693125" y1="67" x2="56.86693125" y2="69.5" width="0.4064" layer="1"/>
 <wire x1="48" y1="67" x2="54.36693125" y2="67" width="0.4064" layer="1"/>
-<wire x1="57.73306875" y1="70.7" x2="59.33306875" y2="72.3" width="0.4064" layer="1"/>
-<wire x1="59.33306875" y1="72.3" x2="64.56693125" y2="72.3" width="0.4064" layer="1"/>
+<wire x1="57.73306875" y1="70.7" x2="59.03306875" y2="72" width="0.4064" layer="1"/>
+<wire x1="59.03306875" y1="72" x2="73.55" y2="72" width="0.4064" layer="1"/>
 </signal>
 <signal name="1V8" class="1" airwireshidden="yes">
 <contactref element="C5" pad="1"/>
@@ -6698,8 +6723,8 @@ design rules under a new name.
 <wire x1="94.43306875" y1="64" x2="100" y2="64" width="0.4064" layer="1"/>
 <wire x1="98.8656" y1="65.1344" x2="100" y2="64" width="0.4064" layer="1"/>
 <wire x1="98.8656" y1="67.12221875" x2="98.8656" y2="65.1344" width="0.4064" layer="1"/>
-<wire x1="65.43306875" y1="72.3" x2="93.68781875" y2="72.3" width="0.4064" layer="1"/>
-<wire x1="93.68781875" y1="72.3" x2="98.8656" y2="67.12221875" width="0.4064" layer="1"/>
+<wire x1="75.45" y1="72" x2="93.98781875" y2="72" width="0.4064" layer="1"/>
+<wire x1="93.98781875" y1="72" x2="98.8656" y2="67.12221875" width="0.4064" layer="1"/>
 </signal>
 <signal name="TRANSIN">
 <contactref element="R2" pad="1"/>
@@ -8372,9 +8397,9 @@ design rules under a new name.
 <wire x1="18.625" y1="62" x2="11.375" y2="62" width="0.3048" layer="1"/>
 <wire x1="22.625" y1="66" x2="18.625" y2="62" width="0.3048" layer="1"/>
 <wire x1="45" y1="66" x2="22.625" y2="66" width="0.3048" layer="1"/>
-<wire x1="52" y1="73" x2="45" y2="66" width="0.3048" layer="1"/>
-<wire x1="94.125" y1="73" x2="52" y2="73" width="0.3048" layer="1"/>
-<wire x1="102.5" y1="64.625" x2="94.125" y2="73" width="0.3048" layer="1"/>
+<wire x1="52.4" y1="73.4" x2="45" y2="66" width="0.3048" layer="1"/>
+<wire x1="93.725" y1="73.4" x2="52.4" y2="73.4" width="0.3048" layer="1"/>
+<wire x1="102.5" y1="64.625" x2="93.725" y2="73.4" width="0.3048" layer="1"/>
 <wire x1="104.375" y1="64.625" x2="102.5" y2="64.625" width="0.3048" layer="1"/>
 <wire x1="122.625" y1="46.375" x2="115.5" y2="53.5" width="0.3048" layer="15"/>
 <wire x1="115.5" y1="53.5" x2="104.375" y2="64.625" width="0.3048" layer="15"/>
