@@ -13358,7 +13358,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="PULSESUMOUT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="SUPPLY41" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY43" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY49" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C6" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
 <part name="C15" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
 <part name="SUPPLY51" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -13830,7 +13829,7 @@ AR_5V and VS+</text>
 </plain>
 <instances>
 <instance part="J12" gate="G$1" x="175.26" y="1.27" smashed="yes"/>
-<instance part="J1" gate="G$1" x="137.16" y="30.48" smashed="yes" rot="R180"/>
+<instance part="J1" gate="G$1" x="129.54" y="27.94" smashed="yes"/>
 <instance part="C3" gate="G$1" x="-2.54" y="73.66" smashed="yes">
 <attribute name="NAME" x="-1.016" y="76.581" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-1.016" y="71.501" size="1.778" layer="96"/>
@@ -13911,7 +13910,6 @@ AR_5V and VS+</text>
 <attribute name="NAME" x="72.898" y="73.914" size="1.778" layer="95" rot="R180"/>
 </instance>
 <instance part="SUPPLY41" gate="GND" x="66.04" y="68.58" smashed="yes"/>
-<instance part="SUPPLY49" gate="GND" x="132.08" y="17.78" smashed="yes"/>
 <instance part="R34" gate="G$1" x="40.64" y="68.58" smashed="yes">
 <attribute name="NAME" x="36.83" y="70.0786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="36.83" y="65.278" size="1.778" layer="96"/>
@@ -14136,10 +14134,6 @@ AR_5V and VS+</text>
 <wire x1="58.42" y1="71.12" x2="66.04" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="8"/>
-<pinref part="SUPPLY49" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="SUPPLY31" gate="GND" pin="GND"/>
 <junction x="38.1" y="30.48"/>
 <pinref part="C47" gate="G$1" pin="2"/>
@@ -14186,8 +14180,8 @@ AR_5V and VS+</text>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
-<wire x1="121.92" y1="25.4" x2="132.08" y2="25.4" width="0.1524" layer="91"/>
-<label x="121.92" y="25.4" size="1.778" layer="95"/>
+<wire x1="144.78" y1="33.02" x2="134.62" y2="33.02" width="0.1524" layer="91"/>
+<label x="144.78" y="33.02" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC26" gate="G$1" pin="GND"/>
@@ -14229,18 +14223,23 @@ AR_5V and VS+</text>
 <pinref part="IC25" gate="G$1" pin="GROUND"/>
 </segment>
 <segment>
-<wire x1="121.92" y1="30.48" x2="132.08" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="27.94" x2="134.62" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="4"/>
-<label x="121.92" y="30.48" size="1.778" layer="95"/>
+<label x="144.78" y="27.94" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<wire x1="121.92" y1="33.02" x2="132.08" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="25.4" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="3"/>
-<label x="121.92" y="33.02" size="1.778" layer="95"/>
+<label x="144.78" y="25.4" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="C125" gate="G$1" pin="2"/>
 <pinref part="SUPPLY125" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="8"/>
+<wire x1="134.62" y1="38.1" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
+<label x="144.78" y="38.1" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="1V8" class="1">
@@ -14344,8 +14343,8 @@ AR_5V and VS+</text>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="35.56" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
-<label x="121.92" y="35.56" size="1.778" layer="95"/>
+<wire x1="134.62" y1="22.86" x2="144.78" y2="22.86" width="0.1524" layer="91"/>
+<label x="144.78" y="22.86" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC26" gate="G$1" pin="VIN"/>
@@ -14473,8 +14472,8 @@ AR_5V and VS+</text>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="38.1" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
-<label x="121.92" y="38.1" size="1.778" layer="95"/>
+<wire x1="134.62" y1="20.32" x2="144.78" y2="20.32" width="0.1524" layer="91"/>
+<label x="144.78" y="20.32" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="R49" gate="G$1" pin="1"/>
@@ -14525,8 +14524,8 @@ AR_5V and VS+</text>
 <net name="VIN+" class="1">
 <segment>
 <pinref part="J1" gate="G$1" pin="5"/>
-<wire x1="121.92" y1="27.94" x2="132.08" y2="27.94" width="0.1524" layer="91"/>
-<label x="121.92" y="27.94" size="1.778" layer="95"/>
+<wire x1="144.78" y1="30.48" x2="134.62" y2="30.48" width="0.1524" layer="91"/>
+<label x="144.78" y="30.48" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="L1" gate="G$1" pin="1"/>
@@ -14556,8 +14555,8 @@ AR_5V and VS+</text>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="7"/>
-<wire x1="132.08" y1="22.86" x2="121.92" y2="22.86" width="0.1524" layer="91"/>
-<label x="121.92" y="22.86" size="1.778" layer="95"/>
+<wire x1="134.62" y1="35.56" x2="144.78" y2="35.56" width="0.1524" layer="91"/>
+<label x="144.78" y="35.56" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="AR_SDAIN2" class="0">
@@ -17866,11 +17865,6 @@ AR_5V and VS+</text>
 <pinref part="J13" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
-<wire x1="281.94" y1="30.48" x2="254" y2="30.48" width="0.1524" layer="91"/>
-<label x="254" y="30.48" size="1.778" layer="95"/>
-<pinref part="J13" gate="G$1" pin="P$3"/>
-</segment>
-<segment>
 <label x="256.54" y="2.54" size="1.778" layer="95"/>
 <wire x1="256.54" y1="2.54" x2="281.94" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="J5" gate="G$1" pin="P$4"/>
@@ -18226,12 +18220,6 @@ AR_5V and VS+</text>
 <wire x1="213.36" y1="-10.16" x2="228.6" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="R114" gate="G$1" pin="1"/>
 <label x="215.9" y="-10.16" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J13" gate="G$1" pin="P$4"/>
-<wire x1="281.94" y1="27.94" x2="256.54" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="254" y1="27.94" x2="256.54" y2="27.94" width="0.1524" layer="91"/>
-<label x="254" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PULSESUMOUT" class="0">
