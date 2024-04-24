@@ -13812,7 +13812,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <sheet>
 <description>Power, IO, Arduino</description>
 <plain>
-<text x="-10.16" y="48.26" size="1.778" layer="90">Linear +- power supplies and smoothing</text>
+<text x="-20.32" y="50.8" size="1.778" layer="90">Linear +- power supplies and smoothing</text>
 <text x="73.66" y="45.72" size="1.778" layer="90">Power inputs</text>
 <wire x1="111.76" y1="109.22" x2="111.76" y2="58.42" width="0.1524" layer="97"/>
 <wire x1="68.58" y1="53.34" x2="68.58" y2="-15.24" width="0.1524" layer="97"/>
@@ -13826,7 +13826,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="121.92" y="43.18" size="1.778" layer="90">Can use jumper to connect 
 AR_5V and VS+</text>
 <text x="-2.54" y="-22.86" size="1.778" layer="90">-1.25V x (1+47/100) = -1.84V</text>
-<text x="-83.82" y="48.26" size="1.778" layer="90">1.8V regulator</text>
+<text x="-71.12" y="50.8" size="1.778" layer="90">1.8V regulator</text>
 </plain>
 <instances>
 <instance part="J12" gate="G$1" x="175.26" y="1.27" smashed="yes"/>
@@ -14502,7 +14502,7 @@ AR_5V and VS+</text>
 <wire x1="20.32" y1="38.1" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="C43" gate="G$1" pin="1"/>
-<label x="17.78" y="35.56" size="1.778" layer="95"/>
+<label x="17.78" y="46.482" size="1.778" layer="95"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <junction x="25.4" y="45.72"/>
 <pinref part="IC11" gate="A1" pin="VI"/>
@@ -14510,7 +14510,7 @@ AR_5V and VS+</text>
 </net>
 <net name="VIN-CLEAN" class="1">
 <segment>
-<label x="10.16" y="5.08" size="1.778" layer="95"/>
+<label x="10.16" y="2.54" size="1.778" layer="95"/>
 <pinref part="IC25" gate="G$1" pin="INPUT"/>
 <wire x1="12.7" y1="7.62" x2="12.7" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="5.08" x2="17.78" y2="5.08" width="0.1524" layer="91"/>
@@ -19215,17 +19215,6 @@ AR_5V and VS+</text>
 <busses>
 </busses>
 <nets>
-<net name="V-" class="0">
-<segment>
-<wire x1="60.96" y1="-38.1" x2="53.34" y2="-38.1" width="0.1524" layer="91"/>
-<label x="55.88" y="-38.1" size="1.778" layer="95"/>
-<pinref part="IC36" gate="G$1" pin="GND"/>
-<pinref part="IC36" gate="G$1" pin="EP"/>
-<wire x1="38.1" y1="-53.34" x2="38.1" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="-38.1" x2="53.34" y2="-38.1" width="0.1524" layer="91"/>
-<junction x="53.34" y="-38.1"/>
-</segment>
-</net>
 <net name="SW2" class="0">
 <segment>
 <wire x1="60.96" y1="-33.02" x2="53.34" y2="-33.02" width="0.1524" layer="91"/>
@@ -19479,6 +19468,15 @@ AR_5V and VS+</text>
 <junction x="147.32" y="-53.34"/>
 <pinref part="C108" gate="G$1" pin="2"/>
 <pinref part="C106" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="-38.1" x2="53.34" y2="-38.1" width="0.1524" layer="91"/>
+<label x="55.88" y="-38.1" size="1.778" layer="95"/>
+<pinref part="IC36" gate="G$1" pin="GND"/>
+<pinref part="IC36" gate="G$1" pin="EP"/>
+<wire x1="38.1" y1="-53.34" x2="38.1" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="-38.1" x2="53.34" y2="-38.1" width="0.1524" layer="91"/>
+<junction x="53.34" y="-38.1"/>
 </segment>
 </net>
 <net name="N$55" class="0">
