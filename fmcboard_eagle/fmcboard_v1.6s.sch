@@ -13355,7 +13355,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="R6" library="passives" deviceset="RESISTOR" device="0402_RES" value="1k"/>
 <part name="R26" library="passives" deviceset="RESISTOR" device="0402_RES" value="100"/>
 <part name="SUPPLY38" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="PULSESUMOUT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
+<part name="PULSESOUT" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="SUPPLY41" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY43" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C6" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
@@ -13433,12 +13433,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="R49" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
 <part name="R50" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
 <part name="R51" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
-<part name="C1" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C2" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C38" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C39" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C40" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C41" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
+<part name="C38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
+<part name="C39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
+<part name="C41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="C56" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="1uF"/>
 <part name="C57" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="1uF"/>
 <part name="C58" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="1uF"/>
@@ -13540,7 +13538,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <attribute name="JLC_ROTATION" value="270"/>
 </part>
 <part name="SUPPLY98" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C34" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="C35" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
 <part name="SUPPLY99" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C36" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
@@ -13610,9 +13608,9 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="IC11" library="adafruit" deviceset="78*" device="DT" package3d_urn="urn:adsk.eagle:package:6240672/1" technology="05"/>
 <part name="IC29" library="LM337KVURG3" deviceset="LM337KVURG3" device=""/>
 <part name="SUPPLY116" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C77" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C77" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C86" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C86" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="SUPPLY45" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R14" library="passives" deviceset="RESISTOR" device="0402_RES" value="100"/>
 <part name="R70" library="passives" deviceset="RESISTOR" device="0402_RES" value="47"/>
@@ -13766,13 +13764,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="J9" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="C8" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
 <part name="C11" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
-<part name="C64" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C64" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="IC36" library="TPS5430DDAR" deviceset="TPS5430DDAR" device=""/>
 <part name="IC37" library="TPS5430DDAR" deviceset="TPS5430DDAR" device=""/>
-<part name="C80" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C118" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C119" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C120" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C120" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="J3" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="L3" library="SparkFun-Passives" deviceset="INDUCTOR" device="PWR" value="10uH">
 <attribute name="LCSC" value="C339970"/>
@@ -13801,8 +13796,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="C108" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206K" package3d_urn="urn:adsk.eagle:package:23682/2" value="100uF"/>
 <part name="C109" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206K" package3d_urn="urn:adsk.eagle:package:23682/2" value="100uF"/>
 <part name="C106" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
-<part name="C110" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
-<part name="C111" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="10uF"/>
+<part name="C110" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
+<part name="C111" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -13903,7 +13898,7 @@ AR_5V and VS+</text>
 <attribute name="NAME" x="100.33" y="67.0814" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="100.33" y="71.882" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="PULSESUMOUT" gate="G1" x="60.96" y="68.58" smashed="yes" rot="R180">
+<instance part="PULSESOUT" gate="G1" x="60.96" y="68.58" smashed="yes" rot="R180">
 <attribute name="NAME" x="72.898" y="73.914" size="1.778" layer="95" rot="R180"/>
 </instance>
 <instance part="SUPPLY41" gate="GND" x="66.04" y="68.58" smashed="yes"/>
@@ -13926,8 +13921,8 @@ AR_5V and VS+</text>
 <instance part="C43" gate="G$1" x="20.32" y="35.56" smashed="yes">
 <attribute name="VALUE" x="14.224" y="30.861" size="1.778" layer="96"/>
 </instance>
-<instance part="C44" gate="G$1" x="-5.08" y="12.7" smashed="yes">
-<attribute name="VALUE" x="-8.636" y="13.081" size="1.778" layer="96"/>
+<instance part="C44" gate="G$1" x="-2.54" y="12.7" smashed="yes">
+<attribute name="VALUE" x="-6.096" y="13.081" size="1.778" layer="96"/>
 </instance>
 <instance part="C45" gate="G$1" x="12.7" y="12.7" smashed="yes">
 <attribute name="VALUE" x="6.604" y="13.081" size="1.778" layer="96"/>
@@ -13953,20 +13948,14 @@ AR_5V and VS+</text>
 <instance part="C1" gate="G$1" x="-10.16" y="35.56" smashed="yes">
 <attribute name="VALUE" x="-11.176" y="30.861" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="25.4" y="43.18" smashed="yes">
-<attribute name="VALUE" x="21.844" y="38.481" size="1.778" layer="96"/>
-</instance>
 <instance part="C38" gate="G$1" x="53.34" y="35.56" smashed="yes">
 <attribute name="VALUE" x="49.784" y="30.861" size="1.778" layer="96"/>
 </instance>
 <instance part="C39" gate="G$1" x="53.34" y="12.7" smashed="yes">
 <attribute name="VALUE" x="49.784" y="13.081" size="1.778" layer="96"/>
 </instance>
-<instance part="C40" gate="G$1" x="17.78" y="20.32" smashed="yes">
-<attribute name="VALUE" x="14.224" y="20.701" size="1.778" layer="96"/>
-</instance>
-<instance part="C41" gate="G$1" x="-15.24" y="12.7" smashed="yes">
-<attribute name="VALUE" x="-16.256" y="13.081" size="1.778" layer="96"/>
+<instance part="C41" gate="G$1" x="-12.7" y="12.7" smashed="yes">
+<attribute name="VALUE" x="-13.716" y="13.081" size="1.778" layer="96"/>
 </instance>
 <instance part="IC26" gate="G$1" x="-50.8" y="40.64" smashed="yes">
 <attribute name="NAME" x="-48.26" y="33.655" size="1.778" layer="95" ratio="10"/>
@@ -14033,12 +14022,6 @@ AR_5V and VS+</text>
 </instance>
 <instance part="R90" gate="G$1" x="144.78" y="78.74" smashed="yes">
 <attribute name="VALUE" x="140.97" y="75.438" size="1.778" layer="96"/>
-</instance>
-<instance part="C118" gate="G$1" x="-10.16" y="43.18" smashed="yes">
-<attribute name="VALUE" x="-11.176" y="38.481" size="1.778" layer="96"/>
-</instance>
-<instance part="C119" gate="G$1" x="-15.24" y="20.32" smashed="yes">
-<attribute name="VALUE" x="-16.256" y="20.701" size="1.778" layer="96"/>
 </instance>
 <instance part="C125" gate="G$1" x="60.96" y="-17.78" smashed="yes">
 <attribute name="NAME" x="57.15" y="-21.59" size="1.778" layer="95" rot="R90" align="center-left"/>
@@ -14125,7 +14108,7 @@ AR_5V and VS+</text>
 <junction x="93.98" y="96.52"/>
 </segment>
 <segment>
-<pinref part="PULSESUMOUT" gate="G1" pin="2"/>
+<pinref part="PULSESOUT" gate="G1" pin="2"/>
 <pinref part="SUPPLY41" gate="GND" pin="GND"/>
 <wire x1="58.42" y1="71.12" x2="66.04" y2="71.12" width="0.1524" layer="91"/>
 </segment>
@@ -14155,24 +14138,20 @@ AR_5V and VS+</text>
 <wire x1="58.42" y1="15.24" x2="53.34" y2="15.24" width="0.1524" layer="91"/>
 <junction x="38.1" y="15.24"/>
 <wire x1="53.34" y1="15.24" x2="38.1" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="15.24" x2="22.86" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="15.24" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="22.86" x2="17.78" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="C45" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="22.86" x2="12.7" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="22.86" x2="12.7" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="15.24" x2="17.78" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="C46" gate="G$1" pin="1"/>
 <pinref part="C39" gate="G$1" pin="1"/>
 <junction x="53.34" y="15.24"/>
-<pinref part="C40" gate="G$1" pin="1"/>
-<junction x="17.78" y="22.86"/>
+<pinref part="C111" gate="G$1" pin="1"/>
 <pinref part="C44" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="15.24" x2="-5.08" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="C119" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="22.86" x2="-15.24" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="15.24" x2="-5.08" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="C45" gate="G$1" pin="1"/>
+<wire x1="12.7" y1="15.24" x2="-2.54" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="C41" gate="G$1" pin="1"/>
+<wire x1="-2.54" y1="15.24" x2="-12.7" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-2.54" y="15.24"/>
+<wire x1="17.78" y1="15.24" x2="12.7" y2="15.24" width="0.1524" layer="91"/>
+<junction x="17.78" y="15.24"/>
 <junction x="12.7" y="15.24"/>
-<junction x="-5.08" y="15.24"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
@@ -14444,7 +14423,7 @@ AR_5V and VS+</text>
 </net>
 <net name="PULSEOUT" class="0">
 <segment>
-<pinref part="PULSESUMOUT" gate="G1" pin="1"/>
+<pinref part="PULSESOUT" gate="G1" pin="1"/>
 <wire x1="43.18" y1="68.58" x2="58.42" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="R34" gate="G$1" pin="2"/>
 <label x="45.72" y="66.04" size="1.778" layer="95"/>
@@ -14480,17 +14459,15 @@ AR_5V and VS+</text>
 </net>
 <net name="VIN+CLEAN" class="1">
 <segment>
-<wire x1="27.94" y1="38.1" x2="27.94" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="2"/>
 <junction x="20.32" y="38.1"/>
-<wire x1="20.32" y1="38.1" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="38.1" x2="25.4" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="C43" gate="G$1" pin="1"/>
-<label x="17.78" y="46.482" size="1.778" layer="95"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<junction x="25.4" y="45.72"/>
+<label x="17.78" y="38.862" size="1.778" layer="95"/>
 <pinref part="IC11" gate="A1" pin="VI"/>
+<pinref part="C110" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="38.1" x2="27.94" y2="38.1" width="0.1524" layer="91"/>
+<junction x="25.4" y="38.1"/>
 </segment>
 </net>
 <net name="VIN-CLEAN" class="1">
@@ -14517,27 +14494,25 @@ AR_5V and VS+</text>
 <pinref part="L1" gate="G$1" pin="1"/>
 <pinref part="C42" gate="G$1" pin="1"/>
 <wire x1="5.08" y1="38.1" x2="0" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="0" y1="38.1" x2="0" y2="45.72" width="0.1524" layer="91"/>
 <junction x="0" y="38.1"/>
-<wire x1="0" y1="45.72" x2="-10.16" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="C118" gate="G$1" pin="1"/>
-<wire x1="-20.32" y1="45.72" x2="-10.16" y2="45.72" width="0.1524" layer="91"/>
-<junction x="-10.16" y="45.72"/>
-<label x="-20.32" y="43.18" size="1.778" layer="95"/>
+<wire x1="-17.78" y1="38.1" x2="-10.16" y2="38.1" width="0.1524" layer="91"/>
+<label x="-17.78" y="38.1" size="1.778" layer="95"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="38.1" x2="0" y2="38.1" width="0.1524" layer="91"/>
+<junction x="-10.16" y="38.1"/>
 </segment>
 </net>
 <net name="VIN-" class="1">
 <segment>
 <pinref part="L2" gate="G$1" pin="1"/>
-<wire x1="-15.24" y1="7.62" x2="-5.08" y2="7.62" width="0.1524" layer="91"/>
-<label x="-20.32" y="5.08" size="1.778" layer="95"/>
+<label x="-17.78" y="5.08" size="1.778" layer="95"/>
 <pinref part="C44" gate="G$1" pin="2"/>
-<wire x1="-5.08" y1="7.62" x2="-10.16" y2="7.62" width="0.1524" layer="91"/>
-<junction x="-5.08" y="7.62"/>
+<wire x1="-2.54" y1="7.62" x2="-10.16" y2="7.62" width="0.1524" layer="91"/>
+<junction x="-2.54" y="7.62"/>
 <pinref part="C41" gate="G$1" pin="2"/>
-<junction x="-15.24" y="7.62"/>
-<wire x1="-15.24" y1="7.62" x2="-2.54" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="7.62" x2="-20.32" y2="7.62" width="0.1524" layer="91"/>
+<junction x="-12.7" y="7.62"/>
+<wire x1="-12.7" y1="7.62" x2="-2.54" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="7.62" x2="-17.78" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="7"/>
@@ -14645,30 +14620,6 @@ AR_5V and VS+</text>
 <pinref part="ARDUINO_NANO1" gate="G$1" pin="VIN"/>
 <wire x1="-76.2" y1="60.96" x2="-66.04" y2="60.96" width="0.1524" layer="91"/>
 <label x="-76.2" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$38" class="0">
-<segment>
-<pinref part="C1" gate="G$1" pin="1"/>
-<pinref part="C118" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<pinref part="C41" gate="G$1" pin="1"/>
-<pinref part="C119" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$58" class="0">
-<segment>
-<pinref part="C2" gate="G$1" pin="2"/>
-<pinref part="C110" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="N$59" class="0">
-<segment>
-<pinref part="C40" gate="G$1" pin="2"/>
-<pinref part="C111" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
@@ -17660,10 +17611,10 @@ AR_5V and VS+</text>
 <instance part="SUPPLY61" gate="GND" x="7.62" y="91.44" smashed="yes"/>
 <instance part="SUPPLY62" gate="GND" x="17.78" y="91.44" smashed="yes"/>
 <instance part="J13" gate="G$1" x="289.56" y="31.75" smashed="yes"/>
-<instance part="R71" gate="G$1" x="276.86" y="33.02" smashed="yes" rot="R180">
-<attribute name="NAME" x="278.13" y="39.1414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="278.13" y="36.322" size="1.778" layer="96" rot="R180"/>
-<attribute name="LCSC" x="276.86" y="33.02" size="1.778" layer="96" rot="R180" display="off"/>
+<instance part="R71" gate="G$1" x="276.86" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="278.13" y="26.4414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="278.13" y="23.622" size="1.778" layer="96" rot="R180"/>
+<attribute name="LCSC" x="276.86" y="27.94" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R72" gate="G$1" x="276.86" y="7.62" smashed="yes" rot="R180">
 <attribute name="NAME" x="278.13" y="11.2014" size="1.778" layer="95" rot="R180"/>
@@ -17839,6 +17790,12 @@ AR_5V and VS+</text>
 <wire x1="281.94" y1="35.56" x2="254" y2="35.56" width="0.1524" layer="91"/>
 <label x="254" y="35.56" size="1.778" layer="95"/>
 <pinref part="J13" gate="G$1" pin="P$1"/>
+<pinref part="J13" gate="G$1" pin="P$3"/>
+<wire x1="281.94" y1="35.56" x2="281.94" y2="33.02" width="0.1524" layer="91"/>
+<junction x="281.94" y="35.56"/>
+<pinref part="J13" gate="G$1" pin="P$2"/>
+<wire x1="281.94" y1="33.02" x2="281.94" y2="30.48" width="0.1524" layer="91"/>
+<junction x="281.94" y="33.02"/>
 </segment>
 <segment>
 <label x="256.54" y="2.54" size="1.778" layer="95"/>
@@ -18210,8 +18167,8 @@ AR_5V and VS+</text>
 <wire x1="228.6" y1="111.76" x2="203.2" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="274.32" y1="33.02" x2="254" y2="33.02" width="0.1524" layer="91"/>
-<label x="254" y="33.02" size="1.778" layer="95"/>
+<wire x1="274.32" y1="27.94" x2="254" y2="27.94" width="0.1524" layer="91"/>
+<label x="254" y="27.94" size="1.778" layer="95"/>
 <pinref part="R71" gate="G$1" pin="2"/>
 </segment>
 </net>
@@ -18354,12 +18311,6 @@ AR_5V and VS+</text>
 <label x="35.56" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$35" class="0">
-<segment>
-<pinref part="J13" gate="G$1" pin="P$2"/>
-<pinref part="R71" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="N$42" class="0">
 <segment>
 <pinref part="J5" gate="G$1" pin="P$1"/>
@@ -18462,6 +18413,12 @@ AR_5V and VS+</text>
 <segment>
 <pinref part="J5" gate="G$1" pin="P$2"/>
 <pinref part="R72" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$57" class="0">
+<segment>
+<pinref part="R71" gate="G$1" pin="1"/>
+<pinref part="J13" gate="G$1" pin="P$4"/>
 </segment>
 </net>
 </nets>
@@ -19084,9 +19041,6 @@ AR_5V and VS+</text>
 <attribute name="NAME" x="29.21" y="25.4" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="29.21" y="22.86" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="C80" gate="G$1" x="43.18" y="53.34" smashed="yes">
-<attribute name="VALUE" x="44.704" y="51.689" size="1.778" layer="96"/>
-</instance>
 <instance part="C120" gate="G$1" x="43.18" y="60.96" smashed="yes">
 <attribute name="VALUE" x="44.704" y="59.309" size="1.778" layer="96"/>
 </instance>
@@ -19249,7 +19203,6 @@ AR_5V and VS+</text>
 <net name="GND" class="2">
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
-<pinref part="C80" gate="G$1" pin="2"/>
 <wire x1="43.18" y1="48.26" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
 <junction x="43.18" y="48.26"/>
 <wire x1="43.18" y1="48.26" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
@@ -19263,6 +19216,8 @@ AR_5V and VS+</text>
 <junction x="35.56" y="48.26"/>
 <pinref part="J3" gate="G$1" pin="2"/>
 <wire x1="35.56" y1="53.34" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="C120" gate="G$1" pin="2"/>
+<wire x1="43.18" y1="55.88" x2="43.18" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="L4" gate="G$1" pin="2"/>
@@ -19359,12 +19314,6 @@ AR_5V and VS+</text>
 <segment>
 <pinref part="C64" gate="G$1" pin="2"/>
 <pinref part="C120" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="N$52" class="0">
-<segment>
-<pinref part="C120" gate="G$1" pin="2"/>
-<pinref part="C80" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="12V" class="1">
