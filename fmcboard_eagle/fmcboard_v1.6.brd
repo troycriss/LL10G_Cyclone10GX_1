@@ -3738,9 +3738,11 @@ design rules under a new name.
 <attribute name="SPICEPREFIX" value="C" x="88" y="48" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C2" library="SparkFun-Passives" package="VISHAY_C" value="100uF" x="143.5" y="36" smashed="yes" rot="R180">
+<attribute name="JLC_ROTATION" value="90" x="143.5" y="36" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="LCSC" value="C7230" x="149.5" y="24" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C40" library="SparkFun-Passives" package="VISHAY_C" value="100uF" x="144" y="9" smashed="yes" rot="R180">
+<attribute name="JLC_ROTATION" value="90" x="144" y="9" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="LCSC" value="C7230" x="144" y="9" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="C8" library="passives" package="0402_CAP" value="0.1uF" x="135" y="49.7" smashed="yes"/>
