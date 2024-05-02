@@ -184,7 +184,7 @@
 <text x="22.4" y="63.1" size="0.8128" layer="21" rot="R180">12V</text>
 <text x="100.6" y="35.5" size="0.8128" layer="21" rot="R180">GND</text>
 <text x="100.6" y="47.5" size="0.8128" layer="21" rot="R180">GND</text>
-<text x="7" y="1" size="1.27" layer="21" rot="R90">C10GX FMC breakout, v1.66
+<text x="7" y="1" size="1.27" layer="21" rot="R90">C10GX FMC breakout, v1.67
 by Andre Dubovskiy and Dr. Andy Haas
 NYU, 2023-2024</text>
 <text x="100.6" y="44.5" size="0.8128" layer="21" rot="R180">VIN-</text>
@@ -3733,7 +3733,9 @@ design rules under a new name.
 <element name="C122" library="passives" package="0402_CAP" value="0.01uF" x="130" y="42" smashed="yes" rot="R180"/>
 <element name="R73" library="passives" package="0402_RES" value="10k" x="139" y="42" smashed="yes"/>
 <element name="R84" library="passives" package="0402_RES" value="1k" x="141" y="43" smashed="yes" rot="R180"/>
-<element name="C125" library="SparkFun-Capacitors" package="EIA3216" value="2.2uF" x="96" y="19" smashed="yes" rot="R270"/>
+<element name="C125" library="SparkFun-Capacitors" package="EIA3216" value="2.2uF" x="96" y="19" smashed="yes" rot="R270">
+<attribute name="LCSC" value="C122264" x="96" y="19" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
 <element name="D2" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" package="SMA-DIODE" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A" x="129.5" y="19.3" smashed="yes" rot="R90">
 <attribute name="JLC_ROTATION" value="180" x="129.5" y="19.3" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="LCSC" value="C64982" x="103.5" y="13.3" size="1.778" layer="27" rot="R90" display="off"/>
