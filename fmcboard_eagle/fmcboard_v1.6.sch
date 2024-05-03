@@ -274,30 +274,11 @@ distributor RS 112-2993</description>
 <text x="2.54" y="-1.905" size="0.889" layer="27" ratio="11" rot="R90">&gt;value</text>
 <rectangle x1="-1.27" y1="-5.08" x2="1.27" y2="5.08" layer="39"/>
 </package>
-<package name="H2-2.54" urn="urn:adsk.eagle:footprint:33040/1" library_version="1">
-<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0.127" layer="21"/>
-<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
-<wire x1="1.27" y1="-2.54" x2="-1.27" y2="-2.54" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0" layer="39"/>
-<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0" layer="39"/>
-<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0" layer="39"/>
-<pad name="1" x="0" y="1.27" drill="0.889" diameter="1.651" shape="square"/>
-<pad name="2" x="0" y="-1.27" drill="0.889" diameter="1.651"/>
-<text x="-1.905" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;NAME</text>
-<text x="2.54" y="-2.54" size="0.889" layer="27" ratio="11" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.27" y1="-2.54" x2="1.27" y2="2.54" layer="39"/>
-</package>
 </packages>
 <packages3d>
 <package3d name="H4-2.54" urn="urn:adsk.eagle:package:33137/1" type="box" library_version="1">
 <packageinstances>
 <packageinstance name="H4-2.54"/>
-</packageinstances>
-</package3d>
-<package3d name="H2-2.54" urn="urn:adsk.eagle:package:33132/1" type="box" library_version="1">
-<packageinstances>
-<packageinstance name="H2-2.54"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -313,16 +294,6 @@ distributor RS 112-2993</description>
 <pin name="P$2" x="-7.62" y="1.27" visible="pad" length="middle"/>
 <pin name="P$3" x="-7.62" y="-1.27" visible="pad" length="middle"/>
 <pin name="P$4" x="-7.62" y="-3.81" visible="pad" length="middle"/>
-</symbol>
-<symbol name="HEADER-2P" urn="urn:adsk.eagle:symbol:33039/1" library_version="1">
-<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
-<text x="-6.35" y="6.35" size="1.27" layer="95" ratio="10">&gt;name</text>
-<text x="1.27" y="6.35" size="1.27" layer="96" ratio="10">&gt;value</text>
-<pin name="1" x="-7.62" y="2.54" length="middle" function="dotclk" swaplevel="1"/>
-<pin name="2" x="-7.62" y="-2.54" length="middle" swaplevel="1"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -346,29 +317,6 @@ distributor RS 112-2993</description>
 <technology name="">
 <attribute name="MPN" value="F185-1104A1BSYA1" constant="no"/>
 <attribute name="VALUE" value="4p-2.54" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" urn="urn:adsk.eagle:component:33184/1" prefix="J" uservalue="yes" library_version="1">
-<description>320020016</description>
-<gates>
-<gate name="G$1" symbol="HEADER-2P" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="H2-2.54">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33132/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="MPN" value="P125-1102A0BS116A1" constant="no"/>
-<attribute name="VALUE" value="2p-2.54" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -14403,7 +14351,6 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY15" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -14834,11 +14781,9 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="SUPPLY144" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY145" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="J9" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="C64" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="IC36" library="TPS5430DDAR" deviceset="TPS5430DDAR" device=""/>
 <part name="IC37" library="TPS5430DDAR" deviceset="TPS5430DDAR" device=""/>
-<part name="J3" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="L3" library="SparkFun-Passives" deviceset="INDUCTOR" device="PWR" value="10uH">
 <attribute name="LCSC" value="C339970"/>
 </part>
@@ -14877,6 +14822,8 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="C112" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="C113" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="0.1uF"/>
 <part name="C108" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="0.1uF"/>
+<part name="J4" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
+<part name="GND2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15270,6 +15217,11 @@ Case 3216</text>
 <wire x1="134.62" y1="38.1" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
 <label x="144.78" y="38.1" size="1.778" layer="95" rot="R180"/>
 </segment>
+<segment>
+<pinref part="J12" gate="G$1" pin="P$1"/>
+<wire x1="167.64" y1="5.08" x2="157.48" y2="5.08" width="0.1524" layer="91"/>
+<label x="157.48" y="5.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="1V8" class="1">
 <segment>
@@ -15283,12 +15235,9 @@ Case 3216</text>
 <label x="109.22" y="15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J12" gate="G$1" pin="P$1"/>
-<wire x1="167.64" y1="5.08" x2="160.02" y2="5.08" width="0.1524" layer="91"/>
-<label x="157.48" y="5.08" size="1.778" layer="95"/>
+<wire x1="167.64" y1="2.54" x2="157.48" y2="2.54" width="0.1524" layer="91"/>
+<label x="157.48" y="2.54" size="1.778" layer="95"/>
 <pinref part="J12" gate="G$1" pin="P$2"/>
-<wire x1="167.64" y1="5.08" x2="167.64" y2="2.54" width="0.1524" layer="91"/>
-<junction x="167.64" y="5.08"/>
 </segment>
 <segment>
 <pinref part="IC26" gate="G$1" pin="VOUT"/>
@@ -20058,17 +20007,14 @@ Case 3216</text>
         = (10/2 + 1) * 1.221  V = 7.3 V</text>
 <text x="-35.56" y="-58.42" size="1.778" layer="90">Caps rated for 25V
 Handling 12V+7V=19V, so double them</text>
-<text x="68.58" y="55.88" size="1.778" layer="90">Caps rated for 25V</text>
+<text x="45.72" y="68.58" size="1.778" layer="90">Caps rated for 25V</text>
 </plain>
 <instances>
 <instance part="GND1" gate="1" x="43.18" y="43.18" smashed="yes">
 <attribute name="VALUE" x="43.18" y="42.926" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="J9" gate="G$1" x="27.94" y="68.58" smashed="yes" rot="R180">
-<attribute name="NAME" x="29.21" y="62.23" size="1.27" layer="95" ratio="10" rot="R180"/>
-</instance>
-<instance part="C64" gate="G$1" x="43.18" y="68.58" smashed="yes">
-<attribute name="VALUE" x="44.704" y="66.929" size="1.778" layer="96"/>
+<instance part="C64" gate="G$1" x="43.18" y="63.5" smashed="yes">
+<attribute name="VALUE" x="44.704" y="61.849" size="1.778" layer="96"/>
 </instance>
 <instance part="IC36" gate="G$1" x="22.86" y="-33.02" smashed="yes">
 <attribute name="NAME" x="29.21" y="-25.4" size="1.778" layer="95" align="center-left"/>
@@ -20077,9 +20023,6 @@ Handling 12V+7V=19V, so double them</text>
 <instance part="IC37" gate="G$1" x="22.86" y="17.78" smashed="yes">
 <attribute name="NAME" x="29.21" y="25.4" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="29.21" y="22.86" size="1.778" layer="96" align="center-left"/>
-</instance>
-<instance part="J3" gate="G$1" x="27.94" y="50.8" smashed="yes" rot="R180">
-<attribute name="NAME" x="29.21" y="44.45" size="1.27" layer="95" ratio="10" rot="R180"/>
 </instance>
 <instance part="L3" gate="G$1" x="121.92" y="20.32" smashed="yes" rot="R90">
 <attribute name="NAME" x="116.84" y="22.86" size="1.778" layer="95" rot="R90"/>
@@ -20139,14 +20082,14 @@ Handling 12V+7V=19V, so double them</text>
 <attribute name="VALUE" x="138.176" y="-39.751" size="1.778" layer="96"/>
 <attribute name="LCSC" x="137.16" y="-35.56" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C8" gate="G$1" x="63.5" y="68.58" smashed="yes">
-<attribute name="VALUE" x="65.024" y="66.929" size="1.778" layer="96"/>
+<instance part="C8" gate="G$1" x="63.5" y="63.5" smashed="yes">
+<attribute name="VALUE" x="65.024" y="61.849" size="1.778" layer="96"/>
 </instance>
-<instance part="C11" gate="G$1" x="73.66" y="68.58" smashed="yes">
-<attribute name="VALUE" x="75.184" y="66.929" size="1.778" layer="96"/>
+<instance part="C11" gate="G$1" x="73.66" y="63.5" smashed="yes">
+<attribute name="VALUE" x="75.184" y="61.849" size="1.778" layer="96"/>
 </instance>
-<instance part="C80" gate="G$1" x="53.34" y="68.58" smashed="yes">
-<attribute name="VALUE" x="54.864" y="66.929" size="1.778" layer="96"/>
+<instance part="C80" gate="G$1" x="53.34" y="63.5" smashed="yes">
+<attribute name="VALUE" x="54.864" y="61.849" size="1.778" layer="96"/>
 </instance>
 <instance part="C109" gate="G$1" x="-10.16" y="-45.72" smashed="yes">
 <attribute name="VALUE" x="-8.636" y="-47.371" size="1.778" layer="96"/>
@@ -20160,11 +20103,13 @@ Handling 12V+7V=19V, so double them</text>
 <instance part="C108" gate="G$1" x="2.54" y="-35.56" smashed="yes">
 <attribute name="VALUE" x="4.064" y="-37.211" size="1.778" layer="96"/>
 </instance>
-<instance part="C12" gate="G$1" x="-2.54" y="55.88" smashed="yes">
-<attribute name="NAME" x="-1.016" y="58.801" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-1.016" y="53.721" size="1.778" layer="96"/>
+<instance part="C12" gate="G$1" x="2.54" y="66.04" smashed="yes">
+<attribute name="VALUE" x="4.064" y="61.341" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY15" gate="GND" x="-2.54" y="48.26" smashed="yes"/>
+<instance part="J4" gate="G$1" x="30.48" y="64.77" smashed="yes"/>
+<instance part="GND2" gate="1" x="2.54" y="58.42" smashed="yes">
+<attribute name="VALUE" x="2.54" y="58.166" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -20201,21 +20146,21 @@ Handling 12V+7V=19V, so double them</text>
 <pinref part="IC37" gate="G$1" pin="VIN"/>
 </segment>
 <segment>
-<wire x1="35.56" y1="71.12" x2="43.18" y2="71.12" width="0.1524" layer="91"/>
-<label x="10.16" y="71.12" size="1.778" layer="95"/>
-<pinref part="J9" gate="G$1" pin="2"/>
 <pinref part="C64" gate="G$1" pin="1"/>
-<wire x1="35.56" y1="71.12" x2="10.16" y2="71.12" width="0.1524" layer="91"/>
-<junction x="35.56" y="71.12"/>
 <pinref part="C8" gate="G$1" pin="1"/>
-<wire x1="43.18" y1="71.12" x2="53.34" y2="71.12" width="0.1524" layer="91"/>
-<junction x="43.18" y="71.12"/>
+<wire x1="43.18" y1="66.04" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C11" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="71.12" x2="63.5" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="71.12" x2="73.66" y2="71.12" width="0.1524" layer="91"/>
-<junction x="63.5" y="71.12"/>
+<wire x1="53.34" y1="66.04" x2="63.5" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="66.04" x2="73.66" y2="66.04" width="0.1524" layer="91"/>
+<junction x="63.5" y="66.04"/>
 <pinref part="C80" gate="G$1" pin="1"/>
-<junction x="53.34" y="71.12"/>
+<junction x="53.34" y="66.04"/>
+<pinref part="J4" gate="G$1" pin="P$2"/>
+<wire x1="22.86" y1="66.04" x2="12.7" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="66.04" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
+<junction x="22.86" y="66.04"/>
+<junction x="43.18" y="66.04"/>
+<label x="12.7" y="66.04" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C112" gate="G$1" pin="1"/>
@@ -20255,25 +20200,26 @@ Handling 12V+7V=19V, so double them</text>
 <net name="GND" class="2">
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="43.18" y1="48.26" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="48.26" x2="22.86" y2="48.26" width="0.1524" layer="91"/>
 <junction x="43.18" y="48.26"/>
 <wire x1="43.18" y1="45.72" x2="43.18" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="1"/>
-<junction x="35.56" y="48.26"/>
-<pinref part="J3" gate="G$1" pin="2"/>
-<wire x1="35.56" y1="53.34" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="60.96" x2="22.86" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="C11" gate="G$1" pin="2"/>
 <pinref part="C8" gate="G$1" pin="2"/>
-<wire x1="73.66" y1="63.5" x2="63.5" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="63.5" x2="63.5" y2="48.26" width="0.1524" layer="91"/>
-<junction x="63.5" y="63.5"/>
+<wire x1="73.66" y1="58.42" x2="63.5" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="58.42" x2="63.5" y2="48.26" width="0.1524" layer="91"/>
+<junction x="63.5" y="58.42"/>
 <wire x1="63.5" y1="48.26" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="48.26" x2="43.18" y2="48.26" width="0.1524" layer="91"/>
 <junction x="53.34" y="48.26"/>
 <pinref part="C64" gate="G$1" pin="2"/>
-<wire x1="43.18" y1="48.26" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="48.26" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="C80" gate="G$1" pin="2"/>
-<wire x1="53.34" y1="48.26" x2="53.34" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="48.26" x2="53.34" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="J4" gate="G$1" pin="P$4"/>
+<pinref part="J4" gate="G$1" pin="P$3"/>
+<wire x1="22.86" y1="63.5" x2="22.86" y2="60.96" width="0.1524" layer="91"/>
+<junction x="22.86" y="60.96"/>
 </segment>
 <segment>
 <pinref part="L4" gate="G$1" pin="2"/>
@@ -20320,7 +20266,7 @@ Handling 12V+7V=19V, so double them</text>
 </segment>
 <segment>
 <pinref part="C12" gate="G$1" pin="2"/>
-<pinref part="SUPPLY15" gate="GND" pin="GND"/>
+<pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SW1" class="0">
@@ -20371,14 +20317,12 @@ Handling 12V+7V=19V, so double them</text>
 </net>
 <net name="12V" class="1">
 <segment>
-<pinref part="J9" gate="G$1" pin="1"/>
-<wire x1="35.56" y1="66.04" x2="10.16" y2="66.04" width="0.1524" layer="91"/>
-<label x="10.16" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
+<label x="-2.54" y="68.58" size="1.778" layer="95"/>
 <pinref part="C12" gate="G$1" pin="1"/>
-<wire x1="-2.54" y1="58.42" x2="-2.54" y2="66.04" width="0.1524" layer="91"/>
-<label x="-5.08" y="66.04" size="1.778" layer="95"/>
+<wire x1="2.54" y1="68.58" x2="-2.54" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="J4" gate="G$1" pin="P$1"/>
+<wire x1="2.54" y1="68.58" x2="22.86" y2="68.58" width="0.1524" layer="91"/>
+<junction x="2.54" y="68.58"/>
 </segment>
 </net>
 <net name="VIN+" class="1">
