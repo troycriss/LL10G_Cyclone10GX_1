@@ -13576,7 +13576,6 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 </pinmapping>
 </spice>
 </part>
-<part name="SUPPLY125" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="IC1" library="OPA699ID" deviceset="OPA699ID" device=""/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1?-3?k"/>
 <part name="R10" library="passives" deviceset="RESISTOR" device="0402_RES" value="100"/>
@@ -13724,6 +13723,7 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="SUPPLY72" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R119" library="passives" deviceset="RESISTOR" device="0402_RES" value="47"/>
 <part name="R120" library="passives" deviceset="RESISTOR" device="0402_RES" value="47"/>
+<part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13928,16 +13928,15 @@ Case 3216</text>
 <attribute name="NAME" x="29.21" y="7.62" size="1.778" layer="95" rot="R180" align="center-left"/>
 <attribute name="VALUE" x="44.704" y="1.27" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
-<instance part="SUPPLY125" gate="GND" x="60.96" y="-20.32" smashed="yes"/>
 <instance part="R87" gate="G$1" x="144.78" y="91.44" smashed="yes">
 <attribute name="VALUE" x="140.97" y="88.138" size="1.778" layer="96"/>
 </instance>
 <instance part="R90" gate="G$1" x="144.78" y="78.74" smashed="yes">
 <attribute name="VALUE" x="140.97" y="75.438" size="1.778" layer="96"/>
 </instance>
-<instance part="C125" gate="G$1" x="60.96" y="-12.7" smashed="yes">
-<attribute name="NAME" x="57.15" y="-16.51" size="1.778" layer="95" rot="R90" align="center-left"/>
-<attribute name="VALUE" x="64.77" y="-16.51" size="1.778" layer="96" rot="R90" align="center-left"/>
+<instance part="C125" gate="G$1" x="61.214" y="-12.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="65.024" y="-8.89" size="1.778" layer="95" rot="R270" align="center-left"/>
+<attribute name="VALUE" x="57.404" y="-8.89" size="1.778" layer="96" rot="R270" align="center-left"/>
 </instance>
 <instance part="C110" gate="G$1" x="25.4" y="35.56" smashed="yes">
 <attribute name="VALUE" x="21.844" y="30.861" size="1.778" layer="96"/>
@@ -13946,6 +13945,7 @@ Case 3216</text>
 <attribute name="VALUE" x="14.224" y="13.081" size="1.778" layer="96"/>
 </instance>
 <instance part="J1" gate="G$1" x="129.54" y="34.29" smashed="yes" rot="R180"/>
+<instance part="SUPPLY83" gate="GND" x="61.214" y="-17.78" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -14099,10 +14099,6 @@ Case 3216</text>
 <pinref part="IC25" gate="G$1" pin="GROUND"/>
 </segment>
 <segment>
-<pinref part="C125" gate="G$1" pin="-"/>
-<pinref part="SUPPLY125" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="J12" gate="G$1" pin="P$1"/>
 <wire x1="167.64" y1="5.08" x2="157.48" y2="5.08" width="0.1524" layer="91"/>
 <label x="157.48" y="5.08" size="1.778" layer="95"/>
@@ -14111,6 +14107,10 @@ Case 3216</text>
 <wire x1="137.16" y1="38.1" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
 <label x="144.78" y="38.1" size="1.778" layer="95" rot="R180"/>
 <pinref part="J1" gate="G$1" pin="P$4"/>
+</segment>
+<segment>
+<pinref part="SUPPLY83" gate="GND" pin="GND"/>
+<pinref part="C125" gate="G$1" pin="+"/>
 </segment>
 </net>
 <net name="1V8" class="1">
@@ -14449,16 +14449,13 @@ Case 3216</text>
 </segment>
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
-<wire x1="60.96" y1="-7.62" x2="66.04" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="38.354" y1="-7.62" x2="60.96" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="38.354" y1="-7.62" x2="61.214" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="38.354" y1="-7.62" x2="38.354" y2="-8.128" width="0.1524" layer="91"/>
 <junction x="38.354" y="-7.62"/>
 <pinref part="IC29" gate="G$1" pin="OUTPUT"/>
 <wire x1="33.02" y1="-7.62" x2="38.354" y2="-7.62" width="0.1524" layer="91"/>
 <label x="60.96" y="-7.62" size="1.778" layer="95"/>
-<pinref part="C125" gate="G$1" pin="+"/>
-<wire x1="60.96" y1="-10.16" x2="60.96" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="60.96" y="-7.62"/>
+<pinref part="C125" gate="G$1" pin="-"/>
 </segment>
 </net>
 <net name="N$30" class="0">
