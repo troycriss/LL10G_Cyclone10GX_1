@@ -13680,7 +13680,9 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="C122" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.01uF"/>
 <part name="R73" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="R84" library="passives" deviceset="RESISTOR" device="0402_RES" value="1k"/>
-<part name="C125" library="SparkFun-Capacitors" deviceset="CAP_POL" device="1206" value="2.2uF"/>
+<part name="C125" library="SparkFun-Capacitors" deviceset="CAP_POL" device="1206" value="2.2uF">
+<attribute name="JLC_ROTATION" value="180"/>
+</part>
 <part name="D2" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="B340A">
 <attribute name="LCSC" value="C64982"/>
 </part>
@@ -13937,6 +13939,7 @@ Case 3216</text>
 <instance part="C125" gate="G$1" x="61.214" y="-12.7" smashed="yes" rot="R180">
 <attribute name="NAME" x="65.024" y="-8.89" size="1.778" layer="95" rot="R270" align="center-left"/>
 <attribute name="VALUE" x="57.404" y="-8.89" size="1.778" layer="96" rot="R270" align="center-left"/>
+<attribute name="JLC_ROTATION" x="61.214" y="-12.7" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="C110" gate="G$1" x="25.4" y="35.56" smashed="yes">
 <attribute name="VALUE" x="21.844" y="30.861" size="1.778" layer="96"/>
