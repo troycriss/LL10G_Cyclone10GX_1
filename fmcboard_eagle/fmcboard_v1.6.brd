@@ -280,6 +280,10 @@ NYU, 2023-2024</text>
 <text x="97.4" y="20" size="1.778" layer="21">+</text>
 <text x="97.5" y="16.8" size="1.778" layer="21">-</text>
 <text x="28.6" y="62.4" size="0.8128" layer="21">GND</text>
+<text x="145.4" y="3" size="1.778" layer="21">+</text>
+<text x="145.5" y="13.8" size="1.778" layer="21">-</text>
+<text x="145.5" y="40.8" size="1.778" layer="21">-</text>
+<text x="145.4" y="30" size="1.778" layer="21">+</text>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
