@@ -90,6 +90,8 @@ module avalon_st_gen
  
  parameter ADDR_offset = 8'h23;
  
+ parameter ADDR_mode = 8'h24;
+ 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
  parameter ADDR_CNTDATA		= 8'hf2;
@@ -238,6 +240,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg do_selected_verify_bit = 1'b1;
 	reg do_full_data=1'b0;
 
+	reg [7:0] do_xor = 8'h01;
 	reg [63:0] datain_memory; // memory to xor
 	reg [1:0] xor_state; // state variable for xoring
 	reg [7:0] xor_counter; // keep track of bit to xor
@@ -256,7 +259,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			xor_state <= 2'b00;
 			xor_counter <= 8'h00;
 		end
-      else if (do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) begin		
+      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) && do_xor[0]) begin		
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
@@ -290,6 +293,33 @@ wire fifo_clk;//fifo_clk is what is used for writing
                     fifo_wrreq<=1'b1;
                     xor_state <= 2'b00;
                 end
+			end
+			else begin
+				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
+				else counter_datain <= counter_datain+nbitstosample; // remember we stored nbitstosample more bits
+				fifo_wrreq<=1'b0;
+			end
+		end else
+			
+		//if not doing xor
+		if(~do_xor[0] && ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)))) begin
+			if (do_test_counter_data) begin
+				counter_datain_max <= 8'h40-8'h08;
+				test_counter_data<=test_counter_data+8'h01;
+				fifo_datain <= {fifo_datain[55:0],test_counter_data};
+			end
+			else if (do_full_data) begin
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],trigger}; // take nbitstosample more bits of input and shift into fifo_datain
+				counter_datain_max <= 8'h40-nbitstosample;
+			end
+			else begin //assuming nbitstosample is 1 when do_full_data is set to false
+				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
+				counter_datain_max <= 8'h40-nbitstosample;
+			end
+			
+			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
+				counter_datain <= 8'h00;
+				fifo_wrreq<=1'b1;
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
@@ -440,6 +470,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
 		
 		else if (write & address == ADDR_offset) trigger_offset<= writedata[7:0];
+		else if (write & address == ADDR_mode) do_xor<= writedata[7:0];
    end
 	
 // ____________________________________________________________________________
