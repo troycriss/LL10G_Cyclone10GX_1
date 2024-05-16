@@ -173,6 +173,14 @@ proc offset {value} {
     reg_write $GEN_BASE_ADDR $GEN_offset $value
 }
 
+#mode command (to turn off xor)
+proc xor {value} {
+    global GEN_BASE_ADDR
+    global GEN_mode
+    puts "\t GEN_mode $value "
+    reg_write $GEN_BASE_ADDR $GEN_mode $value
+}
+
 #########
 
 proc SET_1588_GO_MASTER {} {
