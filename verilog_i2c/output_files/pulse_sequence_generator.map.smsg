@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at pulse_sequence_generator.v(48): always construct contains both blocking and non-blocking assignments File: C:/Users/troyc/Downloads/i2c_gpt/pulse_sequence_generator.v Line: 48
+Warning (10268): Verilog HDL information at ether_on.v(42): always construct contains both blocking and non-blocking assignments File: C:/Users/troyc/Downloads/i2c_gpt/ether_on.v Line: 42
+Warning (10268): Verilog HDL information at ether_on.v(83): always construct contains both blocking and non-blocking assignments File: C:/Users/troyc/Downloads/i2c_gpt/ether_on.v Line: 83
