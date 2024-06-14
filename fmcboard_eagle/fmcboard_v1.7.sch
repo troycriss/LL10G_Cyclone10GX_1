@@ -13525,8 +13525,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="J3" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER(2X4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33148/1" value="2X4P-2.54"/>
 <part name="J4" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER(2X4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33148/1" value="2X4P-2.54"/>
-<part name="U$1" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138"/>
-<part name="U$2" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138"/>
+<part name="U$1" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138">
+<attribute name="JLC_ROTATION" value="270"/>
+<attribute name="LCSC" value="C5190146"/>
+</part>
+<part name="U$2" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138">
+<attribute name="JLC_ROTATION" value="270"/>
+<attribute name="LCSC" value="C5190146"/>
+</part>
 <part name="R48" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="R49" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="R50" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
@@ -13732,9 +13738,13 @@ Case 3216</text>
 <instance part="J4" gate="G$1" x="-39.37" y="87.63" smashed="yes"/>
 <instance part="U$1" gate="G$1" x="-60.96" y="66.04" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-76.2" y="57.404" size="1.778" layer="96"/>
+<attribute name="LCSC" x="-60.96" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" x="-60.96" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="U$2" gate="G$1" x="-17.78" y="66.04" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-33.02" y="57.658" size="1.778" layer="96"/>
+<attribute name="LCSC" x="-17.78" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" x="-17.78" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="R48" gate="G$1" x="-68.326" y="70.612" smashed="yes" rot="R270">
 <attribute name="NAME" x="-66.8274" y="74.422" size="1.778" layer="95" rot="R270"/>
