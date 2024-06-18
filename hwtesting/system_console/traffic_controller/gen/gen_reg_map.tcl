@@ -52,6 +52,7 @@ set GEN_neg3pausedur			  	0x00000080
 set GEN_neg4dur				  	0x00000084
 set GEN_neg4pausedur			  	0x00000088
 set GEN_offset					  	0x0000008C
+set GEN_mode					  	0x00000090
 
 
 #--with 1588
