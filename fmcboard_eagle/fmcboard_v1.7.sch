@@ -13537,6 +13537,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R49" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="R50" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
 <part name="R51" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
+<part name="C118" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
+<part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13762,6 +13764,11 @@ Case 3216</text>
 <attribute name="NAME" x="-8.4074" y="74.422" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="-13.208" y="74.422" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="C118" gate="G$1" x="106.68" y="30.48" smashed="yes">
+<attribute name="NAME" x="108.204" y="33.401" size="1.778" layer="95"/>
+<attribute name="VALUE" x="108.204" y="28.321" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY24" gate="GND" x="106.68" y="22.86" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -13933,6 +13940,10 @@ Case 3216</text>
 <wire x1="-30.48" y1="83.82" x2="-20.32" y2="83.82" width="0.1524" layer="91"/>
 <label x="-27.94" y="83.82" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SUPPLY24" gate="GND" pin="GND"/>
+<pinref part="C118" gate="G$1" pin="2"/>
+</segment>
 </net>
 <net name="1V8" class="1">
 <segment>
@@ -13986,6 +13997,11 @@ Case 3216</text>
 <pinref part="U$2" gate="G$1" pin="G"/>
 <wire x1="-20.32" y1="78.74" x2="-20.32" y2="71.12" width="0.1524" layer="91"/>
 <label x="-25.4" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C118" gate="G$1" pin="1"/>
+<wire x1="106.68" y1="33.02" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
+<label x="104.14" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="3V3" class="1">
