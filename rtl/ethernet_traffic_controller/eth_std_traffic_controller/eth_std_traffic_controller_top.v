@@ -128,7 +128,7 @@
 	.tx_eop      (from_gen_tx_eop), 			// Avalon-ST EndOfPacket
 	.tx_empty    (from_gen_tx_empty), 		// Avalon-ST Empty
 	.tx_error    (from_gen_tx_error), 		// Avalon-ST Error
-	.tx_ready    (to_gen_tx_ready) 
+	.tx_ready    (to_gen_tx_ready)
 	);
 	
   // ___________________________________________________________________

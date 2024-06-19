@@ -33,6 +33,9 @@ module altera_eth_top # (
     output      [NUM_OF_CHANNEL-1:0]    channel_ready_n,
 	 output										 led_heartbeat,
 	 output										 led_other,
+	 
+	 // Pushbutton
+	 input etheron_button,
     
 	 // I2C interface
 	 output          sfp_scl_0,
@@ -49,11 +52,6 @@ module altera_eth_top # (
 	 output fmc_out[31:0] // ""
 );
 
-	 // I2C interface
-	 assign      sfp_scl_0 = arduino_scl;
-	 assign      sfp_scl_1 = arduino_scl;
-	 assign      sfp_sda_0 = arduino_sda;
-	 assign      sfp_sda_1 = arduino_sda;
 	 
 	 // Heartbeat
 	 reg [31:0] cnt = 32'd0;
@@ -191,6 +189,42 @@ module altera_eth_top # (
         .reset_in   (~reset_n),
         .reset_out  (reset_mac64b_clk)
     );
+	 
+	 wire i2c_etheron_trigger; //pushbutton 1 (PB1 on the Dev Kit PCB)
+	 wire i2c_dac_trigger;
+	 wire i2c_slow_clk_out;			//don't need this
+	 wire i2c_slow_clk_ether_out;			//don't need this
+	 wire etheron_scl;
+	 wire etheron_sda;
+	 wire dac_scl;
+	 wire dac_sda;
+	 wire i2c_reset_led;			//don't need this
+	 wire dac_sequence_switch;
+	 
+	 
+	 // I2C interface
+	 assign      sfp_scl_0 = etheron_scl;
+	 assign      sfp_scl_1 = etheron_scl;
+	 assign      sfp_sda_0 = etheron_sda;
+	 assign      sfp_sda_1 = etheron_sda;
+	 
+	 assign		 i2c_etheron_trigger = etheron_button;
+	 
+	 //I2C
+	 i2c_generator i2c_generator (
+	     .clk_in 							(fast1_clk),
+		  .reset_in 						(reset_n),
+		  .button_in						(i2c_dac_trigger),
+		  .button_ether_in				(i2c_etheron_trigger),
+		  .slow_clk_out					(i2c_slow_clk_out),
+		  .slow_clk_stgr_out				(dac_scl),
+		  .slow_clk_ether_out			(i2c_slow_clk_ether_out),
+		  .slow_clk_ether_stgr_out		(etheron_scl),
+		  .pulse_out						(dac_sda),
+		  .pulse_ether_out				(etheron_sda),
+		  .reset_led						(i2c_reset_led),
+		  .sequence_switch				(dac_sequence_switch)
+	 );
     
     // DUT
     alt_mge_multi_channel #(
