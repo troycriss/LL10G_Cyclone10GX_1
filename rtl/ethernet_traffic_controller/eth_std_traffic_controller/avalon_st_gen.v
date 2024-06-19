@@ -495,7 +495,6 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
 		
 		else if (write & address == ADDR_offset) trigger_offset<= writedata[7:0];
-		else if (write & address == ADDR_mode) do_xor<= writedata[7:0];
    end
 	
 // ____________________________________________________________________________
