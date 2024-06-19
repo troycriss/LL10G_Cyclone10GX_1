@@ -58,16 +58,11 @@ void setup() {
 
 void blink(){
   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(10);                      // wait
+  delay(400);
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(400);
 }
 
 void loop() {
-  /*
-  for(int value=0; value<=4095; value++){
-    for (int chan=0; chan<8; chan++) writeDAC(value, chan, 0);//chip 0 (pulses)
-    for (int chan=0; chan<8; chan++) writeDAC(value, chan, 1);//chip 1 (offsets and extra channels)
     blink();
-  }
-  */ 
 }

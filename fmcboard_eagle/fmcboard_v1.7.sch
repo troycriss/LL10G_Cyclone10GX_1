@@ -2847,357 +2847,6 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 </deviceset>
 </devicesets>
 </library>
-<library name="ArduinoNanoV30">
-<packages>
-<package name="ARDUINO_NANO">
-<description>&lt;b&gt;Arduino Nano V3.0&lt;/b&gt;&lt;br&gt;
-&lt;p&gt;The Nano was designed and is being produced by Gravitech.&lt;br&gt;
-
-&lt;a href="http://www.gravitech.us/arna30wiatp.html"&gt;Gravitech Arduino Nano V3.0&lt;/a&gt;&lt;/p&gt;</description>
-<hole x="-22.86" y="-7.62" drill="1.778"/>
-<pad name="1" x="-20.32" y="-7.62" drill="0.8" shape="square"/>
-<pad name="2" x="-17.78" y="-7.62" drill="0.8"/>
-<pad name="3" x="-15.24" y="-7.62" drill="0.8"/>
-<pad name="4" x="-12.7" y="-7.62" drill="0.8"/>
-<pad name="5" x="-10.16" y="-7.62" drill="0.8"/>
-<pad name="6" x="-7.62" y="-7.62" drill="0.8"/>
-<pad name="7" x="-5.08" y="-7.62" drill="0.8"/>
-<pad name="8" x="-2.54" y="-7.62" drill="0.8"/>
-<pad name="9" x="0" y="-7.62" drill="0.8"/>
-<pad name="10" x="2.54" y="-7.62" drill="0.8"/>
-<pad name="11" x="5.08" y="-7.62" drill="0.8"/>
-<pad name="12" x="7.62" y="-7.62" drill="0.8"/>
-<pad name="13" x="10.16" y="-7.62" drill="0.8"/>
-<pad name="14" x="12.7" y="-7.62" drill="0.8"/>
-<pad name="15" x="15.24" y="-7.62" drill="0.8"/>
-<pad name="16" x="15.24" y="7.62" drill="0.8"/>
-<pad name="17" x="12.7" y="7.62" drill="0.8"/>
-<pad name="18" x="10.16" y="7.62" drill="0.8"/>
-<pad name="19" x="7.62" y="7.62" drill="0.8"/>
-<pad name="20" x="5.08" y="7.62" drill="0.8"/>
-<pad name="21" x="2.54" y="7.62" drill="0.8"/>
-<pad name="22" x="0" y="7.62" drill="0.8"/>
-<pad name="23" x="-2.54" y="7.62" drill="0.8"/>
-<pad name="24" x="-5.08" y="7.62" drill="0.8"/>
-<pad name="25" x="-7.62" y="7.62" drill="0.8"/>
-<pad name="26" x="-10.16" y="7.62" drill="0.8"/>
-<pad name="27" x="-12.7" y="7.62" drill="0.8"/>
-<pad name="28" x="-15.24" y="7.62" drill="0.8"/>
-<pad name="29" x="-17.78" y="7.62" drill="0.8"/>
-<pad name="30" x="-20.32" y="7.62" drill="0.8"/>
-<hole x="-22.86" y="7.62" drill="1.778"/>
-<hole x="17.78" y="7.62" drill="1.778"/>
-<hole x="17.78" y="-7.62" drill="1.778"/>
-<wire x1="-24.13" y1="8.89" x2="19.05" y2="8.89" width="0.127" layer="21"/>
-<wire x1="19.05" y1="8.89" x2="19.05" y2="3.81" width="0.127" layer="21"/>
-<wire x1="19.05" y1="3.81" x2="19.05" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="19.05" y1="-3.81" x2="19.05" y2="-8.89" width="0.127" layer="21"/>
-<wire x1="19.05" y1="-8.89" x2="-24.13" y2="-8.89" width="0.127" layer="21"/>
-<wire x1="-24.13" y1="-8.89" x2="-24.13" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-24.13" y1="2.54" x2="-24.13" y2="8.89" width="0.127" layer="21"/>
-<wire x1="-24.13" y1="2.54" x2="-25.4" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-25.4" y1="2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
-<wire x1="-19.05" y1="-2.54" x2="-19.05" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-19.05" y1="2.54" x2="-24.13" y2="2.54" width="0.127" layer="21"/>
-<wire x1="-19.05" y1="-2.54" x2="-25.4" y2="-2.54" width="0.127" layer="21"/>
-<text x="-17.78" y="0" size="1.27" layer="21" font="vector">&gt;NAME</text>
-<text x="-17.78" y="-2.54" size="1.27" layer="21" font="vector">&gt;VALUE</text>
-<circle x="0" y="0" radius="1.79605" width="0.127" layer="21"/>
-<text x="3.81" y="-1.27" size="0.8128" layer="21" font="vector" rot="R90">Reset</text>
-<text x="-20.32" y="-6.35" size="1.016" layer="21" font="vector">1</text>
-<text x="-17.78" y="3.81" size="0.6096" layer="21" font="vector" rot="R180">Mini-B USB</text>
-<wire x1="19.05" y1="3.81" x2="13.97" y2="3.81" width="0.127" layer="21"/>
-<wire x1="13.97" y1="3.81" x2="13.97" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="13.97" y1="-3.81" x2="19.05" y2="-3.81" width="0.127" layer="21"/>
-<circle x="17.78" y="-2.54" radius="0.8" width="0.127" layer="21"/>
-<circle x="17.78" y="0" radius="0.8" width="0.127" layer="21"/>
-<circle x="17.78" y="2.54" radius="0.8" width="0.127" layer="21"/>
-<circle x="15.24" y="2.54" radius="0.8" width="0.127" layer="21"/>
-<circle x="17.78" y="0" radius="0.8" width="0.127" layer="21"/>
-<circle x="15.24" y="0" radius="0.8" width="0.127" layer="21"/>
-<circle x="15.24" y="-2.54" radius="0.8" width="0.127" layer="21"/>
-<text x="12.7" y="1.27" size="0.8128" layer="21" font="vector" rot="SR270">ICSP</text>
-</package>
-</packages>
-<symbols>
-<symbol name="ARDUINO_NANO">
-<description>&lt;b&gt;Arduino Nano V3.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Overview:&lt;/b&gt;&lt;br&gt;
-
-The Arduino Nano is a small, complete, and breadboard-friendly board based on the ATmega328 (Arduino Nano 3.x) or ATmega168 (Arduino Nano 2.x). It has more or less the same functionality of the Arduino Duemilanove, but in a different package. It lacks only a DC power jack, and works with a Mini-B USB cable instead of a standard one.&lt;br&gt;
-The Nano was designed and is being produced by Gravitech.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Specifications:&lt;/b&gt;
-&lt;table border="1" style="width:auto"&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Microcontroller&lt;/td&gt;
-    &lt;td&gt;Atmel ATmega168 or ATmega328&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Operating Voltage (logic level)&lt;/td&gt;
-    &lt;td&gt;5 V&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Input Voltage (recommended)&lt;/td&gt;
-    &lt;td&gt;7-12 V&lt;/td&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Input Voltage (limits)&lt;/td&gt;
-    &lt;td&gt;6-20 V&lt;/td&gt;		
-  &lt;tr&gt;
-    &lt;td&gt;Digital I/O Pins&lt;/td&gt;
-    &lt;td&gt;14 (of which 6 provide PWM output)&lt;/td&gt;		
-  &lt;tr&gt;
-    &lt;td&gt;Analog Input Pins&lt;/td&gt;
-    &lt;td&gt;8&lt;/td&gt;
-  &lt;tr&gt;
-    &lt;td&gt;DC Current per I/O Pin&lt;/td&gt;
-    &lt;td&gt;40 mA&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Flash Memory&lt;/td&gt;
-    &lt;td&gt;16 KB (ATmega168) or 32 KB (ATmega328) of which 2 KB used by bootloader&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;SRAM&lt;/td&gt;
-    &lt;td&gt;1 KB (ATmega168) or 2 KB (ATmega328)&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;EEPROM&lt;/td&gt;
-    &lt;td&gt;512 bytes (ATmega168) or 1 KB (ATmega328)&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Clock Speed&lt;/td&gt;
-    &lt;td&gt;16 MHz&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Dimensions&lt;/td&gt;
-    &lt;td&gt;0.73" x 1.70"&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Length&lt;/td&gt;
-    &lt;td&gt;45 mm&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Width&lt;/td&gt;
-    &lt;td&gt;18 mm&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Weigth&lt;/td&gt;
-    &lt;td&gt;5 g&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Power:&lt;/b&gt;&lt;br&gt;
-
-The Arduino Nano can be powered via the Mini-B USB connection, 6-20V unregulated external power supply (pin 30), or 5V regulated external power supply (pin 27).&lt;br&gt;
-The power source is automatically selected to the highest voltage source.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Memory:&lt;/b&gt;&lt;br&gt;
-
-The ATmega168 has 16 KB of flash memory for storing code (of which 2 KB is used for the bootloader); the ATmega328 has 32 KB, (also with 2 KB used for the bootloader).&lt;br&gt;
-The ATmega168 has 1 KB of SRAM and 512 bytes of EEPROM (which can be read and written with the EEPROM library); the ATmega328 has 2 KB of SRAM and 1 KB of EEPROM.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Input and Output:&lt;/b&gt;&lt;br&gt;
-
-Each of the 14 digital pins on the Nano can be used as an input or output, using pinMode(), digitalWrite(), and digitalRead() functions.&lt;br&gt;
-They operate at 5 volts.&lt;br&gt;
-Each pin can provide or receive a maximum of 40 mA and has an internal pull-up resistor (disconnected by default) of 20-50 kOhms. In addition, some pins have specialized functions.&lt;br&gt;&lt;br&gt;
-
-&lt;a href="https://www.arduino.cc/en/Main/ArduinoBoardNano"&gt;Visit Arduino - ArduinoBoardNano&lt;/a&gt;</description>
-<wire x1="-15.24" y1="-25.4" x2="-15.24" y2="15.24" width="0.254" layer="94"/>
-<wire x1="-15.24" y1="15.24" x2="-5.08" y2="15.24" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="15.24" x2="5.08" y2="15.24" width="0.254" layer="94"/>
-<wire x1="5.08" y1="15.24" x2="15.24" y2="15.24" width="0.254" layer="94"/>
-<wire x1="15.24" y1="15.24" x2="15.24" y2="-25.4" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-25.4" x2="-15.24" y2="-25.4" width="0.254" layer="94"/>
-<pin name="TX1" x="-20.32" y="12.7" length="middle"/>
-<pin name="RX0" x="-20.32" y="10.16" length="middle"/>
-<pin name="!RESET@1" x="-20.32" y="7.62" length="middle" direction="in" function="dot"/>
-<pin name="GND@1" x="-20.32" y="5.08" length="middle" direction="pwr"/>
-<pin name="D2" x="-20.32" y="2.54" length="middle"/>
-<pin name="D3" x="-20.32" y="0" length="middle"/>
-<pin name="D4" x="-20.32" y="-2.54" length="middle"/>
-<pin name="D5" x="-20.32" y="-5.08" length="middle"/>
-<pin name="D6" x="-20.32" y="-7.62" length="middle"/>
-<pin name="D7" x="-20.32" y="-10.16" length="middle"/>
-<pin name="D8" x="-20.32" y="-12.7" length="middle"/>
-<pin name="D9" x="-20.32" y="-15.24" length="middle"/>
-<pin name="D10" x="-20.32" y="-17.78" length="middle"/>
-<pin name="D11" x="-20.32" y="-20.32" length="middle"/>
-<pin name="D12" x="-20.32" y="-22.86" length="middle"/>
-<pin name="D13" x="20.32" y="-22.86" length="middle" rot="R180"/>
-<pin name="3V3" x="20.32" y="-20.32" length="middle" direction="out" rot="R180"/>
-<pin name="AREF" x="20.32" y="-17.78" length="middle" direction="in" rot="R180"/>
-<pin name="A0" x="20.32" y="-15.24" length="middle" rot="R180"/>
-<pin name="A1" x="20.32" y="-12.7" length="middle" rot="R180"/>
-<pin name="A2" x="20.32" y="-10.16" length="middle" rot="R180"/>
-<pin name="A3" x="20.32" y="-7.62" length="middle" rot="R180"/>
-<pin name="A4" x="20.32" y="-5.08" length="middle" rot="R180"/>
-<pin name="A5" x="20.32" y="-2.54" length="middle" rot="R180"/>
-<pin name="A6" x="20.32" y="0" length="middle" rot="R180"/>
-<pin name="A7" x="20.32" y="2.54" length="middle" rot="R180"/>
-<pin name="5V" x="20.32" y="5.08" length="middle" direction="pwr" rot="R180"/>
-<pin name="!RESET@2" x="20.32" y="7.62" length="middle" direction="in" function="dot" rot="R180"/>
-<pin name="GND@2" x="20.32" y="10.16" length="middle" direction="pwr" rot="R180"/>
-<pin name="VIN" x="20.32" y="12.7" length="middle" direction="pwr" rot="R180"/>
-<wire x1="2.54" y1="-20.32" x2="-2.54" y2="-20.32" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-20.32" x2="-2.54" y2="-26.67" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-26.67" x2="2.54" y2="-26.67" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-26.67" x2="2.54" y2="-20.32" width="0.254" layer="94"/>
-<text x="-2.54" y="-17.78" size="1.4224" layer="94" font="vector">Mini-B
- USB</text>
-<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
-<text x="-2.54" y="-7.62" size="1.4224" layer="94" font="vector">RESET
-BUTTON</text>
-<text x="-15.24" y="-30.48" size="1.778" layer="95">&gt;NAME</text>
-<text x="-15.24" y="-33.02" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="-5.08" y1="15.24" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="10.16" x2="5.08" y2="10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="10.16" x2="5.08" y2="15.24" width="0.254" layer="94"/>
-<text x="-2.54" y="7.62" size="1.6764" layer="94" font="vector">ICSP</text>
-<circle x="-2.54" y="11.43" radius="0.762" width="0.254" layer="94"/>
-<circle x="0" y="13.97" radius="0.762" width="0.254" layer="94"/>
-<circle x="2.54" y="13.97" radius="0.762" width="0.254" layer="94"/>
-<circle x="-2.54" y="13.97" radius="0.762" width="0.254" layer="94"/>
-<circle x="2.54" y="11.43" radius="0.762" width="0.254" layer="94"/>
-<circle x="0" y="11.43" radius="0.762" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ARDUINO_NANO" prefix="ARDUINO_NANO" uservalue="yes">
-<description>&lt;b&gt;Arduino Nano V3.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Overview:&lt;/b&gt;&lt;br&gt;
-
-&lt;p&gt;The Arduino Nano is a small, complete, and breadboard-friendly board based on the ATmega328 (Arduino Nano 3.x) or ATmega168 (Arduino Nano 2.x). &lt;br&gt;It has more or less the same functionality of the Arduino Duemilanove, but in a different package.&lt;br&gt;
-It lacks only a DC power jack, and works with a Mini-B USB cable instead of a standard one.&lt;br&gt;
-The Nano was designed and is being produced by Gravitech.&lt;/p&gt;&lt;br&gt;
-
-&lt;b&gt;Specifications:&lt;/b&gt;
-&lt;table border="1" style="width:auto"&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Microcontroller&lt;/td&gt;
-    &lt;td&gt;Atmel ATmega168 or ATmega328&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Operating Voltage (logic level)&lt;/td&gt;
-    &lt;td&gt;5 V&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Input Voltage (recommended)&lt;/td&gt;
-    &lt;td&gt;7-12 V&lt;/td&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Input Voltage (limits)&lt;/td&gt;
-    &lt;td&gt;6-20 V&lt;/td&gt;		
-  &lt;tr&gt;
-    &lt;td&gt;Digital I/O Pins&lt;/td&gt;
-    &lt;td&gt;14 (of which 6 provide PWM output)&lt;/td&gt;		
-  &lt;tr&gt;
-    &lt;td&gt;Analog Input Pins&lt;/td&gt;
-    &lt;td&gt;8&lt;/td&gt;
-  &lt;tr&gt;
-    &lt;td&gt;DC Current per I/O Pin&lt;/td&gt;
-    &lt;td&gt;40 mA&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Flash Memory&lt;/td&gt;
-    &lt;td&gt;16 KB (ATmega168) or 32 KB (ATmega328) of which 2 KB used by bootloader&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;SRAM&lt;/td&gt;
-    &lt;td&gt;1 KB (ATmega168) or 2 KB (ATmega328)&lt;/td&gt;		
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;EEPROM&lt;/td&gt;
-    &lt;td&gt;512 bytes (ATmega168) or 1 KB (ATmega328)&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Clock Speed&lt;/td&gt;
-    &lt;td&gt;16 MHz&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Dimensions&lt;/td&gt;
-    &lt;td&gt;0.73" x 1.70"&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Length&lt;/td&gt;
-    &lt;td&gt;45 mm&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Width&lt;/td&gt;
-    &lt;td&gt;18 mm&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Weigth&lt;/td&gt;
-    &lt;td&gt;5 g&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Power:&lt;/b&gt;&lt;br&gt;
-
-&lt;p&gt;The Arduino Nano can be powered via the Mini-B USB connection, 6-20V unregulated external power supply (pin 30), or 5V regulated external power supply (pin 27).&lt;br&gt;
-The power source is automatically selected to the highest voltage source.&lt;/p&gt;&lt;br&gt;
-
-&lt;b&gt;Memory:&lt;/b&gt;&lt;br&gt;
-
-&lt;p&gt;The ATmega168 has 16 KB of flash memory for storing code (of which 2 KB is used for the bootloader); the ATmega328 has 32 KB, (also with 2 KB used for the bootloader).&lt;br&gt;
-The ATmega168 has 1 KB of SRAM and 512 bytes of EEPROM (which can be read and written with the EEPROM library); the ATmega328 has 2 KB of SRAM and 1 KB of EEPROM.&lt;/p&gt;&lt;br&gt;
-
-&lt;b&gt;Input and Output:&lt;/b&gt;&lt;br&gt;
-
-&lt;p&gt;Each of the 14 digital pins on the Nano can be used as an input or output, using pinMode(), digitalWrite(), and digitalRead() functions.&lt;br&gt;
-They operate at 5 volts.&lt;br&gt;
-Each pin can provide or receive a maximum of 40 mA and has an internal pull-up resistor (disconnected by default) of 20-50 kOhms. In addition, some pins have specialized functions.&lt;/p&gt;&lt;br&gt;
-
-&lt;a href="https://www.arduino.cc/en/Main/ArduinoBoardNano"&gt;Visit Arduino - ArduinoBoardNano&lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="ARDUINO_NANO" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="ARDUINO_NANO">
-<connects>
-<connect gate="G$1" pin="!RESET@1" pad="18"/>
-<connect gate="G$1" pin="!RESET@2" pad="13"/>
-<connect gate="G$1" pin="3V3" pad="2"/>
-<connect gate="G$1" pin="5V" pad="12"/>
-<connect gate="G$1" pin="A0" pad="4"/>
-<connect gate="G$1" pin="A1" pad="5"/>
-<connect gate="G$1" pin="A2" pad="6"/>
-<connect gate="G$1" pin="A3" pad="7"/>
-<connect gate="G$1" pin="A4" pad="8"/>
-<connect gate="G$1" pin="A5" pad="9"/>
-<connect gate="G$1" pin="A6" pad="10"/>
-<connect gate="G$1" pin="A7" pad="11"/>
-<connect gate="G$1" pin="AREF" pad="3"/>
-<connect gate="G$1" pin="D10" pad="28"/>
-<connect gate="G$1" pin="D11" pad="29"/>
-<connect gate="G$1" pin="D12" pad="30"/>
-<connect gate="G$1" pin="D13" pad="1"/>
-<connect gate="G$1" pin="D2" pad="20"/>
-<connect gate="G$1" pin="D3" pad="21"/>
-<connect gate="G$1" pin="D4" pad="22"/>
-<connect gate="G$1" pin="D5" pad="23"/>
-<connect gate="G$1" pin="D6" pad="24"/>
-<connect gate="G$1" pin="D7" pad="25"/>
-<connect gate="G$1" pin="D8" pad="26"/>
-<connect gate="G$1" pin="D9" pad="27"/>
-<connect gate="G$1" pin="GND@1" pad="19"/>
-<connect gate="G$1" pin="GND@2" pad="14"/>
-<connect gate="G$1" pin="RX0" pad="17"/>
-<connect gate="G$1" pin="TX1" pad="16"/>
-<connect gate="G$1" pin="VIN" pad="15"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="LTC6229IMS8E#TRPBF">
 <description>&lt;High Speed Operational Amplifiers Prec, Low Drift &amp; Noise Hi Speed Amp&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
@@ -13268,6 +12917,98 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 </deviceset>
 </devicesets>
 </library>
+<library name="GeekAmmo">
+<description>&lt;h3&gt;GeekAmmo  Library&lt;/h3&gt;
+
+These are parts used by the GeekAmmo company (now part of SparkFun Electronics)!
+
+ If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt;Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="SOT23-3">
+<wire x1="-1.4224" y1="-0.3" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="-0.6576" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.3" width="0.1524" layer="21"/>
+<wire x1="0.6326" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<smd name="3" x="0" y="1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="N-CHANNEL-MOSFET">
+<wire x1="-2.54" y1="-2.54" x2="-1.2192" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="0.762" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0" y1="3.683" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.397" width="0.254" layer="94"/>
+<wire x1="1.905" y1="0.635" x2="0.635" y2="0" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-0.635" x2="0.635" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.397" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-3.683" width="0.254" layer="94"/>
+<wire x1="-1.143" y1="2.54" x2="-1.143" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="3.81" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="6.35" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="3.81" x2="2.54" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-3.81" x2="2.54" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="2.54" y2="3.81" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="2.54" y2="-3.81" width="0.1524" layer="94"/>
+<text x="-12.7" y="0" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-12.7" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="0.8128" layer="94">G</text>
+<text x="1.27" y="-5.08" size="0.8128" layer="94">S</text>
+<text x="1.27" y="5.08" size="0.8128" layer="94">D</text>
+<pin name="D" x="2.54" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="S" x="2.54" y="-7.62" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="G" x="-5.08" y="-2.54" visible="off" length="short" direction="pas"/>
+<polygon width="0.1524" layer="94">
+<vertex x="5.08" y="1.27"/>
+<vertex x="3.81" y="0"/>
+<vertex x="6.35" y="0"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="N-CHANNEL-MOSFET">
+<description>N-Channel MOSFET Mode Field Effect Transistor</description>
+<gates>
+<gate name="G$1" symbol="N-CHANNEL-MOSFET" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-BSS138" package="SOT23-3">
+<connects>
+<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="http://www.fairchildsemi.com/ds/BS/BSS138.pdf" constant="no"/>
+<attribute name="DIGIKEY" value="BSS138TR-ND" constant="no"/>
+<attribute name="ELEMENT14" value="2323154" constant="no"/>
+<attribute name="OTHER" value="" constant="no"/>
+<attribute name="URL" value="http://au.element14.com/fairchild-semiconductor/bss138/mosfet-n-ch-50v-220ma-sot-23/dp/2323154" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -13304,8 +13045,6 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="ARDUINO_NANO1" library="ArduinoNanoV30" deviceset="ARDUINO_NANO" device="" value="1"/>
 <part name="IO_C10" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="IO_H34" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
 <part name="IO_H4" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="BU-SMB-V" device="" package3d_urn="urn:adsk.eagle:package:6209/1"/>
@@ -13403,10 +13142,6 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="SUPPLY46" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R31" library="passives" deviceset="RESISTOR" device="0402_RES" value="330"/>
 <part name="SUPPLY75" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R48" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
-<part name="R49" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
-<part name="R50" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
-<part name="R51" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="C38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="C39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
@@ -13647,8 +13382,6 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="R78" library="passives" deviceset="RESISTOR" device="0402_RES" value="10"/>
 <part name="SUPPLY67" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY68" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R87" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
-<part name="R90" library="passives" deviceset="RESISTOR" device="0402_RES" value="4.7k"/>
 <part name="C31" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="1uF"/>
 <part name="R92" library="passives" deviceset="RESISTOR" device="0402_RES" value="100"/>
 <part name="C89" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="1uF"/>
@@ -13791,6 +13524,21 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <part name="R120" library="passives" deviceset="RESISTOR" device="0402_RES" value="47"/>
 <part name="SUPPLY83" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="J3" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER(2X4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33148/1" value="2X4P-2.54"/>
+<part name="U$1" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138">
+<attribute name="JLC_ROTATION" value="270"/>
+<attribute name="LCSC" value="C5190146"/>
+</part>
+<part name="U$2" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138">
+<attribute name="JLC_ROTATION" value="270"/>
+<attribute name="LCSC" value="C5190146"/>
+</part>
+<part name="R48" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
+<part name="R49" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
+<part name="R50" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
+<part name="R51" library="passives" deviceset="RESISTOR" device="0402_RES" value="10k"/>
+<part name="C118" library="passives" deviceset="CAPACITOR" device="0402_CAP" value="0.1uF"/>
+<part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="J4" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(4P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33137/1" value="4p-2.54"/>
 </parts>
 <sheets>
 <sheet>
@@ -13798,28 +13546,28 @@ These are standard SMD and PTH capacitors. Normally 10uF, 47uF, and 100uF in ele
 <plain>
 <text x="-20.32" y="50.8" size="1.778" layer="90">Linear +- power supplies and smoothing</text>
 <text x="73.66" y="45.72" size="1.778" layer="90">Power inputs</text>
-<wire x1="111.76" y1="109.22" x2="111.76" y2="58.42" width="0.1524" layer="97"/>
 <wire x1="68.58" y1="53.34" x2="68.58" y2="-15.24" width="0.1524" layer="97"/>
 <text x="10.16" y="101.6" size="1.778" layer="90">IO</text>
-<text x="116.84" y="101.6" size="1.778" layer="90">Level limiter</text>
-<wire x1="-91.44" y1="55.88" x2="5.08" y2="55.88" width="0.1524" layer="97"/>
-<text x="-83.82" y="104.14" size="1.778" layer="90">Arduino</text>
+<wire x1="-73.66" y1="55.88" x2="5.08" y2="55.88" width="0.1524" layer="97"/>
+<text x="-71.12" y="96.52" size="1.778" layer="90">i2c to DACs
+(need to be 5V signals)</text>
 <wire x1="7.62" y1="58.42" x2="7.62" y2="106.68" width="0.1524" layer="97"/>
-<wire x1="10.16" y1="55.88" x2="109.22" y2="55.88" width="0.1524" layer="97"/>
-<wire x1="114.3" y1="55.88" x2="175.26" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="10.16" y1="55.88" x2="144.78" y2="55.88" width="0.1524" layer="97"/>
 <text x="-2.54" y="-22.86" size="1.778" layer="90">-1.25V x (1+47/100) = -1.84V</text>
 <text x="-71.12" y="50.8" size="1.778" layer="90">1.8V regulator</text>
 <text x="55.88" y="-25.4" size="1.778" layer="90">Tant only!
 Case 3216</text>
+<text x="-20.32" y="96.52" size="1.778" layer="90">IO's from FPGA
+(1.8V signals)</text>
 </plain>
 <instances>
-<instance part="C3" gate="G$1" x="-2.54" y="73.66" smashed="yes">
-<attribute name="NAME" x="-1.016" y="76.581" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-1.016" y="71.501" size="1.778" layer="96"/>
+<instance part="C3" gate="G$1" x="137.16" y="15.24" smashed="yes">
+<attribute name="NAME" x="138.684" y="18.161" size="1.778" layer="95"/>
+<attribute name="VALUE" x="138.684" y="13.081" size="1.778" layer="96"/>
 </instance>
-<instance part="C5" gate="G$1" x="-12.7" y="73.66" smashed="yes">
-<attribute name="NAME" x="-11.176" y="76.581" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-11.176" y="71.501" size="1.778" layer="96"/>
+<instance part="C5" gate="G$1" x="127" y="15.24" smashed="yes">
+<attribute name="NAME" x="128.524" y="18.161" size="1.778" layer="95"/>
+<attribute name="VALUE" x="128.524" y="13.081" size="1.778" layer="96"/>
 </instance>
 <instance part="C7" gate="G$1" x="96.52" y="30.48" smashed="yes">
 <attribute name="NAME" x="98.044" y="33.401" size="1.778" layer="95"/>
@@ -13844,14 +13592,10 @@ Case 3216</text>
 <instance part="SUPPLY9" gate="GND" x="96.52" y="22.86" smashed="yes"/>
 <instance part="SUPPLY11" gate="GND" x="76.2" y="22.86" smashed="yes"/>
 <instance part="SUPPLY12" gate="GND" x="86.36" y="22.86" smashed="yes"/>
-<instance part="SUPPLY13" gate="GND" x="-2.54" y="66.04" smashed="yes"/>
-<instance part="SUPPLY14" gate="GND" x="-12.7" y="66.04" smashed="yes"/>
+<instance part="SUPPLY13" gate="GND" x="137.16" y="7.62" smashed="yes"/>
+<instance part="SUPPLY14" gate="GND" x="127" y="7.62" smashed="yes"/>
 <instance part="SUPPLY16" gate="GND" x="81.28" y="-7.62" smashed="yes"/>
 <instance part="SUPPLY17" gate="GND" x="88.9" y="-7.62" smashed="yes"/>
-<instance part="SUPPLY24" gate="GND" x="-17.78" y="66.04" smashed="yes"/>
-<instance part="ARDUINO_NANO1" gate="G$1" x="-45.72" y="73.66" smashed="yes" rot="R180">
-<attribute name="NAME" x="-30.48" y="104.14" size="1.778" layer="95" rot="R180"/>
-</instance>
 <instance part="IO_C10" gate="G1" x="91.44" y="99.06" smashed="yes">
 <attribute name="NAME" x="86.36" y="102.362" size="1.778" layer="95"/>
 </instance>
@@ -13918,18 +13662,6 @@ Case 3216</text>
 <instance part="C47" gate="G$1" x="58.42" y="35.56" smashed="yes">
 <attribute name="VALUE" x="57.404" y="30.861" size="1.778" layer="96"/>
 </instance>
-<instance part="R48" gate="G$1" x="-81.28" y="83.82" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-84.582" y="87.63" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R49" gate="G$1" x="-86.36" y="83.82" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-89.662" y="87.63" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R50" gate="G$1" x="-5.08" y="99.06" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-8.382" y="102.87" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R51" gate="G$1" x="0" y="99.06" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-3.302" y="102.87" size="1.778" layer="96" rot="R270"/>
-</instance>
 <instance part="C1" gate="G$1" x="-10.16" y="35.56" smashed="yes">
 <attribute name="VALUE" x="-11.176" y="30.861" size="1.778" layer="96"/>
 </instance>
@@ -13991,12 +13723,6 @@ Case 3216</text>
 <attribute name="NAME" x="29.21" y="7.62" size="1.778" layer="95" rot="R180" align="center-left"/>
 <attribute name="VALUE" x="44.704" y="1.27" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
-<instance part="R87" gate="G$1" x="144.78" y="91.44" smashed="yes">
-<attribute name="VALUE" x="140.97" y="88.138" size="1.778" layer="96"/>
-</instance>
-<instance part="R90" gate="G$1" x="144.78" y="78.74" smashed="yes">
-<attribute name="VALUE" x="140.97" y="75.438" size="1.778" layer="96"/>
-</instance>
 <instance part="C125" gate="G$1" x="61.214" y="-12.7" smashed="yes" rot="R180">
 <attribute name="NAME" x="65.024" y="-8.89" size="1.778" layer="95" rot="R270" align="center-left"/>
 <attribute name="VALUE" x="57.404" y="-8.89" size="1.778" layer="96" rot="R270" align="center-left"/>
@@ -14011,6 +13737,38 @@ Case 3216</text>
 <instance part="J1" gate="G$1" x="129.54" y="34.29" smashed="yes" rot="R180"/>
 <instance part="SUPPLY83" gate="GND" x="61.214" y="-17.78" smashed="yes"/>
 <instance part="J3" gate="G$1" x="123.444" y="-3.81" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="-60.96" y="66.04" smashed="yes" rot="R270">
+<attribute name="VALUE" x="-76.2" y="57.404" size="1.778" layer="96"/>
+<attribute name="LCSC" x="-60.96" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" x="-60.96" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="U$2" gate="G$1" x="-17.78" y="66.04" smashed="yes" rot="R270">
+<attribute name="VALUE" x="-33.02" y="57.658" size="1.778" layer="96"/>
+<attribute name="LCSC" x="-17.78" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="JLC_ROTATION" x="-17.78" y="66.04" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R48" gate="G$1" x="-68.326" y="70.612" smashed="yes" rot="R270">
+<attribute name="NAME" x="-66.8274" y="74.422" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-71.628" y="74.422" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R49" gate="G$1" x="-53.086" y="70.612" smashed="yes" rot="R270">
+<attribute name="NAME" x="-51.5874" y="74.422" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-56.388" y="74.422" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R50" gate="G$1" x="-25.146" y="70.612" smashed="yes" rot="R270">
+<attribute name="NAME" x="-23.6474" y="74.422" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-28.448" y="74.422" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R51" gate="G$1" x="-9.906" y="70.612" smashed="yes" rot="R270">
+<attribute name="NAME" x="-8.4074" y="74.422" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="-13.208" y="74.422" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="C118" gate="G$1" x="106.68" y="30.48" smashed="yes">
+<attribute name="NAME" x="108.204" y="33.401" size="1.778" layer="95"/>
+<attribute name="VALUE" x="108.204" y="28.321" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY24" gate="GND" x="106.68" y="22.86" smashed="yes"/>
+<instance part="J4" gate="G$1" x="63.5" y="90.17" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -14043,11 +13801,6 @@ Case 3216</text>
 <segment>
 <pinref part="C14" gate="G$1" pin="2"/>
 <pinref part="SUPPLY17" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<wire x1="-25.4" y1="68.58" x2="-17.78" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="SUPPLY24" gate="GND" pin="GND"/>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="GND@1"/>
 </segment>
 <segment>
 <pinref part="IO_H5" gate="G1" pin="2"/>
@@ -14177,12 +13930,26 @@ Case 3216</text>
 <pinref part="SUPPLY83" gate="GND" pin="GND"/>
 <pinref part="C125" gate="G$1" pin="+"/>
 </segment>
+<segment>
+<pinref part="SUPPLY24" gate="GND" pin="GND"/>
+<pinref part="C118" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<wire x1="55.88" y1="86.36" x2="45.72" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="J4" gate="G$1" pin="P$4"/>
+<label x="45.72" y="86.36" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="P$2"/>
+<wire x1="55.88" y1="91.44" x2="45.72" y2="91.44" width="0.1524" layer="91"/>
+<label x="45.72" y="91.44" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="1V8" class="1">
 <segment>
-<label x="-15.24" y="78.74" size="1.778" layer="95"/>
+<label x="124.46" y="20.32" size="1.778" layer="95"/>
 <pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="-12.7" y1="76.2" x2="-12.7" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="127" y1="17.78" x2="127" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C14" gate="G$1" pin="1"/>
@@ -14210,6 +13977,27 @@ Case 3216</text>
 <wire x1="96.52" y1="33.02" x2="96.52" y2="40.64" width="0.1524" layer="91"/>
 <label x="93.98" y="38.1" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R48" gate="G$1" pin="1"/>
+<wire x1="-68.326" y1="75.692" x2="-68.326" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="G"/>
+<wire x1="-68.326" y1="78.74" x2="-63.5" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="78.74" x2="-63.5" y2="71.12" width="0.1524" layer="91"/>
+<label x="-68.58" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R50" gate="G$1" pin="1"/>
+<wire x1="-25.146" y1="75.692" x2="-25.146" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-25.146" y1="78.74" x2="-20.32" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="G"/>
+<wire x1="-20.32" y1="78.74" x2="-20.32" y2="71.12" width="0.1524" layer="91"/>
+<label x="-25.4" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C118" gate="G$1" pin="1"/>
+<wire x1="106.68" y1="33.02" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
+<label x="104.14" y="38.1" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="3V3" class="1">
 <segment>
@@ -14230,18 +14018,11 @@ Case 3216</text>
 <wire x1="114.554" y1="0" x2="109.22" y2="0" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="SDAIN" class="1">
-<segment>
-<wire x1="139.7" y1="91.44" x2="121.92" y2="91.44" width="0.1524" layer="91"/>
-<label x="119.38" y="91.44" size="1.778" layer="95"/>
-<pinref part="R87" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="VS+" class="1">
 <segment>
-<label x="-5.08" y="78.74" size="1.778" layer="95"/>
+<label x="134.62" y="20.32" size="1.778" layer="95"/>
 <pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="-2.54" y1="78.74" x2="-2.54" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="20.32" x2="137.16" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C9" gate="G$1" pin="1"/>
@@ -14273,25 +14054,16 @@ Case 3216</text>
 <junction x="-66.04" y="40.64"/>
 </segment>
 <segment>
-<wire x1="-66.04" y1="68.58" x2="-76.2" y2="68.58" width="0.1524" layer="91"/>
-<label x="-76.2" y="68.58" size="1.778" layer="95"/>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="5V"/>
-</segment>
-<segment>
 <pinref part="R49" gate="G$1" pin="1"/>
-<pinref part="R48" gate="G$1" pin="1"/>
-<wire x1="-86.36" y1="88.9" x2="-81.28" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="88.9" x2="-93.98" y2="88.9" width="0.1524" layer="91"/>
-<junction x="-81.28" y="88.9"/>
-<label x="-93.98" y="88.9" size="1.778" layer="95"/>
+<wire x1="-53.086" y1="75.692" x2="-53.34" y2="75.692" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="75.692" x2="-53.34" y2="78.74" width="0.1524" layer="91"/>
+<label x="-53.34" y="78.74" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R51" gate="G$1" pin="1"/>
-<pinref part="R50" gate="G$1" pin="1"/>
-<wire x1="0" y1="104.14" x2="-5.08" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="104.14" x2="-15.24" y2="104.14" width="0.1524" layer="91"/>
-<junction x="-5.08" y="104.14"/>
-<label x="-15.24" y="104.14" size="1.778" layer="95"/>
+<wire x1="-9.906" y1="75.692" x2="-10.16" y2="75.692" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="75.692" x2="-10.16" y2="78.74" width="0.1524" layer="91"/>
+<label x="-10.16" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VS-" class="1">
@@ -14328,39 +14100,26 @@ Case 3216</text>
 <junction x="-15.24" y="-10.16"/>
 </segment>
 </net>
+<net name="SDAIN" class="1">
+<segment>
+<pinref part="U$1" gate="G$1" pin="S"/>
+<pinref part="R48" gate="G$1" pin="2"/>
+<wire x1="-68.58" y1="63.5" x2="-68.326" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="-68.326" y1="63.5" x2="-68.326" y2="68.072" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="63.5" x2="-73.66" y2="63.5" width="0.1524" layer="91"/>
+<junction x="-68.58" y="63.5"/>
+<label x="-76.2" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
 <net name="SCLIN" class="0">
 <segment>
-<wire x1="139.7" y1="78.74" x2="121.92" y2="78.74" width="0.1524" layer="91"/>
-<label x="119.38" y="78.74" size="1.778" layer="95"/>
-<pinref part="R90" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="AR_SDAIN" class="0">
-<segment>
-<wire x1="-25.4" y1="93.98" x2="-5.08" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="93.98" x2="-5.08" y2="96.52" width="0.1524" layer="91"/>
-<label x="-20.32" y="93.98" size="1.778" layer="95"/>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="D11"/>
+<pinref part="U$2" gate="G$1" pin="S"/>
 <pinref part="R50" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<wire x1="147.32" y1="91.44" x2="167.64" y2="91.44" width="0.1524" layer="91"/>
-<label x="160.02" y="91.44" size="1.778" layer="95"/>
-<pinref part="R87" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="AR_SCLIN" class="0">
-<segment>
-<wire x1="-25.4" y1="88.9" x2="0" y2="88.9" width="0.1524" layer="91"/>
-<label x="-20.32" y="88.9" size="1.778" layer="95"/>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="D9"/>
-<pinref part="R51" gate="G$1" pin="2"/>
-<wire x1="0" y1="96.52" x2="0" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="147.32" y1="78.74" x2="167.64" y2="78.74" width="0.1524" layer="91"/>
-<label x="160.02" y="78.74" size="1.778" layer="95"/>
-<pinref part="R90" gate="G$1" pin="2"/>
+<wire x1="-25.4" y1="63.5" x2="-25.146" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="-25.146" y1="63.5" x2="-25.146" y2="68.072" width="0.1524" layer="91"/>
+<junction x="-25.4" y="63.5"/>
+<wire x1="-25.4" y1="63.5" x2="-30.48" y2="63.5" width="0.1524" layer="91"/>
+<label x="-33.02" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="H5" class="0">
@@ -14461,22 +14220,26 @@ Case 3216</text>
 <pinref part="J1" gate="G$1" pin="P$3"/>
 </segment>
 </net>
-<net name="AR_SDAIN2" class="0">
+<net name="SDAIN2" class="0">
 <segment>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="A4"/>
-<wire x1="-66.04" y1="78.74" x2="-81.28" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="78.74" x2="-81.28" y2="81.28" width="0.1524" layer="91"/>
-<label x="-78.74" y="78.74" size="1.778" layer="95"/>
-<pinref part="R48" gate="G$1" pin="2"/>
+<pinref part="R49" gate="G$1" pin="2"/>
+<pinref part="U$1" gate="G$1" pin="D"/>
+<wire x1="-53.086" y1="68.072" x2="-53.34" y2="68.072" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="68.072" x2="-53.34" y2="63.5" width="0.1524" layer="91"/>
+<junction x="-53.34" y="63.5"/>
+<wire x1="-53.34" y1="63.5" x2="-48.26" y2="63.5" width="0.1524" layer="91"/>
+<label x="-53.34" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AR_SCLIN2" class="0">
+<net name="SCLIN2" class="0">
 <segment>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="A5"/>
-<wire x1="-66.04" y1="76.2" x2="-86.36" y2="76.2" width="0.1524" layer="91"/>
-<label x="-78.74" y="76.2" size="1.778" layer="95"/>
-<pinref part="R49" gate="G$1" pin="2"/>
-<wire x1="-86.36" y1="76.2" x2="-86.36" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R51" gate="G$1" pin="2"/>
+<pinref part="U$2" gate="G$1" pin="D"/>
+<wire x1="-9.906" y1="68.072" x2="-10.16" y2="68.072" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="68.072" x2="-10.16" y2="63.5" width="0.1524" layer="91"/>
+<junction x="-10.16" y="63.5"/>
+<wire x1="-10.16" y1="63.5" x2="-5.08" y2="63.5" width="0.1524" layer="91"/>
+<label x="-10.16" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="C10" class="0">
@@ -14533,25 +14296,18 @@ Case 3216</text>
 <junction x="38.354" y="-15.748"/>
 </segment>
 </net>
-<net name="C26" class="0">
-<segment>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="A0"/>
-<wire x1="-66.04" y1="88.9" x2="-73.66" y2="88.9" width="0.1524" layer="91"/>
-<label x="-73.66" y="88.9" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="C27" class="0">
 <segment>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="A1"/>
-<wire x1="-66.04" y1="86.36" x2="-73.66" y2="86.36" width="0.1524" layer="91"/>
-<label x="-73.66" y="86.36" size="1.778" layer="95"/>
+<wire x1="55.88" y1="88.9" x2="45.72" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="J4" gate="G$1" pin="P$3"/>
+<label x="45.72" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="ARVIN" class="0">
+<net name="C26" class="0">
 <segment>
-<pinref part="ARDUINO_NANO1" gate="G$1" pin="VIN"/>
-<wire x1="-76.2" y1="60.96" x2="-66.04" y2="60.96" width="0.1524" layer="91"/>
-<label x="-76.2" y="60.96" size="1.778" layer="95"/>
+<pinref part="J4" gate="G$1" pin="P$1"/>
+<wire x1="55.88" y1="93.98" x2="45.72" y2="93.98" width="0.1524" layer="91"/>
+<label x="45.72" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -16255,7 +16011,7 @@ Case 3216</text>
 <pinref part="IC16" gate="G$1" pin="VOUTA"/>
 </segment>
 </net>
-<net name="AR_SCLIN2" class="0">
+<net name="SCLIN2" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="SCL"/>
 <wire x1="116.84" y1="5.08" x2="129.54" y2="5.08" width="0.1524" layer="91"/>
@@ -16267,7 +16023,7 @@ Case 3216</text>
 <label x="119.38" y="-22.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AR_SDAIN2" class="0">
+<net name="SDAIN2" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="SDA"/>
 <wire x1="116.84" y1="2.54" x2="129.54" y2="2.54" width="0.1524" layer="91"/>
@@ -17760,17 +17516,6 @@ Case 3216</text>
 <pinref part="SUPPLY62" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<wire x1="281.94" y1="35.56" x2="254" y2="35.56" width="0.1524" layer="91"/>
-<label x="254" y="35.56" size="1.778" layer="95"/>
-<pinref part="J13" gate="G$1" pin="P$1"/>
-<pinref part="J13" gate="G$1" pin="P$3"/>
-<wire x1="281.94" y1="35.56" x2="281.94" y2="33.02" width="0.1524" layer="91"/>
-<junction x="281.94" y="35.56"/>
-<pinref part="J13" gate="G$1" pin="P$2"/>
-<wire x1="281.94" y1="33.02" x2="281.94" y2="30.48" width="0.1524" layer="91"/>
-<junction x="281.94" y="33.02"/>
-</segment>
-<segment>
 <label x="256.54" y="2.54" size="1.778" layer="95"/>
 <wire x1="256.54" y1="2.54" x2="281.94" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="J5" gate="G$1" pin="P$4"/>
@@ -17813,6 +17558,21 @@ Case 3216</text>
 <wire x1="111.76" y1="-7.62" x2="116.84" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="PULSESOUT2" gate="G1" pin="2"/>
 <wire x1="116.84" y1="-7.62" x2="116.84" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="J13" gate="G$1" pin="P$3"/>
+<wire x1="281.94" y1="30.48" x2="271.78" y2="30.48" width="0.1524" layer="91"/>
+<label x="271.78" y="30.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="281.94" y1="33.02" x2="271.78" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="J13" gate="G$1" pin="P$2"/>
+<label x="271.78" y="33.02" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="281.94" y1="35.56" x2="271.78" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="J13" gate="G$1" pin="P$1"/>
+<label x="271.78" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO1" class="0">
@@ -19478,12 +19238,6 @@ Handling 12V+7V=19V, so double them</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="202,1,-25.4,66.04,ARDUINO_NANO1,!RESET,,,,"/>
-<approved hash="202,1,-66.04,91.44,ARDUINO_NANO1,AREF,,,,"/>
-<approved hash="104,1,-66.04,68.58,ARDUINO_NANO1,5V,VS+,,,"/>
-<approved hash="202,1,-66.04,66.04,ARDUINO_NANO1,!RESET,,,,"/>
-<approved hash="104,1,-66.04,60.96,ARDUINO_NANO1,VIN,ARVIN,,,"/>
-<approved hash="106,1,-66.04,60.96,ARVIN,,,,,"/>
 <approved hash="106,2,83.82,2.54,DACADDR,,,,,"/>
 </errors>
 </schematic>
