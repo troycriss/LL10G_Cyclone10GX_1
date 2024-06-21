@@ -14,8 +14,8 @@ module i2c_generator (
 );
 
     // Parameters
-    parameter SLOW_DIV = 32;  // Clock division factor for slow clock (adjust as needed)
-	 parameter SLOW_STR_DIV = 64;  // Clock division factor for slow clock (adjust as needed)
+    parameter SLOW_DIV = 25;  // Clock division factor for slow clock (adjust as needed)
+	 parameter SLOW_STR_DIV = 50;  // Clock division factor for slow clock (adjust as needed)
     parameter SEQ_LEN = 81;    // Length of the pulse sequence
     
     // Pulse sequence (example: 01110101110101)
@@ -29,7 +29,7 @@ module i2c_generator (
 	 //reg [SEQ_LEN-1:0] pulse_sequence = 16'b1001000
     // Registers and wires
     reg [8:0] clk_div_counter = 0;
-	 reg [8:0] clk_div_stgr_counter = 32;
+	 reg [8:0] clk_div_stgr_counter = 25;
     reg slow_clk = 0;
 	 reg slow_clk_stgr = 0;
     reg [7:0] pulse_index = 0;
