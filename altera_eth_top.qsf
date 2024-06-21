@@ -197,3 +197,4 @@ set_global_assignment -name IP_FILE rtl/address_decoder/ip/address_decoder_top/a
 set_global_assignment -name VERILOG_FILE "verilog-i2c/etheron-i2c.v"
 set_global_assignment -name VERILOG_FILE "verilog-i2c/i2c.v"
 set_location_assignment PIN_AD4 -to etheron_button
+set_location_assignment PIN_AH2 -to dac_button

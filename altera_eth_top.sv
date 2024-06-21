@@ -36,6 +36,7 @@ module altera_eth_top # (
 	 
 	 // Pushbutton
 	 input etheron_button,
+	 input dac_button,
     
 	 // I2C interface
 	 output          sfp_scl_0,
@@ -44,8 +45,8 @@ module altera_eth_top # (
     output          sfp_sda_1,
 	 input           sfp_int_0,
 	 input           sfp_int_1,
-	 input arduino_scl,
-	 input arduino_sda,
+	 output arduino_scl,
+	 output arduino_sda,
 	 
 	 //FMC inputs / outputs
 	 input fmc_in[31:0], // only 15:0 used by first eth port, next 16 used by second eth port
@@ -207,8 +208,12 @@ module altera_eth_top # (
 	 assign      sfp_scl_1 = etheron_scl;
 	 assign      sfp_sda_0 = etheron_sda;
 	 assign      sfp_sda_1 = etheron_sda;
+	 assign		 arduino_scl = dac_scl;
+	 assign      arduino_sda = dac_sda;
 	 
 	 assign		 i2c_etheron_trigger = etheron_button;
+	 assign		 i2c_dac_trigger = dac_button;
+	 assign      dac_sequence_switch = led_heartbeat;
 	 
 	 //I2C
 	 i2c_generator i2c_generator (
