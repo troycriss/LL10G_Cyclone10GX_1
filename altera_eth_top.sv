@@ -215,6 +215,9 @@ module altera_eth_top # (
 	 assign		 i2c_dac_trigger = dac_button;
 	 assign      dac_sequence_switch = led_heartbeat;
 	 
+	 reg chip_id = 1'b0;
+	 reg [3:0] dac_id = 4'b0;
+	 reg [11:0] vol = 12'd1000;
 	 //I2C
 	 i2c_generator i2c_generator (
 	     .clk_in 							(fast1_clk),
@@ -228,7 +231,11 @@ module altera_eth_top # (
 		  .pulse_out						(dac_sda),
 		  .pulse_ether_out				(etheron_sda),
 		  .reset_led						(i2c_reset_led),
-		  .sequence_switch				(dac_sequence_switch)
+		  .sequence_switch				(dac_sequence_switch),
+		  
+		  .chip_id                    (chip_id),
+	     .dac_id		               (dac_id),
+	     .vol				            (vol)
 	 );
     
     // DUT

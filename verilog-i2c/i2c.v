@@ -10,7 +10,11 @@ module i2c_generator (
     output wire pulse_out,     // Pulse sequence output
     output wire pulse_ether_out,     // Pulse sequence output for ethernet-on
 	 output wire reset_led,
-	 input wire sequence_switch
+	 input wire sequence_switch,
+	 
+	 input chip_id,
+	 input [3:0] dac_id,
+	 input [11:0] vol 
 );
 
     // Parameters
@@ -20,8 +24,27 @@ module i2c_generator (
     
     // Pulse sequence (example: 01110101110101)
     reg [SEQ_LEN-1:0] pulse_sequence = 81'b0_110000111100000000_11_000011110000000000_11_111111111100000000_00_000000000000000000_01;
-	 reg [SEQ_LEN-1:0] other_sequence = 81'b0_110000111100000000_11_000011110000000000_00_000000000000000000_00_000000000000000000_01;
-
+	 reg [SEQ_LEN-1:0] other_sequence = 81'b0_110000111100000000_11_000011110000000000_11_000000000000000000_11_000000000000000000_01;
+	 
+	 wire [8:0] start;
+	 wire [1:0] chip;
+	 wire [17:0] chip_to_channel;
+	 wire [7:0] channel;
+	 wire [3:0] channel_to_voltage;
+	 wire [27:0] voltage;
+	 wire [11:0] stop;
+	 
+	 
+	 assign start = 9'b0_11000011;
+	 assign chip = {~chip_id, ~chip_id}; 
+	 assign chip_to_channel = 18'b00000000_11_00001111;
+	 assign channel = {dac_id[3], dac_id[3], dac_id[2], dac_id[2], dac_id[1], dac_id[1], dac_id[0], dac_id[0]};
+	 assign channel_to_voltage = 4'b00_11;
+	 assign voltage = {vol[11], vol[11], vol[10], vol[10], vol[9], vol[9], vol[8], vol[8], vol[7], vol[7], vol[6], vol[6], vol[5], vol[5], vol[4], vol[4], 4'b00_11, vol[3], vol[3], vol[2], vol[2], vol[1], vol[1], vol[0], vol[0]};
+	 assign stop = 12'b0000000000_01;
+	 
+	 wire [SEQ_LEN-1:0] composite_sequence;
+	 assign composite_sequence = {start, chip, chip_to_channel, channel, channel_to_voltage, voltage, stop};
 	 //reg [SEQ_LEN-1:0] send_out_command = 27'b01000000_0_00000011_0_00000000_0;
 	 //reg [SEQ_LEN-1:0] command_on = 27'b01000000_0_00000001_0_11111001_0;
 	 //reg [SEQ_LEN-1:0] command_off = 27'b01000000_0_00000001_0_11111110_0;
@@ -38,7 +61,7 @@ module i2c_generator (
 	 reg button_state = 1'b0;
 	 reg button_d;
 	 wire button_chg;
-	 reg [8:0] clk_div_pulses = 0;
+	 reg [9:0] clk_div_pulses = 0;
 	 
 	 
 	 always @(posedge clk_in) begin
@@ -112,7 +135,7 @@ module i2c_generator (
 						 end
 					 end else begin
 						if (pulse_index < SEQ_LEN) begin
-							  pulse_gen <= other_sequence[SEQ_LEN - pulse_index - 1];
+							  pulse_gen <= composite_sequence[SEQ_LEN - pulse_index - 1];
 							  pulse_index <= pulse_index + 1;
 						 end else begin
 							  pulse_index <= 0;
