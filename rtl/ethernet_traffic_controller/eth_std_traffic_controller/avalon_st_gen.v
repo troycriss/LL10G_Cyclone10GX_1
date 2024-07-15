@@ -91,7 +91,6 @@ module avalon_st_gen
  parameter ADDR_offset = 8'h23;
  
  parameter ADDR_mode = 8'h24;
- 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
  parameter ADDR_CNTDATA		= 8'hf2;
@@ -244,9 +243,11 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [63:0] datain_memory; // memory to xor
 	reg [1:0] xor_state; // state variable for xoring
 	reg [7:0] xor_counter; // keep track of bit to xor
-	
 	reg verified = 1'b0;
-	
+  reg [15:0] zeros_count = 16'h0000;
+  reg [15:0] all_count = 16'h0000;
+  reg [15:0] zeros_in_216 = 16'h0000;
+  parameter [15:0] INT_216 = 16'hFFFF;
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
@@ -254,12 +255,12 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	always @ (posedge reset or posedge fifo_clk)
    begin
       if (reset) begin
-			fifo_datain <= 64'h0;
-			counter_datain <= 8'h00;
-			xor_state <= 2'b00;
-			xor_counter <= 8'h00;
-		end
-      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) && do_xor[0]) begin		
+			  fifo_datain <= 64'h0;
+			  counter_datain <= 8'h00;
+			  xor_state <= 2'b00;
+			  xor_counter <= 8'h00;
+		  end
+      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) && do_xor[0]) begin
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
@@ -278,21 +279,29 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				    fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1] ^ datain_memory[63-xor_counter]};	// xor with previous 64 bits
 				    counter_datain_max <= 8'h40-nbitstosample;
 				    xor_counter <= xor_counter + 8'h01;
-			    end
+		      end
+          if (~fmc_in[nbitstosample:1])begin
+                    zeros_count <= zeros_count + 16'h0001;
+             end
+             all_count <= all_count + 16'h0001;
+          if (all_count == INT_216)begin
+					   zeros_in_216 <= zeros_count;
+             all_count <= 16'h0000;
+             zeros_count <= 16'h0000;
+          end
 			end
-			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
 				xor_counter <= 8'h00;
 				if (xor_state == 2'b00) begin // was taking data into fifo_datain, but not actually storing it
-                    fifo_wrreq<=1'b0;
-                    datain_memory <= fifo_datain;
-                    xor_state <= 2'b01;
-                end
-                else if (xor_state == 2'b01) begin // was taking XORed data into fifo_datain, and storing it
-                    fifo_wrreq<=1'b1;
-                    xor_state <= 2'b00;
-                end
+             fifo_wrreq<=1'b0;
+             datain_memory <= fifo_datain;
+             xor_state <= 2'b01;
+        end
+        else if (xor_state == 2'b01) begin // was taking XORed data into fifo_datain, and storing it
+             fifo_wrreq<=1'b1;
+             xor_state <= 2'b00;
+        end
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
@@ -300,7 +309,6 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				fifo_wrreq<=1'b0;
 			end
 		end else
-			
 		//if not doing xor
 		if(~do_xor[0] && ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)))) begin
 			if (do_test_counter_data) begin
@@ -315,6 +323,15 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			else begin //assuming nbitstosample is 1 when do_full_data is set to false
 				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
 				counter_datain_max <= 8'h40-nbitstosample;
+            if (~fmc_in[nbitstosample:1])begin
+					     zeros_count <= zeros_count + 16'h0001;
+            end
+            all_count <= all_count + 16'h0001;
+            if (all_count == INT_216)begin
+					     zeros_in_216 <= zeros_count;
+               all_count <= 16'h0000;
+               zeros_count <= 16'h0000;
+            end
 			end
 			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
@@ -974,7 +991,7 @@ always @ (posedge reset or posedge clk)
 			end else if (S_SRC_LEN_IP4) begin
             tx_data_reg[63:32] <= {16'h0, seq_num}; // UDP dummy checksum , seq_num
             //tx_data_reg[31: 0] <= {packet_tx_count[15:0], {6'h0,fifo_rdusedw}}; // padding , padding
-            tx_data_reg[31: 0] <= {packet_tx_count[15:0], verify_error_count}; // add count of verify errors
+            tx_data_reg[31: 0] <= {zeros_in_216, verify_error_count}; // add count of verify errors
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end
@@ -1368,4 +1385,12 @@ module prbs23 ( clk, rst_n, load, enable, seed, d, m);
     	    end
 	end
 
+
+	
+	
+	
+	
+	
+	
+	
  endmodule

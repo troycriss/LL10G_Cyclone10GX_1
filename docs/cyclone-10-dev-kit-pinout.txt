@@ -1,0 +1,608 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 14.1.0 Internal Build 89 06/18/2014 SJ Full Version
+# Date created = 13:40:09  June 26, 2014
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		bts_config_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+set_global_assignment -name FAMILY "Cyclone 10 GX"
+set_global_assignment -name DEVICE 10CX220YF780E5G
+set_global_assignment -name TOP_LEVEL_ENTITY golden_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:40:09  JUNE 26, 2014"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 2
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+
+set_location_assignment PIN_AC12 -to fpga_resetn
+set_location_assignment PIN_J23 -to c10_clk50m
+set_location_assignment PIN_Y15 -to c10_clkusr
+set_location_assignment PIN_AA19 -to refclk_emif_n
+set_location_assignment PIN_AA18 -to refclk_emif_p
+set_location_assignment PIN_AB16 -to c10_refclk1p
+set_location_assignment PIN_AA16 -to c10_refclk1n
+set_location_assignment PIN_R24  -to pcie_refclkp
+set_location_assignment PIN_R23  -to pcie_refclkn
+set_location_assignment PIN_U24 -to usb_refclkp
+set_location_assignment PIN_U23 -to usb_refclkn
+set_location_assignment PIN_N24 -to sfp_refclkp
+set_location_assignment PIN_N23 -to sfp_refclkn
+
+set_location_assignment PIN_AC1 -to user_dip[3]
+set_location_assignment PIN_AC2 -to user_dip[2]
+set_location_assignment PIN_AD2 -to user_dip[1]
+set_location_assignment PIN_AE2 -to user_dip[0]
+set_location_assignment PIN_AH2 -to user_pb[2]
+set_location_assignment PIN_AD4 -to user_pb[1]
+set_location_assignment PIN_AE4 -to user_pb[0]
+set_location_assignment PIN_AC7 -to user_led[3]
+set_location_assignment PIN_AC6 -to user_led[2]
+set_location_assignment PIN_AE6 -to user_led[1]
+set_location_assignment PIN_AF6 -to user_led[0]
+
+set_location_assignment PIN_C10  -to ddr3_d[0]
+set_location_assignment PIN_B10  -to ddr3_d[1]
+set_location_assignment PIN_D10  -to ddr3_d[2]
+set_location_assignment PIN_B9   -to ddr3_d[3]
+set_location_assignment PIN_D8   -to ddr3_d[4]
+set_location_assignment PIN_D9   -to ddr3_d[5]
+set_location_assignment PIN_C11  -to ddr3_d[6]
+set_location_assignment PIN_C8   -to ddr3_d[7]
+set_location_assignment PIN_A11  -to ddr3_d[8]
+set_location_assignment PIN_B15  -to ddr3_d[9]
+set_location_assignment PIN_B11  -to ddr3_d[10]
+set_location_assignment PIN_D13  -to ddr3_d[11]
+set_location_assignment PIN_A13  -to ddr3_d[12]
+set_location_assignment PIN_D14  -to ddr3_d[13]
+set_location_assignment PIN_A12  -to ddr3_d[14]
+set_location_assignment PIN_C13  -to ddr3_d[15]
+set_location_assignment PIN_B26  -to ddr3_d[16]
+set_location_assignment PIN_B23  -to ddr3_d[17]
+set_location_assignment PIN_B25  -to ddr3_d[18]
+set_location_assignment PIN_A22  -to ddr3_d[19]
+set_location_assignment PIN_B21  -to ddr3_d[20]
+set_location_assignment PIN_C21  -to ddr3_d[21]
+set_location_assignment PIN_A24  -to ddr3_d[22]
+set_location_assignment PIN_A21  -to ddr3_d[23]
+set_location_assignment PIN_D15  -to ddr3_d[24]
+set_location_assignment PIN_A19  -to ddr3_d[25]
+set_location_assignment PIN_C15  -to ddr3_d[26]
+set_location_assignment PIN_B20  -to ddr3_d[27]
+set_location_assignment PIN_A18  -to ddr3_d[28]
+set_location_assignment PIN_C20  -to ddr3_d[29]
+set_location_assignment PIN_A17  -to ddr3_d[30]
+set_location_assignment PIN_E15  -to ddr3_d[31]
+set_location_assignment PIN_AH15 -to ddr3_d[32]
+set_location_assignment PIN_AH13 -to ddr3_d[33]
+set_location_assignment PIN_AH17 -to ddr3_d[34]
+set_location_assignment PIN_AG13 -to ddr3_d[35]
+set_location_assignment PIN_AH12 -to ddr3_d[36]
+set_location_assignment PIN_AG10 -to ddr3_d[37]
+set_location_assignment PIN_AH18 -to ddr3_d[38]
+set_location_assignment PIN_AG11 -to ddr3_d[39]
+set_location_assignment PIN_C12  -to ddr3_dm[0]
+set_location_assignment PIN_B14  -to ddr3_dm[1]
+set_location_assignment PIN_B24  -to ddr3_dm[2]
+set_location_assignment PIN_B16  -to ddr3_dm[3]
+set_location_assignment PIN_AH16 -to ddr3_dm[4]
+set_location_assignment PIN_A8   -to ddr3_dqsn[0]
+set_location_assignment PIN_A9   -to ddr3_dqsp[0]
+set_location_assignment PIN_B13  -to ddr3_dqsn[1]
+set_location_assignment PIN_A14  -to ddr3_dqsp[1]
+set_location_assignment PIN_A26  -to ddr3_dqsn[2]
+set_location_assignment PIN_A27  -to ddr3_dqsp[2]
+set_location_assignment PIN_B18  -to ddr3_dqsn[3]
+set_location_assignment PIN_B19  -to ddr3_dqsp[3]
+set_location_assignment PIN_AH10 -to ddr3_dqsn[4]
+set_location_assignment PIN_AH11 -to ddr3_dqsp[4]
+set_location_assignment PIN_Y21  -to ddr3_ba[2]
+set_location_assignment PIN_AA21 -to ddr3_ba[1]
+set_location_assignment PIN_W21  -to ddr3_ba[0]
+set_location_assignment PIN_W20  -to ddr3_casn
+set_location_assignment PIN_AB19 -to ddr3_rasn
+set_location_assignment PIN_Y17  -to ddr3_a[14]
+set_location_assignment PIN_AA17 -to ddr3_a[13]
+set_location_assignment PIN_Y19  -to ddr3_a[12]
+set_location_assignment PIN_AB20 -to ddr3_a[11]
+set_location_assignment PIN_AC20 -to ddr3_a[10]
+set_location_assignment PIN_AH20 -to ddr3_a[9]
+set_location_assignment PIN_AH21 -to ddr3_a[8]
+set_location_assignment PIN_AB21 -to ddr3_a[7]
+set_location_assignment PIN_AC21 -to ddr3_a[6]
+set_location_assignment PIN_AE21 -to ddr3_a[5]
+set_location_assignment PIN_AF21 -to ddr3_a[4]
+set_location_assignment PIN_AG21 -to ddr3_a[3]
+set_location_assignment PIN_AH22 -to ddr3_a[2]
+set_location_assignment PIN_AG20 -to ddr3_a[1]
+set_location_assignment PIN_AG19 -to ddr3_a[0]
+set_location_assignment PIN_AD23 -to ddr3_ckn
+set_location_assignment PIN_AE23 -to ddr3_ckp
+set_location_assignment PIN_AA22 -to ddr3_cke[1]
+set_location_assignment PIN_AA23 -to ddr3_cke[0]
+set_location_assignment PIN_AB23 -to ddr3_odt[1]
+set_location_assignment PIN_AC23 -to ddr3_odt[0]
+set_location_assignment PIN_AE22 -to ddr3_csn[1]
+set_location_assignment PIN_AF22 -to ddr3_csn[0]
+set_location_assignment PIN_AC22 -to ddr3_rstn
+set_location_assignment PIN_AD22 -to ddr3_wen
+set_location_assignment PIN_Y20  -to ddr3_rzq
+
+set_location_assignment PIN_AC16 -to sgmii_txp
+set_location_assignment PIN_AC17 -to sgmii_txn
+set_location_assignment PIN_AD20 -to sgmii_rxp
+set_location_assignment PIN_AD19 -to sgmii_rxn
+set_location_assignment PIN_D19 -to eth_resetn_c10
+set_location_assignment PIN_E17 -to eth_intn_c10
+set_location_assignment PIN_E16 -to eth_mdio_c10
+set_location_assignment PIN_E19 -to eth_mdc_c10
+
+set_location_assignment PIN_N27  -to pcie_txn[3]
+set_location_assignment PIN_N28  -to pcie_txp[3]
+set_location_assignment PIN_R27  -to pcie_txn[2]
+set_location_assignment PIN_R28  -to pcie_txp[2]
+set_location_assignment PIN_U27  -to pcie_txn[1]
+set_location_assignment PIN_U28  -to pcie_txp[1]
+set_location_assignment PIN_W27  -to pcie_txn[0]
+set_location_assignment PIN_W28  -to pcie_txp[0]
+set_location_assignment PIN_M25  -to pcie_rxn[3]
+set_location_assignment PIN_M26  -to pcie_rxp[3]
+set_location_assignment PIN_P25  -to pcie_rxn[2]
+set_location_assignment PIN_P26  -to pcie_rxp[2]
+set_location_assignment PIN_T25  -to pcie_rxn[1]
+set_location_assignment PIN_T26  -to pcie_rxp[1]
+set_location_assignment PIN_V25  -to pcie_rxn[0]
+set_location_assignment PIN_V26  -to pcie_rxp[0]
+set_location_assignment PIN_K22  -to pcie_waken
+set_location_assignment PIN_K23  -to pcie_smbclk
+set_location_assignment PIN_D18  -to pcie_smbdat
+set_location_assignment PIN_AB11 -to pcie_perstn
+
+set_location_assignment PIN_G27 -to sfp_txn[0]
+set_location_assignment PIN_G28 -to sfp_txp[0]
+set_location_assignment PIN_F25 -to sfp_rxn[0]
+set_location_assignment PIN_F26 -to sfp_rxp[0]
+set_location_assignment PIN_J27 -to sfp_txn[1]
+set_location_assignment PIN_J28 -to sfp_txp[1]
+set_location_assignment PIN_H25 -to sfp_rxn[1]
+set_location_assignment PIN_H26 -to sfp_rxp[1]
+set_location_assignment PIN_E21 -to sfp_scl_0
+set_location_assignment PIN_D22 -to sfp_sda_0
+set_location_assignment PIN_E23 -to sfp_int_0
+set_location_assignment PIN_D23 -to sfp_int_1
+set_location_assignment PIN_H21 -to sfp_scl_1
+set_location_assignment PIN_H20 -to sfp_sda_1
+
+set_location_assignment PIN_AF25 -to fmc_dp_m2c_n[0]
+set_location_assignment PIN_AF26 -to fmc_dp_m2c_p[0]
+set_location_assignment PIN_AD25 -to fmc_dp_m2c_n[1]
+set_location_assignment PIN_AD26 -to fmc_dp_m2c_p[1]
+set_location_assignment PIN_AB25 -to fmc_dp_m2c_n[2]
+set_location_assignment PIN_AB26 -to fmc_dp_m2c_p[2]
+set_location_assignment PIN_Y25  -to fmc_dp_m2c_n[3]
+set_location_assignment PIN_Y26  -to fmc_dp_m2c_p[3]
+set_location_assignment PIN_K25  -to fmc_dp_m2c_n[4]
+set_location_assignment PIN_K26  -to fmc_dp_m2c_p[4]
+
+set_location_assignment PIN_AG27 -to fmc_dp_c2m_n[0]
+set_location_assignment PIN_AG28 -to fmc_dp_c2m_p[0]
+set_location_assignment PIN_AE27 -to fmc_dp_c2m_n[1]
+set_location_assignment PIN_AE28 -to fmc_dp_c2m_p[1]
+set_location_assignment PIN_AC27 -to fmc_dp_c2m_n[2]
+set_location_assignment PIN_AC28 -to fmc_dp_c2m_p[2]
+set_location_assignment PIN_AA27 -to fmc_dp_c2m_n[3]
+set_location_assignment PIN_AA28 -to fmc_dp_c2m_p[3]
+set_location_assignment PIN_L27  -to fmc_dp_c2m_n[4]
+set_location_assignment PIN_L28  -to fmc_dp_c2m_p[4]
+
+set_location_assignment PIN_J3  -to fmc_la_txn0
+set_location_assignment PIN_H2  -to fmc_la_txp0
+set_location_assignment PIN_K1  -to fmc_la_txn1
+set_location_assignment PIN_L1  -to fmc_la_txp1
+set_location_assignment PIN_M4  -to fmc_la_txn2
+set_location_assignment PIN_M3  -to fmc_la_txp2
+set_location_assignment PIN_N3  -to fmc_la_txn3
+set_location_assignment PIN_N2  -to fmc_la_txp3
+set_location_assignment PIN_P4  -to fmc_la_txn4
+set_location_assignment PIN_P3  -to fmc_la_txp4
+set_location_assignment PIN_U4  -to fmc_la_txn5
+set_location_assignment PIN_U3  -to fmc_la_txp5
+set_location_assignment PIN_V2  -to fmc_la_txn6
+set_location_assignment PIN_W2  -to fmc_la_txp6
+set_location_assignment PIN_Y2  -to fmc_la_txn7
+set_location_assignment PIN_Y1  -to fmc_la_txp7
+set_location_assignment PIN_AF1 -to fmc_la_txn8
+set_location_assignment PIN_AG1 -to fmc_la_txp8
+set_location_assignment PIN_AB3 -to fmc_la_txn9
+set_location_assignment PIN_AA2 -to fmc_la_txp9
+set_location_assignment PIN_AB5 -to fmc_la_txn10
+set_location_assignment PIN_AB6 -to fmc_la_txp10
+set_location_assignment PIN_AB4 -to fmc_la_txn11
+set_location_assignment PIN_AC5 -to fmc_la_txp11
+set_location_assignment PIN_Y4  -to fmc_la_txn12
+set_location_assignment PIN_W4  -to fmc_la_txp12
+set_location_assignment PIN_Y6  -to fmc_la_txn13
+set_location_assignment PIN_Y7  -to fmc_la_txp13
+set_location_assignment PIN_U5  -to fmc_la_txn14
+set_location_assignment PIN_T4  -to fmc_la_txp14
+set_location_assignment PIN_V7  -to fmc_la_txn15
+set_location_assignment PIN_U6  -to fmc_la_txp15
+set_location_assignment PIN_T7  -to fmc_la_txn16
+set_location_assignment PIN_T6  -to fmc_la_txp16
+
+set_location_assignment PIN_G1  -to fmc_la_rxn0
+set_location_assignment PIN_H1  -to fmc_la_rxp0
+set_location_assignment PIN_R5  -to fmc_la_rxn1
+set_location_assignment PIN_R4  -to fmc_la_rxp1
+set_location_assignment PIN_L4  -to fmc_la_rxn2
+set_location_assignment PIN_K4  -to fmc_la_rxp2
+set_location_assignment PIN_R1  -to fmc_la_rxn3
+set_location_assignment PIN_T1  -to fmc_la_rxp3
+set_location_assignment PIN_T3  -to fmc_la_rxn4
+set_location_assignment PIN_T2  -to fmc_la_rxp4
+set_location_assignment PIN_V3  -to fmc_la_rxn5
+set_location_assignment PIN_W3  -to fmc_la_rxp5
+set_location_assignment PIN_U1  -to fmc_la_rxn6
+set_location_assignment PIN_V1  -to fmc_la_rxp6
+set_location_assignment PIN_AF3 -to fmc_la_rxn7
+set_location_assignment PIN_AG3 -to fmc_la_rxp7
+set_location_assignment PIN_AA1 -to fmc_la_rxn8
+set_location_assignment PIN_AB1 -to fmc_la_rxp8
+set_location_assignment PIN_Y5  -to fmc_la_rxn9
+set_location_assignment PIN_W5  -to fmc_la_rxp9
+set_location_assignment PIN_W7  -to fmc_la_rxn10
+set_location_assignment PIN_W8  -to fmc_la_rxp10
+set_location_assignment PIN_V6  -to fmc_la_rxn11
+set_location_assignment PIN_V5  -to fmc_la_rxp11
+set_location_assignment PIN_V8  -to fmc_la_rxn12
+set_location_assignment PIN_U8  -to fmc_la_rxp12
+set_location_assignment PIN_AA8 -to fmc_la_rxn13
+set_location_assignment PIN_AA9 -to fmc_la_rxp13
+set_location_assignment PIN_T9  -to fmc_la_rxn14
+set_location_assignment PIN_T8  -to fmc_la_rxp14
+
+set_location_assignment PIN_AF2 -to fmc_scl
+set_location_assignment PIN_AE1 -to fmc_sda
+set_location_assignment PIN_M1  -to fmca_clk_m2c_n0
+set_location_assignment PIN_N1  -to fmca_clk_m2c_p0
+set_location_assignment PIN_AC3 -to fmca_clk_m2c_n1
+set_location_assignment PIN_AD3 -to fmca_clk_m2c_p1
+set_location_assignment PIN_W24 -to fmc_gbtclk_m2c_p0
+set_location_assignment PIN_W23 -to fmc_gbtclk_m2c_n0
+set_location_assignment PIN_L3  -to fmc_la_cc_n0
+set_location_assignment PIN_L2  -to fmc_la_cc_p0
+set_location_assignment PIN_AA7 -to fmc_la_cc_n1
+set_location_assignment PIN_AA6 -to fmc_la_cc_p1
+set_location_assignment PIN_R2  -to fmc_prsn_1v8
+
+set_location_assignment PIN_AG14 -to m10_usb_clk
+set_location_assignment PIN_AF14 -to m10_usb_data[0]
+set_location_assignment PIN_AF13 -to m10_usb_data[1]
+set_location_assignment PIN_AE20 -to m10_usb_data[2]
+set_location_assignment PIN_AE19 -to m10_usb_data[3]
+set_location_assignment PIN_AC18 -to m10_usb_data[4]
+set_location_assignment PIN_AD18 -to m10_usb_data[5]
+set_location_assignment PIN_AD17 -to m10_usb_data[6]
+set_location_assignment PIN_AE17 -to m10_usb_data[7]
+set_location_assignment PIN_Y16  -to m10_usb_addr[0]
+set_location_assignment PIN_AA11 -to m10_usb_addr[1]
+set_location_assignment PIN_AA14 -to m10_usb_rdn
+set_location_assignment PIN_AB14 -to m10_usb_wrn
+set_location_assignment PIN_AB15 -to m10_usb_resetn
+set_location_assignment PIN_AC15 -to m10_usb_full
+set_location_assignment PIN_AC13 -to m10_usb_empty
+set_location_assignment PIN_AA13 -to m10_usb_oen
+set_location_assignment PIN_AA12 -to m10_usb_sda
+set_location_assignment PIN_AC11 -to m10_usb_scl
+
+#set_location_assignment PIN_E20 -to c10_qspi_csn
+#set_location_assignment PIN_D20 -to c10_qspi_resetn
+#set_location_assignment PIN_F19 -to c10_qspi_clk
+#set_location_assignment PIN_C16 -to c10_qspi_d[0]
+#set_location_assignment PIN_C17 -to c10_qspi_d[1]
+#set_location_assignment PIN_D17 -to c10_qspi_d[2]
+#set_location_assignment PIN_C18 -to c10_qspi_d[3]
+
+##fast input register
+#set_instance_assignment -name FAST_INPUT_REGISTER ON -to read_dout_quad_reg[0]
+#set_instance_assignment -name FAST_INPUT_REGISTER ON -to read_dout_quad_reg[1]
+#set_instance_assignment -name FAST_INPUT_REGISTER ON -to read_dout_quad_reg[2]
+#set_instance_assignment -name FAST_INPUT_REGISTER ON -to read_dout_quad_reg[3]
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_clk50m
+set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_clkusr
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_resetn
+set_instance_assignment -name IO_STANDARD LVDS -to refclk_emif_p
+set_instance_assignment -name IO_STANDARD LVDS -to c10_refclk1p
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[3]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_pb[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_pb[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_pb[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[3]
+
+set_instance_assignment -name IO_STANDARD LVDS -to sgmii_rxp
+set_instance_assignment -name IO_STANDARD LVDS -to sgmii_txp
+set_instance_assignment -name IO_STANDARD "1.8 V" -to eth_mdc_c10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to eth_mdio_c10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to eth_intn_c10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to eth_resetn_c10
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to pcie_waken
+set_instance_assignment -name IO_STANDARD "1.8 V" -to pcie_smbclk
+set_instance_assignment -name IO_STANDARD "1.8 V" -to pcie_smbdat
+set_instance_assignment -name IO_STANDARD "1.8 V" -to pcie_perstn
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_scl_0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_sda_0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_int_0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_int_1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_scl_1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_sda_1
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn2
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp2
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn4
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp4
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn5
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp5
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn6
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp6
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn7
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp7
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn8
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp8
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn9
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp9
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn11
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp11
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn12
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp12
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn13
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp13
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn14
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp14
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn15
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp15
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txn16
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_txp16
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn2
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp2
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp3
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn4
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp4
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn5
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp5
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn6
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp6
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn7
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp7
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn8
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp8
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn9
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp9
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp10
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn11
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp11
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn12
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp12
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn13
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp13
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxn14
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_la_rxp14
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_scl
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_sda
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fmc_prsn_1v8
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_clk
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[3]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[4]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[5]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[6]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_data[7]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_addr[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_addr[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_wrn
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_sda
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_scl
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_rdn
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_full
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_resetn
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_oen
+set_instance_assignment -name IO_STANDARD "1.8 V" -to m10_usb_empty
+
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_clk
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_d[0]
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_d[1]
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_d[2]
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_d[3]
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_csn
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_qspi_resetn
+
+#reference clock
+set_instance_assignment -name IO_STANDARD LVDS -to pcie_refclkp
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to pcie_refclkp
+set_instance_assignment -name IO_STANDARD LVDS -to usb_refclkp
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to usb_refclkp
+set_instance_assignment -name IO_STANDARD LVDS -to sfp_refclkp
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to sfp_refclkp
+
+#other clocks
+set_instance_assignment -name IO_STANDARD LVDS -to fmca_clk_m2c_p0 -entity qts_fmc
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to fmca_clk_m2c_p0 -entity qts_fmc
+set_instance_assignment -name IO_STANDARD LVDS -to fmca_clk_m2c_p1 -entity qts_fmc
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to fmca_clk_m2c_p1 -entity qts_fmc
+set_instance_assignment -name IO_STANDARD LVDS -to fmc_la_cc_p0 -entity qts_fmc
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to fmc_la_cc_p0 -entity qts_fmc
+set_instance_assignment -name IO_STANDARD LVDS -to fmc_la_cc_p1 -entity qts_fmc
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to fmc_la_cc_p1 -entity qts_fmc
+set_instance_assignment -name IO_STANDARD LVDS -to fmc_gbtclk_m2c_p0 -entity qts_fmc
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to fmc_gbtclk_m2c_p0 -entity qts_fmc
+
+#XCVR IOS
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to pcie_txp
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to pcie_rxp
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to sfp_txp
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to sfp_rxp
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to fmc_dp_m2c_p
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to fmc_dp_c2m_p
+
+#####################################################################################################################
+#RX_PIN settings
+set_instance_assignment -name XCVR_C10_RX_TERM_SEL R_R1 -to pcie_rxp
+set_instance_assignment -name XCVR_C10_RX_ONE_STAGE_ENABLE NON_S1_MODE -to pcie_rxp
+set_instance_assignment -name XCVR_C10_RX_EQ_DC_GAIN_TRIM NO_DC_GAIN -to pcie_rxp
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to pcie_rxp
+set_instance_assignment -name XCVR_C10_RX_ADP_VGA_SEL RADP_VGA_SEL_2 -to pcie_rxp
+set_instance_assignment -name XCVR_C10_RX_ADP_CTLE_ACGAIN_4S RADP_CTLE_ACGAIN_4S_6 -to pcie_rxp
+
+set_instance_assignment -name XCVR_C10_RX_TERM_SEL R_R1 -to sfp_rxp
+set_instance_assignment -name XCVR_C10_RX_ONE_STAGE_ENABLE NON_S1_MODE -to sfp_rxp
+set_instance_assignment -name XCVR_C10_RX_EQ_DC_GAIN_TRIM NO_DC_GAIN -to sfp_rxp
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to sfp_rxp
+set_instance_assignment -name XCVR_C10_RX_ADP_VGA_SEL RADP_VGA_SEL_2 -to sfp_rxp
+set_instance_assignment -name XCVR_C10_RX_ADP_CTLE_ACGAIN_4S RADP_CTLE_ACGAIN_4S_6 -to sfp_rxp
+
+set_instance_assignment -name XCVR_C10_RX_TERM_SEL R_R1 -to fmc_dp_m2c_p
+set_instance_assignment -name XCVR_C10_RX_ONE_STAGE_ENABLE NON_S1_MODE -to fmc_dp_m2c_p
+set_instance_assignment -name XCVR_C10_RX_EQ_DC_GAIN_TRIM NO_DC_GAIN -to fmc_dp_m2c_p
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to fmc_dp_m2c_p
+set_instance_assignment -name XCVR_C10_RX_ADP_VGA_SEL RADP_VGA_SEL_2 -to fmc_dp_m2c_p
+set_instance_assignment -name XCVR_C10_RX_ADP_CTLE_ACGAIN_4S RADP_CTLE_ACGAIN_4S_6 -to fmc_dp_m2c_p
+
+#####################################################################################################################
+#TX_PIN settings
+set_instance_assignment -name XCVR_C10_TX_VOD_OUTPUT_SWING_CTRL 31 -to pcie_txp
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_COMPENSATION_EN ENABLE -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_1ST_POST_TAP 3 -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_1ST_POST_TAP FIR_POST_1T_NEG -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_1T 3 -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_1T FIR_PRE_1T_NEG -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_2ND_POST_TAP 3 -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_2ND_POST_TAP FIR_POST_2T_POS -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_2T 0 -to pcie_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_2T FIR_PRE_2T_POS -to pcie_txp
+
+set_instance_assignment -name XCVR_C10_TX_VOD_OUTPUT_SWING_CTRL 31 -to sfp_txp
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_COMPENSATION_EN ENABLE -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_1ST_POST_TAP 3 -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_1ST_POST_TAP FIR_POST_1T_NEG -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_1T 3 -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_1T FIR_PRE_1T_NEG -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_2ND_POST_TAP 3 -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_2ND_POST_TAP FIR_POST_2T_POS -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_2T 0 -to sfp_txp
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_2T FIR_PRE_2T_POS -to sfp_txp
+
+set_instance_assignment -name XCVR_C10_TX_VOD_OUTPUT_SWING_CTRL 31 -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_COMPENSATION_EN ENABLE -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_1ST_POST_TAP 3 -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_1ST_POST_TAP FIR_POST_1T_NEG -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_1T 3 -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_1T FIR_PRE_1T_NEG -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_2ND_POST_TAP 3 -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_2ND_POST_TAP FIR_POST_2T_POS -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_2T 0 -to fmc_dp_c2m_p
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_2T FIR_PRE_2T_POS -to fmc_dp_c2m_p
+
+#####################################################################################################################
+
+set_global_assignment -name ENABLE_UNUSED_RX_CLOCK_WORKAROUND ON
+
+set_global_assignment -name PARTITION_NETLIST_TYPE POST_FIT -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name UNIPHY_SEQUENCER_DQS_CONFIG_ENABLE ON
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name UNIPHY_TEMP_VER_CODE 2133383589
+set_global_assignment -name ECO_REGENERATE_REPORT ON
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "1.8 V"
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE bts_config_debug.stp
+set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name QII_AUTO_PACKED_REGISTERS "MINIMIZE AREA"
+set_global_assignment -name MUX_RESTRUCTURE OFF
+set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name ENABLE_OCT_DONE ON
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "DUAL IMAGES"
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name VERILOG_FILE golden_top.v
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X4"
+set_global_assignment -name GENERATE_PR_RBF_FILE OFF
+set_global_assignment -name RESERVE_DATA15_THROUGH_DATA8_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_DATA7_THROUGH_DATA1_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name ACTIVE_SERIAL_CLOCK FREQ_50MHZ
+set_global_assignment -name STRATIXII_CONFIGURATION_DEVICE EPCQL1024
