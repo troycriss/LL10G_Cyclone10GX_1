@@ -259,7 +259,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			xor_state <= 2'b00;
 			xor_counter <= 8'h00;
 		end
-      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) && do_xor[0]) begin		
+      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified))) begin		
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
@@ -279,47 +279,21 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				    counter_datain_max <= 8'h40-nbitstosample;
 				    xor_counter <= xor_counter + 8'h01;
 			    end
+             
 			end
 			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
 				xor_counter <= 8'h00;
-				if (xor_state == 2'b00) begin // was taking data into fifo_datain, but not actually storing it
+				if (xor_state == 2'b00 && do_xor[0]) begin // was taking data into fifo_datain, but not actually storing it
                     fifo_wrreq<=1'b0;
                     datain_memory <= fifo_datain;
                     xor_state <= 2'b01;
                 end
-                else if (xor_state == 2'b01) begin // was taking XORed data into fifo_datain, and storing it
+                else if (xor_state == 2'b01 || ~do_xor[0]) begin // was taking XORed data into fifo_datain, and storing it
                     fifo_wrreq<=1'b1;
                     xor_state <= 2'b00;
                 end
-			end
-			else begin
-				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
-				else counter_datain <= counter_datain+nbitstosample; // remember we stored nbitstosample more bits
-				fifo_wrreq<=1'b0;
-			end
-		end else
-			
-		//if not doing xor
-		if(~do_xor[0] && ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)))) begin
-			if (do_test_counter_data) begin
-				counter_datain_max <= 8'h40-8'h08;
-				test_counter_data<=test_counter_data+8'h01;
-				fifo_datain <= {fifo_datain[55:0],test_counter_data};
-			end
-			else if (do_full_data) begin
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample-1:1],trigger}; // take nbitstosample more bits of input and shift into fifo_datain
-				counter_datain_max <= 8'h40-nbitstosample;
-			end
-			else begin //assuming nbitstosample is 1 when do_full_data is set to false
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
-				counter_datain_max <= 8'h40-nbitstosample;
-			end
-			
-			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
-				counter_datain <= 8'h00;
-				fifo_wrreq<=1'b1;
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits

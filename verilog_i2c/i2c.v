@@ -16,7 +16,7 @@
 	 input [3:0] dac_id,
 	 input [11:0] vol, 
 	 input [11:0] new_vol,
-	 input dac_adjustment,
+	 input wire dac_adjustment,
 	 input feedback
 );
 
@@ -81,15 +81,19 @@
     reg slow_clk = 0;
 	 reg slow_clk_stgr = 0;
     reg [7:0] pulse_index = 0;
+	 reg [7:0] pulse_index_f = 0;
     reg pulse_gen = 1;
 	 reg reset_btn;
 	 reg button_state = 1'b0;
+	 reg button_state_f = 1'b0;
 	 reg button_d;
+	 reg button_d_f;
 	 wire button_chg;
+	 wire button_chg_f;
 	 wire feedback_button;
 	 assign feedback_button = (~dac_adjustment) && (~feedback);
-	 wire gen_button;
-	 assign gen_button = (~feedback_button) || (~button_in);
+	 //wire gen_button;
+	 //assign gen_button = (~feedback_button) || (~button_in);
 	 reg [9:0] clk_div_pulses = 0;
 	 
 	 
@@ -148,36 +152,35 @@
             pulse_index <= 0;
             pulse_gen <= 1;
 				button_d <= 0;
-        end else begin
-		      button_d <= gen_button;
-		      if (~gen_button && ~button_state && button_chg) begin
+        end else if (feedback) begin
+		      button_d <= button_in;
+		      if (~button_in && ~button_state && button_chg) begin
 				    button_state <= 1'b1;
-		      end else if(button_state)begin
-					 if (~feedback_button)begin
-					 	 if (pulse_index < SEQ_LEN) begin
-					 		  pulse_gen <= adj_sequence[SEQ_LEN - pulse_index - 1];
-					 		  pulse_index <= pulse_index + 1;
-					 	 end else begin
-					 		  pulse_index <= 0;
-					 		  pulse_gen <= 1;
-					 		  button_state <= 1'b0;
-					 	 end
+		      end else if(button_state) begin
+					if (pulse_index < SEQ_LEN) begin
+						  pulse_gen <= composite_sequence[SEQ_LEN - pulse_index - 1];
+						  pulse_index <= pulse_index + 1;
 					 end else begin
-						if (pulse_index < SEQ_LEN) begin
-							  pulse_gen <= composite_sequence[SEQ_LEN - pulse_index - 1];
-							  pulse_index <= pulse_index + 1;
-						 end else begin
-							  pulse_index <= 0;
-							  pulse_gen <= 1;
-							  button_state <= 1'b0;
-						 end
-					  end 
-            end else begin
-                pulse_index <= 0;
-                pulse_gen <= 1;
-				
-            end
-        end
+						  pulse_index <= 0;
+						  pulse_gen <= 1;
+						  button_state <= 1'b0;
+					 end 
+				end
+			end else if (~feedback) begin
+				 button_d_f <= dac_adjustment;
+				 if (~dac_adjustment && ~button_state_f && button_chg_f) begin
+					button_state_f <= 1'b1;
+				 end else if (button_state_f) begin
+						if (pulse_index_f < SEQ_LEN) begin
+							pulse_gen <= adj_sequence[SEQ_LEN - pulse_index -1];
+							pulse_index_f <= pulse_index_f + 1;
+						end else begin
+							pulse_index_f <= 0;
+							pulse_gen <= 1;
+							button_state_f <= 1'b0;
+						end
+				 end
+         end
 	 end
 
     // Assign outputs
@@ -185,19 +188,8 @@
 	 assign slow_clk_stgr_out = ~slow_clk_stgr;
     assign pulse_out = pulse_gen;
 	 assign reset_led = reset_btn;
-	 assign button_chg = (gen_button != button_d);
+	 assign button_chg = (button_in != button_d);
+	 assign button_chg_f = (dac_adjustment != button_d_f);
 	 
 	 
-	 ether_on ether_on_inst(
-		.clk_in     (clk_in),
-		.reset_in   (reset_in),
-		.ether_button_in (button_ether_in),
-		.slow_clk_out  (slow_clk_ether_out),
-		.slow_clk_stgr_out (slow_clk_ether_stgr_out),
-		.ether_pulse_out (pulse_ether_out)
-	);
-
-
-endmodule
-
 
