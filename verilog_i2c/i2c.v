@@ -17,7 +17,8 @@
 	 input [11:0] vol, 
 	 input [11:0] new_vol,
 	 input wire dac_adjustment,
-	 input feedback
+	 input feedback,
+	 output wire led_check_dac_adj
 );
 
     // Parameters
@@ -62,15 +63,15 @@
 	 wire [11:0] adj_stop;
 	 
 	 
-	 assign adj_start = 9'b0_11000011;
+	 //assign adj_start = 9'b0_11000011;
 	 assign adj_chip = 2'b11; 
-	 assign adj_chip_to_channel = 18'b00000000_11_00001111;
+	 //assign adj_chip_to_channel = 18'b00000000_11_00001111;
 	 assign adj_channel = 8'b00000000;
-	 assign adj_channel_to_voltage = 4'b00_11;
+	 //assign adj_channel_to_voltage = 4'b00_11;
 	 assign adj_voltage = {new_vol[11], new_vol[11], new_vol[10], new_vol[10], new_vol[9], new_vol[9], new_vol[8], new_vol[8], new_vol[7], new_vol[7], new_vol[6], new_vol[6], new_vol[5], new_vol[5], new_vol[4], new_vol[4], 4'b00_11, new_vol[3], new_vol[3], new_vol[2], new_vol[2], new_vol[1], new_vol[1], new_vol[0], new_vol[0]};
-	 assign adj_stop = 12'b0000000000_01;
+	 //assign adj_stop = 12'b0000000000_01;
 	 wire [SEQ_LEN-1:0] adj_sequence;
-	 assign adj_sequence = {adj_start, adj_chip, adj_chip_to_channel, adj_channel, adj_channel_to_voltage, adj_voltage, adj_stop};
+	 assign adj_sequence = {start, adj_chip, chip_to_channel, adj_channel, channel_to_voltage, adj_voltage, stop};
 	
 	
 	
@@ -92,6 +93,8 @@
 	 wire button_chg_f;
 	 wire feedback_button;
 	 assign feedback_button = (~dac_adjustment) && (~feedback);
+	 wire led_check_dac_adj;
+	 assign led_check_dac_adj = dac_adjustment;
 	 //wire gen_button;
 	 //assign gen_button = (~feedback_button) || (~button_in);
 	 reg [9:0] clk_div_pulses = 0;
@@ -106,10 +109,9 @@
         if (~reset_in) begin
             clk_div_counter <= 0;
             slow_clk <= 0;
-        end else begin
+        end else if (feedback) begin
 		      if (~button_state || pulse_index == 0) begin
 				   slow_clk_stgr <= 0;
-					
 					if (clk_div_counter >= (SLOW_DIV - 1)) begin
 						 clk_div_counter <= 0;
 						 slow_clk = ~slow_clk;
@@ -118,9 +120,9 @@
 					end
 				end else if(~button_state || pulse_index == SEQ_LEN-1 || pulse_index == SEQ_LEN || pulse_index % 20 == 0 || pulse_index % 20 == 1) begin
 			      if(pulse_index == SEQ_LEN-1 || pulse_index == SEQ_LEN) begin
-						slow_clk_stgr <= 1'b0;
+						slow_clk_stgr <= 0;
 					end else begin
-						slow_clk_stgr <= 1'b1;
+						slow_clk_stgr <= 1;
 					end
 					
 					if (clk_div_counter >= (SLOW_DIV - 1)) begin
@@ -143,7 +145,43 @@
 						 clk_div_counter <= clk_div_counter + 1;
 					end
 				end
-        end
+        end else if (~feedback) begin
+			  if (~button_state_f || pulse_index == 0) begin
+						slow_clk_stgr <= 0;
+						if (clk_div_counter >= (SLOW_DIV - 1)) begin
+							 clk_div_counter <= 0;
+							 slow_clk = ~slow_clk;
+						end else begin
+							 clk_div_counter <= clk_div_counter + 1;
+						end
+				end else if(~button_state_f || pulse_index == SEQ_LEN-1 || pulse_index == SEQ_LEN || pulse_index % 20 == 0 || pulse_index % 20 == 1) begin
+					if(pulse_index == SEQ_LEN-1 || pulse_index == SEQ_LEN) begin
+						slow_clk_stgr <= 0;
+					end else begin
+						slow_clk_stgr <= 1;
+					end
+					
+					if (clk_div_counter >= (SLOW_DIV - 1)) begin
+						 clk_div_counter <= 0;
+						 slow_clk = ~slow_clk;
+					end else begin
+						 clk_div_counter <= clk_div_counter + 1;
+					end
+				end else begin
+					if (clk_div_stgr_counter >= (SLOW_STR_DIV - 1)) begin
+						 clk_div_stgr_counter <= 0;
+						 slow_clk_stgr = ~slow_clk_stgr;
+					end else begin
+						 clk_div_stgr_counter <= clk_div_stgr_counter + 1;
+					end
+					if (clk_div_counter >= (SLOW_DIV - 1)) begin
+						 clk_div_counter <= 0;
+						 slow_clk = ~slow_clk;
+					end else begin
+						 clk_div_counter <= clk_div_counter + 1;
+					end
+				end
+		  end
     end
 
     // Pulse Sequence Generation State Machine
@@ -159,7 +197,7 @@
 		      end else if(button_state) begin
 					if (pulse_index < SEQ_LEN) begin
 						  pulse_gen <= composite_sequence[SEQ_LEN - pulse_index - 1];
-						  pulse_index <= pulse_index + 1;
+						  pulse_index <= pulse_index + 1'd1;
 					 end else begin
 						  pulse_index <= 0;
 						  pulse_gen <= 1;
@@ -171,11 +209,11 @@
 				 if (~dac_adjustment && ~button_state_f && button_chg_f) begin
 					button_state_f <= 1'b1;
 				 end else if (button_state_f) begin
-						if (pulse_index_f < SEQ_LEN) begin
+						if (pulse_index < SEQ_LEN) begin
 							pulse_gen <= adj_sequence[SEQ_LEN - pulse_index -1];
-							pulse_index_f <= pulse_index_f + 1;
+							pulse_index <= pulse_index + 1;
 						end else begin
-							pulse_index_f <= 0;
+							pulse_index <= 0;
 							pulse_gen <= 1;
 							button_state_f <= 1'b0;
 						end
@@ -192,4 +230,14 @@
 	 assign button_chg_f = (dac_adjustment != button_d_f);
 	 
 	 
+	 ether_on ether_on_inst(
+		.clk_in     (clk_in),
+		.reset_in   (reset_in),
+		.ether_button_in (button_ether_in),
+		.slow_clk_out  (slow_clk_ether_out),
+		.slow_clk_stgr_out (slow_clk_ether_stgr_out),
+		.ether_pulse_out (pulse_ether_out)
+	);
 
+
+endmodule

@@ -11,13 +11,15 @@ module pulse_adjuster (
 );
 
     reg [31:0] counter = 0;
+	 reg [31:0] counter_2 = 0;
 	 reg [31:0] sample_counter = 0;
 	 reg [40:0] total_zeros = 0;
     reg [31:0] over_p_counter = 0;
     reg [15:0] old_num_zeros = 0;
     parameter SAMPLE_SIZE = 8_000;
     parameter BIT_LENGTH = 2**16;
-	 parameter DELAY_TIME = 1_000_000;
+	 parameter DELAY_TIME = 1000;
+	 parameter FEEDBACK_INTERVAL = 10_000;
     parameter [11:0] starting_vol = 700;
     reg [11:0] output_vol = starting_vol;
 	 //wire [11:0] new_vol;
@@ -43,18 +45,25 @@ module pulse_adjuster (
 			  if ((~feedback) && (new_dac_adjustment) && (new_zeros_num != old_num_zeros)) begin
 				  led_check_2 <= 1'b1;
 				  led_check <= 1'b1;
-				  //total_zeros <= total_zeros + new_zeros_num;
-				  //sample_counter <= sample_counter + 1;
-				  if (new_zeros_num > ((BIT_LENGTH >> 1) + 1000)) begin
-						new_dac_adjustment <= 1'b0;
-						output_vol <= output_vol + 1;
-				  end else if (new_zeros_num < ((BIT_LENGTH >> 1) - 1000)) begin
-						new_dac_adjustment <= 1'b0;
-						output_vol <= output_vol - 1;
-				  end else begin
-						new_dac_adjustment <= 1'b1;
-						led_check <= 1'b1;
-						led_check_2 <= 1'b1;
+				  if (counter_2 < (FEEDBACK_INTERVAL - 1)) begin
+				      counter_2 <= counter_2 + 1;
+						total_zeros <= total_zeros + new_zeros_num;
+						sample_counter <= sample_counter + 1;
+				  end else if (counter_2 >= (FEEDBACK_INTERVAL - 1)) begin
+					  if (total_zeros > (((BIT_LENGTH*sample_counter) >> 1) + 5000)) begin
+							new_dac_adjustment <= 1'b0;
+							output_vol <= output_vol + 1;
+					  end else if (new_zeros_num < (((BIT_LENGTH*sample_counter) >> 1) - 5000)) begin
+							new_dac_adjustment <= 1'b0;
+							output_vol <= output_vol - 1;
+					  end else begin
+							new_dac_adjustment <= 1'b1;
+							led_check <= 1'b1;
+							led_check_2 <= 1'b1;
+					  end
+					  counter_2 <= 0;
+					  sample_counter <= 0;
+					  total_zeros <= 0;
 				  end
 			  end else if (~new_dac_adjustment) begin
 				  if (counter >= (DELAY_TIME - 1)) begin
@@ -71,9 +80,6 @@ module pulse_adjuster (
 				  sample_counter <= 0;
 			  end
 		end
-endmodule		
-		
-		
-
+endmodule
 
 	
