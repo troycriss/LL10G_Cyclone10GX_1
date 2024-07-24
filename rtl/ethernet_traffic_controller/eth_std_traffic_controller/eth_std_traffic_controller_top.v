@@ -51,6 +51,15 @@
 	output 	wire 		avl_st_rx_ready,
 	input 	wire 		avl_st_rx_sop,
 	input 	wire 		avl_st_rx_val
+	
+	,output wire 	 		  chip_id_out
+   ,output wire 	 [3:0]  channel_out
+   ,output wire    [11:0] vol_out
+   ,output wire           change_dac_out
+	,output wire    [15:0] zeros_in_216_out
+	,output wire 	 		  feedback
+	,output wire 			  new_zeros
+
 );
 
 
@@ -128,7 +137,15 @@
 	.tx_eop      (from_gen_tx_eop), 			// Avalon-ST EndOfPacket
 	.tx_empty    (from_gen_tx_empty), 		// Avalon-ST Empty
 	.tx_error    (from_gen_tx_error), 		// Avalon-ST Error
-	.tx_ready    (to_gen_tx_ready)
+	.tx_ready    (to_gen_tx_ready),
+	
+	.chip_id_out (chip_id_out),
+	.channel_out (channel_out),
+	.vol_out     (vol_out),
+	.change_dac_out (change_dac_out),
+	.zeros_in_216_out (zeros_in_216_out),
+	.feedback_in    (feedback),
+	.new_zeros_flag (new_zeros)
 	);
 	
   // ___________________________________________________________________
@@ -239,3 +256,4 @@ module traffic_reset_sync ( clk, data_in, reset, data_out) ;
     end
 
 endmodule
+

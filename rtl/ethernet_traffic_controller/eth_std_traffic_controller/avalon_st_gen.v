@@ -45,6 +45,13 @@ module avalon_st_gen
 ,output reg     [2:0]  tx_empty        // Avalon-ST TX Empty
 ,output wire           tx_error        // Avalon-ST TX Error
 
+,output wire 	 		  chip_id_out
+,output wire 	 [3:0]  channel_out
+,output wire    [11:0] vol_out
+,output wire           change_dac_out
+,output wire 	 [15:0] zeros_in_216_out
+,output wire	 	     feedback_in
+,output wire 			  new_zeros_flag
 );
 
 
@@ -91,6 +98,13 @@ module avalon_st_gen
  parameter ADDR_offset = 8'h23;
  
  parameter ADDR_mode = 8'h24;
+ 
+ parameter ADDR_chip_id = 8'h25;
+ parameter ADDR_channel = 8'h26;
+ parameter ADDR_vol = 8'h27;
+ parameter ADDR_button = 8'h28;
+ parameter ADDR_feedback = 8'h29;
+ 
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
  parameter ADDR_CNTDATA		= 8'hf2;
@@ -110,6 +124,24 @@ reg     [31:0] packet_tx_count;                 // Register to count the number 
 reg     [31:0] rand_seed0;                      // Register to program seed number for prbs generator [31:0]
 reg     [31:0] rand_seed1;                      // Register to program seed number for prbs generator [63:32]
 reg     [31:0] rand_seed2;                      // Register to program seed number for prbs generator [91:64]
+
+
+//dacwrite command registers
+reg chip_id;
+reg feedback = 1'b1;
+reg [3:0] channel;
+reg [11:0] vol;
+reg change_dac=1'b1; //start flag
+reg [15:0] zeros_in_216 = 16'h0000;
+
+assign chip_id_out = chip_id;
+assign feedback_in = feedback;
+assign channel_out = channel;
+assign vol_out = vol;
+assign change_dac_out = change_dac;
+//wire zeros_in_216_out;
+assign zeros_in_216_out[15:0] = zeros_in_216[15:0];
+
 
 reg    random_payload;                            // Select what type of data pattern:0=incremental, 1=random
 reg    random_length;                             // Select what type of packet length:0=fixed, 1=random
@@ -238,16 +270,17 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg do_selected_data_bit = 1'b1;
 	reg do_selected_verify_bit = 1'b1;
 	reg do_full_data=1'b0;
-
+	
 	reg [7:0] do_xor = 8'h01;
 	reg [63:0] datain_memory; // memory to xor
 	reg [1:0] xor_state; // state variable for xoring
 	reg [7:0] xor_counter; // keep track of bit to xor
 	reg verified = 1'b0;
-  reg [15:0] zeros_count = 16'h0000;
-  reg [15:0] all_count = 16'h0000;
-  reg [15:0] zeros_in_216 = 16'h0000;
-  parameter [15:0] INT_216 = 16'hFFFF;
+   reg [15:0] zeros_count = 16'h0000;
+   reg [15:0] all_count = 16'h0000;
+	reg new_zeros = 1'b0;
+	assign new_zeros_flag = new_zeros;
+   parameter [15:0] INT_216 = 16'hFFFF;
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
@@ -255,21 +288,12 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	always @ (posedge reset or posedge fifo_clk)
    begin
       if (reset) begin
-<<<<<<< HEAD
-			fifo_datain <= 64'h0;
-			counter_datain <= 8'h00;
-			xor_state <= 2'b00;
-			xor_counter <= 8'h00;
-		end
-      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified))) begin		
-=======
 			  fifo_datain <= 64'h0;
 			  counter_datain <= 8'h00;
 			  xor_state <= 2'b00;
 			  xor_counter <= 8'h00;
 		  end
       else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) && do_xor[0]) begin
->>>>>>> eef7ede6a316f097cbacc5332f110dabc855a2d1
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
@@ -288,36 +312,24 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				    fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1] ^ datain_memory[63-xor_counter]};	// xor with previous 64 bits
 				    counter_datain_max <= 8'h40-nbitstosample;
 				    xor_counter <= xor_counter + 8'h01;
-<<<<<<< HEAD
-			    end
-             
-=======
 		      end
           if (~fmc_in[nbitstosample:1])begin
                     zeros_count <= zeros_count + 16'h0001;
              end
              all_count <= all_count + 16'h0001;
           if (all_count == INT_216)begin
-					   zeros_in_216 <= zeros_count;
+				 zeros_in_216 <= zeros_count;
              all_count <= 16'h0000;
              zeros_count <= 16'h0000;
-          end
->>>>>>> eef7ede6a316f097cbacc5332f110dabc855a2d1
+				 new_zeros <= 1'b1;
+          end else if (all_count == INT_216/2) begin
+				 new_zeros <= 1'b0;
+			 end
+			
 			end
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
 				xor_counter <= 8'h00;
-<<<<<<< HEAD
-				if (xor_state == 2'b00 && do_xor[0]) begin // was taking data into fifo_datain, but not actually storing it
-                    fifo_wrreq<=1'b0;
-                    datain_memory <= fifo_datain;
-                    xor_state <= 2'b01;
-                end
-                else if (xor_state == 2'b01 || ~do_xor[0]) begin // was taking XORed data into fifo_datain, and storing it
-                    fifo_wrreq<=1'b1;
-                    xor_state <= 2'b00;
-                end
-=======
 				if (xor_state == 2'b00) begin // was taking data into fifo_datain, but not actually storing it
              fifo_wrreq<=1'b0;
              datain_memory <= fifo_datain;
@@ -327,15 +339,12 @@ wire fifo_clk;//fifo_clk is what is used for writing
              fifo_wrreq<=1'b1;
              xor_state <= 2'b00;
         end
->>>>>>> eef7ede6a316f097cbacc5332f110dabc855a2d1
 			end
 			else begin
 				if (do_test_counter_data) counter_datain <= counter_datain+8'h08; // remember we stored 8 more bits
 				else counter_datain <= counter_datain+nbitstosample; // remember we stored nbitstosample more bits
 				fifo_wrreq<=1'b0;
 			end
-<<<<<<< HEAD
-=======
 		end else
 		//if not doing xor
 		if(~do_xor[0] && ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)))) begin
@@ -356,10 +365,13 @@ wire fifo_clk;//fifo_clk is what is used for writing
             end
             all_count <= all_count + 16'h0001;
             if (all_count == INT_216)begin
-					     zeros_in_216 <= zeros_count;
+					zeros_in_216 <= zeros_count;
                all_count <= 16'h0000;
                zeros_count <= 16'h0000;
-            end
+					new_zeros <= 1'b1;
+            end else if (all_count == INT_216/2) begin
+					new_zeros <= 1'b0;
+				end
 			end
 			
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
@@ -371,7 +383,6 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				else counter_datain <= counter_datain+nbitstosample; // remember we stored nbitstosample more bits
 				fifo_wrreq<=1'b0;
 			end
->>>>>>> eef7ede6a316f097cbacc5332f110dabc855a2d1
 		end else begin
 			fifo_wrreq<=1'b0;
 		end
@@ -467,6 +478,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	);
 
 	//Read registers
+	reg [12:0] change_dac_counter = 0;
+	parameter DAC_CHANGE_DELAY = 5000;
 	always @ (posedge reset or posedge clk)
    begin
       if (reset) begin
@@ -514,9 +527,23 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		else if (write & address == ADDR_neg3pausedur) neg3pausedur<= writedata;
 		else if (write & address == ADDR_neg4dur) neg4dur<= writedata;
 		else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
-		
+		else if (write & address == ADDR_feedback) feedback <= writedata[0];
 		else if (write & address == ADDR_offset) trigger_offset<= writedata[7:0];
 		else if (write & address == ADDR_mode) do_xor<= writedata[7:0];
+		else if (write & address == ADDR_chip_id) chip_id <= writedata[0];
+		else if (write & address == ADDR_channel) channel <= writedata[3:0];
+		else if (write & address == ADDR_vol) begin
+			vol <= writedata[11:0];
+			change_dac <= 1'b0;
+		//else if (write & address == ADDR_button) change_dac <= writedata[0];
+		end
+		
+		else if (~change_dac && (change_dac_counter < DAC_CHANGE_DELAY)) begin
+				change_dac_counter <= change_dac_counter +1;
+		end else if (~change_dac && (change_dac_counter >= DAC_CHANGE_DELAY)) begin
+				change_dac <= 1'b1;
+				change_dac_counter <= 0;
+		end
    end
 	
 // ____________________________________________________________________________

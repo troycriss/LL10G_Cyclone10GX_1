@@ -181,7 +181,34 @@ proc xor {value} {
     reg_write $GEN_BASE_ADDR $GEN_mode $value
 }
 
+
+proc feedback {value} {
+    global GEN_BASE_ADDR
+    global GEN_feedback
+    puts "\t GEN_feedback $value "
+    reg_write $GEN_BASE_ADDR $GEN_feedback $value
+}
+
 #########
+
+proc dacwrite {chip_id channel vol} {
+	global GEN_BASE_ADDR
+	global GEN_chip_id
+	global GEN_channel
+	global GEN_vol
+	puts "\t dacwrite channel $channel to voltage $vol "
+	reg_write $GEN_BASE_ADDR $GEN_chip_id $chip_id
+	reg_write $GEN_BASE_ADDR $GEN_channel $channel
+	reg_write $GEN_BASE_ADDR $GEN_vol $vol
+}
+
+##proc button {value} {
+##	global GEN_BASE_ADDR
+##	global GEN_button
+##	puts "\t button set to $value " 
+##	reg_write $GEN_BASE_ADDR $GEN_button $value
+##}
+
 
 proc SET_1588_GO_MASTER {} {
     global TRAFFIC_CONTROLLER_BASE_ADDR
