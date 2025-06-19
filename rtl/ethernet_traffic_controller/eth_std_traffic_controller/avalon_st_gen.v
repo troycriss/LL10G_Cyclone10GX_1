@@ -52,6 +52,10 @@ module avalon_st_gen
 ,output wire 	 [15:0] zeros_in_216_out
 ,output wire	 	     feedback_in
 ,output wire 			  new_zeros_flag
+,output wire    [15:0] start_vol_out
+,input  wire    [15:0] feedback_report
+,input wire 			  resting
+,output wire 	 [15:0] percentage
 );
 
 
@@ -104,6 +108,11 @@ module avalon_st_gen
  parameter ADDR_vol = 8'h27;
  parameter ADDR_button = 8'h28;
  parameter ADDR_feedback = 8'h29;
+ parameter ADDR_start_vol = 8'h2A;
+ parameter ADDR_pulserest = 8'h2B;
+ parameter ADDR_percentage = 8'h2c;
+ parameter ADDR_walking = 8'h2d;
+ parameter ADDR_polarity = 8'h2E;
  
  parameter ADDR_CNTDASA		= 8'hf0;
  parameter ADDR_CNTSATLEN	= 8'hf1;
@@ -129,18 +138,23 @@ reg     [31:0] rand_seed2;                      // Register to program seed numb
 //dacwrite command registers
 reg chip_id;
 reg feedback = 1'b1;
+reg [15:0] start_vol = 700;
 reg [3:0] channel;
 reg [11:0] vol;
 reg change_dac=1'b1; //start flag
 reg [15:0] zeros_in_216 = 16'h0000;
+wire [15:0] feedback_report;
+wire resting;
 
 assign chip_id_out = chip_id;
 assign feedback_in = feedback;
+assign start_vol_out = start_vol;
 assign channel_out = channel;
 assign vol_out = vol;
 assign change_dac_out = change_dac;
 //wire zeros_in_216_out;
 assign zeros_in_216_out[15:0] = zeros_in_216[15:0];
+assign percentage[15:0] = percentage_in[15:0];
 
 
 reg    random_payload;                            // Select what type of data pattern:0=incremental, 1=random
@@ -222,6 +236,8 @@ reg fifo_wrreq=1'b0;
 reg fifo_rdreq=1'b0;
 reg fifo_aclr=1'b0;
 wire [63:0] fifo_dataout;
+wire [63:0] walk_result; 
+reg walking = 1'b0;
 wire [9:0] fifo_rdusedw;//number of entries (out of 1024)
 wire fifo_rdfull; //full synced to read clk
 wire fifo_rdempty; //empty synced to read clk
@@ -232,9 +248,12 @@ wire fifo_clk;//fifo_clk is what is used for writing
 //trigger for fifo
 //reg trigger = 1'b0;
 
+wire [63:0] new_fifo_datain;
+wire new_fifo_wrreq;
+
 	myfifo fifo1 (
-		.data    (fifo_datain),    //   input,  width = 64,  fifo_input.datain
-		.wrreq   (fifo_wrreq),   //   input,   width = 1,            .wrreq
+		.data    (new_fifo_datain),    //   input,  width = 64,  fifo_input.datain
+		.wrreq   (new_fifo_wrreq),   //   input,   width = 1,            .wrreq
 		.rdreq   (fifo_rdreq),   //   input,   width = 1,            .rdreq
 		.wrclk   (fifo_clk),   //   input,   width = 1,            .wrclk
 		.rdclk   (clk),   //   input,   width = 1,            .rdclk
@@ -246,6 +265,15 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		.wrfull  (fifo_wrfull)   //  output,   width = 1,            .wrfull
 	);
 	
+	long_xor xor_2048 (
+		 .clk_in        (fifo_clk),
+		 .data_in       (fifo_datain),
+		 .do_xor        (do_xor),
+		 .fifo_wrfull   (fifo_wrfull),  // Ensure FIFO does not overflow
+		 .new_datain	 (fifo_wrreq),
+		 .data_out      (new_fifo_datain),
+		 .fifo_request  (new_fifo_wrreq)
+	);
 	reg fifo_p_clk;
 	reg [31:0] fifo_clk_counter=0;
 	reg [31:0] fifo_clk_prescale=0;
@@ -272,6 +300,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg do_full_data=1'b0;
 	
 	reg [7:0] do_xor = 8'h01;
+	reg [7:0] set_polarity = 8'h01;
 	reg [63:0] datain_memory; // memory to xor
 	reg [1:0] xor_state; // state variable for xoring
 	reg [7:0] xor_counter; // keep track of bit to xor
@@ -284,6 +313,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	reg [7:0] test_counter_data=8'h00;
 	reg [7:0] counter_datain=8'h00;
 	reg [7:0] counter_datain_max=8'h40;
+	reg unused_xor = 1'b0;
 	parameter nbitstosample=6'd1; // should be a power of 2, to fit into 64 bit word!
 	always @ (posedge reset or posedge fifo_clk)
    begin
@@ -293,7 +323,7 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			  xor_state <= 2'b00;
 			  xor_counter <= 8'h00;
 		  end
-      else if ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) && do_xor[0]) begin
+      else if (unused_xor && (do_full_data || do_test_counter_data || (do_selected_data_bit && verified))) begin
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
@@ -304,28 +334,25 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			else begin //assuming nbitstosample is 1 when do_full_data is set to false
-			    if (xor_state == 2'b00) begin
+			    if (xor_state == 2'b00 && ~resting) begin
     				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
 	    			counter_datain_max <= 8'h40-nbitstosample;
 	    		end
-	    		else if (xor_state == 2'b01) begin
+	    		else if (xor_state == 2'b01 && ~resting && xor_counter < 64) begin
 				    fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1] ^ datain_memory[63-xor_counter]};	// xor with previous 64 bits
 				    counter_datain_max <= 8'h40-nbitstosample;
 				    xor_counter <= xor_counter + 8'h01;
 		      end
-          if (~fmc_in[nbitstosample:1])begin
-                    zeros_count <= zeros_count + 16'h0001;
-             end
-             all_count <= all_count + 16'h0001;
-          if (all_count == INT_216)begin
+			end
+         if (~fmc_in[nbitstosample:1])begin
+             zeros_count <= zeros_count + 16'h0001;
+         end
+         all_count <= all_count + 16'h0001;
+         if (all_count == 100)begin
 				 zeros_in_216 <= zeros_count;
              all_count <= 16'h0000;
              zeros_count <= 16'h0000;
-				 new_zeros <= 1'b1;
-          end else if (all_count == INT_216/2) begin
-				 new_zeros <= 1'b0;
-			 end
-			
+				 new_zeros <= 1'b1;			
 			end
 			if (counter_datain >= counter_datain_max) begin // ready to write it to the fifo
 				counter_datain <= 8'h00;
@@ -347,7 +374,8 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			end
 		end else
 		//if not doing xor
-		if(~do_xor[0] && ((do_full_data || do_test_counter_data || (do_selected_data_bit && verified)))) begin
+		if(do_full_data || do_test_counter_data || (do_selected_data_bit && verified)) begin
+			datain_memory <= 64'h0;
 			if (do_test_counter_data) begin
 				counter_datain_max <= 8'h40-8'h08;
 				test_counter_data<=test_counter_data+8'h01;
@@ -358,19 +386,19 @@ wire fifo_clk;//fifo_clk is what is used for writing
 				counter_datain_max <= 8'h40-nbitstosample;
 			end
 			else begin //assuming nbitstosample is 1 when do_full_data is set to false
-				fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
-				counter_datain_max <= 8'h40-nbitstosample;
-            if (~fmc_in[nbitstosample:1])begin
-					     zeros_count <= zeros_count + 16'h0001;
-            end
-            all_count <= all_count + 16'h0001;
-            if (all_count == INT_216)begin
-					zeros_in_216 <= zeros_count;
-               all_count <= 16'h0000;
-               zeros_count <= 16'h0000;
-					new_zeros <= 1'b1;
-            end else if (all_count == INT_216/2) begin
-					new_zeros <= 1'b0;
+				if (~resting) begin
+					fifo_datain <= {fifo_datain[63-nbitstosample:0],fmc_in[nbitstosample:1]}; // take nbitstosample more bits of input and shift into fifo_datain
+					counter_datain_max <= 8'h40-nbitstosample;
+					if (~fmc_in[nbitstosample:1])begin
+							  zeros_count <= zeros_count + 16'h0001;
+					end
+					all_count <= all_count + 16'h0001;
+					if (all_count == 100)begin
+						zeros_in_216 <= zeros_count;
+						all_count <= 16'h0000;
+						zeros_count <= 16'h0000;
+						new_zeros <= 1'b1;
+					end
 				end
 			end
 			
@@ -410,7 +438,9 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			end else begin
 				if (verify_error_count!=16'hffff) verify_error_count <= verify_error_count + 1'b1;
 				do_selected_verify_bit <= 1'b0;
-				verified <= 1'b0;
+//				DISABLING verify functionality while there is no verify pulse
+//				verified <= 1'b0;
+				verified <= 1'b1;
 			end
 		end
 		else do_selected_verify_bit <= 1'b0;
@@ -427,29 +457,35 @@ wire fifo_clk;//fifo_clk is what is used for writing
 	
 	//pulse outputs and pauses
 	reg [31:0] pos1dur = 10;
-	reg [31:0] pos1pausedur = 10;
+	reg [31:0] pos1pausedur = 0;
 	
 	reg [31:0] pos2dur = 10;
-	reg [31:0] pos2pausedur = 10;
+	reg [31:0] pos2pausedur = 0;
 	
 	reg [31:0] pos3dur = 10;
-	reg [31:0] pos3pausedur = 10;
+	reg [31:0] pos3pausedur = 0;
 	
 	reg [31:0] pos4dur = 10;
-	reg [31:0] pos4pausedur = 10;
+	reg [31:0] pos4pausedur = 0;
 	
 	reg [31:0] neg1dur = 10;
-	reg [31:0] neg1pausedur = 10;
+	reg [31:0] neg1pausedur = 0;
 	
 	reg [31:0] neg2dur = 10;
-	reg [31:0] neg2pausedur = 10;
+	reg [31:0] neg2pausedur = 0;
 	
 	reg [31:0] neg3dur = 10;
-	reg [31:0] neg3pausedur = 10;
+	reg [31:0] neg3pausedur = 0;
 	
 	reg [31:0] neg4dur = 10;
-	reg [31:0] neg4pausedur = 10;
+	reg [31:0] neg4pausedur = 0;
 	
+	reg [31:0] rest_counter = 0;
+	reg [7:0]  rest_counts = 0;
+	reg [31:0] paused_count = 0;
+	//reg resting = 1'b0;
+	reg pulse_rest = 1'b0;
+	reg [15:0] percentage_in = 50;
 	
 	PulseController pulser (
 		.clk_in(fast2_clk),
@@ -474,7 +510,10 @@ wire fifo_clk;//fifo_clk is what is used for writing
 		
 		.signal_out(fmc_out[15:8]),
 		.trigger(trigger),
-		.verify_trigger(verify_trigger)
+		.verify_trigger(verify_trigger),
+		
+		.polarity(set_polarity)
+		
 	);
 
 	//Read registers
@@ -504,45 +543,50 @@ wire fifo_clk;//fifo_clk is what is used for writing
 			neg3pausedur <= 0;
 			neg4dur <= 0;
 			neg4pausedur <= 0;
-		end
-		
-		else if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
-		else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
-		else if (write & address == ADDR_destip) destip <= writedata;
-		
-		else if (write & address == ADDR_pos1dur) pos1dur<= writedata;
-		else if (write & address == ADDR_pos1pausedur) pos1pausedur<= writedata;
-		else if (write & address == ADDR_pos2dur) pos2dur<= writedata;
-		else if (write & address == ADDR_pos2pausedur) pos2pausedur<= writedata;
-		else if (write & address == ADDR_pos3dur) pos3dur<= writedata;
-		else if (write & address == ADDR_pos3pausedur) pos3pausedur<= writedata;
-		else if (write & address == ADDR_pos4dur) pos4dur<= writedata;
-		else if (write & address == ADDR_pos4pausedur) pos4pausedur<= writedata;
-		
-		else if (write & address == ADDR_neg1dur) neg1dur<= writedata;
-		else if (write & address == ADDR_neg1pausedur) neg1pausedur<= writedata;
-		else if (write & address == ADDR_neg2dur) neg2dur<= writedata;
-		else if (write & address == ADDR_neg2pausedur) neg2pausedur<= writedata;
-		else if (write & address == ADDR_neg3dur) neg3dur<= writedata;
-		else if (write & address == ADDR_neg3pausedur) neg3pausedur<= writedata;
-		else if (write & address == ADDR_neg4dur) neg4dur<= writedata;
-		else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
-		else if (write & address == ADDR_feedback) feedback <= writedata[0];
-		else if (write & address == ADDR_offset) trigger_offset<= writedata[7:0];
-		else if (write & address == ADDR_mode) do_xor<= writedata[7:0];
-		else if (write & address == ADDR_chip_id) chip_id <= writedata[0];
-		else if (write & address == ADDR_channel) channel <= writedata[3:0];
-		else if (write & address == ADDR_vol) begin
-			vol <= writedata[11:0];
-			change_dac <= 1'b0;
-		//else if (write & address == ADDR_button) change_dac <= writedata[0];
-		end
-		
-		else if (~change_dac && (change_dac_counter < DAC_CHANGE_DELAY)) begin
-				change_dac_counter <= change_dac_counter +1;
-		end else if (~change_dac && (change_dac_counter >= DAC_CHANGE_DELAY)) begin
-				change_dac <= 1'b1;
-				change_dac_counter <= 0;
+		end else begin
+			if (write & address == ADDR_do_test_counter_data) do_test_counter_data <= writedata[0];
+			else if (write & address == ADDR_fifo_clk_prescale) fifo_clk_prescale <= writedata;
+			else if (write & address == ADDR_destip) destip <= writedata;
+			
+			else if (write & address == ADDR_pos1dur) pos1dur<= writedata;
+			else if (write & address == ADDR_pos1pausedur) pos1pausedur<= writedata;
+			else if (write & address == ADDR_pos2dur) pos2dur<= writedata;
+			else if (write & address == ADDR_pos2pausedur) pos2pausedur<= writedata;
+			else if (write & address == ADDR_pos3dur) pos3dur<= writedata;
+			else if (write & address == ADDR_pos3pausedur) pos3pausedur<= writedata;
+			else if (write & address == ADDR_pos4dur) pos4dur<= writedata;
+			else if (write & address == ADDR_pos4pausedur) pos4pausedur<= writedata;
+			
+			else if (write & address == ADDR_neg1dur) neg1dur<= writedata;
+			else if (write & address == ADDR_neg1pausedur) neg1pausedur<= writedata;
+			else if (write & address == ADDR_neg2dur) neg2dur<= writedata;
+			else if (write & address == ADDR_neg2pausedur) neg2pausedur<= writedata;
+			else if (write & address == ADDR_neg3dur) neg3dur<= writedata;
+			else if (write & address == ADDR_neg3pausedur) neg3pausedur<= writedata;
+			else if (write & address == ADDR_neg4dur) neg4dur<= writedata;
+			else if (write & address == ADDR_neg4pausedur) neg4pausedur<= writedata;
+			else if (write & address == ADDR_feedback) feedback <= writedata[0];
+			else if (write & address == ADDR_walking) walking <= writedata[0];
+			else if (write & address == ADDR_pulserest) pulse_rest <= writedata[0];
+			else if (write & address == ADDR_start_vol) start_vol <= writedata;
+			else if (write & address == ADDR_offset) trigger_offset<= writedata[7:0];
+			else if (write & address == ADDR_mode) do_xor<= writedata[7:0];
+			else if (write & address == ADDR_chip_id) chip_id <= writedata[0];
+			else if (write & address == ADDR_channel) channel <= writedata[3:0];
+			else if (write & address == ADDR_polarity) set_polarity <= writedata[7:0];
+			else if (write & address == ADDR_percentage) percentage_in <= writedata[15:0];
+			else if (write & address == ADDR_vol) begin
+				vol <= writedata[11:0];
+				change_dac <= 1'b0;
+			//else if (write & address == ADDR_button) change_dac <= writedata[0];
+			end
+			
+			else if (~change_dac && (change_dac_counter < DAC_CHANGE_DELAY)) begin
+					change_dac_counter <= change_dac_counter +1;
+			end else if (~change_dac && (change_dac_counter >= DAC_CHANGE_DELAY)) begin
+					change_dac <= 1'b1;
+					change_dac_counter <= 0;
+			end
 		end
    end
 	
@@ -1012,7 +1056,12 @@ always @ (posedge reset or posedge clk)
          end else if ((S_DATA|S_SRC_LEN_SEQ|S_SRC_LEN_IP1|S_SRC_LEN_IP2|S_SRC_LEN_IP3|S_SRC_LEN_IP4) & ~random_payload & tx_ready) begin
 				//data_pattern <= data_pattern + 64'h0808080808080808;
             //data_pattern <= {56'h0000000000000000,fmc_in};
-				data_pattern <= fifo_dataout;
+				if (~walking) begin
+					data_pattern <= fifo_dataout;
+				end else begin
+					data_pattern <= walk_result;
+				end
+				//data_pattern <= 64'hFFFFFFFFFFFFFFFF; //test, good this set output to only 1's
          end else if ((S_SRC_LEN_SEQ | S_DATA) & random_payload & tx_ready) begin
             data_pattern <= tx_prbs[63:0];
          end
@@ -1047,7 +1096,7 @@ always @ (posedge reset or posedge clk)
 			end else if (S_SRC_LEN_IP4) begin
             tx_data_reg[63:32] <= {16'h0, seq_num}; // UDP dummy checksum , seq_num
             //tx_data_reg[31: 0] <= {packet_tx_count[15:0], {6'h0,fifo_rdusedw}}; // padding , padding
-            tx_data_reg[31: 0] <= {zeros_in_216, verify_error_count}; // add count of verify errors
+            tx_data_reg[31: 0] <= {feedback_report, verify_error_count}; // add count of verify errors
          end else if (S_DATA & tx_ready) begin
             tx_data_reg <= data_pattern;
          end
