@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "slow_clk_out",
+					"strict" : false
+				},
+				{
+					"name" : "slow_clk_stgr_out",
+					"strict" : false
+				},
+				{
+					"name" : "slow_clk_ether_out",
+					"strict" : false
+				},
+				{
+					"name" : "slow_clk_ether_stgr_out",
+					"strict" : false
+				},
+				{
+					"name" : "pulse_out",
+					"strict" : false
+				},
+				{
+					"name" : "pulse_ether_out",
+					"strict" : false
+				},
+				{
+					"name" : "reset_led",
+					"strict" : false
+				},
+				{
+					"name" : "clk_in",
+					"strict" : false
+				},
+				{
+					"name" : "reset_in",
+					"strict" : false
+				},
+				{
+					"name" : "sequence_switch",
+					"strict" : false
+				},
+				{
+					"name" : "button_in",
+					"strict" : false
+				},
+				{
+					"name" : "button_ether_in",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

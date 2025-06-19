@@ -33,6 +33,10 @@ module altera_eth_top # (
     output      [NUM_OF_CHANNEL-1:0]    channel_ready_n,
 	 output										 led_heartbeat,
 	 output										 led_other,
+	 
+	 // Pushbutton
+	 input etheron_button,
+	 input dac_button,
     
 	 // I2C interface
 	 output          sfp_scl_0,
@@ -41,24 +45,20 @@ module altera_eth_top # (
     output          sfp_sda_1,
 	 input           sfp_int_0,
 	 input           sfp_int_1,
-	 input arduino_scl,
-	 input arduino_sda,
+	 output arduino_scl,
+	 output arduino_sda,
 	 
 	 //FMC inputs / outputs
 	 input fmc_in[31:0], // only 15:0 used by first eth port, next 16 used by second eth port
 	 output fmc_out[31:0] // ""
+
 );
 
-	 // I2C interface
-	 assign      sfp_scl_0 = arduino_scl;
-	 assign      sfp_scl_1 = arduino_scl;
-	 assign      sfp_sda_0 = arduino_sda;
-	 assign      sfp_sda_1 = arduino_sda;
 	 
 	 // Heartbeat
 	 reg [31:0] cnt = 32'd0;
 	 reg led_clk_reg;
-	 assign led_heartbeat = led_clk_reg;
+	 assign led_heartbeat = new_zero_led_check;//led_clk_reg;
 	 always @(posedge clk_125) begin
 		if (cnt == 32'h7735940) // 125000000
 		begin
@@ -88,7 +88,7 @@ module altera_eth_top # (
 	 // Heartbeat fast
 	 reg [31:0] cnt_fast = 32'd0;
 	 reg led_clk_reg_fast;
-	 assign led_other = led_clk_reg_fast;
+	 assign led_other = led_checker; // ANDRE AND TROY DEBUG OUTPUT FOR DACWRITE CONSOLE CMD
 	 always @(posedge fast1_clk) begin
 		if (cnt_fast == 32'h773594) // 12500000 (so should go at 9.765625*16/125 = 156.25/125 times other heartbeat)
 		begin
@@ -96,6 +96,11 @@ module altera_eth_top # (
 			led_clk_reg_fast <= ~led_clk_reg_fast;
 		end
 		else cnt_fast <= cnt_fast + 32'd1;
+	 end
+	 
+	 reg eth_on_state;
+	 initial begin
+	    eth_on_state <= 2'b1;
 	 end
     
     // Reset
@@ -191,6 +196,114 @@ module altera_eth_top # (
         .reset_in   (~reset_n),
         .reset_out  (reset_mac64b_clk)
     );
+	 
+	 wire i2c_etheron_trigger; //pushbutton 1 (PB1 on the Dev Kit PCB)
+	 wire i2c_dac_trigger;
+	 wire i2c_slow_clk_out;			//don't need this
+	 wire i2c_slow_clk_ether_out;			//don't need this
+	 wire etheron_scl;
+	 wire etheron_sda;
+	 wire dac_scl;
+	 wire dac_sda;
+	 wire i2c_reset_led;			//don't need this
+	 wire dac_sequence_switch;
+	 
+	 
+	 // I2C interface
+	 assign      sfp_scl_0 = etheron_scl;
+	 assign      sfp_scl_1 = etheron_scl;
+	 assign      sfp_sda_0 = etheron_sda;
+	 assign      sfp_sda_1 = etheron_sda;
+	 assign		 arduino_scl = dac_scl;
+	 assign      arduino_sda = dac_sda;
+	 
+	 assign		 i2c_etheron_trigger = etheron_button;
+	 assign		 i2c_dac_trigger = dac_button && dac_change_out[0];
+	 assign      dac_sequence_switch = led_heartbeat;
+	 
+	 // I2C console command interface
+	 wire [1:0] chip_id_out;
+	 wire [1:0] [3:0] channel_out;
+	 wire [1:0] [11:0] vol_out;
+	 wire [1:0] dac_change_out;
+	 wire [1:0] [15:0] zeros_in_216_out;
+ 	 wire [11:0] new_vol;
+	 wire dac_adjustment;
+	 wire [1:0] feedback;
+	 wire [1:0] new_zeros;
+	 wire led_checker;
+	 wire new_zero_led_check;
+	 //direct console command interface
+	 wire chip_id;
+	 wire [3:0] channel;
+	 wire [11:0] vol;
+	 wire dac_change;
+	 reg chip_id_reg = 1'b0;
+	 reg [3:0] channel_reg = 4'b0;
+	 reg [11:0] vol_reg = 12'd2000;
+	 reg dac_change_reg = 1'b1;
+	 assign chip_id = chip_id_reg;
+	 assign channel = channel_reg;
+	 assign vol = vol_reg;
+	 assign dac_change = dac_change_reg;
+	 
+	 wire console_write;
+	 wire [31:0] console_writedata;
+	 
+	 assign console_write = csr_traffic_controller_write[0];
+	 assign console_writedata = csr_traffic_controller_writedata[0];
+	 assign console_address = csr_traffic_controller_address[0][9:2];
+	 
+	 parameter ADDR_chip_id = 8'h25;
+	 parameter ADDR_channel = 8'h26;
+	 parameter ADDR_vol = 8'h27;
+	 parameter ADDR_button = 8'h28;
+	 
+	 always @ (posedge mac64b_clk)
+    begin
+		if (console_write & console_address == ADDR_chip_id) chip_id_reg <= console_writedata[0];
+		else if (console_write & console_address == ADDR_channel) channel_reg <= console_writedata[3:0];
+		else if (console_write & console_address == ADDR_vol) vol_reg <= console_writedata[11:0]; 
+		else if (console_write & console_address == ADDR_button) dac_change_reg <= console_writedata[0];
+    end
+	 
+	 
+ 
+	  pulse_adjuster pulse_adjuster_inst (
+	  .clk_in				(i2c_slow_clk_out),
+	  .reset_in				(reset_in),
+	  .new_zeros_num		(zeros_in_216_out),
+	  .dac_adjustment		(dac_adjustment),
+	  .new_vol				(new_vol),
+	  .feedback				(feedback[0]),
+	  .new_zero_led_check (new_zero_led_check),
+	  .new_zeros			(new_zeros[0]),
+	  .led_checker 		(led_checker)
+);
+
+	 //I2C
+	 i2c_generator i2c_generator (
+	     .clk_in 							(fast1_clk),
+		  .reset_in 						(reset_n),
+		  .button_in						(i2c_dac_trigger),
+		  .button_ether_in				(i2c_etheron_trigger),
+		  .slow_clk_out					(i2c_slow_clk_out),
+		  .slow_clk_stgr_out				(dac_scl),
+		  .slow_clk_ether_out			(i2c_slow_clk_ether_out),
+		  .slow_clk_ether_stgr_out		(etheron_scl),
+		  .pulse_out						(dac_sda),
+		  .pulse_ether_out				(etheron_sda),
+		  .reset_led						(i2c_reset_led),
+		  .sequence_switch				(dac_sequence_switch),
+		  
+		  .chip_id 							(chip_id_out[0]),
+	     .dac_id		               (channel_out[0]),
+	     .vol				            (vol_out[0]),
+		  .new_vol							(new_vol),
+		  .dac_adjustment					(dac_adjustment),
+		  .feedback							(feedback[0])
+		  //.zeros_in_216					(zeros_in_216[0])
+	 );
     
     // DUT
     alt_mge_multi_channel #(
@@ -342,7 +455,15 @@ module altera_eth_top # (
                         .eth_1588_wait_limit                        (1'b1),
                         .eth_1588_start_tod_sync                    (),
                         .eth_1588_channel_ready                     (2'b11),
-                        .eth_1588_traffic_controller_error_n        ()
+                        .eth_1588_traffic_controller_error_n        (),
+								
+								.chip_id_out         (chip_id_out),
+								.channel_out         (channel_out),
+								.vol_out             (vol_out),
+								.change_dac_out      (dac_change_out),
+								.zeros_in_216			(zeros_in_216_out),
+								.feedback 				(feedback),
+								.new_zeros				(new_zeros)
                     );
                     
                 end
@@ -408,7 +529,16 @@ module altera_eth_top # (
                         .eth_1588_wait_limit                        (1'b1),
                         .eth_1588_start_tod_sync                    (),
                         .eth_1588_channel_ready                     (2'b11),
-                        .eth_1588_traffic_controller_error_n        ()
+                        .eth_1588_traffic_controller_error_n        (),
+								
+								.chip_id_out         (chip_id_out),
+								.channel_out         (channel_out),
+								.vol_out             (vol_out),
+								.change_dac_out      (dac_change_out),
+								.zeros_in_216_out		(zeros_in_216_out),
+								.feedback 				(feedback),
+								.new_zeros				(new_zeros)
+
                     );
                     
                 end
@@ -528,4 +658,3 @@ module altera_eth_top # (
     endfunction
     
 endmodule
-
